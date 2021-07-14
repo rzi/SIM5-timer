@@ -6,7 +6,132 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        public bool firstStart,secondStart, thirdStart;
+        public bool firstStart, secondStart, thirdStart, fourhtStart, fivthStart, sixthStart, seventhStart, eightStart, ninthStart, tenthStart;
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            fivthStart = false;
+            label42.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label42.Text);
+            DateTime timeEnd = DateTime.Parse(label41.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label43.Text = diff1.ToString();
+
+            label44.Text = "";
+            label45.Text = "";
+            label46.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label44.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            sixthStart = true;
+            progressBar6.ForeColor = Color.LightGreen;
+            progressBar6.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            sixthStart = false;
+            label45.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label45.Text);
+            DateTime timeEnd = DateTime.Parse(label44.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label46.Text = diff1.ToString();
+
+            label47.Text = "";
+            label48.Text = "";
+            label49.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label47.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            seventhStart = true;
+            progressBar7.ForeColor = Color.LightGreen;
+            progressBar7.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            seventhStart = false;
+            label48.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label48.Text);
+            DateTime timeEnd = DateTime.Parse(label47.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label49.Text = diff1.ToString();
+
+            label50.Text = "";
+            label51.Text = "";
+            label52.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label50.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            eightStart = true;
+            progressBar8.ForeColor = Color.LightGreen;
+            progressBar8.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            eightStart = false;
+            label51.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label51.Text);
+            DateTime timeEnd = DateTime.Parse(label50.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label52.Text = diff1.ToString();
+
+            label53.Text = "";
+            label54.Text = "";
+            label55.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label53.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            ninthStart = true;
+            progressBar9.ForeColor = Color.LightGreen;
+            progressBar9.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ninthStart = false;
+            label54.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label54.Text);
+            DateTime timeEnd = DateTime.Parse(label53.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label55.Text = diff1.ToString();
+
+            label56.Text = "";
+            label57.Text = "";
+            label58.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label56.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            tenthStart = true;
+            progressBar10.ForeColor = Color.LightGreen;
+            progressBar10.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            tenthStart = false;
+            label57.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label57.Text);
+            DateTime timeEnd = DateTime.Parse(label56.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label58.Text = diff1.ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            fourhtStart = false;
+            label39.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label39.Text);
+            DateTime timeEnd = DateTime.Parse(label38.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label40.Text = diff1.ToString();
+
+            label41.Text = "";
+            label42.Text = "";
+            label43.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label41.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            fivthStart = true;
+            progressBar6.ForeColor = Color.LightGreen;
+            progressBar6.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -151,7 +276,21 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
+            thirdStart = false;
+            label36.Text = label3.Text;
+            DateTime timeStart = DateTime.Parse(label36.Text);
+            DateTime timeEnd = DateTime.Parse(label35.Text);
+            TimeSpan diff1 = timeStart.Subtract(timeEnd);
+            label37.Text = diff1.ToString();
 
+            label38.Text = "";
+            label39.Text = "";
+            label40.Text = "";
+            DateTime timeStart1 = DateTime.Parse(label3.Text);
+            label38.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            fourhtStart = true;
+            progressBar4.ForeColor = Color.LightGreen;
+            progressBar4.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
 
         public static double ConvertToUnixTimestamp(DateTime date)
