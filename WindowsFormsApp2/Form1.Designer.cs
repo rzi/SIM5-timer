@@ -37,6 +37,8 @@ namespace WindowsFormsApp2
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.progressBar10 = new System.Windows.Forms.ProgressBar();
@@ -94,7 +96,13 @@ namespace WindowsFormsApp2
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label30 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -148,11 +156,19 @@ namespace WindowsFormsApp2
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(935, 564);
+            this.tabControl1.Size = new System.Drawing.Size(935, 590);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label37);
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Controls.Add(this.label35);
+            this.tabPage1.Controls.Add(this.button11);
+            this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.label33);
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.label29);
             this.tabPage1.Controls.Add(this.label28);
@@ -218,10 +234,26 @@ namespace WindowsFormsApp2
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(927, 526);
+            this.tabPage1.Size = new System.Drawing.Size(927, 552);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pomiary";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(674, 141);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(0, 25);
+            this.label31.TabIndex = 63;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(551, 141);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(0, 25);
+            this.label30.TabIndex = 62;
             // 
             // label29
             // 
@@ -576,6 +608,7 @@ namespace WindowsFormsApp2
             this.button3.TabIndex = 20;
             this.button3.Text = "Start";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // textBox3
             // 
@@ -596,6 +629,7 @@ namespace WindowsFormsApp2
             // 
             // progressBar2
             // 
+            this.progressBar2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.progressBar2.Location = new System.Drawing.Point(401, 138);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(103, 30);
@@ -613,11 +647,13 @@ namespace WindowsFormsApp2
             // 
             // progressBar1
             // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.progressBar1.ForeColor = System.Drawing.Color.Red;
             this.progressBar1.Location = new System.Drawing.Point(401, 96);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(103, 30);
             this.progressBar1.TabIndex = 15;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+
             // 
             // textBox2
             // 
@@ -642,7 +678,7 @@ namespace WindowsFormsApp2
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(63, 31);
             this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "6000";
+            this.textBox1.Text = "180";
             // 
             // label9
             // 
@@ -702,28 +738,80 @@ namespace WindowsFormsApp2
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(901, 526);
+            this.tabPage2.Size = new System.Drawing.Size(927, 526);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Wykresy";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label30
+            // label33
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(453, 20);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(82, 25);
-            this.label30.TabIndex = 62;
-            this.label30.Text = "label30";
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.White;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(429, 102);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(0, 20);
+            this.label33.TabIndex = 65;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.White;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label34.Location = new System.Drawing.Point(429, 145);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(0, 20);
+            this.label34.TabIndex = 65;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(302, 493);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(89, 32);
+            this.button11.TabIndex = 66;
+            this.button11.Text = "Stop";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(555, 181);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(0, 25);
+            this.label35.TabIndex = 67;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(674, 181);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(0, 25);
+            this.label36.TabIndex = 68;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(816, 181);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(0, 25);
+            this.label37.TabIndex = 69;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(816, 142);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(0, 25);
+            this.label32.TabIndex = 64;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 586);
+            this.ClientSize = new System.Drawing.Size(977, 614);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Timer for SIM5 time management";
+            this.Text = "Time keeper support for SIM5 time management";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -796,8 +884,16 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label32;
     }
 }
 
