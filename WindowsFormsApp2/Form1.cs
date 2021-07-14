@@ -113,6 +113,11 @@ namespace WindowsFormsApp2
             label58.Text = diff1.ToString();
         }
 
+        private void progressBar3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             fourhtStart = false;
@@ -233,6 +238,45 @@ namespace WindowsFormsApp2
                     if (progressBar2.Value > redTriger)
                     {
                         progressBar2.ForeColor = Color.Red;
+                    }
+                }
+            }
+            if (thirdStart)
+            {
+
+                if (progressBar3.Maximum == progressBar3.Value)
+                {
+                    secondStart = false;
+                    progressBar3.ForeColor = Color.Red;
+                }
+                else
+                {
+                    DateTime timeStart1 = DateTime.Parse(label35.Text);
+                    int timeTarget1 = Convert.ToInt32(textBox3.Text); //set time in sec.
+                    DateTime timeEnd1 = timeStart1.AddSeconds(timeTarget1);
+                    DateTime timeNow1 = DateTime.Parse(label3.Text);
+                    double tStart = ConvertToUnixTimestamp(timeStart1);
+                    double tEnd = ConvertToUnixTimestamp(timeEnd1);
+                    double tNow = ConvertToUnixTimestamp(timeNow1);
+
+                    Console.WriteLine("tStart: " + (tStart - tStart));
+                    Console.WriteLine("tNow: " + (tNow - tStart));
+                    Console.WriteLine("tEnd: " + (tEnd - tStart));
+                    progressBar3.Maximum = (int)(tEnd - tStart);
+                    progressBar3.Value = (int)(tNow - tStart);
+                    int yellowTriger = (int)((tEnd - tStart) * 0.8);
+                    int redTriger = (int)((tEnd - tStart) * 0.9);
+                    Console.WriteLine("yellowTriger: " + yellowTriger);
+                    int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
+                    label59.Text = percentTNow.ToString("N0") + "%";
+                    Console.WriteLine("label59 " + percentTNow);
+                    if (progressBar3.Value > yellowTriger)
+                    {
+                        progressBar3.ForeColor = Color.Yellow;
+                    }
+                    if (progressBar3.Value > redTriger)
+                    {
+                        progressBar3.ForeColor = Color.Red;
                     }
                 }
             }
