@@ -115,18 +115,16 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             firstStart = false;
-            label8.Text = label3.Text; //pole 
-            DateTime timeStart = DateTime.Parse(label8.Text); //
-            DateTime timeEnd = DateTime.Parse(label29.Text); // 
+            label8.Text = label3.Text; 
+            DateTime timeStart = DateTime.Parse(label8.Text); 
+            DateTime timeEnd = DateTime.Parse(label29.Text); 
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label9.Text = diff1.ToString();
 
             label30.Text = "";
             label31.Text = "";
             label32.Text = "";
-            int timeTarget = Convert.ToInt32(textBox2.Text);
             DateTime timeStart1 = DateTime.Parse(label3.Text);
-            DateTime timeEnd1 = timeStart.AddSeconds(timeTarget);
             label30.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
             secondStart = true;
             progressBar2.ForeColor = Color.LightGreen;
@@ -144,17 +142,18 @@ namespace WindowsFormsApp2
             label35.Text = "";
             label36.Text = "";
             label37.Text = "";
-            int timeTarget = Convert.ToInt32(textBox3.Text);
             DateTime timeStart1 = DateTime.Parse(label3.Text);
-            DateTime timeEnd1 = timeStart.AddSeconds(timeTarget);
-            Console.WriteLine(timeStart1);
-            Console.WriteLine(timeTarget);
-            Console.WriteLine(timeEnd1);
             label35.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
             thirdStart = true;
             progressBar3.ForeColor = Color.LightGreen;
             progressBar3.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public static double ConvertToUnixTimestamp(DateTime date)
         {
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
