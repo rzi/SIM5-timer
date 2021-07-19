@@ -41,6 +41,7 @@ namespace WindowsFormsApp2
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
@@ -136,7 +137,6 @@ namespace WindowsFormsApp2
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -305,6 +305,16 @@ namespace WindowsFormsApp2
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pomiary";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(798, 528);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(113, 33);
+            this.button12.TabIndex = 99;
+            this.button12.Text = "Wyczyść";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label66
             // 
@@ -1134,16 +1144,6 @@ namespace WindowsFormsApp2
             this.tabPage2.Text = "Wykresy";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(798, 528);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(113, 33);
-            this.button12.TabIndex = 99;
-            this.button12.Text = "Wyczyść";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
@@ -1174,6 +1174,7 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Time keeper support for SIM5 time management";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

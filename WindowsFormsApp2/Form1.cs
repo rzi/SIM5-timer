@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -116,15 +117,24 @@ namespace WindowsFormsApp2
 
         private void button12_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("button ");
             // czyszczenie
-            Application.Restart();
-            Process.GetCurrentProcess().Kill();
-        }
+            //Application.Restart();
+            //Process.GetCurrentProcess().Kill();
 
+         
+
+        }
         
         private void chart1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
