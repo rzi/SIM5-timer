@@ -9,7 +9,9 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
     {
         public bool firstStart, secondStart, thirdStart, fourhtStart, fivthStart, sixthStart, seventhStart, eightStart, ninthStart, tenthStart;
-
+        public string currentAction;
+        public int currentBar, maxiBar;
+        public string procentBar;
         private void button6_Click(object sender, EventArgs e)
         {
             fivthStart = false;
@@ -18,6 +20,8 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(label41.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label43.Text = diff1.ToString();
+
+            currentAction = label13.Text;
 
             label44.Text = "";
             label45.Text = "";
@@ -38,6 +42,8 @@ namespace WindowsFormsApp2
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label46.Text = diff1.ToString();
 
+            currentAction = label14.Text;
+
             label47.Text = "";
             label48.Text = "";
             label49.Text = "";
@@ -56,6 +62,8 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(label47.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label49.Text = diff1.ToString();
+
+            currentAction = label15.Text;
 
             label50.Text = "";
             label51.Text = "";
@@ -76,6 +84,8 @@ namespace WindowsFormsApp2
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label52.Text = diff1.ToString();
 
+            currentAction = label16.Text;
+
             label53.Text = "";
             label54.Text = "";
             label55.Text = "";
@@ -95,6 +105,8 @@ namespace WindowsFormsApp2
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label55.Text = diff1.ToString();
 
+            currentAction = label17.Text;
+
             label56.Text = "";
             label57.Text = "";
             label58.Text = "";
@@ -113,6 +125,11 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(label56.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label58.Text = diff1.ToString();
+           // currentAction = "";
+            //currentBar = 0;
+            //maxiBar = 0;
+            //procentBar = " ";
+           
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -131,9 +148,24 @@ namespace WindowsFormsApp2
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(this);
             form2.Show();
         }
 
@@ -145,6 +177,8 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(label38.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label40.Text = diff1.ToString();
+
+            currentAction = label12.Text;
 
             label41.Text = "";
             label42.Text = "";
@@ -166,6 +200,8 @@ namespace WindowsFormsApp2
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            currentAction = label1.Text;
+
             label29.Text = "";
             label8.Text = "";
             label9.Text = "";
@@ -182,7 +218,7 @@ namespace WindowsFormsApp2
             label3.Text = now.ToLongTimeString(); //bieżący czas
             if (firstStart)
             {
-
+           
                 if (progressBar1.Maximum == progressBar1.Value)
                 {
                     firstStart = false;
@@ -203,11 +239,15 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar1.Maximum = (int)(tEnd - tStart);
                     progressBar1.Value = (int)(tNow - tStart);
+                    currentBar = progressBar1.Value;
+                    maxiBar = progressBar1.Maximum;
+                    Console.WriteLine("currentBar: " + currentBar);
                     int yellowTriger = (int)((tEnd - tStart) * 0.8) ;
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " +yellowTriger);
                     int percentTNow = (int)((tNow-tStart ) / (tEnd-tStart )*100);
                     label33.Text = percentTNow.ToString("N0") +"%";
+                    procentBar = label33.Text;
                     Console.WriteLine("label33: " + percentTNow);
                     if (progressBar1.Value > yellowTriger)
                     {
@@ -244,11 +284,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar2.Maximum = (int)(tEnd - tStart);
                     progressBar2.Value = (int)(tNow - tStart);
+                    currentBar = progressBar2.Value;
+                    maxiBar = progressBar2.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label34.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label34.Text;
                     Console.WriteLine("label34 " + percentTNow);
                     if (progressBar2.Value > yellowTriger)
                     {
@@ -283,11 +326,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar3.Maximum = (int)(tEnd - tStart);
                     progressBar3.Value = (int)(tNow - tStart);
+                    currentBar = progressBar3.Value;
+                    maxiBar = progressBar3.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label59.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label59.Text;
                     Console.WriteLine("label59 " + percentTNow);
                     if (progressBar3.Value > yellowTriger)
                     {
@@ -322,11 +368,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar4.Maximum = (int)(tEnd - tStart);
                     progressBar4.Value = (int)(tNow - tStart);
+                    currentBar = progressBar4.Value;
+                    maxiBar = progressBar4.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label60.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label60.Text;
                     Console.WriteLine("label60 " + percentTNow);
                     if (progressBar4.Value > yellowTriger)
                     {
@@ -361,11 +410,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar5.Maximum = (int)(tEnd - tStart);
                     progressBar5.Value = (int)(tNow - tStart);
+                    currentBar = progressBar5.Value;
+                    maxiBar = progressBar5.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label61.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label61.Text;
                     Console.WriteLine("label61 " + percentTNow);
                     if (progressBar5.Value > yellowTriger)
                     {
@@ -400,11 +452,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar6.Maximum = (int)(tEnd - tStart);
                     progressBar6.Value = (int)(tNow - tStart);
+                    currentBar = progressBar6.Value;
+                    maxiBar = progressBar6.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label62.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label62.Text;
                     Console.WriteLine("label62 " + percentTNow);
                     if (progressBar6.Value > yellowTriger)
                     {
@@ -439,11 +494,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar7.Maximum = (int)(tEnd - tStart);
                     progressBar7.Value = (int)(tNow - tStart);
+                    currentBar = progressBar7.Value;
+                    maxiBar = progressBar7.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label63.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label63.Text;
                     Console.WriteLine("label63 " + percentTNow);
                     if (progressBar7.Value > yellowTriger)
                     {
@@ -478,11 +536,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar8.Maximum = (int)(tEnd - tStart);
                     progressBar8.Value = (int)(tNow - tStart);
+                    currentBar = progressBar8.Value;
+                    maxiBar = progressBar8.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label64.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label64.Text;
                     Console.WriteLine("label64 " + percentTNow);
                     if (progressBar8.Value > yellowTriger)
                     {
@@ -517,12 +578,15 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar9.Maximum = (int)(tEnd - tStart);
                     progressBar9.Value = (int)(tNow - tStart);
+                    currentBar = progressBar9.Value;
+                    maxiBar = progressBar9.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label65.Text = percentTNow.ToString("N0") + "%";
-                    Console.WriteLine("label64 " + percentTNow);
+                    procentBar = label65.Text;
+                    Console.WriteLine("label65 " + percentTNow);
                     if (progressBar9.Value > yellowTriger)
                     {
                         progressBar9.ForeColor = Color.Yellow;
@@ -556,11 +620,14 @@ namespace WindowsFormsApp2
                     Console.WriteLine("tEnd: " + (tEnd - tStart));
                     progressBar10.Maximum = (int)(tEnd - tStart);
                     progressBar10.Value = (int)(tNow - tStart);
+                    currentBar = progressBar10.Value;
+                    maxiBar = progressBar10.Maximum;
                     int yellowTriger = (int)((tEnd - tStart) * 0.8);
                     int redTriger = (int)((tEnd - tStart) * 0.9);
                     Console.WriteLine("yellowTriger: " + yellowTriger);
                     int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
                     label66.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = label66.Text;
                     Console.WriteLine("label66 " + percentTNow);
                     if (progressBar10.Value > yellowTriger)
                     {
@@ -582,6 +649,8 @@ namespace WindowsFormsApp2
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label9.Text = diff1.ToString();
 
+            currentAction = label2.Text;
+
             label30.Text = "";
             label31.Text = "";
             label32.Text = "";
@@ -600,6 +669,8 @@ namespace WindowsFormsApp2
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label32.Text = diff1.ToString();
 
+            currentAction = label10.Text;
+
             label35.Text = "";
             label36.Text = "";
             label37.Text = "";
@@ -617,6 +688,8 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(label35.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             label37.Text = diff1.ToString();
+
+            currentAction = label11.Text;
 
             label38.Text = "";
             label39.Text = "";
