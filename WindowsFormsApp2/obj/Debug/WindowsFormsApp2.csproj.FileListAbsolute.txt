@@ -8,3 +8,14 @@ C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb

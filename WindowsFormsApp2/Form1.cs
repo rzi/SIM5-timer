@@ -32,7 +32,6 @@ namespace WindowsFormsApp2
             progressBar6.ForeColor = Color.LightGreen;
             progressBar6.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             sixthStart = false;
@@ -53,7 +52,6 @@ namespace WindowsFormsApp2
             progressBar7.ForeColor = Color.LightGreen;
             progressBar7.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             seventhStart = false;
@@ -74,7 +72,6 @@ namespace WindowsFormsApp2
             progressBar8.ForeColor = Color.LightGreen;
             progressBar8.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
-
         private void button9_Click(object sender, EventArgs e)
         {
             eightStart = false;
@@ -95,7 +92,6 @@ namespace WindowsFormsApp2
             progressBar9.ForeColor = Color.LightGreen;
             progressBar9.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
-
         private void button10_Click(object sender, EventArgs e)
         {
             ninthStart = false;
@@ -116,7 +112,6 @@ namespace WindowsFormsApp2
             progressBar10.ForeColor = Color.LightGreen;
             progressBar10.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
-
         private void button11_Click(object sender, EventArgs e)
         {
             tenthStart = false;
@@ -131,7 +126,6 @@ namespace WindowsFormsApp2
             //procentBar = " ";
            
         }
-
         private void button12_Click(object sender, EventArgs e)
         {
             Console.WriteLine("button ");
@@ -142,33 +136,15 @@ namespace WindowsFormsApp2
          
 
         }
-        
         private void chart1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this);
             form2.Show();
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             fourhtStart = false;
@@ -189,7 +165,6 @@ namespace WindowsFormsApp2
             progressBar5.ForeColor = Color.LightGreen;
             progressBar5.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
-
         public Form1()
         {
             InitializeComponent();
