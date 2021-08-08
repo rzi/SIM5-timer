@@ -38,108 +38,8 @@ namespace WindowsFormsApp2
             System.Windows.Forms.DataVisualization.Charting.Title title17 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title18 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.progressBar10 = new System.Windows.Forms.ProgressBar();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.progressBar9 = new System.Windows.Forms.ProgressBar();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.progressBar8 = new System.Windows.Forms.ProgressBar();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.progressBar7 = new System.Windows.Forms.ProgressBar();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.progressBar6 = new System.Windows.Forms.ProgressBar();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.progressBar5 = new System.Windows.Forms.ProgressBar();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.progressBar4 = new System.Windows.Forms.ProgressBar();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -156,57 +56,110 @@ namespace WindowsFormsApp2
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.introTitle = new System.Windows.Forms.Label();
+            this.currentTime = new System.Windows.Forms.Label();
+            this.introButton = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataLabel = new System.Windows.Forms.Label();
+            this.startLabel = new System.Windows.Forms.Label();
+            this.endLabel = new System.Windows.Forms.Label();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.introEnd = new System.Windows.Forms.Label();
+            this.introResult = new System.Windows.Forms.Label();
+            this.safetyTitle = new System.Windows.Forms.Label();
+            this.introProgressBar = new System.Windows.Forms.ProgressBar();
+            this.safetButton = new System.Windows.Forms.Button();
+            this.safetyProgressBar = new System.Windows.Forms.ProgressBar();
+            this.qualityTitle = new System.Windows.Forms.Label();
+            this.qualityButton = new System.Windows.Forms.Button();
+            this.qualityProgressBar = new System.Windows.Forms.ProgressBar();
+            this.customerServiceTitle = new System.Windows.Forms.Label();
+            this.customerServiceButton = new System.Windows.Forms.Button();
+            this.customerServiceProgressBar = new System.Windows.Forms.ProgressBar();
+            this.performanceTitle = new System.Windows.Forms.Label();
+            this.performanceButton = new System.Windows.Forms.Button();
+            this.performanceProgressBar = new System.Windows.Forms.ProgressBar();
+            this.peopleTitle = new System.Windows.Forms.Label();
+            this.peopleButton = new System.Windows.Forms.Button();
+            this.peopleProgressBar = new System.Windows.Forms.ProgressBar();
+            this.projectsTitle = new System.Windows.Forms.Label();
+            this.projectsButton = new System.Windows.Forms.Button();
+            this.projectsProgressBar = new System.Windows.Forms.ProgressBar();
+            this.priorityTitle = new System.Windows.Forms.Label();
+            this.visitsTitle = new System.Windows.Forms.Label();
+            this.feedbackTitle = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.priorityButton = new System.Windows.Forms.Button();
+            this.priorityProgressBar = new System.Windows.Forms.ProgressBar();
+            this.visitsButton = new System.Windows.Forms.Button();
+            this.visitsProgressBar = new System.Windows.Forms.ProgressBar();
+            this.feedbackButton = new System.Windows.Forms.Button();
+            this.feedbackProgressBar = new System.Windows.Forms.ProgressBar();
+            this.introStart = new System.Windows.Forms.Label();
+            this.safetyStart = new System.Windows.Forms.Label();
+            this.safetyEnd = new System.Windows.Forms.Label();
+            this.safetyResult = new System.Windows.Forms.Label();
+            this.introProgressValue = new System.Windows.Forms.Label();
+            this.safetyProgressValue = new System.Windows.Forms.Label();
+            this.stopButton = new System.Windows.Forms.Button();
+            this.qualityStart = new System.Windows.Forms.Label();
+            this.qualityEnd = new System.Windows.Forms.Label();
+            this.qualityResult = new System.Windows.Forms.Label();
+            this.customerServiceStart = new System.Windows.Forms.Label();
+            this.customerServiceEnd = new System.Windows.Forms.Label();
+            this.customerServiceResult = new System.Windows.Forms.Label();
+            this.performanceStart = new System.Windows.Forms.Label();
+            this.performanceEnd = new System.Windows.Forms.Label();
+            this.performanceResult = new System.Windows.Forms.Label();
+            this.peopleStart = new System.Windows.Forms.Label();
+            this.peopleEnd = new System.Windows.Forms.Label();
+            this.peopleResult = new System.Windows.Forms.Label();
+            this.projectsStart = new System.Windows.Forms.Label();
+            this.projectsEnd = new System.Windows.Forms.Label();
+            this.projectsResult = new System.Windows.Forms.Label();
+            this.priorityStart = new System.Windows.Forms.Label();
+            this.priorityEnd = new System.Windows.Forms.Label();
+            this.priorityResults = new System.Windows.Forms.Label();
+            this.visitsStart = new System.Windows.Forms.Label();
+            this.visitsEnd = new System.Windows.Forms.Label();
+            this.visitsResult = new System.Windows.Forms.Label();
+            this.feedbackStart = new System.Windows.Forms.Label();
+            this.feedbackEnd = new System.Windows.Forms.Label();
+            this.feedbackResult = new System.Windows.Forms.Label();
+            this.qualityProgressValue = new System.Windows.Forms.Label();
+            this.customerServiceProgressValue = new System.Windows.Forms.Label();
+            this.performanceProgressValue = new System.Windows.Forms.Label();
+            this.peopleProgressValue = new System.Windows.Forms.Label();
+            this.projectsProgressValue = new System.Windows.Forms.Label();
+            this.priorityProgressValue = new System.Windows.Forms.Label();
+            this.visitsProgressValue = new System.Windows.Forms.Label();
+            this.feedbackProgressValue = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.introTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.safetyTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.qualityTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.customerServiceTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.performanceTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.peopleTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.projectsTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.priorityTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.visitsTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.feedbackTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(97, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(165, 31);
-            this.dateTimePicker1.TabIndex = 0;
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Wstęp";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(302, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(279, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 25);
-            this.label3.TabIndex = 5;
             // 
             // tabControl1
             // 
@@ -219,945 +172,6 @@ namespace WindowsFormsApp2
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(935, 610);
             this.tabControl1.TabIndex = 8;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
-            this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.label66);
-            this.tabPage1.Controls.Add(this.label65);
-            this.tabPage1.Controls.Add(this.label64);
-            this.tabPage1.Controls.Add(this.label63);
-            this.tabPage1.Controls.Add(this.label62);
-            this.tabPage1.Controls.Add(this.label61);
-            this.tabPage1.Controls.Add(this.label60);
-            this.tabPage1.Controls.Add(this.label59);
-            this.tabPage1.Controls.Add(this.label58);
-            this.tabPage1.Controls.Add(this.label57);
-            this.tabPage1.Controls.Add(this.label56);
-            this.tabPage1.Controls.Add(this.label55);
-            this.tabPage1.Controls.Add(this.label54);
-            this.tabPage1.Controls.Add(this.label53);
-            this.tabPage1.Controls.Add(this.label52);
-            this.tabPage1.Controls.Add(this.label51);
-            this.tabPage1.Controls.Add(this.label50);
-            this.tabPage1.Controls.Add(this.label49);
-            this.tabPage1.Controls.Add(this.label48);
-            this.tabPage1.Controls.Add(this.label47);
-            this.tabPage1.Controls.Add(this.label46);
-            this.tabPage1.Controls.Add(this.label45);
-            this.tabPage1.Controls.Add(this.label44);
-            this.tabPage1.Controls.Add(this.label43);
-            this.tabPage1.Controls.Add(this.label42);
-            this.tabPage1.Controls.Add(this.label41);
-            this.tabPage1.Controls.Add(this.label40);
-            this.tabPage1.Controls.Add(this.label39);
-            this.tabPage1.Controls.Add(this.label38);
-            this.tabPage1.Controls.Add(this.label37);
-            this.tabPage1.Controls.Add(this.label36);
-            this.tabPage1.Controls.Add(this.label35);
-            this.tabPage1.Controls.Add(this.button11);
-            this.tabPage1.Controls.Add(this.label34);
-            this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.label32);
-            this.tabPage1.Controls.Add(this.label31);
-            this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.label29);
-            this.tabPage1.Controls.Add(this.label28);
-            this.tabPage1.Controls.Add(this.progressBar10);
-            this.tabPage1.Controls.Add(this.button10);
-            this.tabPage1.Controls.Add(this.textBox10);
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.progressBar9);
-            this.tabPage1.Controls.Add(this.button9);
-            this.tabPage1.Controls.Add(this.textBox9);
-            this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.progressBar8);
-            this.tabPage1.Controls.Add(this.button8);
-            this.tabPage1.Controls.Add(this.textBox8);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Controls.Add(this.label22);
-            this.tabPage1.Controls.Add(this.label21);
-            this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.progressBar7);
-            this.tabPage1.Controls.Add(this.button7);
-            this.tabPage1.Controls.Add(this.textBox7);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.progressBar6);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.Controls.Add(this.textBox6);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.progressBar5);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.progressBar4);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.progressBar3);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.progressBar2);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.progressBar1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(927, 572);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Pomiary";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(798, 528);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(113, 33);
-            this.button12.TabIndex = 99;
-            this.button12.Text = "Wyczyść";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.BackColor = System.Drawing.Color.White;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label66.Location = new System.Drawing.Point(429, 458);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(0, 20);
-            this.label66.TabIndex = 98;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.BackColor = System.Drawing.Color.White;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label65.Location = new System.Drawing.Point(429, 421);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(0, 20);
-            this.label65.TabIndex = 97;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.BackColor = System.Drawing.Color.White;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label64.Location = new System.Drawing.Point(429, 387);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(0, 20);
-            this.label64.TabIndex = 96;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.BackColor = System.Drawing.Color.White;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label63.Location = new System.Drawing.Point(429, 343);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(0, 20);
-            this.label63.TabIndex = 95;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.BackColor = System.Drawing.Color.White;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label62.Location = new System.Drawing.Point(429, 303);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(0, 20);
-            this.label62.TabIndex = 94;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.BackColor = System.Drawing.Color.White;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label61.Location = new System.Drawing.Point(429, 262);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(0, 20);
-            this.label61.TabIndex = 93;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.Color.White;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label60.Location = new System.Drawing.Point(429, 219);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(0, 20);
-            this.label60.TabIndex = 92;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.Color.White;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label59.Location = new System.Drawing.Point(429, 181);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(0, 20);
-            this.label59.TabIndex = 91;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(820, 454);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(0, 25);
-            this.label58.TabIndex = 90;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(688, 454);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(0, 25);
-            this.label57.TabIndex = 89;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(551, 454);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(0, 25);
-            this.label56.TabIndex = 88;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(820, 418);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(0, 25);
-            this.label55.TabIndex = 87;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(688, 421);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(0, 25);
-            this.label54.TabIndex = 86;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(551, 420);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(0, 25);
-            this.label53.TabIndex = 85;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(820, 380);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(0, 25);
-            this.label52.TabIndex = 84;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(688, 384);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(0, 25);
-            this.label51.TabIndex = 83;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(551, 381);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(0, 25);
-            this.label50.TabIndex = 82;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(820, 339);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(0, 25);
-            this.label49.TabIndex = 81;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(688, 343);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(0, 25);
-            this.label48.TabIndex = 80;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(551, 339);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(0, 25);
-            this.label47.TabIndex = 79;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(820, 297);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(0, 25);
-            this.label46.TabIndex = 78;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(688, 300);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(0, 25);
-            this.label45.TabIndex = 77;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(551, 297);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(0, 25);
-            this.label44.TabIndex = 76;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(820, 258);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(0, 25);
-            this.label43.TabIndex = 75;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(688, 258);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(0, 25);
-            this.label42.TabIndex = 74;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(551, 259);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(0, 25);
-            this.label41.TabIndex = 73;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(820, 219);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(0, 25);
-            this.label40.TabIndex = 72;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(688, 218);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(0, 25);
-            this.label39.TabIndex = 71;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(551, 219);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(0, 25);
-            this.label38.TabIndex = 70;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(820, 179);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(0, 25);
-            this.label37.TabIndex = 69;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(688, 179);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(0, 25);
-            this.label36.TabIndex = 68;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(551, 179);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(0, 25);
-            this.label35.TabIndex = 67;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(302, 493);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(89, 32);
-            this.button11.TabIndex = 66;
-            this.button11.Text = "Stop";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.White;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label34.Location = new System.Drawing.Point(429, 145);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(0, 20);
-            this.label34.TabIndex = 65;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.White;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(429, 102);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(0, 20);
-            this.label33.TabIndex = 65;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(820, 142);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(0, 25);
-            this.label32.TabIndex = 64;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(688, 142);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(0, 25);
-            this.label31.TabIndex = 63;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(551, 141);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(0, 25);
-            this.label30.TabIndex = 62;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(551, 101);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(0, 25);
-            this.label29.TabIndex = 61;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(249, 458);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(35, 25);
-            this.label28.TabIndex = 60;
-            this.label28.Text = "[s]";
-            // 
-            // progressBar10
-            // 
-            this.progressBar10.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar10.Location = new System.Drawing.Point(401, 454);
-            this.progressBar10.Name = "progressBar10";
-            this.progressBar10.Size = new System.Drawing.Size(103, 31);
-            this.progressBar10.TabIndex = 59;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(302, 454);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(89, 31);
-            this.button10.TabIndex = 58;
-            this.button10.Text = "Start";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(180, 455);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(61, 31);
-            this.textBox10.TabIndex = 57;
-            this.textBox10.Text = "10";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(249, 421);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(35, 25);
-            this.label27.TabIndex = 56;
-            this.label27.Text = "[s]";
-            // 
-            // progressBar9
-            // 
-            this.progressBar9.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar9.Location = new System.Drawing.Point(401, 417);
-            this.progressBar9.Name = "progressBar9";
-            this.progressBar9.Size = new System.Drawing.Size(103, 31);
-            this.progressBar9.TabIndex = 55;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(302, 417);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(89, 31);
-            this.button9.TabIndex = 54;
-            this.button9.Text = "Start";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(180, 418);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(61, 31);
-            this.textBox9.TabIndex = 53;
-            this.textBox9.Text = "10";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(249, 384);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(35, 25);
-            this.label26.TabIndex = 52;
-            this.label26.Text = "[s]";
-            // 
-            // progressBar8
-            // 
-            this.progressBar8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar8.Location = new System.Drawing.Point(401, 380);
-            this.progressBar8.Name = "progressBar8";
-            this.progressBar8.Size = new System.Drawing.Size(103, 31);
-            this.progressBar8.TabIndex = 51;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(302, 380);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(89, 31);
-            this.button8.TabIndex = 50;
-            this.button8.Text = "Start";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(180, 381);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(61, 31);
-            this.textBox8.TabIndex = 49;
-            this.textBox8.Text = "10";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(249, 343);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(35, 25);
-            this.label25.TabIndex = 48;
-            this.label25.Text = "[s]";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(249, 302);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(35, 25);
-            this.label24.TabIndex = 47;
-            this.label24.Text = "[s]";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(249, 262);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(35, 25);
-            this.label23.TabIndex = 46;
-            this.label23.Text = "[s]";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(249, 219);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 25);
-            this.label22.TabIndex = 45;
-            this.label22.Text = "[s]";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(249, 179);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(35, 25);
-            this.label21.TabIndex = 44;
-            this.label21.Text = "[s]";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(249, 141);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(35, 25);
-            this.label20.TabIndex = 43;
-            this.label20.Text = "[s]";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(249, 100);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 25);
-            this.label19.TabIndex = 42;
-            this.label19.Text = "[s]";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(410, 60);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(87, 25);
-            this.label18.TabIndex = 41;
-            this.label18.Text = "Progres";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(20, 457);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 25);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "Feedback ";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(22, 421);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 25);
-            this.label16.TabIndex = 39;
-            this.label16.Text = "Wizyty";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 384);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(103, 25);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Priorytety";
-            // 
-            // progressBar7
-            // 
-            this.progressBar7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar7.Location = new System.Drawing.Point(401, 339);
-            this.progressBar7.Name = "progressBar7";
-            this.progressBar7.Size = new System.Drawing.Size(103, 31);
-            this.progressBar7.TabIndex = 37;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(302, 339);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(89, 31);
-            this.button7.TabIndex = 36;
-            this.button7.Text = "Start";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(180, 340);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(61, 31);
-            this.textBox7.TabIndex = 35;
-            this.textBox7.Text = "10";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(22, 342);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 25);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "LPE";
-            // 
-            // progressBar6
-            // 
-            this.progressBar6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar6.Location = new System.Drawing.Point(401, 297);
-            this.progressBar6.Name = "progressBar6";
-            this.progressBar6.Size = new System.Drawing.Size(103, 30);
-            this.progressBar6.TabIndex = 33;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(302, 297);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(89, 30);
-            this.button6.TabIndex = 32;
-            this.button6.Text = "Start";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(180, 297);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(61, 31);
-            this.textBox6.TabIndex = 31;
-            this.textBox6.Text = "10";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 299);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 25);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "JLA";
-            // 
-            // progressBar5
-            // 
-            this.progressBar5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar5.Location = new System.Drawing.Point(401, 256);
-            this.progressBar5.Name = "progressBar5";
-            this.progressBar5.Size = new System.Drawing.Size(103, 30);
-            this.progressBar5.TabIndex = 29;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(302, 255);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 30);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Start";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(180, 256);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(61, 31);
-            this.textBox5.TabIndex = 27;
-            this.textBox5.Text = "10";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 258);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 25);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "NLA";
-            // 
-            // progressBar4
-            // 
-            this.progressBar4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar4.Location = new System.Drawing.Point(401, 214);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(103, 30);
-            this.progressBar4.TabIndex = 25;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(302, 215);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 30);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Start";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(180, 215);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(61, 31);
-            this.textBox4.TabIndex = 23;
-            this.textBox4.Text = "10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 218);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 25);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "PMA";
-            // 
-            // progressBar3
-            // 
-            this.progressBar3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar3.Location = new System.Drawing.Point(401, 176);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(103, 30);
-            this.progressBar3.TabIndex = 21;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(302, 176);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 30);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Start";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(180, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(61, 31);
-            this.textBox3.TabIndex = 19;
-            this.textBox3.Text = "10";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 176);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 25);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "JKU";
-            // 
-            // progressBar2
-            // 
-            this.progressBar2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar2.Location = new System.Drawing.Point(401, 138);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(103, 30);
-            this.progressBar2.TabIndex = 17;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(302, 138);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 30);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar1.ForeColor = System.Drawing.Color.Red;
-            this.progressBar1.Location = new System.Drawing.Point(401, 96);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(103, 30);
-            this.progressBar1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(180, 139);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 31);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "10";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 25);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "MLT";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(180, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 31);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "10";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(820, 100);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 25);
-            this.label9.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(688, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 25);
-            this.label8.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(820, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 25);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Czas";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(674, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 25);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Zakończenie";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(522, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Rozpoczęcie";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(20, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Data";
             // 
             // tabPage2
             // 
@@ -1322,17 +336,919 @@ namespace WindowsFormsApp2
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // dateTimePicker2
+            // introTitle
             // 
-            this.dateTimePicker2.CustomFormat = "mm:ss";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(582, 246);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(315, 31);
-            this.dateTimePicker2.TabIndex = 100;
-            this.dateTimePicker2.Value = new System.DateTime(2021, 8, 6, 0, 0, 0, 0);
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.introTitle.AutoSize = true;
+            this.introTitle.Location = new System.Drawing.Point(22, 101);
+            this.introTitle.Name = "introTitle";
+            this.introTitle.Size = new System.Drawing.Size(73, 25);
+            this.introTitle.TabIndex = 1;
+            this.introTitle.Text = "Wstęp";
+            // 
+            // currentTime
+            // 
+            this.currentTime.AutoSize = true;
+            this.currentTime.Location = new System.Drawing.Point(279, 20);
+            this.currentTime.Name = "currentTime";
+            this.currentTime.Size = new System.Drawing.Size(0, 25);
+            this.currentTime.TabIndex = 5;
+            // 
+            // introButton
+            // 
+            this.introButton.Location = new System.Drawing.Point(302, 97);
+            this.introButton.Name = "introButton";
+            this.introButton.Size = new System.Drawing.Size(89, 30);
+            this.introButton.TabIndex = 3;
+            this.introButton.Text = "Start";
+            this.introButton.UseVisualStyleBackColor = true;
+            this.introButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(97, 15);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(165, 31);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // dataLabel
+            // 
+            this.dataLabel.AutoSize = true;
+            this.dataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataLabel.Location = new System.Drawing.Point(20, 20);
+            this.dataLabel.Name = "dataLabel";
+            this.dataLabel.Size = new System.Drawing.Size(57, 25);
+            this.dataLabel.TabIndex = 6;
+            this.dataLabel.Text = "Data";
+            // 
+            // startLabel
+            // 
+            this.startLabel.AutoSize = true;
+            this.startLabel.Location = new System.Drawing.Point(522, 60);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(136, 25);
+            this.startLabel.TabIndex = 7;
+            this.startLabel.Text = "Rozpoczęcie";
+            // 
+            // endLabel
+            // 
+            this.endLabel.AutoSize = true;
+            this.endLabel.Location = new System.Drawing.Point(674, 60);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(135, 25);
+            this.endLabel.TabIndex = 8;
+            this.endLabel.Text = "Zakończenie";
+            // 
+            // resultLabel
+            // 
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Location = new System.Drawing.Point(820, 60);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(91, 25);
+            this.resultLabel.TabIndex = 9;
+            this.resultLabel.Text = "Rezultat";
+            // 
+            // introEnd
+            // 
+            this.introEnd.AutoSize = true;
+            this.introEnd.Location = new System.Drawing.Point(688, 100);
+            this.introEnd.Name = "introEnd";
+            this.introEnd.Size = new System.Drawing.Size(0, 25);
+            this.introEnd.TabIndex = 10;
+            // 
+            // introResult
+            // 
+            this.introResult.AutoSize = true;
+            this.introResult.Location = new System.Drawing.Point(820, 100);
+            this.introResult.Name = "introResult";
+            this.introResult.Size = new System.Drawing.Size(0, 25);
+            this.introResult.TabIndex = 11;
+            // 
+            // safetyTitle
+            // 
+            this.safetyTitle.AutoSize = true;
+            this.safetyTitle.Location = new System.Drawing.Point(20, 140);
+            this.safetyTitle.Name = "safetyTitle";
+            this.safetyTitle.Size = new System.Drawing.Size(55, 25);
+            this.safetyTitle.TabIndex = 13;
+            this.safetyTitle.Text = "BHP";
+            // 
+            // introProgressBar
+            // 
+            this.introProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.introProgressBar.ForeColor = System.Drawing.Color.Red;
+            this.introProgressBar.Location = new System.Drawing.Point(401, 96);
+            this.introProgressBar.Name = "introProgressBar";
+            this.introProgressBar.Size = new System.Drawing.Size(103, 30);
+            this.introProgressBar.TabIndex = 15;
+            // 
+            // safetButton
+            // 
+            this.safetButton.Location = new System.Drawing.Point(302, 138);
+            this.safetButton.Name = "safetButton";
+            this.safetButton.Size = new System.Drawing.Size(89, 30);
+            this.safetButton.TabIndex = 16;
+            this.safetButton.Text = "Start";
+            this.safetButton.UseVisualStyleBackColor = true;
+            this.safetButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // safetyProgressBar
+            // 
+            this.safetyProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.safetyProgressBar.Location = new System.Drawing.Point(401, 138);
+            this.safetyProgressBar.Name = "safetyProgressBar";
+            this.safetyProgressBar.Size = new System.Drawing.Size(103, 30);
+            this.safetyProgressBar.TabIndex = 17;
+            // 
+            // qualityTitle
+            // 
+            this.qualityTitle.AutoSize = true;
+            this.qualityTitle.Location = new System.Drawing.Point(20, 176);
+            this.qualityTitle.Name = "qualityTitle";
+            this.qualityTitle.Size = new System.Drawing.Size(80, 25);
+            this.qualityTitle.TabIndex = 18;
+            this.qualityTitle.Text = "Jakoćś";
+            // 
+            // qualityButton
+            // 
+            this.qualityButton.Location = new System.Drawing.Point(302, 176);
+            this.qualityButton.Name = "qualityButton";
+            this.qualityButton.Size = new System.Drawing.Size(89, 30);
+            this.qualityButton.TabIndex = 20;
+            this.qualityButton.Text = "Start";
+            this.qualityButton.UseVisualStyleBackColor = true;
+            this.qualityButton.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // qualityProgressBar
+            // 
+            this.qualityProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.qualityProgressBar.Location = new System.Drawing.Point(401, 176);
+            this.qualityProgressBar.Name = "qualityProgressBar";
+            this.qualityProgressBar.Size = new System.Drawing.Size(103, 30);
+            this.qualityProgressBar.TabIndex = 21;
+            // 
+            // customerServiceTitle
+            // 
+            this.customerServiceTitle.AutoSize = true;
+            this.customerServiceTitle.Location = new System.Drawing.Point(20, 218);
+            this.customerServiceTitle.Name = "customerServiceTitle";
+            this.customerServiceTitle.Size = new System.Drawing.Size(76, 25);
+            this.customerServiceTitle.TabIndex = 22;
+            this.customerServiceTitle.Text = "Serwis";
+            // 
+            // customerServiceButton
+            // 
+            this.customerServiceButton.Location = new System.Drawing.Point(302, 215);
+            this.customerServiceButton.Name = "customerServiceButton";
+            this.customerServiceButton.Size = new System.Drawing.Size(89, 30);
+            this.customerServiceButton.TabIndex = 24;
+            this.customerServiceButton.Text = "Start";
+            this.customerServiceButton.UseVisualStyleBackColor = true;
+            this.customerServiceButton.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // customerServiceProgressBar
+            // 
+            this.customerServiceProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.customerServiceProgressBar.Location = new System.Drawing.Point(401, 214);
+            this.customerServiceProgressBar.Name = "customerServiceProgressBar";
+            this.customerServiceProgressBar.Size = new System.Drawing.Size(103, 30);
+            this.customerServiceProgressBar.TabIndex = 25;
+            // 
+            // performanceTitle
+            // 
+            this.performanceTitle.AutoSize = true;
+            this.performanceTitle.Location = new System.Drawing.Point(22, 258);
+            this.performanceTitle.Name = "performanceTitle";
+            this.performanceTitle.Size = new System.Drawing.Size(133, 25);
+            this.performanceTitle.TabIndex = 26;
+            this.performanceTitle.Text = "Efektywność";
+            // 
+            // performanceButton
+            // 
+            this.performanceButton.Location = new System.Drawing.Point(302, 255);
+            this.performanceButton.Name = "performanceButton";
+            this.performanceButton.Size = new System.Drawing.Size(89, 30);
+            this.performanceButton.TabIndex = 28;
+            this.performanceButton.Text = "Start";
+            this.performanceButton.UseVisualStyleBackColor = true;
+            this.performanceButton.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // performanceProgressBar
+            // 
+            this.performanceProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.performanceProgressBar.Location = new System.Drawing.Point(401, 256);
+            this.performanceProgressBar.Name = "performanceProgressBar";
+            this.performanceProgressBar.Size = new System.Drawing.Size(103, 30);
+            this.performanceProgressBar.TabIndex = 29;
+            // 
+            // peopleTitle
+            // 
+            this.peopleTitle.AutoSize = true;
+            this.peopleTitle.Location = new System.Drawing.Point(20, 299);
+            this.peopleTitle.Name = "peopleTitle";
+            this.peopleTitle.Size = new System.Drawing.Size(80, 25);
+            this.peopleTitle.TabIndex = 30;
+            this.peopleTitle.Text = "Eureka";
+            // 
+            // peopleButton
+            // 
+            this.peopleButton.Location = new System.Drawing.Point(302, 297);
+            this.peopleButton.Name = "peopleButton";
+            this.peopleButton.Size = new System.Drawing.Size(89, 30);
+            this.peopleButton.TabIndex = 32;
+            this.peopleButton.Text = "Start";
+            this.peopleButton.UseVisualStyleBackColor = true;
+            this.peopleButton.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // peopleProgressBar
+            // 
+            this.peopleProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.peopleProgressBar.Location = new System.Drawing.Point(401, 297);
+            this.peopleProgressBar.Name = "peopleProgressBar";
+            this.peopleProgressBar.Size = new System.Drawing.Size(103, 30);
+            this.peopleProgressBar.TabIndex = 33;
+            // 
+            // projectsTitle
+            // 
+            this.projectsTitle.AutoSize = true;
+            this.projectsTitle.Location = new System.Drawing.Point(22, 342);
+            this.projectsTitle.Name = "projectsTitle";
+            this.projectsTitle.Size = new System.Drawing.Size(90, 25);
+            this.projectsTitle.TabIndex = 34;
+            this.projectsTitle.Text = "Projekty";
+            // 
+            // projectsButton
+            // 
+            this.projectsButton.Location = new System.Drawing.Point(302, 339);
+            this.projectsButton.Name = "projectsButton";
+            this.projectsButton.Size = new System.Drawing.Size(89, 31);
+            this.projectsButton.TabIndex = 36;
+            this.projectsButton.Text = "Start";
+            this.projectsButton.UseVisualStyleBackColor = true;
+            this.projectsButton.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // projectsProgressBar
+            // 
+            this.projectsProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.projectsProgressBar.Location = new System.Drawing.Point(401, 339);
+            this.projectsProgressBar.Name = "projectsProgressBar";
+            this.projectsProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.projectsProgressBar.TabIndex = 37;
+            // 
+            // priorityTitle
+            // 
+            this.priorityTitle.AutoSize = true;
+            this.priorityTitle.Location = new System.Drawing.Point(20, 384);
+            this.priorityTitle.Name = "priorityTitle";
+            this.priorityTitle.Size = new System.Drawing.Size(103, 25);
+            this.priorityTitle.TabIndex = 38;
+            this.priorityTitle.Text = "Priorytety";
+            // 
+            // visitsTitle
+            // 
+            this.visitsTitle.AutoSize = true;
+            this.visitsTitle.Location = new System.Drawing.Point(22, 421);
+            this.visitsTitle.Name = "visitsTitle";
+            this.visitsTitle.Size = new System.Drawing.Size(76, 25);
+            this.visitsTitle.TabIndex = 39;
+            this.visitsTitle.Text = "Wizyty";
+            // 
+            // feedbackTitle
+            // 
+            this.feedbackTitle.AutoSize = true;
+            this.feedbackTitle.Location = new System.Drawing.Point(20, 464);
+            this.feedbackTitle.Name = "feedbackTitle";
+            this.feedbackTitle.Size = new System.Drawing.Size(113, 25);
+            this.feedbackTitle.TabIndex = 40;
+            this.feedbackTitle.Text = "Feedback ";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(166, 60);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(113, 25);
+            this.timeLabel.TabIndex = 41;
+            this.timeLabel.Text = "Czas [min]";
+            // 
+            // priorityButton
+            // 
+            this.priorityButton.Location = new System.Drawing.Point(302, 380);
+            this.priorityButton.Name = "priorityButton";
+            this.priorityButton.Size = new System.Drawing.Size(89, 31);
+            this.priorityButton.TabIndex = 50;
+            this.priorityButton.Text = "Start";
+            this.priorityButton.UseVisualStyleBackColor = true;
+            this.priorityButton.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // priorityProgressBar
+            // 
+            this.priorityProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.priorityProgressBar.Location = new System.Drawing.Point(401, 380);
+            this.priorityProgressBar.Name = "priorityProgressBar";
+            this.priorityProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.priorityProgressBar.TabIndex = 51;
+            // 
+            // visitsButton
+            // 
+            this.visitsButton.Location = new System.Drawing.Point(302, 417);
+            this.visitsButton.Name = "visitsButton";
+            this.visitsButton.Size = new System.Drawing.Size(89, 31);
+            this.visitsButton.TabIndex = 54;
+            this.visitsButton.Text = "Start";
+            this.visitsButton.UseVisualStyleBackColor = true;
+            this.visitsButton.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // visitsProgressBar
+            // 
+            this.visitsProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.visitsProgressBar.Location = new System.Drawing.Point(401, 417);
+            this.visitsProgressBar.Name = "visitsProgressBar";
+            this.visitsProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.visitsProgressBar.TabIndex = 55;
+            // 
+            // feedbackButton
+            // 
+            this.feedbackButton.Location = new System.Drawing.Point(302, 454);
+            this.feedbackButton.Name = "feedbackButton";
+            this.feedbackButton.Size = new System.Drawing.Size(89, 31);
+            this.feedbackButton.TabIndex = 58;
+            this.feedbackButton.Text = "Start";
+            this.feedbackButton.UseVisualStyleBackColor = true;
+            this.feedbackButton.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // feedbackProgressBar
+            // 
+            this.feedbackProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.feedbackProgressBar.Location = new System.Drawing.Point(401, 454);
+            this.feedbackProgressBar.Name = "feedbackProgressBar";
+            this.feedbackProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.feedbackProgressBar.TabIndex = 59;
+            // 
+            // introStart
+            // 
+            this.introStart.AutoSize = true;
+            this.introStart.Location = new System.Drawing.Point(551, 101);
+            this.introStart.Name = "introStart";
+            this.introStart.Size = new System.Drawing.Size(0, 25);
+            this.introStart.TabIndex = 61;
+            // 
+            // safetyStart
+            // 
+            this.safetyStart.AutoSize = true;
+            this.safetyStart.Location = new System.Drawing.Point(551, 141);
+            this.safetyStart.Name = "safetyStart";
+            this.safetyStart.Size = new System.Drawing.Size(0, 25);
+            this.safetyStart.TabIndex = 62;
+            // 
+            // safetyEnd
+            // 
+            this.safetyEnd.AutoSize = true;
+            this.safetyEnd.Location = new System.Drawing.Point(688, 142);
+            this.safetyEnd.Name = "safetyEnd";
+            this.safetyEnd.Size = new System.Drawing.Size(0, 25);
+            this.safetyEnd.TabIndex = 63;
+            // 
+            // safetyResult
+            // 
+            this.safetyResult.AutoSize = true;
+            this.safetyResult.Location = new System.Drawing.Point(820, 142);
+            this.safetyResult.Name = "safetyResult";
+            this.safetyResult.Size = new System.Drawing.Size(0, 25);
+            this.safetyResult.TabIndex = 64;
+            // 
+            // introProgressValue
+            // 
+            this.introProgressValue.AutoSize = true;
+            this.introProgressValue.BackColor = System.Drawing.Color.White;
+            this.introProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.introProgressValue.Location = new System.Drawing.Point(429, 102);
+            this.introProgressValue.Name = "introProgressValue";
+            this.introProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.introProgressValue.TabIndex = 65;
+            // 
+            // safetyProgressValue
+            // 
+            this.safetyProgressValue.AutoSize = true;
+            this.safetyProgressValue.BackColor = System.Drawing.Color.White;
+            this.safetyProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.safetyProgressValue.Location = new System.Drawing.Point(429, 145);
+            this.safetyProgressValue.Name = "safetyProgressValue";
+            this.safetyProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.safetyProgressValue.TabIndex = 65;
+            // 
+            // stopButton
+            // 
+            this.stopButton.Location = new System.Drawing.Point(302, 493);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(89, 32);
+            this.stopButton.TabIndex = 66;
+            this.stopButton.Text = "Stop";
+            this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // qualityStart
+            // 
+            this.qualityStart.AutoSize = true;
+            this.qualityStart.Location = new System.Drawing.Point(551, 179);
+            this.qualityStart.Name = "qualityStart";
+            this.qualityStart.Size = new System.Drawing.Size(0, 25);
+            this.qualityStart.TabIndex = 67;
+            // 
+            // qualityEnd
+            // 
+            this.qualityEnd.AutoSize = true;
+            this.qualityEnd.Location = new System.Drawing.Point(688, 179);
+            this.qualityEnd.Name = "qualityEnd";
+            this.qualityEnd.Size = new System.Drawing.Size(0, 25);
+            this.qualityEnd.TabIndex = 68;
+            // 
+            // qualityResult
+            // 
+            this.qualityResult.AutoSize = true;
+            this.qualityResult.Location = new System.Drawing.Point(820, 179);
+            this.qualityResult.Name = "qualityResult";
+            this.qualityResult.Size = new System.Drawing.Size(0, 25);
+            this.qualityResult.TabIndex = 69;
+            // 
+            // customerServiceStart
+            // 
+            this.customerServiceStart.AutoSize = true;
+            this.customerServiceStart.Location = new System.Drawing.Point(551, 219);
+            this.customerServiceStart.Name = "customerServiceStart";
+            this.customerServiceStart.Size = new System.Drawing.Size(0, 25);
+            this.customerServiceStart.TabIndex = 70;
+            // 
+            // customerServiceEnd
+            // 
+            this.customerServiceEnd.AutoSize = true;
+            this.customerServiceEnd.Location = new System.Drawing.Point(688, 218);
+            this.customerServiceEnd.Name = "customerServiceEnd";
+            this.customerServiceEnd.Size = new System.Drawing.Size(0, 25);
+            this.customerServiceEnd.TabIndex = 71;
+            // 
+            // customerServiceResult
+            // 
+            this.customerServiceResult.AutoSize = true;
+            this.customerServiceResult.Location = new System.Drawing.Point(820, 219);
+            this.customerServiceResult.Name = "customerServiceResult";
+            this.customerServiceResult.Size = new System.Drawing.Size(0, 25);
+            this.customerServiceResult.TabIndex = 72;
+            // 
+            // performanceStart
+            // 
+            this.performanceStart.AutoSize = true;
+            this.performanceStart.Location = new System.Drawing.Point(551, 259);
+            this.performanceStart.Name = "performanceStart";
+            this.performanceStart.Size = new System.Drawing.Size(0, 25);
+            this.performanceStart.TabIndex = 73;
+            // 
+            // performanceEnd
+            // 
+            this.performanceEnd.AutoSize = true;
+            this.performanceEnd.Location = new System.Drawing.Point(688, 258);
+            this.performanceEnd.Name = "performanceEnd";
+            this.performanceEnd.Size = new System.Drawing.Size(0, 25);
+            this.performanceEnd.TabIndex = 74;
+            // 
+            // performanceResult
+            // 
+            this.performanceResult.AutoSize = true;
+            this.performanceResult.Location = new System.Drawing.Point(820, 258);
+            this.performanceResult.Name = "performanceResult";
+            this.performanceResult.Size = new System.Drawing.Size(0, 25);
+            this.performanceResult.TabIndex = 75;
+            // 
+            // peopleStart
+            // 
+            this.peopleStart.AutoSize = true;
+            this.peopleStart.Location = new System.Drawing.Point(551, 297);
+            this.peopleStart.Name = "peopleStart";
+            this.peopleStart.Size = new System.Drawing.Size(0, 25);
+            this.peopleStart.TabIndex = 76;
+            // 
+            // peopleEnd
+            // 
+            this.peopleEnd.AutoSize = true;
+            this.peopleEnd.Location = new System.Drawing.Point(688, 300);
+            this.peopleEnd.Name = "peopleEnd";
+            this.peopleEnd.Size = new System.Drawing.Size(0, 25);
+            this.peopleEnd.TabIndex = 77;
+            // 
+            // peopleResult
+            // 
+            this.peopleResult.AutoSize = true;
+            this.peopleResult.Location = new System.Drawing.Point(820, 297);
+            this.peopleResult.Name = "peopleResult";
+            this.peopleResult.Size = new System.Drawing.Size(0, 25);
+            this.peopleResult.TabIndex = 78;
+            // 
+            // projectsStart
+            // 
+            this.projectsStart.AutoSize = true;
+            this.projectsStart.Location = new System.Drawing.Point(551, 339);
+            this.projectsStart.Name = "projectsStart";
+            this.projectsStart.Size = new System.Drawing.Size(0, 25);
+            this.projectsStart.TabIndex = 79;
+            // 
+            // projectsEnd
+            // 
+            this.projectsEnd.AutoSize = true;
+            this.projectsEnd.Location = new System.Drawing.Point(688, 343);
+            this.projectsEnd.Name = "projectsEnd";
+            this.projectsEnd.Size = new System.Drawing.Size(0, 25);
+            this.projectsEnd.TabIndex = 80;
+            // 
+            // projectsResult
+            // 
+            this.projectsResult.AutoSize = true;
+            this.projectsResult.Location = new System.Drawing.Point(820, 339);
+            this.projectsResult.Name = "projectsResult";
+            this.projectsResult.Size = new System.Drawing.Size(0, 25);
+            this.projectsResult.TabIndex = 81;
+            // 
+            // priorityStart
+            // 
+            this.priorityStart.AutoSize = true;
+            this.priorityStart.Location = new System.Drawing.Point(551, 381);
+            this.priorityStart.Name = "priorityStart";
+            this.priorityStart.Size = new System.Drawing.Size(0, 25);
+            this.priorityStart.TabIndex = 82;
+            // 
+            // priorityEnd
+            // 
+            this.priorityEnd.AutoSize = true;
+            this.priorityEnd.Location = new System.Drawing.Point(688, 384);
+            this.priorityEnd.Name = "priorityEnd";
+            this.priorityEnd.Size = new System.Drawing.Size(0, 25);
+            this.priorityEnd.TabIndex = 83;
+            // 
+            // priorityResults
+            // 
+            this.priorityResults.AutoSize = true;
+            this.priorityResults.Location = new System.Drawing.Point(820, 380);
+            this.priorityResults.Name = "priorityResults";
+            this.priorityResults.Size = new System.Drawing.Size(0, 25);
+            this.priorityResults.TabIndex = 84;
+            // 
+            // visitsStart
+            // 
+            this.visitsStart.AutoSize = true;
+            this.visitsStart.Location = new System.Drawing.Point(551, 420);
+            this.visitsStart.Name = "visitsStart";
+            this.visitsStart.Size = new System.Drawing.Size(0, 25);
+            this.visitsStart.TabIndex = 85;
+            // 
+            // visitsEnd
+            // 
+            this.visitsEnd.AutoSize = true;
+            this.visitsEnd.Location = new System.Drawing.Point(688, 421);
+            this.visitsEnd.Name = "visitsEnd";
+            this.visitsEnd.Size = new System.Drawing.Size(0, 25);
+            this.visitsEnd.TabIndex = 86;
+            // 
+            // visitsResult
+            // 
+            this.visitsResult.AutoSize = true;
+            this.visitsResult.Location = new System.Drawing.Point(820, 418);
+            this.visitsResult.Name = "visitsResult";
+            this.visitsResult.Size = new System.Drawing.Size(0, 25);
+            this.visitsResult.TabIndex = 87;
+            // 
+            // feedbackStart
+            // 
+            this.feedbackStart.AutoSize = true;
+            this.feedbackStart.Location = new System.Drawing.Point(551, 454);
+            this.feedbackStart.Name = "feedbackStart";
+            this.feedbackStart.Size = new System.Drawing.Size(0, 25);
+            this.feedbackStart.TabIndex = 88;
+            // 
+            // feedbackEnd
+            // 
+            this.feedbackEnd.AutoSize = true;
+            this.feedbackEnd.Location = new System.Drawing.Point(688, 454);
+            this.feedbackEnd.Name = "feedbackEnd";
+            this.feedbackEnd.Size = new System.Drawing.Size(0, 25);
+            this.feedbackEnd.TabIndex = 89;
+            // 
+            // feedbackResult
+            // 
+            this.feedbackResult.AutoSize = true;
+            this.feedbackResult.Location = new System.Drawing.Point(820, 454);
+            this.feedbackResult.Name = "feedbackResult";
+            this.feedbackResult.Size = new System.Drawing.Size(0, 25);
+            this.feedbackResult.TabIndex = 90;
+            // 
+            // qualityProgressValue
+            // 
+            this.qualityProgressValue.AutoSize = true;
+            this.qualityProgressValue.BackColor = System.Drawing.Color.White;
+            this.qualityProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.qualityProgressValue.Location = new System.Drawing.Point(429, 181);
+            this.qualityProgressValue.Name = "qualityProgressValue";
+            this.qualityProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.qualityProgressValue.TabIndex = 91;
+            // 
+            // customerServiceProgressValue
+            // 
+            this.customerServiceProgressValue.AutoSize = true;
+            this.customerServiceProgressValue.BackColor = System.Drawing.Color.White;
+            this.customerServiceProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.customerServiceProgressValue.Location = new System.Drawing.Point(429, 219);
+            this.customerServiceProgressValue.Name = "customerServiceProgressValue";
+            this.customerServiceProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.customerServiceProgressValue.TabIndex = 92;
+            // 
+            // performanceProgressValue
+            // 
+            this.performanceProgressValue.AutoSize = true;
+            this.performanceProgressValue.BackColor = System.Drawing.Color.White;
+            this.performanceProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.performanceProgressValue.Location = new System.Drawing.Point(429, 262);
+            this.performanceProgressValue.Name = "performanceProgressValue";
+            this.performanceProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.performanceProgressValue.TabIndex = 93;
+            // 
+            // peopleProgressValue
+            // 
+            this.peopleProgressValue.AutoSize = true;
+            this.peopleProgressValue.BackColor = System.Drawing.Color.White;
+            this.peopleProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.peopleProgressValue.Location = new System.Drawing.Point(429, 303);
+            this.peopleProgressValue.Name = "peopleProgressValue";
+            this.peopleProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.peopleProgressValue.TabIndex = 94;
+            // 
+            // projectsProgressValue
+            // 
+            this.projectsProgressValue.AutoSize = true;
+            this.projectsProgressValue.BackColor = System.Drawing.Color.White;
+            this.projectsProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.projectsProgressValue.Location = new System.Drawing.Point(429, 343);
+            this.projectsProgressValue.Name = "projectsProgressValue";
+            this.projectsProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.projectsProgressValue.TabIndex = 95;
+            // 
+            // priorityProgressValue
+            // 
+            this.priorityProgressValue.AutoSize = true;
+            this.priorityProgressValue.BackColor = System.Drawing.Color.White;
+            this.priorityProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.priorityProgressValue.Location = new System.Drawing.Point(429, 387);
+            this.priorityProgressValue.Name = "priorityProgressValue";
+            this.priorityProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.priorityProgressValue.TabIndex = 96;
+            // 
+            // visitsProgressValue
+            // 
+            this.visitsProgressValue.AutoSize = true;
+            this.visitsProgressValue.BackColor = System.Drawing.Color.White;
+            this.visitsProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.visitsProgressValue.Location = new System.Drawing.Point(429, 421);
+            this.visitsProgressValue.Name = "visitsProgressValue";
+            this.visitsProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.visitsProgressValue.TabIndex = 97;
+            // 
+            // feedbackProgressValue
+            // 
+            this.feedbackProgressValue.AutoSize = true;
+            this.feedbackProgressValue.BackColor = System.Drawing.Color.White;
+            this.feedbackProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.feedbackProgressValue.Location = new System.Drawing.Point(429, 458);
+            this.feedbackProgressValue.Name = "feedbackProgressValue";
+            this.feedbackProgressValue.Size = new System.Drawing.Size(0, 20);
+            this.feedbackProgressValue.TabIndex = 98;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(798, 528);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(113, 33);
+            this.button12.TabIndex = 99;
+            this.button12.Text = "Wyczyść";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // introTimePicker
+            // 
+            this.introTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.introTimePicker.CustomFormat = "mm:ss";
+            this.introTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.introTimePicker.Location = new System.Drawing.Point(180, 97);
+            this.introTimePicker.Name = "introTimePicker";
+            this.introTimePicker.ShowUpDown = true;
+            this.introTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.introTimePicker.TabIndex = 100;
+            this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.feedbackTimePicker);
+            this.tabPage1.Controls.Add(this.visitsTimePicker);
+            this.tabPage1.Controls.Add(this.priorityTimePicker);
+            this.tabPage1.Controls.Add(this.projectsTimePicker);
+            this.tabPage1.Controls.Add(this.peopleTimePicker);
+            this.tabPage1.Controls.Add(this.performanceTimePicker);
+            this.tabPage1.Controls.Add(this.customerServiceTimePicker);
+            this.tabPage1.Controls.Add(this.qualityTimePicker);
+            this.tabPage1.Controls.Add(this.safetyTimePicker);
+            this.tabPage1.Controls.Add(this.introTimePicker);
+            this.tabPage1.Controls.Add(this.button12);
+            this.tabPage1.Controls.Add(this.feedbackProgressValue);
+            this.tabPage1.Controls.Add(this.visitsProgressValue);
+            this.tabPage1.Controls.Add(this.priorityProgressValue);
+            this.tabPage1.Controls.Add(this.projectsProgressValue);
+            this.tabPage1.Controls.Add(this.peopleProgressValue);
+            this.tabPage1.Controls.Add(this.performanceProgressValue);
+            this.tabPage1.Controls.Add(this.customerServiceProgressValue);
+            this.tabPage1.Controls.Add(this.qualityProgressValue);
+            this.tabPage1.Controls.Add(this.feedbackResult);
+            this.tabPage1.Controls.Add(this.feedbackEnd);
+            this.tabPage1.Controls.Add(this.feedbackStart);
+            this.tabPage1.Controls.Add(this.visitsResult);
+            this.tabPage1.Controls.Add(this.visitsEnd);
+            this.tabPage1.Controls.Add(this.visitsStart);
+            this.tabPage1.Controls.Add(this.priorityResults);
+            this.tabPage1.Controls.Add(this.priorityEnd);
+            this.tabPage1.Controls.Add(this.priorityStart);
+            this.tabPage1.Controls.Add(this.projectsResult);
+            this.tabPage1.Controls.Add(this.projectsEnd);
+            this.tabPage1.Controls.Add(this.projectsStart);
+            this.tabPage1.Controls.Add(this.peopleResult);
+            this.tabPage1.Controls.Add(this.peopleEnd);
+            this.tabPage1.Controls.Add(this.peopleStart);
+            this.tabPage1.Controls.Add(this.performanceResult);
+            this.tabPage1.Controls.Add(this.performanceEnd);
+            this.tabPage1.Controls.Add(this.performanceStart);
+            this.tabPage1.Controls.Add(this.customerServiceResult);
+            this.tabPage1.Controls.Add(this.customerServiceEnd);
+            this.tabPage1.Controls.Add(this.customerServiceStart);
+            this.tabPage1.Controls.Add(this.qualityResult);
+            this.tabPage1.Controls.Add(this.qualityEnd);
+            this.tabPage1.Controls.Add(this.qualityStart);
+            this.tabPage1.Controls.Add(this.stopButton);
+            this.tabPage1.Controls.Add(this.safetyProgressValue);
+            this.tabPage1.Controls.Add(this.introProgressValue);
+            this.tabPage1.Controls.Add(this.safetyResult);
+            this.tabPage1.Controls.Add(this.safetyEnd);
+            this.tabPage1.Controls.Add(this.safetyStart);
+            this.tabPage1.Controls.Add(this.introStart);
+            this.tabPage1.Controls.Add(this.feedbackProgressBar);
+            this.tabPage1.Controls.Add(this.feedbackButton);
+            this.tabPage1.Controls.Add(this.visitsProgressBar);
+            this.tabPage1.Controls.Add(this.visitsButton);
+            this.tabPage1.Controls.Add(this.priorityProgressBar);
+            this.tabPage1.Controls.Add(this.priorityButton);
+            this.tabPage1.Controls.Add(this.timeLabel);
+            this.tabPage1.Controls.Add(this.feedbackTitle);
+            this.tabPage1.Controls.Add(this.visitsTitle);
+            this.tabPage1.Controls.Add(this.priorityTitle);
+            this.tabPage1.Controls.Add(this.projectsProgressBar);
+            this.tabPage1.Controls.Add(this.projectsButton);
+            this.tabPage1.Controls.Add(this.projectsTitle);
+            this.tabPage1.Controls.Add(this.peopleProgressBar);
+            this.tabPage1.Controls.Add(this.peopleButton);
+            this.tabPage1.Controls.Add(this.peopleTitle);
+            this.tabPage1.Controls.Add(this.performanceProgressBar);
+            this.tabPage1.Controls.Add(this.performanceButton);
+            this.tabPage1.Controls.Add(this.performanceTitle);
+            this.tabPage1.Controls.Add(this.customerServiceProgressBar);
+            this.tabPage1.Controls.Add(this.customerServiceButton);
+            this.tabPage1.Controls.Add(this.customerServiceTitle);
+            this.tabPage1.Controls.Add(this.qualityProgressBar);
+            this.tabPage1.Controls.Add(this.qualityButton);
+            this.tabPage1.Controls.Add(this.qualityTitle);
+            this.tabPage1.Controls.Add(this.safetyProgressBar);
+            this.tabPage1.Controls.Add(this.safetButton);
+            this.tabPage1.Controls.Add(this.introProgressBar);
+            this.tabPage1.Controls.Add(this.safetyTitle);
+            this.tabPage1.Controls.Add(this.introResult);
+            this.tabPage1.Controls.Add(this.introEnd);
+            this.tabPage1.Controls.Add(this.resultLabel);
+            this.tabPage1.Controls.Add(this.endLabel);
+            this.tabPage1.Controls.Add(this.startLabel);
+            this.tabPage1.Controls.Add(this.dataLabel);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.introButton);
+            this.tabPage1.Controls.Add(this.currentTime);
+            this.tabPage1.Controls.Add(this.introTitle);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabPage1.Size = new System.Drawing.Size(927, 572);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Pomiary";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // safetyTimePicker
+            // 
+            this.safetyTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.safetyTimePicker.CustomFormat = "mm:ss";
+            this.safetyTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.safetyTimePicker.Location = new System.Drawing.Point(180, 140);
+            this.safetyTimePicker.Name = "safetyTimePicker";
+            this.safetyTimePicker.ShowUpDown = true;
+            this.safetyTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.safetyTimePicker.TabIndex = 101;
+            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // qualityTimePicker
+            // 
+            this.qualityTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.qualityTimePicker.CustomFormat = "mm:ss";
+            this.qualityTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.qualityTimePicker.Location = new System.Drawing.Point(180, 177);
+            this.qualityTimePicker.Name = "qualityTimePicker";
+            this.qualityTimePicker.ShowUpDown = true;
+            this.qualityTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.qualityTimePicker.TabIndex = 102;
+            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // customerServiceTimePicker
+            // 
+            this.customerServiceTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.customerServiceTimePicker.CustomFormat = "mm:ss";
+            this.customerServiceTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.customerServiceTimePicker.Location = new System.Drawing.Point(180, 218);
+            this.customerServiceTimePicker.Name = "customerServiceTimePicker";
+            this.customerServiceTimePicker.ShowUpDown = true;
+            this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.customerServiceTimePicker.TabIndex = 103;
+            this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // performanceTimePicker
+            // 
+            this.performanceTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.performanceTimePicker.CustomFormat = "mm:ss";
+            this.performanceTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.performanceTimePicker.Location = new System.Drawing.Point(180, 258);
+            this.performanceTimePicker.Name = "performanceTimePicker";
+            this.performanceTimePicker.ShowUpDown = true;
+            this.performanceTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.performanceTimePicker.TabIndex = 104;
+            this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // peopleTimePicker
+            // 
+            this.peopleTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.peopleTimePicker.CustomFormat = "mm:ss";
+            this.peopleTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.peopleTimePicker.Location = new System.Drawing.Point(180, 297);
+            this.peopleTimePicker.Name = "peopleTimePicker";
+            this.peopleTimePicker.ShowUpDown = true;
+            this.peopleTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.peopleTimePicker.TabIndex = 105;
+            this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // projectsTimePicker
+            // 
+            this.projectsTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.projectsTimePicker.CustomFormat = "mm:ss";
+            this.projectsTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.projectsTimePicker.Location = new System.Drawing.Point(180, 339);
+            this.projectsTimePicker.Name = "projectsTimePicker";
+            this.projectsTimePicker.ShowUpDown = true;
+            this.projectsTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.projectsTimePicker.TabIndex = 106;
+            this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // priorityTimePicker
+            // 
+            this.priorityTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.priorityTimePicker.CustomFormat = "mm:ss";
+            this.priorityTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.priorityTimePicker.Location = new System.Drawing.Point(180, 381);
+            this.priorityTimePicker.Name = "priorityTimePicker";
+            this.priorityTimePicker.ShowUpDown = true;
+            this.priorityTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.priorityTimePicker.TabIndex = 107;
+            this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // visitsTimePicker
+            // 
+            this.visitsTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.visitsTimePicker.CustomFormat = "mm:ss";
+            this.visitsTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.visitsTimePicker.Location = new System.Drawing.Point(180, 421);
+            this.visitsTimePicker.Name = "visitsTimePicker";
+            this.visitsTimePicker.ShowUpDown = true;
+            this.visitsTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.visitsTimePicker.TabIndex = 108;
+            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
+            // 
+            // feedbackTimePicker
+            // 
+            this.feedbackTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.feedbackTimePicker.CustomFormat = "mm:ss";
+            this.feedbackTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.feedbackTimePicker.Location = new System.Drawing.Point(180, 458);
+            this.feedbackTimePicker.Name = "feedbackTimePicker";
+            this.feedbackTimePicker.ShowUpDown = true;
+            this.feedbackTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.feedbackTimePicker.TabIndex = 109;
+            this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 12, 0);
             // 
             // Form1
             // 
@@ -1344,8 +1260,6 @@ namespace WindowsFormsApp2
             this.Text = "Time keeper support for SIM5 time management";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -1354,115 +1268,16 @@ namespace WindowsFormsApp2
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ProgressBar progressBar7;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ProgressBar progressBar6;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ProgressBar progressBar5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ProgressBar progressBar4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ProgressBar progressBar3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ProgressBar progressBar10;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ProgressBar progressBar9;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ProgressBar progressBar8;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -1478,7 +1293,96 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DateTimePicker feedbackTimePicker;
+        private System.Windows.Forms.DateTimePicker visitsTimePicker;
+        private System.Windows.Forms.DateTimePicker priorityTimePicker;
+        private System.Windows.Forms.DateTimePicker projectsTimePicker;
+        private System.Windows.Forms.DateTimePicker peopleTimePicker;
+        private System.Windows.Forms.DateTimePicker performanceTimePicker;
+        private System.Windows.Forms.DateTimePicker customerServiceTimePicker;
+        private System.Windows.Forms.DateTimePicker qualityTimePicker;
+        private System.Windows.Forms.DateTimePicker safetyTimePicker;
+        private System.Windows.Forms.DateTimePicker introTimePicker;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label feedbackProgressValue;
+        private System.Windows.Forms.Label visitsProgressValue;
+        private System.Windows.Forms.Label priorityProgressValue;
+        private System.Windows.Forms.Label projectsProgressValue;
+        private System.Windows.Forms.Label peopleProgressValue;
+        private System.Windows.Forms.Label performanceProgressValue;
+        private System.Windows.Forms.Label customerServiceProgressValue;
+        private System.Windows.Forms.Label qualityProgressValue;
+        private System.Windows.Forms.Label feedbackResult;
+        private System.Windows.Forms.Label feedbackEnd;
+        private System.Windows.Forms.Label feedbackStart;
+        private System.Windows.Forms.Label visitsResult;
+        private System.Windows.Forms.Label visitsEnd;
+        private System.Windows.Forms.Label visitsStart;
+        private System.Windows.Forms.Label priorityResults;
+        private System.Windows.Forms.Label priorityEnd;
+        private System.Windows.Forms.Label priorityStart;
+        private System.Windows.Forms.Label projectsResult;
+        private System.Windows.Forms.Label projectsEnd;
+        private System.Windows.Forms.Label projectsStart;
+        private System.Windows.Forms.Label peopleResult;
+        private System.Windows.Forms.Label peopleEnd;
+        private System.Windows.Forms.Label peopleStart;
+        private System.Windows.Forms.Label performanceResult;
+        private System.Windows.Forms.Label performanceEnd;
+        private System.Windows.Forms.Label performanceStart;
+        private System.Windows.Forms.Label customerServiceResult;
+        private System.Windows.Forms.Label customerServiceEnd;
+        private System.Windows.Forms.Label customerServiceStart;
+        private System.Windows.Forms.Label qualityResult;
+        private System.Windows.Forms.Label qualityEnd;
+        private System.Windows.Forms.Label qualityStart;
+        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Label safetyProgressValue;
+        private System.Windows.Forms.Label introProgressValue;
+        private System.Windows.Forms.Label safetyResult;
+        private System.Windows.Forms.Label safetyEnd;
+        private System.Windows.Forms.Label safetyStart;
+        private System.Windows.Forms.Label introStart;
+        private System.Windows.Forms.ProgressBar feedbackProgressBar;
+        private System.Windows.Forms.Button feedbackButton;
+        private System.Windows.Forms.ProgressBar visitsProgressBar;
+        private System.Windows.Forms.Button visitsButton;
+        private System.Windows.Forms.ProgressBar priorityProgressBar;
+        private System.Windows.Forms.Button priorityButton;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label feedbackTitle;
+        private System.Windows.Forms.Label visitsTitle;
+        private System.Windows.Forms.Label priorityTitle;
+        private System.Windows.Forms.ProgressBar projectsProgressBar;
+        private System.Windows.Forms.Button projectsButton;
+        private System.Windows.Forms.Label projectsTitle;
+        private System.Windows.Forms.ProgressBar peopleProgressBar;
+        private System.Windows.Forms.Button peopleButton;
+        private System.Windows.Forms.Label peopleTitle;
+        private System.Windows.Forms.ProgressBar performanceProgressBar;
+        private System.Windows.Forms.Button performanceButton;
+        private System.Windows.Forms.Label performanceTitle;
+        private System.Windows.Forms.ProgressBar customerServiceProgressBar;
+        private System.Windows.Forms.Button customerServiceButton;
+        private System.Windows.Forms.Label customerServiceTitle;
+        private System.Windows.Forms.ProgressBar qualityProgressBar;
+        private System.Windows.Forms.Button qualityButton;
+        private System.Windows.Forms.Label qualityTitle;
+        private System.Windows.Forms.ProgressBar safetyProgressBar;
+        private System.Windows.Forms.Button safetButton;
+        private System.Windows.Forms.ProgressBar introProgressBar;
+        private System.Windows.Forms.Label safetyTitle;
+        private System.Windows.Forms.Label introResult;
+        private System.Windows.Forms.Label introEnd;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Label endLabel;
+        private System.Windows.Forms.Label startLabel;
+        private System.Windows.Forms.Label dataLabel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button introButton;
+        private System.Windows.Forms.Label currentTime;
+        private System.Windows.Forms.Label introTitle;
     }
 }
 

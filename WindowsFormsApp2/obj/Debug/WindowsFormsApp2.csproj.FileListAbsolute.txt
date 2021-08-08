@@ -18,3 +18,4 @@ C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\Window
 C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\sesa48177\Source\Repos\rzi\SIM5-timer\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache

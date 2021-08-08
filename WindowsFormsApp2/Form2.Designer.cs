@@ -39,9 +39,9 @@ namespace WindowsFormsApp2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(25, 18);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 0;
@@ -49,9 +49,9 @@ namespace WindowsFormsApp2
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(143, 22);
+            this.progressBar1.Location = new System.Drawing.Point(152, 22);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(132, 20);
+            this.progressBar1.Size = new System.Drawing.Size(123, 20);
             this.progressBar1.TabIndex = 1;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
@@ -72,7 +72,7 @@ namespace WindowsFormsApp2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(365, 81);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
@@ -80,7 +80,7 @@ namespace WindowsFormsApp2
             this.Name = "Form2";
             this.Text = "Timer";
             this.TopMost = true;
-            this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
