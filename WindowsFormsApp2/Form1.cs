@@ -10,10 +10,11 @@ namespace WindowsFormsApp2
     {
         public bool intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
         public string currentAction, procentBar;
-        public int currentBar, maxiBar;     
-                 
-       // ItemObj2 itemObj2 = new ItemObj2();
-        
+        public int currentBar, maxiBar;
+
+        //ItemObj2 itemObj2 = new ItemObj2();
+        ItemObj2 intro1 = new ItemObj2();
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this);
@@ -27,11 +28,11 @@ namespace WindowsFormsApp2
         public void timer1_Tick(object sender, EventArgs e)
         {
             //itemObj2.GetName("test2");
-            // Console.WriteLine("itemObj2.Name2"+itemObj2.Name2);
-            // itemObj2.Name2= "test2";
-            // itemObj2.GetName("test3");
-            // Console.WriteLine("itemObj2.Name2 "+itemObj2.Name2);
-            
+            //Console.WriteLine("itemObj2.Name2 " + itemObj2.Name2);
+            //itemObj2.Name2 = "test2";
+            //itemObj2.GetName("test3");
+            //Console.WriteLine("itemObj2.Name2 " + itemObj2.Name2);
+
             DateTime now = DateTime.Now;
             currentTime.Text = now.ToLongTimeString(); //bieżący czas
             Console.WriteLine("Item 1 "+ ItemObj.Item1);
@@ -94,6 +95,7 @@ namespace WindowsFormsApp2
             // Stary
             if (intro)
             {
+                //intro1.Name2 = "aaa";
                 if (introProgressBar.Maximum == introProgressBar.Value)
                 {
                     intro = false;
@@ -101,31 +103,31 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    DateTime timeStart = DateTime.Parse(introStart.Text);
-                    TimeSpan setTime = new TimeSpan(introTimePicker.Value.Ticks);
-                    long timeInSeconds = setTime.Minutes * 60 + setTime.Seconds;
-                    DateTime timeEnd = timeStart.AddSeconds(timeInSeconds);
-                    DateTime timeNow = DateTime.Parse(currentTime.Text);
-                    double tStart = ConvertToUnixTimestamp(timeStart);
-                    double tEnd = ConvertToUnixTimestamp(timeEnd);
-                    double tNow = ConvertToUnixTimestamp(timeNow);
-                    introProgressBar.Maximum = (int)(tEnd - tStart);
-                    if (((int)(tNow - tStart)) == 1)
+                    double maximum = maximumFN(introStart.Text, intro, introTimePicker.Value.Ticks);
+                    int value = valueFN(introStart.Text, currentTime.Text);
+
+                    introProgressBar.Maximum = (int) maximum;
+                    Console.WriteLine("maximum " + maximum);
+                    Console.WriteLine("value " + value);
+
+                    if (value == 1)
                     {
-                    // obsługa błedu gdy wartośc zadana jest równa 0
-                    }else
+                        // obsługa błedu gdy wartośc zadana jest równa 0
+                    }
+                    else
                     {
-                        introProgressBar.Value = (int)(tNow - tStart);
-                        currentBar = introProgressBar.Value;
-                        maxiBar = introProgressBar.Maximum;
-                        int yellowTriger = (int)((tEnd - tStart) * 0.8);
-                        int redTriger = (int)(tEnd - tStart);
-                        int percentTNow = (int)((tNow - tStart) / (tEnd - tStart) * 100);
+                        introProgressBar.Value = value;
+                        currentBar = value;
+                        maxiBar = (int) maximum;
+                        double yellowTriger = (maximum * 0.8);
+                        int redTriger = (int) maximum;
+                        int percentTNow = (int) ((value / maximum) * 100);
+                        Console.WriteLine("procentTNow " +percentTNow);
                         introProgressValue.Text = percentTNow.ToString("N0") + "%";
                         procentBar = introProgressValue.Text;
                         if (introProgressBar.Value > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
                         if (introProgressBar.Value > redTriger) introProgressBar.ForeColor = Color.Red;
-                    }        
+                    }
                 }
                 
             }
@@ -475,6 +477,29 @@ namespace WindowsFormsApp2
                 }
             }
         }
+
+        private int valueFN(string startTime, string text2)
+        {
+            DateTime timeStart = DateTime.Parse(startTime);
+            DateTime timeNow = DateTime.Parse(currentTime.Text);
+            double tStart = ConvertToUnixTimestamp(timeStart);
+            double tNow = ConvertToUnixTimestamp(timeNow);
+            int result = (int)(tNow - tStart);
+            return result;
+        }
+
+        private double maximumFN(string introStart, bool intro, long ticks)
+        {
+            DateTime timeStart = DateTime.Parse(introStart);
+            TimeSpan setTime = new TimeSpan(ticks);
+            long timeInSeconds = setTime.Minutes * 60 + setTime.Seconds;
+            DateTime timeEnd = timeStart.AddSeconds(timeInSeconds);
+            double tStart = ConvertToUnixTimestamp(timeStart);
+            double tEnd = ConvertToUnixTimestamp(timeEnd);
+            double result = tEnd - tStart;
+            return result;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             currentAction = introTitle.Text;
@@ -487,8 +512,9 @@ namespace WindowsFormsApp2
             intro = true;
             introProgressBar.ForeColor = Color.LightGreen;
             introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-               
+
             // obiektowo - test
+            
             ItemObj.StartTime = DateTime.Parse(currentTime.Text);
             ItemObj.Item1 = true;
             introProgressBar.ForeColor = Color.LightGreen;
