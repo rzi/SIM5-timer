@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
         public string currentAction, procentBar;
         public int currentBar, maxiBar;
 
-        ItemObj2 intro1 = new ItemObj2();
+        ItemObj2 intro1 = new ItemObj2(); //test
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -28,7 +28,6 @@ namespace WindowsFormsApp2
         {
             DateTime now = DateTime.Now;
             currentTime.Text = now.ToLongTimeString(); //bieżący czas
-
             if (intro)
             {
                 if (introProgressBar.Maximum == introProgressBar.Value)
@@ -368,7 +367,6 @@ namespace WindowsFormsApp2
                 }
             }
         }
-
         private int valueFN(string startTime, string currentTime)
         {
             DateTime timeStart = DateTime.Parse(startTime);
@@ -378,10 +376,9 @@ namespace WindowsFormsApp2
             int result = (int)(tNow - tStart);
             return result;
         }
-
-        private double maximumFN(string introStart, long ticks)
+        private double maximumFN(string start, long ticks)
         {
-            DateTime timeStart = DateTime.Parse(introStart);
+            DateTime timeStart = DateTime.Parse(start);
             TimeSpan setTime = new TimeSpan(ticks);
             long timeInSeconds = setTime.Minutes * 60 + setTime.Seconds;
             DateTime timeEnd = timeStart.AddSeconds(timeInSeconds);
@@ -390,7 +387,6 @@ namespace WindowsFormsApp2
             double result = tEnd - tStart;
             return result;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             currentAction = introTitle.Text;
