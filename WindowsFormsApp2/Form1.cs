@@ -103,7 +103,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    double maximum = maximumFN(introStart.Text, intro, introTimePicker.Value.Ticks);
+                    double maximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
                     int value = valueFN(introStart.Text, currentTime.Text);
 
                     introProgressBar.Maximum = (int) maximum;
@@ -478,17 +478,17 @@ namespace WindowsFormsApp2
             }
         }
 
-        private int valueFN(string startTime, string text2)
+        private int valueFN(string startTime, string currentTime)
         {
             DateTime timeStart = DateTime.Parse(startTime);
-            DateTime timeNow = DateTime.Parse(currentTime.Text);
+            DateTime timeNow = DateTime.Parse(currentTime);
             double tStart = ConvertToUnixTimestamp(timeStart);
             double tNow = ConvertToUnixTimestamp(timeNow);
             int result = (int)(tNow - tStart);
             return result;
         }
 
-        private double maximumFN(string introStart, bool intro, long ticks)
+        private double maximumFN(string introStart, long ticks)
         {
             DateTime timeStart = DateTime.Parse(introStart);
             TimeSpan setTime = new TimeSpan(ticks);
