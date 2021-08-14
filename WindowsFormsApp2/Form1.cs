@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
@@ -12,7 +13,8 @@ namespace WindowsFormsApp2
         public string currentAction, procentBar;
         public int currentBar, maxiBar;
 
-        ItemObj2 intro1 = new ItemObj2(); //test
+        //ItemObj2 intro1 = new ItemObj2(); //test
+        Result result = new Result();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -58,6 +60,12 @@ namespace WindowsFormsApp2
                         procentBar = introProgressValue.Text;
                         if (introProgressBar.Value > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
                         if (introProgressBar.Value > redTriger) introProgressBar.ForeColor = Color.Red;
+                        result.isIntro = intro;
+                        result.setIntro = introTimePicker.ToString();
+                        result.startIntro = introStart.ToString();
+                        result.stopIntro = introEnd.ToString();
+                        result.resultIntro = introResult.ToString();
+                        result.intro = "intro";
                     }
                 }
                 
@@ -387,6 +395,9 @@ namespace WindowsFormsApp2
             double result = tEnd - tStart;
             return result;
         }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             currentAction = introTitle.Text;
@@ -486,6 +497,12 @@ namespace WindowsFormsApp2
             performanceProgressBar.ForeColor = Color.LightGreen;
             performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             performance = false;
@@ -594,12 +611,20 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             feedbackResult.Text = diff1.ToString();
-            // currentAction = "";
-            //currentBar = 0;
-            //maxiBar = 0;
-            //procentBar = " ";
-
+            saveToDB();
+            createChart();
         }
+
+        private void createChart()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void saveToDB()
+        {
+            Console.WriteLine("zapis do DB");
+        }
+
         private void button12_Click(object sender, EventArgs e)
         {
             Console.WriteLine("button ");
