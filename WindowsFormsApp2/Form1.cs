@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 
 namespace WindowsFormsApp2
@@ -19,7 +22,9 @@ namespace WindowsFormsApp2
         private void Form1_Load(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this);
-            form2.Show();       
+            form2.Show();
+
+           
         }  
         public Form1()
         {
@@ -396,8 +401,6 @@ namespace WindowsFormsApp2
             return result;
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             currentAction = introTitle.Text;
@@ -420,7 +423,8 @@ namespace WindowsFormsApp2
             Console.WriteLine(ItemObj.Item1);
         }
         private void button2_Click(object sender, EventArgs e)
-        {
+        { 
+
             intro = false;
             introEnd.Text = currentTime.Text; 
             DateTime timeStart = DateTime.Parse(introEnd.Text); 
@@ -436,6 +440,7 @@ namespace WindowsFormsApp2
             safety = true;
             safetyProgressBar.ForeColor = Color.LightGreen;
             safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("intro" , introTimePicker.Value.ToString(),introStart.Text,introEnd.Text,introResult.Text,introProgressValue.Text );
         }
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -456,6 +461,7 @@ namespace WindowsFormsApp2
             quality = true;
             qualityProgressBar.ForeColor = Color.LightGreen;
             qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("safety", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -476,6 +482,7 @@ namespace WindowsFormsApp2
             customerService = true;
             customerServiceProgressBar.ForeColor = Color.LightGreen;
             customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("quality", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -496,12 +503,9 @@ namespace WindowsFormsApp2
             performance = true;
             performanceProgressBar.ForeColor = Color.LightGreen;
             performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("customerService", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
         }
 
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -522,6 +526,7 @@ namespace WindowsFormsApp2
             people = true;
             peopleProgressBar.ForeColor = Color.LightGreen;
             peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("performance", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -542,6 +547,7 @@ namespace WindowsFormsApp2
             projects = true;
             projectsProgressBar.ForeColor = Color.LightGreen;
             projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("people", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -556,12 +562,13 @@ namespace WindowsFormsApp2
 
             priorityStart.Text = "";
             priorityEnd.Text = "";
-            priorityResults.Text = "";
+            priorityResult.Text = "";
             DateTime timeStart1 = DateTime.Parse(currentTime.Text);
             priorityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
             priority = true;
             priorityProgressBar.ForeColor = Color.LightGreen;
             priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("projects", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -570,7 +577,7 @@ namespace WindowsFormsApp2
             DateTime timeStart = DateTime.Parse(priorityEnd.Text);
             DateTime timeEnd = DateTime.Parse(priorityStart.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            priorityResults.Text = diff1.ToString();
+            priorityResult.Text = diff1.ToString();
 
             currentAction = visitsTitle.Text;
 
@@ -582,6 +589,7 @@ namespace WindowsFormsApp2
             visits = true;
             visitsProgressBar.ForeColor = Color.LightGreen;
             visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("priority", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
         }
         private void button10_Click(object sender, EventArgs e)
         {
@@ -602,6 +610,7 @@ namespace WindowsFormsApp2
             feedback = true;
             feedbackProgressBar.ForeColor = Color.LightGreen;
             feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            saveToDB("visits", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
         }
         private void button11_Click(object sender, EventArgs e)
         {
@@ -611,8 +620,8 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             feedbackResult.Text = diff1.ToString();
-            saveToDB();
-            createChart();
+            saveToDB("feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
+            //createChart();
         }
 
         private void createChart()
@@ -620,11 +629,45 @@ namespace WindowsFormsApp2
             throw new NotImplementedException();
         }
 
-        private void saveToDB()
+        private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult,string progressValue)
         {
             Console.WriteLine("zapis do DB");
-        }
+            // db connection
+            string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
+            MySqlConnection conn = new MySqlConnection(connectionstring);
+            try
+            {
+                conn.Open();
+                //SQL Query to execute
+                //insert Query
+                // we are inserting actor_id, first_name, last_name, last_updated columns data
+                //21:36:01	insert into timedb.timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("2021-08-15","safety","3:00", "20:02:00","20:05:00","03:00","100%")	1 row(s) affected	0.000 sec
 
+                string date = dateTimePicker1.Value.ToString().Substring(0,10);
+                    Console.WriteLine("data: " + date);
+                string timeSet1 = timeSet.Substring(10, 9);
+                Console.WriteLine("timeSet1: " + timeSet1);
+                string sql = "insert into timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+                    + "\"" + date +"\""
+                    +",\"" + block +"\""
+                    +",\"" +timeSet1+ "\""
+                    +",\"" +timeStart + "\""
+                    +",\"" + timeEnd +"\""
+                    +",\"" + timeResult +"\""
+                    +",\"" + progressValue +"\""
+                    + ")";
+                Console.WriteLine(" sql; " + sql);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+        }
         private void button12_Click(object sender, EventArgs e)
         {
             Console.WriteLine("button ");
@@ -642,6 +685,45 @@ namespace WindowsFormsApp2
         {
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             return origin.AddSeconds(timestamp);
+        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (tabControl1.SelectedTab == tabControl1.TabPages[3])// Historia
+            {
+                // db connection
+                string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
+                MySqlConnection conn = new MySqlConnection(connectionstring);
+                try
+                {
+                    string mysql = "Select * FROM timedb";
+                    MySqlCommand command = new MySqlCommand(mysql, conn);
+                    conn.Open();
+
+                    MySqlDataReader rdr = command.ExecuteReader();
+                    //read the data
+                    while (rdr.Read())
+                    {
+                        Console.WriteLine(rdr[0] + "  " + rdr[1] + "  " + rdr[2] + " " + rdr[3] + " " + rdr[4] + " " + rdr[5]);
+                    }
+                    rdr.Close();
+
+                    MySqlDataAdapter dtb = new MySqlDataAdapter();
+                    dtb.SelectCommand = command;
+                    System.Data.DataTable dTable = new DataTable();
+                    dtb.Fill(dTable);
+                    BindingSource bSource = new BindingSource();
+                    bSource.DataSource = dTable;
+
+                    dataGridView1.DataSource = bSource;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
+            }
+            
         }
     }
 }

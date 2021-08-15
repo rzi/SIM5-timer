@@ -30,15 +30,16 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -67,7 +68,7 @@ namespace WindowsFormsApp2
             this.visitsResult = new System.Windows.Forms.Label();
             this.visitsEnd = new System.Windows.Forms.Label();
             this.visitsStart = new System.Windows.Forms.Label();
-            this.priorityResults = new System.Windows.Forms.Label();
+            this.priorityResult = new System.Windows.Forms.Label();
             this.priorityEnd = new System.Windows.Forms.Label();
             this.priorityStart = new System.Windows.Forms.Label();
             this.projectsResult = new System.Windows.Forms.Label();
@@ -146,6 +147,8 @@ namespace WindowsFormsApp2
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -154,6 +157,8 @@ namespace WindowsFormsApp2
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,12 +172,15 @@ namespace WindowsFormsApp2
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(935, 610);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+
             // 
             // tabPage1
             // 
@@ -201,7 +209,7 @@ namespace WindowsFormsApp2
             this.tabPage1.Controls.Add(this.visitsResult);
             this.tabPage1.Controls.Add(this.visitsEnd);
             this.tabPage1.Controls.Add(this.visitsStart);
-            this.tabPage1.Controls.Add(this.priorityResults);
+            this.tabPage1.Controls.Add(this.priorityResult);
             this.tabPage1.Controls.Add(this.priorityEnd);
             this.tabPage1.Controls.Add(this.priorityStart);
             this.tabPage1.Controls.Add(this.projectsResult);
@@ -265,11 +273,11 @@ namespace WindowsFormsApp2
             this.tabPage1.Controls.Add(this.introButton);
             this.tabPage1.Controls.Add(this.currentTime);
             this.tabPage1.Controls.Add(this.introTitle);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(927, 572);
+            this.tabPage1.Size = new System.Drawing.Size(927, 573);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pomiary";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -282,7 +290,7 @@ namespace WindowsFormsApp2
             this.feedbackTimePicker.Location = new System.Drawing.Point(180, 458);
             this.feedbackTimePicker.Name = "feedbackTimePicker";
             this.feedbackTimePicker.ShowUpDown = true;
-            this.feedbackTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.feedbackTimePicker.Size = new System.Drawing.Size(90, 29);
             this.feedbackTimePicker.TabIndex = 109;
             this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
             // 
@@ -294,7 +302,7 @@ namespace WindowsFormsApp2
             this.visitsTimePicker.Location = new System.Drawing.Point(180, 421);
             this.visitsTimePicker.Name = "visitsTimePicker";
             this.visitsTimePicker.ShowUpDown = true;
-            this.visitsTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.visitsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.visitsTimePicker.TabIndex = 108;
             this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 2, 0, 0);
             // 
@@ -306,7 +314,7 @@ namespace WindowsFormsApp2
             this.priorityTimePicker.Location = new System.Drawing.Point(180, 381);
             this.priorityTimePicker.Name = "priorityTimePicker";
             this.priorityTimePicker.ShowUpDown = true;
-            this.priorityTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.priorityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.priorityTimePicker.TabIndex = 107;
             this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             // 
@@ -318,7 +326,7 @@ namespace WindowsFormsApp2
             this.projectsTimePicker.Location = new System.Drawing.Point(180, 339);
             this.projectsTimePicker.Name = "projectsTimePicker";
             this.projectsTimePicker.ShowUpDown = true;
-            this.projectsTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.projectsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.projectsTimePicker.TabIndex = 106;
             this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             // 
@@ -330,7 +338,7 @@ namespace WindowsFormsApp2
             this.peopleTimePicker.Location = new System.Drawing.Point(180, 297);
             this.peopleTimePicker.Name = "peopleTimePicker";
             this.peopleTimePicker.ShowUpDown = true;
-            this.peopleTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.peopleTimePicker.Size = new System.Drawing.Size(90, 29);
             this.peopleTimePicker.TabIndex = 105;
             this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 2, 0, 0);
             // 
@@ -342,7 +350,7 @@ namespace WindowsFormsApp2
             this.performanceTimePicker.Location = new System.Drawing.Point(180, 258);
             this.performanceTimePicker.Name = "performanceTimePicker";
             this.performanceTimePicker.ShowUpDown = true;
-            this.performanceTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.performanceTimePicker.Size = new System.Drawing.Size(90, 29);
             this.performanceTimePicker.TabIndex = 104;
             this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             // 
@@ -354,7 +362,7 @@ namespace WindowsFormsApp2
             this.customerServiceTimePicker.Location = new System.Drawing.Point(180, 218);
             this.customerServiceTimePicker.Name = "customerServiceTimePicker";
             this.customerServiceTimePicker.ShowUpDown = true;
-            this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 29);
             this.customerServiceTimePicker.TabIndex = 103;
             this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             // 
@@ -366,7 +374,7 @@ namespace WindowsFormsApp2
             this.qualityTimePicker.Location = new System.Drawing.Point(180, 177);
             this.qualityTimePicker.Name = "qualityTimePicker";
             this.qualityTimePicker.ShowUpDown = true;
-            this.qualityTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.qualityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.qualityTimePicker.TabIndex = 102;
             this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             // 
@@ -378,7 +386,7 @@ namespace WindowsFormsApp2
             this.safetyTimePicker.Location = new System.Drawing.Point(180, 140);
             this.safetyTimePicker.Name = "safetyTimePicker";
             this.safetyTimePicker.ShowUpDown = true;
-            this.safetyTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.safetyTimePicker.Size = new System.Drawing.Size(90, 29);
             this.safetyTimePicker.TabIndex = 101;
             this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             // 
@@ -390,7 +398,7 @@ namespace WindowsFormsApp2
             this.introTimePicker.Location = new System.Drawing.Point(180, 97);
             this.introTimePicker.Name = "introTimePicker";
             this.introTimePicker.ShowUpDown = true;
-            this.introTimePicker.Size = new System.Drawing.Size(90, 31);
+            this.introTimePicker.Size = new System.Drawing.Size(90, 29);
             this.introTimePicker.TabIndex = 100;
             this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
             // 
@@ -489,7 +497,7 @@ namespace WindowsFormsApp2
             this.feedbackResult.AutoSize = true;
             this.feedbackResult.Location = new System.Drawing.Point(820, 454);
             this.feedbackResult.Name = "feedbackResult";
-            this.feedbackResult.Size = new System.Drawing.Size(0, 25);
+            this.feedbackResult.Size = new System.Drawing.Size(0, 24);
             this.feedbackResult.TabIndex = 90;
             // 
             // feedbackEnd
@@ -497,7 +505,7 @@ namespace WindowsFormsApp2
             this.feedbackEnd.AutoSize = true;
             this.feedbackEnd.Location = new System.Drawing.Point(688, 454);
             this.feedbackEnd.Name = "feedbackEnd";
-            this.feedbackEnd.Size = new System.Drawing.Size(0, 25);
+            this.feedbackEnd.Size = new System.Drawing.Size(0, 24);
             this.feedbackEnd.TabIndex = 89;
             // 
             // feedbackStart
@@ -505,7 +513,7 @@ namespace WindowsFormsApp2
             this.feedbackStart.AutoSize = true;
             this.feedbackStart.Location = new System.Drawing.Point(551, 454);
             this.feedbackStart.Name = "feedbackStart";
-            this.feedbackStart.Size = new System.Drawing.Size(0, 25);
+            this.feedbackStart.Size = new System.Drawing.Size(0, 24);
             this.feedbackStart.TabIndex = 88;
             // 
             // visitsResult
@@ -513,7 +521,7 @@ namespace WindowsFormsApp2
             this.visitsResult.AutoSize = true;
             this.visitsResult.Location = new System.Drawing.Point(820, 418);
             this.visitsResult.Name = "visitsResult";
-            this.visitsResult.Size = new System.Drawing.Size(0, 25);
+            this.visitsResult.Size = new System.Drawing.Size(0, 24);
             this.visitsResult.TabIndex = 87;
             // 
             // visitsEnd
@@ -521,7 +529,7 @@ namespace WindowsFormsApp2
             this.visitsEnd.AutoSize = true;
             this.visitsEnd.Location = new System.Drawing.Point(688, 421);
             this.visitsEnd.Name = "visitsEnd";
-            this.visitsEnd.Size = new System.Drawing.Size(0, 25);
+            this.visitsEnd.Size = new System.Drawing.Size(0, 24);
             this.visitsEnd.TabIndex = 86;
             // 
             // visitsStart
@@ -529,23 +537,23 @@ namespace WindowsFormsApp2
             this.visitsStart.AutoSize = true;
             this.visitsStart.Location = new System.Drawing.Point(551, 420);
             this.visitsStart.Name = "visitsStart";
-            this.visitsStart.Size = new System.Drawing.Size(0, 25);
+            this.visitsStart.Size = new System.Drawing.Size(0, 24);
             this.visitsStart.TabIndex = 85;
             // 
-            // priorityResults
+            // priorityResult
             // 
-            this.priorityResults.AutoSize = true;
-            this.priorityResults.Location = new System.Drawing.Point(820, 380);
-            this.priorityResults.Name = "priorityResults";
-            this.priorityResults.Size = new System.Drawing.Size(0, 25);
-            this.priorityResults.TabIndex = 84;
+            this.priorityResult.AutoSize = true;
+            this.priorityResult.Location = new System.Drawing.Point(820, 380);
+            this.priorityResult.Name = "priorityResult";
+            this.priorityResult.Size = new System.Drawing.Size(0, 24);
+            this.priorityResult.TabIndex = 84;
             // 
             // priorityEnd
             // 
             this.priorityEnd.AutoSize = true;
             this.priorityEnd.Location = new System.Drawing.Point(688, 384);
             this.priorityEnd.Name = "priorityEnd";
-            this.priorityEnd.Size = new System.Drawing.Size(0, 25);
+            this.priorityEnd.Size = new System.Drawing.Size(0, 24);
             this.priorityEnd.TabIndex = 83;
             // 
             // priorityStart
@@ -553,7 +561,7 @@ namespace WindowsFormsApp2
             this.priorityStart.AutoSize = true;
             this.priorityStart.Location = new System.Drawing.Point(551, 381);
             this.priorityStart.Name = "priorityStart";
-            this.priorityStart.Size = new System.Drawing.Size(0, 25);
+            this.priorityStart.Size = new System.Drawing.Size(0, 24);
             this.priorityStart.TabIndex = 82;
             // 
             // projectsResult
@@ -561,7 +569,7 @@ namespace WindowsFormsApp2
             this.projectsResult.AutoSize = true;
             this.projectsResult.Location = new System.Drawing.Point(820, 339);
             this.projectsResult.Name = "projectsResult";
-            this.projectsResult.Size = new System.Drawing.Size(0, 25);
+            this.projectsResult.Size = new System.Drawing.Size(0, 24);
             this.projectsResult.TabIndex = 81;
             // 
             // projectsEnd
@@ -569,7 +577,7 @@ namespace WindowsFormsApp2
             this.projectsEnd.AutoSize = true;
             this.projectsEnd.Location = new System.Drawing.Point(688, 343);
             this.projectsEnd.Name = "projectsEnd";
-            this.projectsEnd.Size = new System.Drawing.Size(0, 25);
+            this.projectsEnd.Size = new System.Drawing.Size(0, 24);
             this.projectsEnd.TabIndex = 80;
             // 
             // projectsStart
@@ -577,7 +585,7 @@ namespace WindowsFormsApp2
             this.projectsStart.AutoSize = true;
             this.projectsStart.Location = new System.Drawing.Point(551, 339);
             this.projectsStart.Name = "projectsStart";
-            this.projectsStart.Size = new System.Drawing.Size(0, 25);
+            this.projectsStart.Size = new System.Drawing.Size(0, 24);
             this.projectsStart.TabIndex = 79;
             // 
             // peopleResult
@@ -585,7 +593,7 @@ namespace WindowsFormsApp2
             this.peopleResult.AutoSize = true;
             this.peopleResult.Location = new System.Drawing.Point(820, 297);
             this.peopleResult.Name = "peopleResult";
-            this.peopleResult.Size = new System.Drawing.Size(0, 25);
+            this.peopleResult.Size = new System.Drawing.Size(0, 24);
             this.peopleResult.TabIndex = 78;
             // 
             // peopleEnd
@@ -593,7 +601,7 @@ namespace WindowsFormsApp2
             this.peopleEnd.AutoSize = true;
             this.peopleEnd.Location = new System.Drawing.Point(688, 300);
             this.peopleEnd.Name = "peopleEnd";
-            this.peopleEnd.Size = new System.Drawing.Size(0, 25);
+            this.peopleEnd.Size = new System.Drawing.Size(0, 24);
             this.peopleEnd.TabIndex = 77;
             // 
             // peopleStart
@@ -601,7 +609,7 @@ namespace WindowsFormsApp2
             this.peopleStart.AutoSize = true;
             this.peopleStart.Location = new System.Drawing.Point(551, 297);
             this.peopleStart.Name = "peopleStart";
-            this.peopleStart.Size = new System.Drawing.Size(0, 25);
+            this.peopleStart.Size = new System.Drawing.Size(0, 24);
             this.peopleStart.TabIndex = 76;
             // 
             // performanceResult
@@ -609,7 +617,7 @@ namespace WindowsFormsApp2
             this.performanceResult.AutoSize = true;
             this.performanceResult.Location = new System.Drawing.Point(820, 258);
             this.performanceResult.Name = "performanceResult";
-            this.performanceResult.Size = new System.Drawing.Size(0, 25);
+            this.performanceResult.Size = new System.Drawing.Size(0, 24);
             this.performanceResult.TabIndex = 75;
             // 
             // performanceEnd
@@ -617,7 +625,7 @@ namespace WindowsFormsApp2
             this.performanceEnd.AutoSize = true;
             this.performanceEnd.Location = new System.Drawing.Point(688, 258);
             this.performanceEnd.Name = "performanceEnd";
-            this.performanceEnd.Size = new System.Drawing.Size(0, 25);
+            this.performanceEnd.Size = new System.Drawing.Size(0, 24);
             this.performanceEnd.TabIndex = 74;
             // 
             // performanceStart
@@ -625,7 +633,7 @@ namespace WindowsFormsApp2
             this.performanceStart.AutoSize = true;
             this.performanceStart.Location = new System.Drawing.Point(551, 259);
             this.performanceStart.Name = "performanceStart";
-            this.performanceStart.Size = new System.Drawing.Size(0, 25);
+            this.performanceStart.Size = new System.Drawing.Size(0, 24);
             this.performanceStart.TabIndex = 73;
             // 
             // customerServiceResult
@@ -633,7 +641,7 @@ namespace WindowsFormsApp2
             this.customerServiceResult.AutoSize = true;
             this.customerServiceResult.Location = new System.Drawing.Point(820, 219);
             this.customerServiceResult.Name = "customerServiceResult";
-            this.customerServiceResult.Size = new System.Drawing.Size(0, 25);
+            this.customerServiceResult.Size = new System.Drawing.Size(0, 24);
             this.customerServiceResult.TabIndex = 72;
             // 
             // customerServiceEnd
@@ -641,7 +649,7 @@ namespace WindowsFormsApp2
             this.customerServiceEnd.AutoSize = true;
             this.customerServiceEnd.Location = new System.Drawing.Point(688, 218);
             this.customerServiceEnd.Name = "customerServiceEnd";
-            this.customerServiceEnd.Size = new System.Drawing.Size(0, 25);
+            this.customerServiceEnd.Size = new System.Drawing.Size(0, 24);
             this.customerServiceEnd.TabIndex = 71;
             // 
             // customerServiceStart
@@ -649,7 +657,7 @@ namespace WindowsFormsApp2
             this.customerServiceStart.AutoSize = true;
             this.customerServiceStart.Location = new System.Drawing.Point(551, 219);
             this.customerServiceStart.Name = "customerServiceStart";
-            this.customerServiceStart.Size = new System.Drawing.Size(0, 25);
+            this.customerServiceStart.Size = new System.Drawing.Size(0, 24);
             this.customerServiceStart.TabIndex = 70;
             // 
             // qualityResult
@@ -657,7 +665,7 @@ namespace WindowsFormsApp2
             this.qualityResult.AutoSize = true;
             this.qualityResult.Location = new System.Drawing.Point(820, 179);
             this.qualityResult.Name = "qualityResult";
-            this.qualityResult.Size = new System.Drawing.Size(0, 25);
+            this.qualityResult.Size = new System.Drawing.Size(0, 24);
             this.qualityResult.TabIndex = 69;
             // 
             // qualityEnd
@@ -665,7 +673,7 @@ namespace WindowsFormsApp2
             this.qualityEnd.AutoSize = true;
             this.qualityEnd.Location = new System.Drawing.Point(688, 179);
             this.qualityEnd.Name = "qualityEnd";
-            this.qualityEnd.Size = new System.Drawing.Size(0, 25);
+            this.qualityEnd.Size = new System.Drawing.Size(0, 24);
             this.qualityEnd.TabIndex = 68;
             // 
             // qualityStart
@@ -673,7 +681,7 @@ namespace WindowsFormsApp2
             this.qualityStart.AutoSize = true;
             this.qualityStart.Location = new System.Drawing.Point(551, 179);
             this.qualityStart.Name = "qualityStart";
-            this.qualityStart.Size = new System.Drawing.Size(0, 25);
+            this.qualityStart.Size = new System.Drawing.Size(0, 24);
             this.qualityStart.TabIndex = 67;
             // 
             // stopButton
@@ -711,7 +719,7 @@ namespace WindowsFormsApp2
             this.safetyResult.AutoSize = true;
             this.safetyResult.Location = new System.Drawing.Point(820, 142);
             this.safetyResult.Name = "safetyResult";
-            this.safetyResult.Size = new System.Drawing.Size(0, 25);
+            this.safetyResult.Size = new System.Drawing.Size(0, 24);
             this.safetyResult.TabIndex = 64;
             // 
             // safetyEnd
@@ -719,7 +727,7 @@ namespace WindowsFormsApp2
             this.safetyEnd.AutoSize = true;
             this.safetyEnd.Location = new System.Drawing.Point(688, 142);
             this.safetyEnd.Name = "safetyEnd";
-            this.safetyEnd.Size = new System.Drawing.Size(0, 25);
+            this.safetyEnd.Size = new System.Drawing.Size(0, 24);
             this.safetyEnd.TabIndex = 63;
             // 
             // safetyStart
@@ -727,7 +735,7 @@ namespace WindowsFormsApp2
             this.safetyStart.AutoSize = true;
             this.safetyStart.Location = new System.Drawing.Point(551, 141);
             this.safetyStart.Name = "safetyStart";
-            this.safetyStart.Size = new System.Drawing.Size(0, 25);
+            this.safetyStart.Size = new System.Drawing.Size(0, 24);
             this.safetyStart.TabIndex = 62;
             // 
             // introStart
@@ -735,7 +743,7 @@ namespace WindowsFormsApp2
             this.introStart.AutoSize = true;
             this.introStart.Location = new System.Drawing.Point(551, 101);
             this.introStart.Name = "introStart";
-            this.introStart.Size = new System.Drawing.Size(0, 25);
+            this.introStart.Size = new System.Drawing.Size(0, 24);
             this.introStart.TabIndex = 61;
             // 
             // feedbackProgressBar
@@ -797,7 +805,7 @@ namespace WindowsFormsApp2
             this.timeLabel.AutoSize = true;
             this.timeLabel.Location = new System.Drawing.Point(166, 60);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(113, 25);
+            this.timeLabel.Size = new System.Drawing.Size(97, 24);
             this.timeLabel.TabIndex = 41;
             this.timeLabel.Text = "Czas [min]";
             // 
@@ -806,7 +814,7 @@ namespace WindowsFormsApp2
             this.feedbackTitle.AutoSize = true;
             this.feedbackTitle.Location = new System.Drawing.Point(20, 464);
             this.feedbackTitle.Name = "feedbackTitle";
-            this.feedbackTitle.Size = new System.Drawing.Size(113, 25);
+            this.feedbackTitle.Size = new System.Drawing.Size(100, 24);
             this.feedbackTitle.TabIndex = 40;
             this.feedbackTitle.Text = "Feedback ";
             // 
@@ -815,7 +823,7 @@ namespace WindowsFormsApp2
             this.visitsTitle.AutoSize = true;
             this.visitsTitle.Location = new System.Drawing.Point(22, 421);
             this.visitsTitle.Name = "visitsTitle";
-            this.visitsTitle.Size = new System.Drawing.Size(76, 25);
+            this.visitsTitle.Size = new System.Drawing.Size(63, 24);
             this.visitsTitle.TabIndex = 39;
             this.visitsTitle.Text = "Wizyty";
             // 
@@ -824,7 +832,7 @@ namespace WindowsFormsApp2
             this.priorityTitle.AutoSize = true;
             this.priorityTitle.Location = new System.Drawing.Point(20, 384);
             this.priorityTitle.Name = "priorityTitle";
-            this.priorityTitle.Size = new System.Drawing.Size(103, 25);
+            this.priorityTitle.Size = new System.Drawing.Size(86, 24);
             this.priorityTitle.TabIndex = 38;
             this.priorityTitle.Text = "Priorytety";
             // 
@@ -851,7 +859,7 @@ namespace WindowsFormsApp2
             this.projectsTitle.AutoSize = true;
             this.projectsTitle.Location = new System.Drawing.Point(22, 342);
             this.projectsTitle.Name = "projectsTitle";
-            this.projectsTitle.Size = new System.Drawing.Size(90, 25);
+            this.projectsTitle.Size = new System.Drawing.Size(76, 24);
             this.projectsTitle.TabIndex = 34;
             this.projectsTitle.Text = "Projekty";
             // 
@@ -878,7 +886,7 @@ namespace WindowsFormsApp2
             this.peopleTitle.AutoSize = true;
             this.peopleTitle.Location = new System.Drawing.Point(20, 299);
             this.peopleTitle.Name = "peopleTitle";
-            this.peopleTitle.Size = new System.Drawing.Size(80, 25);
+            this.peopleTitle.Size = new System.Drawing.Size(70, 24);
             this.peopleTitle.TabIndex = 30;
             this.peopleTitle.Text = "Eureka";
             // 
@@ -905,7 +913,7 @@ namespace WindowsFormsApp2
             this.performanceTitle.AutoSize = true;
             this.performanceTitle.Location = new System.Drawing.Point(22, 258);
             this.performanceTitle.Name = "performanceTitle";
-            this.performanceTitle.Size = new System.Drawing.Size(133, 25);
+            this.performanceTitle.Size = new System.Drawing.Size(115, 24);
             this.performanceTitle.TabIndex = 26;
             this.performanceTitle.Text = "Efektywność";
             // 
@@ -932,7 +940,7 @@ namespace WindowsFormsApp2
             this.customerServiceTitle.AutoSize = true;
             this.customerServiceTitle.Location = new System.Drawing.Point(20, 218);
             this.customerServiceTitle.Name = "customerServiceTitle";
-            this.customerServiceTitle.Size = new System.Drawing.Size(76, 25);
+            this.customerServiceTitle.Size = new System.Drawing.Size(66, 24);
             this.customerServiceTitle.TabIndex = 22;
             this.customerServiceTitle.Text = "Serwis";
             // 
@@ -959,7 +967,7 @@ namespace WindowsFormsApp2
             this.qualityTitle.AutoSize = true;
             this.qualityTitle.Location = new System.Drawing.Point(20, 176);
             this.qualityTitle.Name = "qualityTitle";
-            this.qualityTitle.Size = new System.Drawing.Size(80, 25);
+            this.qualityTitle.Size = new System.Drawing.Size(68, 24);
             this.qualityTitle.TabIndex = 18;
             this.qualityTitle.Text = "Jakoćś";
             // 
@@ -995,7 +1003,7 @@ namespace WindowsFormsApp2
             this.safetyTitle.AutoSize = true;
             this.safetyTitle.Location = new System.Drawing.Point(20, 140);
             this.safetyTitle.Name = "safetyTitle";
-            this.safetyTitle.Size = new System.Drawing.Size(55, 25);
+            this.safetyTitle.Size = new System.Drawing.Size(48, 24);
             this.safetyTitle.TabIndex = 13;
             this.safetyTitle.Text = "BHP";
             // 
@@ -1004,7 +1012,7 @@ namespace WindowsFormsApp2
             this.introResult.AutoSize = true;
             this.introResult.Location = new System.Drawing.Point(820, 100);
             this.introResult.Name = "introResult";
-            this.introResult.Size = new System.Drawing.Size(0, 25);
+            this.introResult.Size = new System.Drawing.Size(0, 24);
             this.introResult.TabIndex = 11;
             // 
             // introEnd
@@ -1012,7 +1020,7 @@ namespace WindowsFormsApp2
             this.introEnd.AutoSize = true;
             this.introEnd.Location = new System.Drawing.Point(688, 100);
             this.introEnd.Name = "introEnd";
-            this.introEnd.Size = new System.Drawing.Size(0, 25);
+            this.introEnd.Size = new System.Drawing.Size(0, 24);
             this.introEnd.TabIndex = 10;
             // 
             // resultLabel
@@ -1020,7 +1028,7 @@ namespace WindowsFormsApp2
             this.resultLabel.AutoSize = true;
             this.resultLabel.Location = new System.Drawing.Point(820, 60);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(91, 25);
+            this.resultLabel.Size = new System.Drawing.Size(76, 24);
             this.resultLabel.TabIndex = 9;
             this.resultLabel.Text = "Rezultat";
             // 
@@ -1029,7 +1037,7 @@ namespace WindowsFormsApp2
             this.endLabel.AutoSize = true;
             this.endLabel.Location = new System.Drawing.Point(674, 60);
             this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(135, 25);
+            this.endLabel.Size = new System.Drawing.Size(119, 24);
             this.endLabel.TabIndex = 8;
             this.endLabel.Text = "Zakończenie";
             // 
@@ -1038,7 +1046,7 @@ namespace WindowsFormsApp2
             this.startLabel.AutoSize = true;
             this.startLabel.Location = new System.Drawing.Point(522, 60);
             this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(136, 25);
+            this.startLabel.Size = new System.Drawing.Size(120, 24);
             this.startLabel.TabIndex = 7;
             this.startLabel.Text = "Rozpoczęcie";
             // 
@@ -1076,7 +1084,7 @@ namespace WindowsFormsApp2
             this.currentTime.AutoSize = true;
             this.currentTime.Location = new System.Drawing.Point(279, 20);
             this.currentTime.Name = "currentTime";
-            this.currentTime.Size = new System.Drawing.Size(0, 25);
+            this.currentTime.Size = new System.Drawing.Size(0, 24);
             this.currentTime.TabIndex = 5;
             // 
             // introTitle
@@ -1084,63 +1092,62 @@ namespace WindowsFormsApp2
             this.introTitle.AutoSize = true;
             this.introTitle.Location = new System.Drawing.Point(22, 101);
             this.introTitle.Name = "introTitle";
-            this.introTitle.Size = new System.Drawing.Size(73, 25);
+            this.introTitle.Size = new System.Drawing.Size(63, 24);
             this.introTitle.TabIndex = 1;
             this.introTitle.Text = "Wstęp";
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.chart1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(927, 572);
+            this.tabPage2.Size = new System.Drawing.Size(927, 573);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Wykresy";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(68, 82);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Label = "text";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            dataPoint1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series1.Points.Add(dataPoint1);
-            series1.XValueMember = "1";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series1.YValueMembers = "1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series7.ChartArea = "ChartArea1";
+            series7.Label = "text";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series7.Points.Add(dataPoint4);
+            series7.XValueMember = "1";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series7.YValueMembers = "1";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series2";
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(782, 313);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title1.Name = "Title1";
-            title2.Name = "Title2";
-            title3.Name = "Title3";
-            this.chart1.Titles.Add(title1);
-            this.chart1.Titles.Add(title2);
-            this.chart1.Titles.Add(title3);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            title10.Name = "Title1";
+            title11.Name = "Title2";
+            title12.Name = "Title3";
+            this.chart1.Titles.Add(title10);
+            this.chart1.Titles.Add(title11);
+            this.chart1.Titles.Add(title12);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.bindingNavigator1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(927, 572);
+            this.tabPage3.Size = new System.Drawing.Size(927, 573);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Historia";
+            this.tabPage3.Text = "Baza danych";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // bindingNavigator1
@@ -1257,6 +1264,37 @@ namespace WindowsFormsApp2
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 33);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(927, 573);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Historia";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Location = new System.Drawing.Point(30, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(873, 442);
+            this.dataGridView1.TabIndex = 0;
+
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1276,6 +1314,8 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1326,7 +1366,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label visitsResult;
         private System.Windows.Forms.Label visitsEnd;
         private System.Windows.Forms.Label visitsStart;
-        private System.Windows.Forms.Label priorityResults;
+        private System.Windows.Forms.Label priorityResult;
         private System.Windows.Forms.Label priorityEnd;
         private System.Windows.Forms.Label priorityStart;
         private System.Windows.Forms.Label projectsResult;
@@ -1390,6 +1430,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button introButton;
         private System.Windows.Forms.Label currentTime;
         private System.Windows.Forms.Label introTitle;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
