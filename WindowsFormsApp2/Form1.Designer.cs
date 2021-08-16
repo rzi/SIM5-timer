@@ -30,16 +30,15 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title31 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title32 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title33 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -150,6 +149,8 @@ namespace WindowsFormsApp2
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sumLabel = new System.Windows.Forms.Label();
+            this.sumValue = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -180,10 +181,11 @@ namespace WindowsFormsApp2
             this.tabControl1.Size = new System.Drawing.Size(935, 610);
             this.tabControl1.TabIndex = 8;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.sumValue);
+            this.tabPage1.Controls.Add(this.sumLabel);
             this.tabPage1.Controls.Add(this.feedbackTimePicker);
             this.tabPage1.Controls.Add(this.visitsTimePicker);
             this.tabPage1.Controls.Add(this.priorityTimePicker);
@@ -293,6 +295,7 @@ namespace WindowsFormsApp2
             this.feedbackTimePicker.Size = new System.Drawing.Size(90, 29);
             this.feedbackTimePicker.TabIndex = 109;
             this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
+            this.feedbackTimePicker.ValueChanged += new System.EventHandler(this.feedbackTimePicker_ValueChanged);
             // 
             // visitsTimePicker
             // 
@@ -305,6 +308,7 @@ namespace WindowsFormsApp2
             this.visitsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.visitsTimePicker.TabIndex = 108;
             this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 2, 0, 0);
+            this.visitsTimePicker.ValueChanged += new System.EventHandler(this.visitsTimePicker_ValueChanged);
             // 
             // priorityTimePicker
             // 
@@ -317,6 +321,7 @@ namespace WindowsFormsApp2
             this.priorityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.priorityTimePicker.TabIndex = 107;
             this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
+            this.priorityTimePicker.ValueChanged += new System.EventHandler(this.priorityTimePicker_ValueChanged);
             // 
             // projectsTimePicker
             // 
@@ -329,6 +334,7 @@ namespace WindowsFormsApp2
             this.projectsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.projectsTimePicker.TabIndex = 106;
             this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
+            this.projectsTimePicker.ValueChanged += new System.EventHandler(this.projectsTimePicker_ValueChanged);
             // 
             // peopleTimePicker
             // 
@@ -341,6 +347,7 @@ namespace WindowsFormsApp2
             this.peopleTimePicker.Size = new System.Drawing.Size(90, 29);
             this.peopleTimePicker.TabIndex = 105;
             this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 2, 0, 0);
+            this.peopleTimePicker.ValueChanged += new System.EventHandler(this.peopleTimePicker_ValueChanged);
             // 
             // performanceTimePicker
             // 
@@ -353,6 +360,7 @@ namespace WindowsFormsApp2
             this.performanceTimePicker.Size = new System.Drawing.Size(90, 29);
             this.performanceTimePicker.TabIndex = 104;
             this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.performanceTimePicker.ValueChanged += new System.EventHandler(this.performanceTimePicker_ValueChanged);
             // 
             // customerServiceTimePicker
             // 
@@ -365,6 +373,7 @@ namespace WindowsFormsApp2
             this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 29);
             this.customerServiceTimePicker.TabIndex = 103;
             this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
+            this.customerServiceTimePicker.ValueChanged += new System.EventHandler(this.customerServiceTimePicker_ValueChanged);
             // 
             // qualityTimePicker
             // 
@@ -377,6 +386,7 @@ namespace WindowsFormsApp2
             this.qualityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.qualityTimePicker.TabIndex = 102;
             this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
+            this.qualityTimePicker.ValueChanged += new System.EventHandler(this.qualityTimePicker_ValueChanged);
             // 
             // safetyTimePicker
             // 
@@ -389,6 +399,7 @@ namespace WindowsFormsApp2
             this.safetyTimePicker.Size = new System.Drawing.Size(90, 29);
             this.safetyTimePicker.TabIndex = 101;
             this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
+            this.safetyTimePicker.ValueChanged += new System.EventHandler(this.safetyTimePicker_ValueChanged);
             // 
             // introTimePicker
             // 
@@ -401,6 +412,7 @@ namespace WindowsFormsApp2
             this.introTimePicker.Size = new System.Drawing.Size(90, 29);
             this.introTimePicker.TabIndex = 100;
             this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
+            this.introTimePicker.ValueChanged += new System.EventHandler(this.introTimePicker_ValueChanged);
             // 
             // button12
             // 
@@ -1109,35 +1121,35 @@ namespace WindowsFormsApp2
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea11.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.chart1.Legends.Add(legend11);
             this.chart1.Location = new System.Drawing.Point(68, 82);
             this.chart1.Name = "chart1";
-            series7.ChartArea = "ChartArea1";
-            series7.Label = "text";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series7.Points.Add(dataPoint4);
-            series7.XValueMember = "1";
-            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series7.YValueMembers = "1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series2";
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
+            series21.ChartArea = "ChartArea1";
+            series21.Label = "text";
+            series21.Legend = "Legend1";
+            series21.Name = "Series1";
+            dataPoint11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series21.Points.Add(dataPoint11);
+            series21.XValueMember = "1";
+            series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series21.YValueMembers = "1";
+            series22.ChartArea = "ChartArea1";
+            series22.Legend = "Legend1";
+            series22.Name = "Series2";
+            this.chart1.Series.Add(series21);
+            this.chart1.Series.Add(series22);
             this.chart1.Size = new System.Drawing.Size(782, 313);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title10.Name = "Title1";
-            title11.Name = "Title2";
-            title12.Name = "Title3";
-            this.chart1.Titles.Add(title10);
-            this.chart1.Titles.Add(title11);
-            this.chart1.Titles.Add(title12);
+            title31.Name = "Title1";
+            title32.Name = "Title2";
+            title33.Name = "Title3";
+            this.chart1.Titles.Add(title31);
+            this.chart1.Titles.Add(title32);
+            this.chart1.Titles.Add(title33);
             // 
             // tabPage3
             // 
@@ -1280,20 +1292,29 @@ namespace WindowsFormsApp2
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(30, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(873, 442);
             this.dataGridView1.TabIndex = 0;
-
+            // 
+            // sumLabel
+            // 
+            this.sumLabel.AutoSize = true;
+            this.sumLabel.Location = new System.Drawing.Point(113, 510);
+            this.sumLabel.Name = "sumLabel";
+            this.sumLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.sumLabel.Size = new System.Drawing.Size(64, 24);
+            this.sumLabel.TabIndex = 110;
+            this.sumLabel.Text = "Suma:";
+            // 
+            // sumValue
+            // 
+            this.sumValue.AutoSize = true;
+            this.sumValue.Location = new System.Drawing.Point(180, 510);
+            this.sumValue.Name = "sumValue";
+            this.sumValue.Size = new System.Drawing.Size(0, 24);
+            this.sumValue.TabIndex = 111;
             // 
             // Form1
             // 
@@ -1432,6 +1453,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label introTitle;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label sumValue;
+        private System.Windows.Forms.Label sumLabel;
     }
 }
 

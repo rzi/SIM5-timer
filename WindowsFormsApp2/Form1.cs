@@ -6,8 +6,6 @@ using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-
-
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
@@ -16,16 +14,13 @@ namespace WindowsFormsApp2
         public string currentAction, procentBar;
         public int currentBar, maxiBar;
 
-        //ItemObj2 intro1 = new ItemObj2(); //test
         Result result = new Result();
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this);
             form2.Show();
-
-           
-        }  
+            sumValue.Text = calcSumOfTime().ToString();
+        }
         public Form1()
         {
             InitializeComponent();
@@ -400,7 +395,6 @@ namespace WindowsFormsApp2
             double result = tEnd - tStart;
             return result;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             currentAction = introTitle.Text;
@@ -505,8 +499,6 @@ namespace WindowsFormsApp2
             performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("customerService", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
         }
-
-
         private void button6_Click(object sender, EventArgs e)
         {
             performance = false;
@@ -623,12 +615,10 @@ namespace WindowsFormsApp2
             saveToDB("feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
             //createChart();
         }
-
         private void createChart()
         {
             throw new NotImplementedException();
         }
-
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult,string progressValue)
         {
             Console.WriteLine("zapis do DB");
@@ -724,6 +714,61 @@ namespace WindowsFormsApp2
                 conn.Close();
             }
             
+        }
+        private void introTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void safetyTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void customerServiceTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void performanceTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void peopleTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void projectsTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void priorityTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void visitsTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void feedbackTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private TimeSpan calcSumOfTime()
+        {
+            TimeSpan sumOftimeSet = introTimePicker.Value.TimeOfDay
+                .Add(safetyTimePicker.Value.TimeOfDay)
+                .Add(qualityTimePicker.Value.TimeOfDay)
+                .Add(customerServiceTimePicker.Value.TimeOfDay)
+                .Add(performanceTimePicker.Value.TimeOfDay)
+                .Add(peopleTimePicker.Value.TimeOfDay)
+                .Add(projectsTimePicker.Value.TimeOfDay)
+                .Add(priorityTimePicker.Value.TimeOfDay)
+                .Add(visitsTimePicker.Value.TimeOfDay)
+                .Add(feedbackTimePicker.Value.TimeOfDay)
+                ;
+            return sumOftimeSet;
         }
     }
 }
