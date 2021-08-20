@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.Windows.Forms.DataVisualization.Charting;
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
@@ -19,8 +19,298 @@ namespace WindowsFormsApp2
         {
             Form2 form2 = new Form2(this);
             form2.Show();
-            sumValue.Text = calcSumOfTime().ToString();
+            //sumValue.Text = calcSumOfTime().ToString();
+            //fillChart();
         }
+
+        private void fillChart()
+        {
+            // chart intro
+            double introResult1 = convertResult(introResult.Text);
+            chart1.Series["Series1"].Points.AddXY("Wstęp", introResult1);
+            chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() +" min";
+            int valueOfColor =  valueOfColorFN(introProgressValue.Text);          
+            
+            if (valueOfColor > 100)
+            {
+                chart1.Series["Series1"].Points[0].Color = Color.Red;
+            }
+            else
+            {
+                chart1.Series["Series1"].Points[0].Color = Color.LightGreen;
+            }
+
+            // chart safety
+            chart1.Series["Series1"].Points.AddXY("BHP", introResult1);
+            chart1.Series["Series1"].Points[1].Color = Color.White;
+
+            chart1.Series["Series1"].Points.AddXY("Jakość", introResult1);
+            chart1.Series["Series1"].Points[2].Color = Color.White;
+
+            chart1.Series["Series1"].Points.AddXY("Serwis", introResult1);
+            chart1.Series["Series1"].Points[3].Color = Color.White;
+
+            chart1.Series["Series1"].Points.AddXY("Efektywność", introResult1);
+            chart1.Series["Series1"].Points[4].Color = Color.White;
+
+            chart1.Series["Series1"].Points.AddXY("Eureka", introResult1);
+            chart1.Series["Series1"].Points[5].Color = Color.White;
+            chart1.Series["Series1"].Points.AddXY("Projekty", introResult1);
+            chart1.Series["Series1"].Points[6].Color = Color.White;
+            chart1.Series["Series1"].Points.AddXY("Priorytety", introResult1);
+            chart1.Series["Series1"].Points[7].Color = Color.White;
+            chart1.Series["Series1"].Points.AddXY("Wizyty", introResult1);
+            chart1.Series["Series1"].Points[8].Color = Color.White;
+            chart1.Series["Series1"].Points.AddXY("Feedback", introResult1);
+            chart1.Series["Series1"].Points[9].Color = Color.White;
+
+
+            // chart safety
+            double saferyResult1 = convertResult(safetyResult.Text);
+            chart1.Series["Series2"].Points.AddXY("Wstęp", saferyResult1);
+            chart1.Series["Series2"].Points[0].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("BHP", saferyResult1);
+            chart1.Series["Series2"].Points[1].Label = Math.Round(saferyResult1, 1).ToString() + " min";
+            valueOfColor = valueOfColorFN(safetyProgressValue.Text);
+
+            if (valueOfColor > 100)
+            {
+                chart1.Series["Series2"].Points[1].Color = Color.Red;
+            }
+            else
+            {
+                chart1.Series["Series2"].Points[1].Color = Color.LightGreen;
+            }
+
+
+            chart1.Series["Series2"].Points.AddXY("Jakość", saferyResult1);
+            chart1.Series["Series2"].Points[2].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Serwis", saferyResult1);
+            chart1.Series["Series2"].Points[3].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Efektywność", saferyResult1);
+            chart1.Series["Series2"].Points[4].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Eureka", saferyResult1);
+            chart1.Series["Series2"].Points[5].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Projekty", saferyResult1);
+            chart1.Series["Series2"].Points[6].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Priorytety", saferyResult1);
+            chart1.Series["Series2"].Points[7].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Wizyty", saferyResult1);
+            chart1.Series["Series2"].Points[8].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Feedback", saferyResult1);
+            chart1.Series["Series2"].Points[9].Color = Color.White;
+
+            // chart quality 
+            double qualityResult1 = convertResult(qualityResult.Text);
+            chart1.Series["Series3"].Points.AddXY("Wstęp", qualityResult1);
+            chart1.Series["Series3"].Points[0].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("BHP", qualityResult1);
+            chart1.Series["Series3"].Points[1].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Jakość", qualityResult1);
+            chart1.Series["Series3"].Points[2].Label = Math.Round(qualityResult1, 1).ToString() + " min";
+            valueOfColor = valueOfColorFN(qualityProgressValue.Text);
+
+            if (valueOfColor > 100)
+            {
+                chart1.Series["Series3"].Points[2].Color = Color.Red;
+            }
+            else
+            {
+                chart1.Series["Series3"].Points[2].Color = Color.LightGreen;
+            }
+
+            chart1.Series["Series3"].Points.AddXY("Serwis", qualityResult1);
+            chart1.Series["Series3"].Points[3].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Efektywność", qualityResult1);
+            chart1.Series["Series3"].Points[4].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Eureka", qualityResult1);
+            chart1.Series["Series3"].Points[5].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Projekty", qualityResult1);
+            chart1.Series["Series3"].Points[6].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Priorytety", qualityResult1);
+            chart1.Series["Series3"].Points[7].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Wizyty", qualityResult1);
+            chart1.Series["Series3"].Points[8].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Feedback", qualityResult1);
+            chart1.Series["Series3"].Points[9].Color = Color.White;
+
+            // chart servis
+            double customerServiceResult1 = convertResult(customerServiceResult.Text);
+            chart1.Series["Series4"].Points.AddXY("Wstęp", customerServiceResult1);
+            chart1.Series["Series4"].Points[0].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("BHP", customerServiceResult1);
+            chart1.Series["Series4"].Points[1].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Jakość", customerServiceResult1);
+            chart1.Series["Series4"].Points[2].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Serwis", customerServiceResult1);
+            chart1.Series["Series4"].Points[3].Label = Math.Round(customerServiceResult1, 1).ToString() + " min";
+            valueOfColor = valueOfColorFN(customerServiceProgressValue.Text);
+
+            if (valueOfColor > 100)
+            {
+                chart1.Series["Series4"].Points[3].Color = Color.Red;
+            }
+            else
+            {
+                chart1.Series["Series4"].Points[3].Color = Color.LightGreen;
+            }
+
+
+            chart1.Series["Series4"].Points.AddXY("Efektywność", customerServiceResult1);
+            chart1.Series["Series4"].Points[4].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Eureka", customerServiceResult1);
+            chart1.Series["Series4"].Points[5].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Projekty", customerServiceResult1);
+            chart1.Series["Series4"].Points[6].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Priorytety", customerServiceResult1);
+            chart1.Series["Series4"].Points[7].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Wizyty", customerServiceResult1);
+            chart1.Series["Series4"].Points[8].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Feedback", customerServiceResult1);
+            chart1.Series["Series4"].Points[9].Color = Color.White;
+
+            // chart efficiency
+            double performanceResult1 = convertResult(performanceResult.Text);
+            chart1.Series["Series5"].Points.AddXY("Wstęp", performanceResult1);
+            chart1.Series["Series5"].Points[0].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("BHP", performanceResult1);
+            chart1.Series["Series5"].Points[1].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Jakość", performanceResult1);
+            chart1.Series["Series5"].Points[2].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Serwis", performanceResult1);
+            chart1.Series["Series5"].Points[3].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Efektywność", performanceResult1);
+            chart1.Series["Series5"].Points[4].Label = Math.Round(performanceResult1, 1).ToString() + " min";
+            valueOfColor = valueOfColorFN(performanceProgressValue.Text);
+
+            if (valueOfColor > 100)
+            {
+                chart1.Series["Series5"].Points[4].Color = Color.Red;
+            }
+            else
+            {
+                chart1.Series["Series5"].Points[4].Color = Color.LightGreen;
+            }
+            chart1.Series["Series5"].Points.AddXY("Eureka", performanceResult1);
+            chart1.Series["Series5"].Points[5].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Projekty", performanceResult1);
+            chart1.Series["Series5"].Points[6].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Priorytety", performanceResult1);
+            chart1.Series["Series5"].Points[7].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Wizyty", performanceResult1);
+            chart1.Series["Series5"].Points[8].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Feedback", performanceResult1);
+            chart1.Series["Series5"].Points[9].Color = Color.White;
+
+            // chart efficiency
+            double peopleResult1 = convertResult(peopleResult.Text);
+            chart1.Series["Series6"].Points.AddXY("Wstęp", peopleResult1);
+            chart1.Series["Series6"].Points[0].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Jakość", "10");
+            // chart1.Series["Series1"].Points[2].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Serwis", "10");
+            // chart1.Series["Series1"].Points[3].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Efektywnoć", "10");
+            // chart1.Series["Series1"].Points[4].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Eureka", "10");
+            // chart1.Series["Series1"].Points[5].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Projekty", "10");
+            // chart1.Series["Series1"].Points[6].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Priorytety", "10");
+            // chart1.Series["Series1"].Points[7].Color = Color.White;
+
+            // chart1.Series["Series1"].Points.AddXY("Feedback", "10");
+            // chart1.Series["Series1"].Points[8].Color = Color.White;
+
+            //chart1.Series["Series2"].Points.AddXY("Wstęp", "0");            
+            //chart1.Series["Series2"].Points.AddXY("BHP", "10");
+            //chart1.Series["Series2"].Points.AddXY("Jakość", "10");
+            // chart1.Series["Series2"].Points[2].Color = Color.White;
+            // chart1.Series["Series2"].Points.AddXY("Serwis", "10");
+            // chart1.Series["Series2"].Points.AddXY("Efektywność", "10");
+            // chart1.Series["Series2"].Points.AddXY("Eureka", "10");
+
+            // chart1.Series["Series3"].Points.AddXY("Wstęp", "0");
+            // chart1.Series["Series3"].Points.AddXY("BHP", "10");
+            // chart1.Series["Series3"].Points.AddXY("Jakość", "10");
+            // chart1.Series["Series3"].Points.AddXY("Serwis", "10");
+            // chart1.Series["Series3"].Points.AddXY("Efektywność", "10");
+            // chart1.Series["Series3"].Points.AddXY("Eureka", "10");
+
+            // chart1.Series["Series4"].Points.AddXY("Wstęp", "0");
+            // chart1.Series["Series4"].Points.AddXY("BHP", "0");
+            // chart1.Series["Series4"].Points.AddXY("Jakość", "10");
+            // chart1.Series["Series4"].Points.AddXY("Serwis", "10");
+            // chart1.Series["Series4"].Points.AddXY("Efektywność", "10");
+            // chart1.Series["Series4"].Points.AddXY("Eureka", "10");
+            //chart title  
+            chart1.Titles.Add(dateTimePicker1.Value.ToString().Substring(0, 10));
+
+            // Data arrays.
+            //string[] seriesArray = { "Wstęp", "BHP", "Jakość", "Serwis", "Efektywnośc" , "Eureka", "Projekty", "Priorytety","Wizyty", "Feedback" };
+            //int[] pointsArray = {1,1,1,1,1,1,1,1,1,1 };
+            // Add series.
+
+            //Series series = this.chart1.Series.Add("Seria1");
+
+            // for (int i = 0; i < seriesArray.Length; i++)
+            //{
+            // Add point.
+            //series.Points.Add(pointsArray[i]);
+            //series.Points.AddXY(seriesArray[i], pointsArray[i]);
+
+            // Add series.
+            //Series series = this.chart1.Series.Add(seriesArray[i]);
+
+            // Add point.
+            //series.Points.Add(pointsArray[i]);
+            //series.Points. color = Color.Red;
+
+            // }
+        }
+
+        private int valueOfColorFN(string text )
+        {
+            char[] MyChar = { '%' };
+            string NewString = text.TrimEnd(MyChar);
+            Console.WriteLine(NewString);
+            return int.Parse(NewString);
+
+        }
+
+        // private string colorOfChartFN(string ProgressValue)
+        // {
+        // string ProgressValue.TrimEnd(ProgressValue);
+        //int color = int.Parse(ProgressValue);
+        //Console.WriteLine(color);
+
+        //if (color > 100)
+        //{
+        //    return "Red";
+        //}
+        //else
+        //{
+        //    return "Green";
+        //}
+        //}
+
+        private double convertResult(string text)
+        {
+            DateTime result = DateTime.Parse(text);
+            Console.WriteLine("result " + (float)result.Minute + (float)result.Second / 60);
+            Console.WriteLine("minute " + (int)result.Minute);
+            Console.WriteLine("second " + (int)result.Second);
+            float result2 = (int)result.Minute + ((float)result.Second / 60);
+            Console.WriteLine("min/60 " + result2);
+            return result2;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -32,356 +322,273 @@ namespace WindowsFormsApp2
             currentTime.Text = now.ToLongTimeString(); //bieżący czas
             if (intro)
             {
-                if (introProgressBar.Maximum == introProgressBar.Value)
+                double progressBarMaximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(introStart.Text, currentTime.Text);
+                introProgressBar.Maximum = (int)progressBarMaximum;
+                if (progressBarValue == 1)
                 {
-                    intro = false;
-                    introProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(introStart.Text, currentTime.Text);
-                    introProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        introProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int) ((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " +percentTNow);
-                        introProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = introProgressValue.Text;
-                        if (introProgressBar.Value > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
-                        if (introProgressBar.Value > redTriger) introProgressBar.ForeColor = Color.Red;
-                        result.isIntro = intro;
-                        result.setIntro = introTimePicker.ToString();
-                        result.startIntro = introStart.ToString();
-                        result.stopIntro = introEnd.ToString();
-                        result.resultIntro = introResult.ToString();
-                        result.intro = "intro";
-                    }
+                    if (introProgressBar.Value < introProgressBar.Maximum) introProgressBar.Value = (int) progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger =  progressBarMaximum;
+                    double percentTNow =  ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " +percentTNow);
+                    introProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = introProgressValue.Text;
+                    if (progressBarValue > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) introProgressBar.ForeColor = Color.Red;
+                    result.isIntro = intro;
+                    result.setIntro = introTimePicker.ToString();
+                    result.startIntro = introStart.ToString();
+                    result.stopIntro = introEnd.ToString();
+                    result.resultIntro = introResult.ToString();
+                    result.intro = "intro";
                 }
                 
             }
             if (safety)
             {
-                if (safetyProgressBar.Maximum == safetyProgressBar.Value)
+                double progressBarMaximum = maximumFN(safetyStart.Text, safetyTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(safetyStart.Text, currentTime.Text);
+                safetyProgressBar.Maximum = (int)progressBarMaximum;
+
+                if (progressBarValue == 1)
                 {
-                    safety = false;
-                    safetyProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(safetyStart.Text, safetyTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(safetyStart.Text, currentTime.Text);
-                    safetyProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        safetyProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        safetyProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = safetyProgressValue.Text;
-                        if (safetyProgressBar.Value > yellowTriger) safetyProgressBar.ForeColor = Color.Yellow;
-                        if (safetyProgressBar.Value > redTriger) safetyProgressBar.ForeColor = Color.Red;
-                    }
+                    if (safetyProgressBar.Value < safetyProgressBar.Maximum) safetyProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    safetyProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = safetyProgressValue.Text;
+                    if (progressBarValue > yellowTriger) safetyProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) safetyProgressBar.ForeColor = Color.Red;
                 }
             }
             if (quality)
             {
+                double progressBarMaximum = maximumFN(qualityStart.Text, qualityTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(qualityStart.Text, currentTime.Text);
+                qualityProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (qualityProgressBar.Maximum == qualityProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    quality = false;
-                    qualityProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(qualityStart.Text, qualityTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(qualityStart.Text, currentTime.Text);
-                    qualityProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        qualityProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        qualityProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = qualityProgressValue.Text;
-                        if (qualityProgressBar.Value > yellowTriger) qualityProgressBar.ForeColor = Color.Yellow;
-                        if (qualityProgressBar.Value > redTriger) qualityProgressBar.ForeColor = Color.Red;
-                    }
+                    if (qualityProgressBar.Value < qualityProgressBar.Maximum) qualityProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = (int)progressBarMaximum;
+                    double percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    qualityProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = qualityProgressValue.Text;
+                    if (progressBarValue > yellowTriger) qualityProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) qualityProgressBar.ForeColor = Color.Red;
                 }
+
             }
             if (customerService)
             {
+                double progressBarMaximum = maximumFN(customerServiceStart.Text, customerServiceTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(customerServiceStart.Text, currentTime.Text);
+                customerServiceProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (customerServiceProgressBar.Maximum == customerServiceProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    customerService = false;
-                    customerServiceProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(customerServiceStart.Text, customerServiceTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(customerServiceStart.Text, currentTime.Text);
-                    customerServiceProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        customerServiceProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        customerServiceProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = customerServiceProgressValue.Text;
-                        if (customerServiceProgressBar.Value > yellowTriger) customerServiceProgressBar.ForeColor = Color.Yellow;
-                        if (customerServiceProgressBar.Value > redTriger) customerServiceProgressBar.ForeColor = Color.Red;
-                    }
+                    if (customerServiceProgressBar.Value < customerServiceProgressBar.Maximum) customerServiceProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    customerServiceProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = customerServiceProgressValue.Text;
+                    if (progressBarValue > yellowTriger) customerServiceProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) customerServiceProgressBar.ForeColor = Color.Red;
                 }
+
             }
             if (performance)
             {
+                double progressBarMaximum = maximumFN(performanceStart.Text, performanceTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(performanceStart.Text, currentTime.Text);
+                performanceProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (performanceProgressBar.Maximum == performanceProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    performance = false;
-                    performanceProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(performanceStart.Text, performanceTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(performanceStart.Text, currentTime.Text);
-                    performanceProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        performanceProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        performanceProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = performanceProgressValue.Text;
-                        if (performanceProgressBar.Value > yellowTriger) performanceProgressBar.ForeColor = Color.Yellow;
-                        if (performanceProgressBar.Value > redTriger) performanceProgressBar.ForeColor = Color.Red;
-                    }
+                    if (performanceProgressBar.Value < performanceProgressBar.Maximum) performanceProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int)progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    performanceProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = performanceProgressValue.Text;
+                    if (progressBarValue > yellowTriger) performanceProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) performanceProgressBar.ForeColor = Color.Red;
                 }
+               
             }
             if (people)
             {
+                double progressBarMaximum = maximumFN(peopleStart.Text, peopleTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(peopleStart.Text, currentTime.Text);
+                peopleProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (peopleProgressBar.Maximum == peopleProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    people = false;
-                    peopleProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(peopleStart.Text, peopleTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(peopleStart.Text, currentTime.Text);
-                    peopleProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        peopleProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        peopleProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = peopleProgressValue.Text;
-                        if (peopleProgressBar.Value > yellowTriger) peopleProgressBar.ForeColor = Color.Yellow;
-                        if (peopleProgressBar.Value > redTriger) peopleProgressBar.ForeColor = Color.Red;
-                    }
+                    if (peopleProgressBar.Value < peopleProgressBar.Maximum) peopleProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = (int)progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    peopleProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = peopleProgressValue.Text;
+                    if (progressBarValue > yellowTriger) peopleProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) peopleProgressBar.ForeColor = Color.Red;
                 }
+               
             }
             if (projects)
             {
+                double progressBarMaximum = maximumFN(projectsStart.Text, projectsTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(projectsStart.Text, currentTime.Text);
+                projectsProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (projectsProgressBar.Maximum == projectsProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    projects = false;
-                    projectsProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(projectsStart.Text, projectsTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(projectsStart.Text, currentTime.Text);
-                    projectsProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        projectsProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        projectsProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = projectsProgressValue.Text;
-                        if (projectsProgressBar.Value > yellowTriger) projectsProgressBar.ForeColor = Color.Yellow;
-                        if (projectsProgressBar.Value > redTriger) projectsProgressBar.ForeColor = Color.Red;
-                    }
+                    if (projectsProgressBar.Value < projectsProgressBar.Maximum) projectsProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    projectsProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = projectsProgressValue.Text;
+                    if (progressBarValue > yellowTriger) projectsProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) projectsProgressBar.ForeColor = Color.Red;
                 }
             }
             if (priority)
             {
+                double progressBarMaximum = maximumFN(priorityStart.Text, priorityTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(priorityStart.Text, currentTime.Text);
+                priorityProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (priorityProgressBar.Maximum == priorityProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    priority = false;
-                    priorityProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(priorityStart.Text, priorityTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(priorityStart.Text, currentTime.Text);
-                    priorityProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        priorityProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        priorityProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = priorityProgressValue.Text;
-                        if (priorityProgressBar.Value > yellowTriger) priorityProgressBar.ForeColor = Color.Yellow;
-                        if (priorityProgressBar.Value > redTriger) priorityProgressBar.ForeColor = Color.Red;
-                    }
+                    if (priorityProgressBar.Value < priorityProgressBar.Maximum) priorityProgressBar.Value = (int)progressBarValue; 
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    priorityProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = priorityProgressValue.Text;
+                    if (progressBarValue > yellowTriger) priorityProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) priorityProgressBar.ForeColor = Color.Red;
                 }
             }
             if (visits)
             {
+                double progressBarMaximum = maximumFN(visitsStart.Text, visitsTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(visitsStart.Text, currentTime.Text);
+                visitsProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (visitsProgressBar.Maximum == visitsProgressBar.Value)
+                if (progressBarValue == 1)
                 {
-                    visits = false;
-                    visitsProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(visitsStart.Text, visitsTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(visitsStart.Text, currentTime.Text);
-                    visitsProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        visitsProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        visitsProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = visitsProgressValue.Text;
-                        if (visitsProgressBar.Value > yellowTriger) visitsProgressBar.ForeColor = Color.Yellow;
-                        if (visitsProgressBar.Value > redTriger) visitsProgressBar.ForeColor = Color.Red;
-                    }
+                    if (visitsProgressBar.Value < visitsProgressBar.Maximum) visitsProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    visitsProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = visitsProgressValue.Text;
+                    if (progressBarValue > yellowTriger) visitsProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) visitsProgressBar.ForeColor = Color.Red;
                 }
             }
             if (feedback)
             {
-                if (feedbackProgressBar.Maximum == feedbackProgressBar.Value)
+                double progressBarMaximum = maximumFN(feedbackStart.Text, feedbackTimePicker.Value.Ticks);
+                double progressBarValue = valueFN(feedbackStart.Text, currentTime.Text);
+                feedbackProgressBar.Maximum = (int)progressBarMaximum;
+
+                if (progressBarValue == 1)
                 {
-                    feedback = false;
-                    feedbackProgressBar.ForeColor = Color.Red;
+                    // obsługa błedu gdy wartośc zadana jest równa 0
                 }
                 else
                 {
-                    double progressBarMaximum = maximumFN(feedbackStart.Text, feedbackTimePicker.Value.Ticks);
-                    int progressBarValue = valueFN(feedbackStart.Text, currentTime.Text);
-                    feedbackProgressBar.Maximum = (int)progressBarMaximum;
-
-                    if (progressBarValue == 1)
-                    {
-                        // obsługa błedu gdy wartośc zadana jest równa 0
-                    }
-                    else
-                    {
-                        feedbackProgressBar.Value = progressBarValue;
-                        currentBar = progressBarValue;
-                        maxiBar = (int)progressBarMaximum;
-                        double yellowTriger = (progressBarMaximum * 0.8);
-                        int redTriger = (int)progressBarMaximum;
-                        int percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-                        Console.WriteLine("procentTNow " + percentTNow);
-                        feedbackProgressValue.Text = percentTNow.ToString("N0") + "%";
-                        procentBar = feedbackProgressValue.Text;
-                        if (feedbackProgressBar.Value > yellowTriger) feedbackProgressBar.ForeColor = Color.Yellow;
-                        if (feedbackProgressBar.Value > redTriger) feedbackProgressBar.ForeColor = Color.Red;
-                    }
+                    if (feedbackProgressBar.Value < feedbackProgressBar.Maximum) feedbackProgressBar.Value = (int)progressBarValue;
+                    currentBar = (int) progressBarValue;
+                    maxiBar = (int)progressBarMaximum;
+                    double yellowTriger = (progressBarMaximum * 0.8);
+                    double redTriger = progressBarMaximum;
+                    double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+                    Console.WriteLine("procentTNow " + percentTNow);
+                    feedbackProgressValue.Text = percentTNow.ToString("N0") + "%";
+                    procentBar = feedbackProgressValue.Text;
+                    if (progressBarValue > yellowTriger) feedbackProgressBar.ForeColor = Color.Yellow;
+                    if (progressBarValue > redTriger) feedbackProgressBar.ForeColor = Color.Red;
                 }
             }
         }
-        private int valueFN(string startTime, string currentTime)
+        private double valueFN(string startTime, string currentTime)
         {
             DateTime timeStart = DateTime.Parse(startTime);
             DateTime timeNow = DateTime.Parse(currentTime);
             double tStart = ConvertToUnixTimestamp(timeStart);
             double tNow = ConvertToUnixTimestamp(timeNow);
-            int result = (int)(tNow - tStart);
+            //int result = (int)(tNow - tStart);
+            double result = (tNow - tStart);
             return result;
         }
         private double maximumFN(string start, long ticks)
@@ -418,7 +625,6 @@ namespace WindowsFormsApp2
         }
         private void button2_Click(object sender, EventArgs e)
         { 
-
             intro = false;
             introEnd.Text = currentTime.Text; 
             DateTime timeStart = DateTime.Parse(introEnd.Text); 
@@ -431,6 +637,11 @@ namespace WindowsFormsApp2
             safetyResult.Text = "";
             DateTime timeStart1 = DateTime.Parse(currentTime.Text);
             safetyStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+            DateTime introTimeObjective = timeEnd.AddSeconds(introTimePicker.Value.TimeOfDay.Minutes * 60 + introTimePicker.Value.TimeOfDay.Seconds);
+
+            double result1 =calcOfSpentTime(timeEnd, timeStart, introTimeObjective);
+            Console.WriteLine("wynik " +  (result1));
+
             safety = true;
             safetyProgressBar.ForeColor = Color.LightGreen;
             safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -615,10 +826,6 @@ namespace WindowsFormsApp2
             saveToDB("feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
             //createChart();
         }
-        private void createChart()
-        {
-            throw new NotImplementedException();
-        }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult,string progressValue)
         {
             Console.WriteLine("zapis do DB");
@@ -678,8 +885,7 @@ namespace WindowsFormsApp2
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (tabControl1.SelectedTab == tabControl1.TabPages[3])// Historia
+            if (tabControl1.SelectedTab == tabControl1.TabPages[2])// Historia
             {
                 // db connection
                 string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
@@ -713,7 +919,10 @@ namespace WindowsFormsApp2
                 }
                 conn.Close();
             }
-            
+            if (tabControl1.SelectedTab == tabControl1.TabPages[1]) // wykres
+            {
+                fillChart();
+            }
         }
         private void introTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -723,6 +932,12 @@ namespace WindowsFormsApp2
         {
             sumValue.Text = calcSumOfTime().ToString();
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
@@ -769,6 +984,23 @@ namespace WindowsFormsApp2
                 .Add(feedbackTimePicker.Value.TimeOfDay)
                 ;
             return sumOftimeSet;
+        }
+        private double calcOfSpentTime(DateTime timeEnd, DateTime timeStart, DateTime introTimeObjective)
+        {
+            // real progress time calcul.
+            double Start = (timeEnd.TimeOfDay.TotalHours / timeEnd.TimeOfDay.Hours - 1);
+            double End = (timeStart.TimeOfDay.TotalHours / timeStart.TimeOfDay.Hours - 1);
+            double Objective = (introTimeObjective.TimeOfDay.TotalHours / introTimeObjective.TimeOfDay.Hours - 1);
+
+            Console.WriteLine("Start " + Start);
+            Console.WriteLine("End " + End);
+            Console.WriteLine("Obj " + Objective);
+            double result1 = (End / Objective) * 100;
+            return result1;
+        }
+        private void createChart()
+        {
+            throw new NotImplementedException();
         }
     }
 }
