@@ -43,6 +43,7 @@ namespace WindowsFormsApp2
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -312,7 +313,7 @@ namespace WindowsFormsApp2
             this.visitsTimePicker.ShowUpDown = true;
             this.visitsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.visitsTimePicker.TabIndex = 108;
-            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 2, 0, 0);
+            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             this.visitsTimePicker.ValueChanged += new System.EventHandler(this.visitsTimePicker_ValueChanged);
             // 
             // priorityTimePicker
@@ -390,7 +391,7 @@ namespace WindowsFormsApp2
             this.qualityTimePicker.ShowUpDown = true;
             this.qualityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.qualityTimePicker.TabIndex = 102;
-            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
+            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.qualityTimePicker.ValueChanged += new System.EventHandler(this.qualityTimePicker_ValueChanged);
             // 
             // safetyTimePicker
@@ -403,7 +404,7 @@ namespace WindowsFormsApp2
             this.safetyTimePicker.ShowUpDown = true;
             this.safetyTimePicker.Size = new System.Drawing.Size(90, 29);
             this.safetyTimePicker.TabIndex = 101;
-            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
+            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.safetyTimePicker.ValueChanged += new System.EventHandler(this.safetyTimePicker_ValueChanged);
             // 
             // introTimePicker
@@ -1123,7 +1124,6 @@ namespace WindowsFormsApp2
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Wykresy";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // chart1
             // 
@@ -1242,10 +1242,10 @@ namespace WindowsFormsApp2
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(937, 442);
             this.dataGridView1.TabIndex = 0;
             // 
             // Form1
@@ -1254,6 +1254,7 @@ namespace WindowsFormsApp2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 634);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Time keeper support for SIM5 time management";
             this.Load += new System.EventHandler(this.Form1_Load);

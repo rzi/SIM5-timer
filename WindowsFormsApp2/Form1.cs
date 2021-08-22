@@ -13,12 +13,11 @@ namespace WindowsFormsApp2
         public bool intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
         public string currentAction, procentBar;
         public int currentBar, maxiBar;
-
         Result result = new Result();
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Form2 form2 = new Form2(this);
-            //form2.Show();
+            Form2 form2 = new Form2(this);
+            form2.Show();
             sumValue.Text = calcSumOfTime().ToString();
         }
         private void fillChart()
@@ -27,11 +26,9 @@ namespace WindowsFormsApp2
             // chart intro
             double introResult1 = convertResult(introResult.Text);
             meetingTime = meetingTime + introResult1;
-//            introResult1=10.91;
             chart1.Series["Series1"].Points.AddXY("Wstęp", introResult1);
             chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() +" min";
             int valueOfColor =  valueOfColorFN(introProgressValue.Text);
-           // int valueOfColor = 1000;
             if (valueOfColor > 100)
             {
                 chart1.Series["Series1"].Points[0].Color = Color.Red;
@@ -60,7 +57,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series1"].Points[9].Color = Color.White;
             chart1.Series["Series1"].Points.AddXY("Suma", introResult1);
             chart1.Series["Series1"].Points[10].Color = Color.White;
-
 
             // chart safety
             double saferyResult1 = convertResult(safetyResult.Text);
@@ -107,7 +103,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series3"].Points.AddXY("Jakość", qualityResult1);
             chart1.Series["Series3"].Points[2].Label = Math.Round(qualityResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(qualityProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series3"].Points[2].Color = Color.Red;
@@ -116,7 +111,6 @@ namespace WindowsFormsApp2
             {
                 chart1.Series["Series3"].Points[2].Color = Color.LightGreen;
             }
-
             chart1.Series["Series3"].Points.AddXY("Serwis", qualityResult1);
             chart1.Series["Series3"].Points[3].Color = Color.White;
             chart1.Series["Series3"].Points.AddXY("Efektywność", qualityResult1);
@@ -134,7 +128,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series3"].Points.AddXY("Suma", qualityResult1);
             chart1.Series["Series3"].Points[10].Color = Color.White;
 
-
             // chart servis
             double customerServiceResult1 = convertResult(customerServiceResult.Text);
             meetingTime = meetingTime + customerServiceResult1;
@@ -147,7 +140,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series4"].Points.AddXY("Serwis", customerServiceResult1);
             chart1.Series["Series4"].Points[3].Label = Math.Round(customerServiceResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(customerServiceProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series4"].Points[3].Color = Color.Red;
@@ -156,8 +148,6 @@ namespace WindowsFormsApp2
             {
                 chart1.Series["Series4"].Points[3].Color = Color.LightGreen;
             }
-
-
             chart1.Series["Series4"].Points.AddXY("Efektywność", customerServiceResult1);
             chart1.Series["Series4"].Points[4].Color = Color.White;
             chart1.Series["Series4"].Points.AddXY("Eureka", customerServiceResult1);
@@ -176,7 +166,6 @@ namespace WindowsFormsApp2
             // chart efficiency
             double performanceResult1 = convertResult(performanceResult.Text);
             meetingTime = meetingTime + performanceResult1;
-            Console.WriteLine("performanceResult1 " + performanceResult1);
             chart1.Series["Series5"].Points.AddXY("Wstęp", performanceResult1);
             chart1.Series["Series5"].Points[0].Color = Color.White;
             chart1.Series["Series5"].Points.AddXY("BHP", performanceResult1);
@@ -188,7 +177,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series5"].Points.AddXY("Efektywność", performanceResult1);
             chart1.Series["Series5"].Points[4].Label = Math.Round(performanceResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(performanceProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series5"].Points[4].Color = Color.Red;
@@ -226,7 +214,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series6"].Points.AddXY("Eureka", peopleResult1);
             chart1.Series["Series6"].Points[5].Label = Math.Round(peopleResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(peopleProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series6"].Points[5].Color = Color.Red;
@@ -264,7 +251,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series7"].Points.AddXY("Projekty", projectsResult1);
             chart1.Series["Series7"].Points[6].Label = Math.Round(projectsResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(projectsProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series7"].Points[6].Color = Color.Red;
@@ -302,7 +288,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series8"].Points.AddXY("Priorytety", priorityResult1);;
             chart1.Series["Series8"].Points[7].Label = Math.Round(priorityResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(priorityProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series8"].Points[7].Color = Color.Red;
@@ -317,7 +302,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series8"].Points[9].Color = Color.White;
             chart1.Series["Series8"].Points.AddXY("Suma", priorityResult1);
             chart1.Series["Series8"].Points[10].Color = Color.White;
-
 
             // chart visits
             double visitsResult1 = convertResult(visitsResult.Text);
@@ -341,7 +325,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series9"].Points.AddXY("Wizyty", visitsResult1);
             chart1.Series["Series9"].Points[8].Label = Math.Round(visitsResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(visitsProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series9"].Points[8].Color = Color.Red;
@@ -379,7 +362,6 @@ namespace WindowsFormsApp2
             chart1.Series["Series10"].Points.AddXY("Feedback", feedbackResult1);
             chart1.Series["Series10"].Points[9].Label = Math.Round(feedbackResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(feedbackProgressValue.Text);
-
             if (valueOfColor > 100)
             {
                 chart1.Series["Series10"].Points[9].Color = Color.Red;
@@ -421,7 +403,6 @@ namespace WindowsFormsApp2
             double sumOfSetTimeMinute = sumOfSetTime.Minutes + (sumOfSetTime.Seconds / 60);
             Console.WriteLine("sumInMinute " + sumOfSetTimeMinute);
             Console.WriteLine("meetingTime " + meetingTime);
-
             if (meetingTime > sumOfSetTimeMinute)
             {
                 chart1.Series["Series11"].Points[10].Color = Color.Red;
@@ -434,7 +415,6 @@ namespace WindowsFormsApp2
             chart1.ChartAreas[0].AxisY.Maximum = meetingTime;
             chart1.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9, System.Drawing.FontStyle.Bold);
             chart1.Invalidate();
-            //Microsoft Sans Serif; 14,25pt
            
             //chart title  
             chart1.Titles.Add(
@@ -796,7 +776,7 @@ namespace WindowsFormsApp2
             safety = true;
             safetyProgressBar.ForeColor = Color.LightGreen;
             safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("intro" , introTimePicker.Value.ToString(),introStart.Text,introEnd.Text,introResult.Text,introProgressValue.Text );
+            saveToDB("Wstęp" , introTimePicker.Value.ToString(),introStart.Text,introEnd.Text,introResult.Text,introProgressValue.Text );
         }
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -817,7 +797,7 @@ namespace WindowsFormsApp2
             quality = true;
             qualityProgressBar.ForeColor = Color.LightGreen;
             qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("safety", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
+            saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -838,7 +818,7 @@ namespace WindowsFormsApp2
             customerService = true;
             customerServiceProgressBar.ForeColor = Color.LightGreen;
             customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("quality", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
+            saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -859,7 +839,7 @@ namespace WindowsFormsApp2
             performance = true;
             performanceProgressBar.ForeColor = Color.LightGreen;
             performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("customerService", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
+            saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -880,7 +860,7 @@ namespace WindowsFormsApp2
             people = true;
             peopleProgressBar.ForeColor = Color.LightGreen;
             peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("performance", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
+            saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -901,7 +881,7 @@ namespace WindowsFormsApp2
             projects = true;
             projectsProgressBar.ForeColor = Color.LightGreen;
             projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("people", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
+            saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -922,7 +902,7 @@ namespace WindowsFormsApp2
             priority = true;
             priorityProgressBar.ForeColor = Color.LightGreen;
             priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("projects", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
+            saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -943,7 +923,7 @@ namespace WindowsFormsApp2
             visits = true;
             visitsProgressBar.ForeColor = Color.LightGreen;
             visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("priority", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
+            saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
         }
         private void button10_Click(object sender, EventArgs e)
         {
@@ -964,7 +944,7 @@ namespace WindowsFormsApp2
             feedback = true;
             feedbackProgressBar.ForeColor = Color.LightGreen;
             feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("visits", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
+            saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
         }
         private void button11_Click(object sender, EventArgs e)
         {
@@ -974,8 +954,9 @@ namespace WindowsFormsApp2
             DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
             TimeSpan diff1 = timeStart.Subtract(timeEnd);
             feedbackResult.Text = diff1.ToString();
-            saveToDB("feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
+            saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
             fillChart();
+            
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult,string progressValue)
         {
@@ -1021,6 +1002,9 @@ namespace WindowsFormsApp2
             // czyszczenie restart app
             Application.Restart();
             Process.GetCurrentProcess().Kill();
+            this.Visible = true;
+
+
         }
         public static double ConvertToUnixTimestamp(DateTime date)
         {
@@ -1037,6 +1021,7 @@ namespace WindowsFormsApp2
         {
             if (tabControl1.SelectedTab == tabControl1.TabPages[2])// Historia
             {
+
                 // db connection
                 string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
                 MySqlConnection conn = new MySqlConnection(connectionstring);
@@ -1062,6 +1047,8 @@ namespace WindowsFormsApp2
                     bSource.DataSource = dTable;
 
                     dataGridView1.DataSource = bSource;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
                 catch (Exception ex)
                 {
@@ -1081,10 +1068,6 @@ namespace WindowsFormsApp2
         private void safetyTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
         private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -1146,9 +1129,6 @@ namespace WindowsFormsApp2
             double result1 = (End / Objective) * 100;
             return result1;
         }
-        private void createChart()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
