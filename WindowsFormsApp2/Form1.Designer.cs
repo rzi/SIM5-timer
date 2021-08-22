@@ -42,6 +42,7 @@ namespace WindowsFormsApp2
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -1126,22 +1127,23 @@ namespace WindowsFormsApp2
             // 
             // chart1
             // 
+            chartArea1.AxisX.Interval = 1D;
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MaximumAutoSize = 90F;
             chartArea1.AxisX.ScaleBreakStyle.Spacing = 1D;
-            chartArea1.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated90;
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelAutoFitMaxFontSize = 14;
             chartArea1.AxisY.MajorGrid.Enabled = false;
             chartArea1.AxisY.Title = "Czas [mn]";
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Enabled = false;
             legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(23, 38);
+            this.chart1.Location = new System.Drawing.Point(3, 38);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -1204,6 +1206,11 @@ namespace WindowsFormsApp2
             series10.Legend = "Legend1";
             series10.Name = "Series10";
             series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series11.ChartArea = "ChartArea1";
+            series11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series11.Legend = "Legend1";
+            series11.Name = "Series11";
+            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
@@ -1214,7 +1221,8 @@ namespace WindowsFormsApp2
             this.chart1.Series.Add(series8);
             this.chart1.Series.Add(series9);
             this.chart1.Series.Add(series10);
-            this.chart1.Size = new System.Drawing.Size(953, 472);
+            this.chart1.Series.Add(series11);
+            this.chart1.Size = new System.Drawing.Size(987, 472);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -1244,7 +1252,7 @@ namespace WindowsFormsApp2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 634);
+            this.ClientSize = new System.Drawing.Size(1028, 634);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Time keeper support for SIM5 time management";

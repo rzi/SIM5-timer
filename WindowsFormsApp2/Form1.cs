@@ -17,17 +17,21 @@ namespace WindowsFormsApp2
         Result result = new Result();
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(this);
-            form2.Show();
+            //Form2 form2 = new Form2(this);
+            //form2.Show();
+            sumValue.Text = calcSumOfTime().ToString();
         }
-
         private void fillChart()
         {
+            double meetingTime =0;
             // chart intro
             double introResult1 = convertResult(introResult.Text);
+            meetingTime = meetingTime + introResult1;
+//            introResult1=10.91;
             chart1.Series["Series1"].Points.AddXY("Wstęp", introResult1);
             chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() +" min";
-            int valueOfColor =  valueOfColorFN(introProgressValue.Text);                  
+            int valueOfColor =  valueOfColorFN(introProgressValue.Text);
+           // int valueOfColor = 1000;
             if (valueOfColor > 100)
             {
                 chart1.Series["Series1"].Points[0].Color = Color.Red;
@@ -54,9 +58,13 @@ namespace WindowsFormsApp2
             chart1.Series["Series1"].Points[8].Color = Color.White;
             chart1.Series["Series1"].Points.AddXY("Feedback", introResult1);
             chart1.Series["Series1"].Points[9].Color = Color.White;
+            chart1.Series["Series1"].Points.AddXY("Suma", introResult1);
+            chart1.Series["Series1"].Points[10].Color = Color.White;
+
 
             // chart safety
             double saferyResult1 = convertResult(safetyResult.Text);
+            meetingTime = meetingTime + saferyResult1;
             chart1.Series["Series2"].Points.AddXY("Wstęp", saferyResult1);
             chart1.Series["Series2"].Points[0].Color = Color.White;
             chart1.Series["Series2"].Points.AddXY("BHP", saferyResult1);
@@ -86,9 +94,12 @@ namespace WindowsFormsApp2
             chart1.Series["Series2"].Points[8].Color = Color.White;
             chart1.Series["Series2"].Points.AddXY("Feedback", saferyResult1);
             chart1.Series["Series2"].Points[9].Color = Color.White;
+            chart1.Series["Series2"].Points.AddXY("Suma", saferyResult1);
+            chart1.Series["Series2"].Points[10].Color = Color.White;
 
             // chart quality 
             double qualityResult1 = convertResult(qualityResult.Text);
+            meetingTime = meetingTime + qualityResult1;
             chart1.Series["Series3"].Points.AddXY("Wstęp", qualityResult1);
             chart1.Series["Series3"].Points[0].Color = Color.White;
             chart1.Series["Series3"].Points.AddXY("BHP", qualityResult1);
@@ -120,9 +131,13 @@ namespace WindowsFormsApp2
             chart1.Series["Series3"].Points[8].Color = Color.White;
             chart1.Series["Series3"].Points.AddXY("Feedback", qualityResult1);
             chart1.Series["Series3"].Points[9].Color = Color.White;
+            chart1.Series["Series3"].Points.AddXY("Suma", qualityResult1);
+            chart1.Series["Series3"].Points[10].Color = Color.White;
+
 
             // chart servis
             double customerServiceResult1 = convertResult(customerServiceResult.Text);
+            meetingTime = meetingTime + customerServiceResult1;
             chart1.Series["Series4"].Points.AddXY("Wstęp", customerServiceResult1);
             chart1.Series["Series4"].Points[0].Color = Color.White;
             chart1.Series["Series4"].Points.AddXY("BHP", customerServiceResult1);
@@ -155,9 +170,12 @@ namespace WindowsFormsApp2
             chart1.Series["Series4"].Points[8].Color = Color.White;
             chart1.Series["Series4"].Points.AddXY("Feedback", customerServiceResult1);
             chart1.Series["Series4"].Points[9].Color = Color.White;
+            chart1.Series["Series4"].Points.AddXY("Suma", customerServiceResult1);
+            chart1.Series["Series4"].Points[10].Color = Color.White;
 
             // chart efficiency
             double performanceResult1 = convertResult(performanceResult.Text);
+            meetingTime = meetingTime + performanceResult1;
             Console.WriteLine("performanceResult1 " + performanceResult1);
             chart1.Series["Series5"].Points.AddXY("Wstęp", performanceResult1);
             chart1.Series["Series5"].Points[0].Color = Color.White;
@@ -189,9 +207,12 @@ namespace WindowsFormsApp2
             chart1.Series["Series5"].Points[8].Color = Color.White;
             chart1.Series["Series5"].Points.AddXY("Feedback", performanceResult1);
             chart1.Series["Series5"].Points[9].Color = Color.White;
+            chart1.Series["Series5"].Points.AddXY("Suma", performanceResult1);
+            chart1.Series["Series5"].Points[10].Color = Color.White;
 
             // chart people
             double peopleResult1 = convertResult(peopleResult.Text);
+            meetingTime = meetingTime + peopleResult1;
             chart1.Series["Series6"].Points.AddXY("Wstęp", peopleResult1);
             chart1.Series["Series6"].Points[0].Color = Color.White;
             chart1.Series["Series6"].Points.AddXY("BHP", peopleResult1);
@@ -222,9 +243,12 @@ namespace WindowsFormsApp2
             chart1.Series["Series6"].Points[8].Color = Color.White;
             chart1.Series["Series6"].Points.AddXY("Feedback", peopleResult1);
             chart1.Series["Series6"].Points[9].Color = Color.White;
+            chart1.Series["Series6"].Points.AddXY("Suma", peopleResult1);
+            chart1.Series["Series6"].Points[10].Color = Color.White;
 
             // chart projects
             double projectsResult1 = convertResult(projectsResult.Text);
+            meetingTime = meetingTime + projectsResult1;
             chart1.Series["Series7"].Points.AddXY("Wstęp", projectsResult1);
             chart1.Series["Series7"].Points[0].Color = Color.White;
             chart1.Series["Series7"].Points.AddXY("BHP", projectsResult1);
@@ -255,9 +279,12 @@ namespace WindowsFormsApp2
             chart1.Series["Series7"].Points[8].Color = Color.White;
             chart1.Series["Series7"].Points.AddXY("Feedback", projectsResult1);
             chart1.Series["Series7"].Points[9].Color = Color.White;
+            chart1.Series["Series7"].Points.AddXY("Suma", projectsResult1);
+            chart1.Series["Series7"].Points[10].Color = Color.White;
 
             // chart priority
             double priorityResult1 = convertResult(priorityResult.Text);
+            meetingTime = meetingTime + priorityResult1;
             chart1.Series["Series8"].Points.AddXY("Wstęp", priorityResult1);
             chart1.Series["Series8"].Points[0].Color = Color.White;
             chart1.Series["Series8"].Points.AddXY("BHP", priorityResult1);
@@ -288,10 +315,13 @@ namespace WindowsFormsApp2
             chart1.Series["Series8"].Points[8].Color = Color.White;
             chart1.Series["Series8"].Points.AddXY("Feedback", priorityResult1);
             chart1.Series["Series8"].Points[9].Color = Color.White;
-              
+            chart1.Series["Series8"].Points.AddXY("Suma", priorityResult1);
+            chart1.Series["Series8"].Points[10].Color = Color.White;
+
 
             // chart visits
             double visitsResult1 = convertResult(visitsResult.Text);
+            meetingTime = meetingTime + visitsResult1;
             chart1.Series["Series9"].Points.AddXY("Wstp", visitsResult1);
             chart1.Series["Series9"].Points[0].Color = Color.White;
             chart1.Series["Series9"].Points.AddXY("BHP", visitsResult1);
@@ -322,9 +352,12 @@ namespace WindowsFormsApp2
             }
             chart1.Series["Series9"].Points.AddXY("feedback", visitsResult1);
             chart1.Series["Series9"].Points[9].Color = Color.White;
+            chart1.Series["Series9"].Points.AddXY("Suma", visitsResult1);
+            chart1.Series["Series9"].Points[10].Color = Color.White;
 
             // chart feedback
             double feedbackResult1 = convertResult(feedbackResult.Text);
+            meetingTime = meetingTime + feedbackResult1;
             chart1.Series["Series10"].Points.AddXY("Wstp", feedbackResult1);
             chart1.Series["Series10"].Points[0].Color = Color.White;
             chart1.Series["Series10"].Points.AddXY("BHP", feedbackResult1);
@@ -343,7 +376,7 @@ namespace WindowsFormsApp2
             chart1.Series["Series10"].Points[7].Color = Color.White;
             chart1.Series["Series10"].Points.AddXY("Wizyty", feedbackResult1);
             chart1.Series["Series10"].Points[8].Color = Color.White;
-            chart1.Series["Series10"].Points.AddXY("Feedback", visitsResult1);
+            chart1.Series["Series10"].Points.AddXY("Feedback", feedbackResult1);
             chart1.Series["Series10"].Points[9].Label = Math.Round(feedbackResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(feedbackProgressValue.Text);
 
@@ -355,7 +388,54 @@ namespace WindowsFormsApp2
             {
                 chart1.Series["Series10"].Points[9].Color = Color.LightGreen;
             }
+            chart1.Series["Series10"].Points.AddXY("Suma", feedbackResult1);
+            chart1.Series["Series10"].Points[10].Color = Color.White;
 
+            // suma
+            chart1.Series["Series11"].Points.AddXY("Wstp", "0");
+            chart1.Series["Series11"].Points[0].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("BHP", "0");
+            chart1.Series["Series11"].Points[1].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Jakość", "1");
+            chart1.Series["Series11"].Points[2].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Serwis", "0");
+            chart1.Series["Series11"].Points[3].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Efektywność", "0");
+            chart1.Series["Series11"].Points[4].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Eureka", "0");
+            chart1.Series["Series11"].Points[5].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Projekty", "0");
+            chart1.Series["Series11"].Points[6].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Priorytety", "0");
+            chart1.Series["Series11"].Points[7].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Wizyty", "0");
+            chart1.Series["Series11"].Points[8].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Feedback", "0");
+            chart1.Series["Series11"].Points[9].Color = Color.Transparent;
+            chart1.Series["Series11"].Points.AddXY("Suma", "0");
+            chart1.Series["Series11"].Points[10].Color = Color.Transparent;
+            chart1.Series["Series11"].Points[10].Label = Math.Round(meetingTime, 1).ToString() + " \nmin";
+
+            TimeSpan sumOfSetTime = calcSumOfTime();
+            Console.WriteLine("sumOfSetTime " + sumOfSetTime);
+            double sumOfSetTimeMinute = sumOfSetTime.Minutes + (sumOfSetTime.Seconds / 60);
+            Console.WriteLine("sumInMinute " + sumOfSetTimeMinute);
+            Console.WriteLine("meetingTime " + meetingTime);
+
+            if (meetingTime > sumOfSetTimeMinute)
+            {
+                chart1.Series["Series11"].Points[10].Color = Color.Red;
+            }
+            else
+            {
+                chart1.Series["Series11"].Points[10].Color = Color.LightGreen;
+            }
+            chart1.Series["Series11"].Points[10].YValues[0] = meetingTime;
+            chart1.ChartAreas[0].AxisY.Maximum = meetingTime;
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9, System.Drawing.FontStyle.Bold);
+            chart1.Invalidate();
+            //Microsoft Sans Serif; 14,25pt
+           
             //chart title  
             chart1.Titles.Add(
              new Title(
@@ -366,7 +446,6 @@ namespace WindowsFormsApp2
                 )
             );
         }
-
         private int valueOfColorFN(string text )
         {
             char[] MyChar = { '%' };
@@ -374,7 +453,6 @@ namespace WindowsFormsApp2
             Console.WriteLine("valueOfColor: "+ NewString);
             return int.Parse(NewString);
         }
-
         private double convertResult(string text)
         {
             DateTime result = DateTime.Parse(text);
@@ -384,7 +462,6 @@ namespace WindowsFormsApp2
             Console.WriteLine("min/60 " + result2);
             return result2;
         }
-
         public Form1()
         {
             InitializeComponent();
@@ -1005,12 +1082,10 @@ namespace WindowsFormsApp2
         {
             sumValue.Text = calcSumOfTime().ToString();
         }
-
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
