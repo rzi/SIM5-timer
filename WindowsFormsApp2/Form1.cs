@@ -835,72 +835,100 @@ namespace WindowsFormsApp2
         }
         private void button2_Click(object sender, EventArgs e)
         { 
-            intro = false;
-            introEnd.Text = currentTime.Text; 
-            DateTime timeStart = DateTime.Parse(introEnd.Text); 
-            DateTime timeEnd = DateTime.Parse(introStart.Text); 
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            introResult.Text = diff1.ToString();
-            currentAction = safetyTitle.Text;
-            safetyStart.Text = "";
-            safetyEnd.Text = "";
-            safetyResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            safetyStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            DateTime introTimeObjective = timeEnd.AddSeconds(introTimePicker.Value.TimeOfDay.Minutes * 60 + introTimePicker.Value.TimeOfDay.Seconds);
+            if (intro)
+            {
+                intro = false;
+                introEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(introEnd.Text);
+                DateTime timeEnd = DateTime.Parse(introStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                introResult.Text = diff1.ToString();
+                currentAction = safetyTitle.Text;
+                safetyStart.Text = "";
+                safetyEnd.Text = "";
+                safetyResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                safetyStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                DateTime introTimeObjective = timeEnd.AddSeconds(introTimePicker.Value.TimeOfDay.Minutes * 60 + introTimePicker.Value.TimeOfDay.Seconds);
 
-            double result1 =calcOfSpentTime(timeEnd, timeStart, introTimeObjective);
-            Console.WriteLine("wynik " +  (result1));
+                double result1 = calcOfSpentTime(timeEnd, timeStart, introTimeObjective);
+                Console.WriteLine("wynik " + (result1));
 
-            safety = true;
-            safetyProgressBar.ForeColor = Color.LightGreen;
-            safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Wstęp" , introTimePicker.Value.ToString(),introStart.Text,introEnd.Text,introResult.Text,introProgressValue.Text );
+                safety = true;
+                safetyProgressBar.ForeColor = Color.LightGreen;
+                safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Wstęp", introTimePicker.Value.ToString(), introStart.Text, introEnd.Text, introResult.Text, introProgressValue.Text);
+
+            } else
+            {
+                wrongSequenceWarning();
+            }
+
         }
+
+
+        private void wrongSequenceWarning()
+        {
+            MessageBox.Show( "Zła sekwencja", "Uwaga!");
+        }
+
         private void Button3_Click(object sender, EventArgs e)
         {
-            safety = false;
-            safetyEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(safetyEnd.Text);
-            DateTime timeEnd = DateTime.Parse(safetyStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            safetyResult.Text = diff1.ToString();
+            if (safety)
+            { 
+                safety = false;
+                safetyEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(safetyEnd.Text);
+                DateTime timeEnd = DateTime.Parse(safetyStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                safetyResult.Text = diff1.ToString();
 
-            currentAction = qualityTitle.Text;
+                currentAction = qualityTitle.Text;
 
-            qualityStart.Text = "";
-            qualityEnd.Text = "";
-            qualityResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            qualityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            quality = true;
-            qualityProgressBar.ForeColor = Color.LightGreen;
-            qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
+                qualityStart.Text = "";
+                qualityEnd.Text = "";
+                qualityResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                qualityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                quality = true;
+                qualityProgressBar.ForeColor = Color.LightGreen;
+                qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
+            } else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            quality = false;
-            qualityEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(qualityEnd.Text);
-            DateTime timeEnd = DateTime.Parse(qualityStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            qualityResult.Text = diff1.ToString();
+            if (quality) { 
+                quality = false;
+                qualityEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(qualityEnd.Text);
+                DateTime timeEnd = DateTime.Parse(qualityStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                qualityResult.Text = diff1.ToString();
 
-            currentAction = customerServiceTitle.Text;
+                currentAction = customerServiceTitle.Text;
 
-            customerServiceStart.Text = "";
-            customerServiceEnd.Text = "";
-            customerServiceResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            customerServiceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            customerService = true;
-            customerServiceProgressBar.ForeColor = Color.LightGreen;
-            customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
-        }
+                customerServiceStart.Text = "";
+                customerServiceEnd.Text = "";
+                customerServiceResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                customerServiceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                customerService = true;
+                customerServiceProgressBar.ForeColor = Color.LightGreen;
+                customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
+            } 
+        else
+            {
+                wrongSequenceWarning();
+            }
+}
         private void button5_Click(object sender, EventArgs e)
         {
+            if (customerService) { 
             customerService = false;
             customerServiceEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(customerServiceEnd.Text);
@@ -919,9 +947,16 @@ namespace WindowsFormsApp2
             performanceProgressBar.ForeColor = Color.LightGreen;
             performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
-        }
+
+        } 
+        else
+            {
+                wrongSequenceWarning();
+    }
+}
         private void button6_Click(object sender, EventArgs e)
         {
+            if (performance) { 
             performance = false;
             performanceEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(performanceEnd.Text);
@@ -940,9 +975,15 @@ namespace WindowsFormsApp2
             peopleProgressBar.ForeColor = Color.LightGreen;
             peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void button7_Click(object sender, EventArgs e)
         {
+            if (people) { 
             people = false;
             peopleEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(peopleEnd.Text);
@@ -961,9 +1002,15 @@ namespace WindowsFormsApp2
             projectsProgressBar.ForeColor = Color.LightGreen;
             projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void button8_Click(object sender, EventArgs e)
         {
+            if (projects) { 
             projects = false;
             projectsEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(projectsEnd.Text);
@@ -982,9 +1029,15 @@ namespace WindowsFormsApp2
             priorityProgressBar.ForeColor = Color.LightGreen;
             priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void button9_Click(object sender, EventArgs e)
         {
+            if (priority) { 
             priority = false;
             priorityEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(priorityEnd.Text);
@@ -1003,9 +1056,15 @@ namespace WindowsFormsApp2
             visitsProgressBar.ForeColor = Color.LightGreen;
             visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void button10_Click(object sender, EventArgs e)
         {
+            if (visits) { 
             visits = false;
             visitsEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(visitsEnd.Text);
@@ -1024,9 +1083,15 @@ namespace WindowsFormsApp2
             feedbackProgressBar.ForeColor = Color.LightGreen;
             feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void button11_Click(object sender, EventArgs e)
         {
+            if (feedback) { 
             feedback = false;
             feedbackEnd.Text = currentTime.Text;
             DateTime timeStart = DateTime.Parse(feedbackEnd.Text);
@@ -1035,6 +1100,11 @@ namespace WindowsFormsApp2
             feedbackResult.Text = diff1.ToString();
             saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
             fillChart();
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult,string progressValue)
         {
