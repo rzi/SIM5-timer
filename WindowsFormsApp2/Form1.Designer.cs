@@ -298,7 +298,7 @@ namespace WindowsFormsApp2
             this.feedbackTimePicker.ShowUpDown = true;
             this.feedbackTimePicker.Size = new System.Drawing.Size(90, 29);
             this.feedbackTimePicker.TabIndex = 109;
-            this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
+            this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.feedbackTimePicker.ValueChanged += new System.EventHandler(this.feedbackTimePicker_ValueChanged);
             // 
             // visitsTimePicker
@@ -311,7 +311,7 @@ namespace WindowsFormsApp2
             this.visitsTimePicker.ShowUpDown = true;
             this.visitsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.visitsTimePicker.TabIndex = 108;
-            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
+            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.visitsTimePicker.ValueChanged += new System.EventHandler(this.visitsTimePicker_ValueChanged);
             // 
             // priorityTimePicker
@@ -324,7 +324,7 @@ namespace WindowsFormsApp2
             this.priorityTimePicker.ShowUpDown = true;
             this.priorityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.priorityTimePicker.TabIndex = 107;
-            this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.priorityTimePicker.ValueChanged += new System.EventHandler(this.priorityTimePicker_ValueChanged);
             // 
             // projectsTimePicker
@@ -337,7 +337,7 @@ namespace WindowsFormsApp2
             this.projectsTimePicker.ShowUpDown = true;
             this.projectsTimePicker.Size = new System.Drawing.Size(90, 29);
             this.projectsTimePicker.TabIndex = 106;
-            this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.projectsTimePicker.ValueChanged += new System.EventHandler(this.projectsTimePicker_ValueChanged);
             // 
             // peopleTimePicker
@@ -350,7 +350,7 @@ namespace WindowsFormsApp2
             this.peopleTimePicker.ShowUpDown = true;
             this.peopleTimePicker.Size = new System.Drawing.Size(90, 29);
             this.peopleTimePicker.TabIndex = 105;
-            this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 2, 0, 0);
+            this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.peopleTimePicker.ValueChanged += new System.EventHandler(this.peopleTimePicker_ValueChanged);
             // 
             // performanceTimePicker
@@ -363,7 +363,7 @@ namespace WindowsFormsApp2
             this.performanceTimePicker.ShowUpDown = true;
             this.performanceTimePicker.Size = new System.Drawing.Size(90, 29);
             this.performanceTimePicker.TabIndex = 104;
-            this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.performanceTimePicker.ValueChanged += new System.EventHandler(this.performanceTimePicker_ValueChanged);
             // 
             // customerServiceTimePicker
@@ -376,7 +376,7 @@ namespace WindowsFormsApp2
             this.customerServiceTimePicker.ShowUpDown = true;
             this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 29);
             this.customerServiceTimePicker.TabIndex = 103;
-            this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.customerServiceTimePicker.ValueChanged += new System.EventHandler(this.customerServiceTimePicker_ValueChanged);
             // 
             // qualityTimePicker
@@ -389,7 +389,7 @@ namespace WindowsFormsApp2
             this.qualityTimePicker.ShowUpDown = true;
             this.qualityTimePicker.Size = new System.Drawing.Size(90, 29);
             this.qualityTimePicker.TabIndex = 102;
-            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.qualityTimePicker.ValueChanged += new System.EventHandler(this.qualityTimePicker_ValueChanged);
             // 
             // safetyTimePicker
@@ -402,7 +402,7 @@ namespace WindowsFormsApp2
             this.safetyTimePicker.ShowUpDown = true;
             this.safetyTimePicker.Size = new System.Drawing.Size(90, 29);
             this.safetyTimePicker.TabIndex = 101;
-            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
+            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.safetyTimePicker.ValueChanged += new System.EventHandler(this.safetyTimePicker_ValueChanged);
             // 
             // introTimePicker
@@ -415,7 +415,7 @@ namespace WindowsFormsApp2
             this.introTimePicker.ShowUpDown = true;
             this.introTimePicker.Size = new System.Drawing.Size(90, 29);
             this.introTimePicker.TabIndex = 100;
-            this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
+            this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
             this.introTimePicker.ValueChanged += new System.EventHandler(this.introTimePicker_ValueChanged);
             // 
             // button12

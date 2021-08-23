@@ -28,16 +28,18 @@ namespace WindowsFormsApp2
             double introResult1 = convertResult(introResult.Text);
             meetingTime = meetingTime + introResult1;
             chart1.Series["Series1"].Points.AddXY("Wstęp", introResult1);
-            chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() +" min";
-            int valueOfColor =  valueOfColorFN(introProgressValue.Text);
+            int valueOfColor = valueOfColorFN(introProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series1"].Points[0].Color = Color.Red;
+                chart1.Series["Series1"].Points[0].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series1"].Points[0].Color = Color.LightGreen;
+                chart1.Series["Series1"].Points[0].LabelForeColor = Color.Black;
             }
+            chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() +" \nmin";
             chart1.Series["Series1"].Points.AddXY("BHP", introResult1);
             chart1.Series["Series1"].Points[1].Color = Color.White;
             chart1.Series["Series1"].Points.AddXY("Jakość", introResult1);
@@ -65,16 +67,19 @@ namespace WindowsFormsApp2
             chart1.Series["Series2"].Points.AddXY("Wstęp", saferyResult1);
             chart1.Series["Series2"].Points[0].Color = Color.White;
             chart1.Series["Series2"].Points.AddXY("BHP", saferyResult1);
-            chart1.Series["Series2"].Points[1].Label = Math.Round(saferyResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(safetyProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series2"].Points[1].Color = Color.Red;
+                chart1.Series["Series2"].Points[1].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series2"].Points[1].Color = Color.LightGreen;
+                chart1.Series["Series2"].Points[1].LabelForeColor = Color.Black;
             }
+
+            chart1.Series["Series2"].Points[1].Label = Math.Round(saferyResult1, 1).ToString() + " \nmin";
             chart1.Series["Series2"].Points.AddXY("Jakość", saferyResult1);
             chart1.Series["Series2"].Points[2].Color = Color.White;
             chart1.Series["Series2"].Points.AddXY("Serwis", saferyResult1);
@@ -102,16 +107,18 @@ namespace WindowsFormsApp2
             chart1.Series["Series3"].Points.AddXY("BHP", qualityResult1);
             chart1.Series["Series3"].Points[1].Color = Color.White;
             chart1.Series["Series3"].Points.AddXY("Jakość", qualityResult1);
-            chart1.Series["Series3"].Points[2].Label = Math.Round(qualityResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(qualityProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series3"].Points[2].Color = Color.Red;
+                chart1.Series["Series3"].Points[2].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series3"].Points[2].Color = Color.LightGreen;
+                chart1.Series["Series3"].Points[2].LabelForeColor = Color.Black;
             }
+            chart1.Series["Series3"].Points[2].Label = Math.Round(qualityResult1, 1).ToString() + " \nmin";
             chart1.Series["Series3"].Points.AddXY("Serwis", qualityResult1);
             chart1.Series["Series3"].Points[3].Color = Color.White;
             chart1.Series["Series3"].Points.AddXY("Efektywność", qualityResult1);
@@ -139,16 +146,18 @@ namespace WindowsFormsApp2
             chart1.Series["Series4"].Points.AddXY("Jakość", customerServiceResult1);
             chart1.Series["Series4"].Points[2].Color = Color.White;
             chart1.Series["Series4"].Points.AddXY("Serwis", customerServiceResult1);
-            chart1.Series["Series4"].Points[3].Label = Math.Round(customerServiceResult1, 1).ToString() + " min";
             valueOfColor = valueOfColorFN(customerServiceProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series4"].Points[3].Color = Color.Red;
+                chart1.Series["Series4"].Points[3].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series4"].Points[3].Color = Color.LightGreen;
+                chart1.Series["Series4"].Points[3].LabelForeColor = Color.Black;
             }
+            chart1.Series["Series4"].Points[3].Label = Math.Round(customerServiceResult1, 1).ToString() + " \nmin";
             chart1.Series["Series4"].Points.AddXY("Efektywność", customerServiceResult1);
             chart1.Series["Series4"].Points[4].Color = Color.White;
             chart1.Series["Series4"].Points.AddXY("Eureka", customerServiceResult1);
@@ -176,15 +185,17 @@ namespace WindowsFormsApp2
             chart1.Series["Series5"].Points.AddXY("Serwis", performanceResult1);
             chart1.Series["Series5"].Points[3].Color = Color.White;
             chart1.Series["Series5"].Points.AddXY("Efektywność", performanceResult1);
-            chart1.Series["Series5"].Points[4].Label = Math.Round(performanceResult1, 1).ToString() + " min";
+            chart1.Series["Series5"].Points[4].Label = Math.Round(performanceResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(performanceProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series5"].Points[4].Color = Color.Red;
+                chart1.Series["Series5"].Points[4].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series5"].Points[4].Color = Color.LightGreen;
+                chart1.Series["Series5"].Points[4].LabelForeColor = Color.Black;
             }
             chart1.Series["Series5"].Points.AddXY("Eureka", performanceResult1);
             chart1.Series["Series5"].Points[5].Color = Color.White;
@@ -213,15 +224,17 @@ namespace WindowsFormsApp2
             chart1.Series["Series6"].Points.AddXY("Efektywność", peopleResult1);
             chart1.Series["Series6"].Points[4].Color = Color.White;
             chart1.Series["Series6"].Points.AddXY("Eureka", peopleResult1);
-            chart1.Series["Series6"].Points[5].Label = Math.Round(peopleResult1, 1).ToString() + " min";
+            chart1.Series["Series6"].Points[5].Label = Math.Round(peopleResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(peopleProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series6"].Points[5].Color = Color.Red;
+                chart1.Series["Series6"].Points[5].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series6"].Points[5].Color = Color.LightGreen;
+                chart1.Series["Series6"].Points[5].LabelForeColor = Color.Black;
             }
             chart1.Series["Series6"].Points.AddXY("Projekty", peopleResult1);
             chart1.Series["Series6"].Points[6].Color = Color.White;
@@ -250,15 +263,17 @@ namespace WindowsFormsApp2
             chart1.Series["Series7"].Points.AddXY("Eureka", projectsResult1);
             chart1.Series["Series7"].Points[5].Color = Color.White;
             chart1.Series["Series7"].Points.AddXY("Projekty", projectsResult1);
-            chart1.Series["Series7"].Points[6].Label = Math.Round(projectsResult1, 1).ToString() + " min";
+            chart1.Series["Series7"].Points[6].Label = Math.Round(projectsResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(projectsProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series7"].Points[6].Color = Color.Red;
+                chart1.Series["Series7"].Points[6].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series7"].Points[6].Color = Color.LightGreen;
+                chart1.Series["Series7"].Points[6].LabelForeColor = Color.Black;
             }
             chart1.Series["Series7"].Points.AddXY("Priorytety", projectsResult1);
             chart1.Series["Series7"].Points[7].Color = Color.White;
@@ -287,15 +302,17 @@ namespace WindowsFormsApp2
             chart1.Series["Series8"].Points.AddXY("Projekty", priorityResult1);
             chart1.Series["Series8"].Points[6].Color = Color.White;
             chart1.Series["Series8"].Points.AddXY("Priorytety", priorityResult1);;
-            chart1.Series["Series8"].Points[7].Label = Math.Round(priorityResult1, 1).ToString() + " min";
+            chart1.Series["Series8"].Points[7].Label = Math.Round(priorityResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(priorityProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series8"].Points[7].Color = Color.Red;
+                chart1.Series["Series8"].Points[7].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series8"].Points[7].Color = Color.LightGreen;
+                chart1.Series["Series8"].Points[7].LabelForeColor = Color.Black;
             }
             chart1.Series["Series8"].Points.AddXY("Wizyty", priorityResult1);
             chart1.Series["Series8"].Points[8].Color = Color.White;
@@ -324,15 +341,17 @@ namespace WindowsFormsApp2
             chart1.Series["Series9"].Points.AddXY("Priorytety", visitsResult1);
             chart1.Series["Series9"].Points[7].Color = Color.White;
             chart1.Series["Series9"].Points.AddXY("Wizyty", visitsResult1);
-            chart1.Series["Series9"].Points[8].Label = Math.Round(visitsResult1, 1).ToString() + " min";
+            chart1.Series["Series9"].Points[8].Label = Math.Round(visitsResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(visitsProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series9"].Points[8].Color = Color.Red;
+                chart1.Series["Series9"].Points[8].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series9"].Points[8].Color = Color.LightGreen;
+                chart1.Series["Series9"].Points[8].LabelForeColor = Color.Black;
             }
             chart1.Series["Series9"].Points.AddXY("feedback", visitsResult1);
             chart1.Series["Series9"].Points[9].Color = Color.White;
@@ -361,15 +380,17 @@ namespace WindowsFormsApp2
             chart1.Series["Series10"].Points.AddXY("Wizyty", feedbackResult1);
             chart1.Series["Series10"].Points[8].Color = Color.White;
             chart1.Series["Series10"].Points.AddXY("Feedback", feedbackResult1);
-            chart1.Series["Series10"].Points[9].Label = Math.Round(feedbackResult1, 1).ToString() + " min";
+            chart1.Series["Series10"].Points[9].Label = Math.Round(feedbackResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(feedbackProgressValue.Text);
             if (valueOfColor > 100)
             {
                 chart1.Series["Series10"].Points[9].Color = Color.Red;
+                chart1.Series["Series10"].Points[9].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series10"].Points[9].Color = Color.LightGreen;
+                chart1.Series["Series10"].Points[9].LabelForeColor = Color.Black;
             }
             chart1.Series["Series10"].Points.AddXY("Suma", feedbackResult1);
             chart1.Series["Series10"].Points[10].Color = Color.White;
@@ -396,9 +417,7 @@ namespace WindowsFormsApp2
             chart1.Series["Series11"].Points.AddXY("Feedback", "0");
             chart1.Series["Series11"].Points[9].Color = Color.Transparent;
             chart1.Series["Series11"].Points.AddXY("Suma", "0");
-            chart1.Series["Series11"].Points[10].Color = Color.Transparent;
-            chart1.Series["Series11"].Points[10].Label = Math.Round(meetingTime, 1).ToString() + " \nmin";
-
+            
             TimeSpan sumOfSetTime = calcSumOfTime();
             Console.WriteLine("sumOfSetTime " + sumOfSetTime);
             double sumOfSetTimeMinute = sumOfSetTime.Minutes + (sumOfSetTime.Seconds / 60);
@@ -407,10 +426,12 @@ namespace WindowsFormsApp2
             if (meetingTime > sumOfSetTimeMinute)
             {
                 chart1.Series["Series11"].Points[10].Color = Color.Red;
+                chart1.Series["Series11"].Points[10].LabelForeColor = Color.White;
             }
             else
             {
                 chart1.Series["Series11"].Points[10].Color = Color.LightGreen;
+                chart1.Series["Series11"].Points[10].LabelForeColor = Color.Black;
             }
             chart1.Series["Series11"].Points[10].YValues[0] = meetingTime;
             chart1.ChartAreas[0].AxisY.Maximum = meetingTime;
