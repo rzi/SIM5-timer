@@ -743,12 +743,12 @@ namespace WindowsFormsApp2
             //        introFN();
             //        break;
 
-            //    //case > 15.0:
-            //    //    Console.WriteLine($"Measured value is {measurement}; too high.");
+            //    //case "safety":
+            //    //    fafetyFN();
             //    //    break;
 
-            //    //case double.NaN:
-            //    //    Console.WriteLine("Failed measurement.");
+            //    //case "quality":
+            //    //    qualityFN();
             //    //    break;
 
             //    default:
