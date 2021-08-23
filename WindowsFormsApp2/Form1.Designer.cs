@@ -142,14 +142,12 @@ namespace WindowsFormsApp2
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -275,7 +273,7 @@ namespace WindowsFormsApp2
             // sumValue
             // 
             this.sumValue.AutoSize = true;
-            this.sumValue.Location = new System.Drawing.Point(180, 510);
+            this.sumValue.Location = new System.Drawing.Point(180, 507);
             this.sumValue.Name = "sumValue";
             this.sumValue.Size = new System.Drawing.Size(0, 24);
             this.sumValue.TabIndex = 111;
@@ -283,7 +281,7 @@ namespace WindowsFormsApp2
             // sumLabel
             // 
             this.sumLabel.AutoSize = true;
-            this.sumLabel.Location = new System.Drawing.Point(113, 510);
+            this.sumLabel.Location = new System.Drawing.Point(113, 507);
             this.sumLabel.Name = "sumLabel";
             this.sumLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.sumLabel.Size = new System.Drawing.Size(64, 24);
@@ -295,7 +293,7 @@ namespace WindowsFormsApp2
             this.feedbackTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.feedbackTimePicker.CustomFormat = "mm:ss";
             this.feedbackTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.feedbackTimePicker.Location = new System.Drawing.Point(180, 458);
+            this.feedbackTimePicker.Location = new System.Drawing.Point(180, 466);
             this.feedbackTimePicker.Name = "feedbackTimePicker";
             this.feedbackTimePicker.ShowUpDown = true;
             this.feedbackTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -308,7 +306,7 @@ namespace WindowsFormsApp2
             this.visitsTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.visitsTimePicker.CustomFormat = "mm:ss";
             this.visitsTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.visitsTimePicker.Location = new System.Drawing.Point(180, 421);
+            this.visitsTimePicker.Location = new System.Drawing.Point(180, 425);
             this.visitsTimePicker.Name = "visitsTimePicker";
             this.visitsTimePicker.ShowUpDown = true;
             this.visitsTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -321,7 +319,7 @@ namespace WindowsFormsApp2
             this.priorityTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.priorityTimePicker.CustomFormat = "mm:ss";
             this.priorityTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.priorityTimePicker.Location = new System.Drawing.Point(180, 381);
+            this.priorityTimePicker.Location = new System.Drawing.Point(180, 384);
             this.priorityTimePicker.Name = "priorityTimePicker";
             this.priorityTimePicker.ShowUpDown = true;
             this.priorityTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -334,7 +332,7 @@ namespace WindowsFormsApp2
             this.projectsTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.projectsTimePicker.CustomFormat = "mm:ss";
             this.projectsTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.projectsTimePicker.Location = new System.Drawing.Point(180, 339);
+            this.projectsTimePicker.Location = new System.Drawing.Point(180, 343);
             this.projectsTimePicker.Name = "projectsTimePicker";
             this.projectsTimePicker.ShowUpDown = true;
             this.projectsTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -347,7 +345,7 @@ namespace WindowsFormsApp2
             this.peopleTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.peopleTimePicker.CustomFormat = "mm:ss";
             this.peopleTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.peopleTimePicker.Location = new System.Drawing.Point(180, 297);
+            this.peopleTimePicker.Location = new System.Drawing.Point(180, 302);
             this.peopleTimePicker.Name = "peopleTimePicker";
             this.peopleTimePicker.ShowUpDown = true;
             this.peopleTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -360,7 +358,7 @@ namespace WindowsFormsApp2
             this.performanceTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.performanceTimePicker.CustomFormat = "mm:ss";
             this.performanceTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.performanceTimePicker.Location = new System.Drawing.Point(180, 258);
+            this.performanceTimePicker.Location = new System.Drawing.Point(180, 261);
             this.performanceTimePicker.Name = "performanceTimePicker";
             this.performanceTimePicker.ShowUpDown = true;
             this.performanceTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -373,7 +371,7 @@ namespace WindowsFormsApp2
             this.customerServiceTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.customerServiceTimePicker.CustomFormat = "mm:ss";
             this.customerServiceTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.customerServiceTimePicker.Location = new System.Drawing.Point(180, 218);
+            this.customerServiceTimePicker.Location = new System.Drawing.Point(180, 220);
             this.customerServiceTimePicker.Name = "customerServiceTimePicker";
             this.customerServiceTimePicker.ShowUpDown = true;
             this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -386,7 +384,7 @@ namespace WindowsFormsApp2
             this.qualityTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.qualityTimePicker.CustomFormat = "mm:ss";
             this.qualityTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.qualityTimePicker.Location = new System.Drawing.Point(180, 177);
+            this.qualityTimePicker.Location = new System.Drawing.Point(180, 179);
             this.qualityTimePicker.Name = "qualityTimePicker";
             this.qualityTimePicker.ShowUpDown = true;
             this.qualityTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -399,7 +397,7 @@ namespace WindowsFormsApp2
             this.safetyTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.safetyTimePicker.CustomFormat = "mm:ss";
             this.safetyTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.safetyTimePicker.Location = new System.Drawing.Point(180, 140);
+            this.safetyTimePicker.Location = new System.Drawing.Point(180, 138);
             this.safetyTimePicker.Name = "safetyTimePicker";
             this.safetyTimePicker.ShowUpDown = true;
             this.safetyTimePicker.Size = new System.Drawing.Size(90, 29);
@@ -435,7 +433,7 @@ namespace WindowsFormsApp2
             this.feedbackProgressValue.AutoSize = true;
             this.feedbackProgressValue.BackColor = System.Drawing.Color.White;
             this.feedbackProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.feedbackProgressValue.Location = new System.Drawing.Point(429, 458);
+            this.feedbackProgressValue.Location = new System.Drawing.Point(429, 470);
             this.feedbackProgressValue.Name = "feedbackProgressValue";
             this.feedbackProgressValue.Size = new System.Drawing.Size(0, 20);
             this.feedbackProgressValue.TabIndex = 98;
@@ -445,7 +443,7 @@ namespace WindowsFormsApp2
             this.visitsProgressValue.AutoSize = true;
             this.visitsProgressValue.BackColor = System.Drawing.Color.White;
             this.visitsProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.visitsProgressValue.Location = new System.Drawing.Point(429, 421);
+            this.visitsProgressValue.Location = new System.Drawing.Point(429, 429);
             this.visitsProgressValue.Name = "visitsProgressValue";
             this.visitsProgressValue.Size = new System.Drawing.Size(0, 20);
             this.visitsProgressValue.TabIndex = 97;
@@ -455,7 +453,7 @@ namespace WindowsFormsApp2
             this.priorityProgressValue.AutoSize = true;
             this.priorityProgressValue.BackColor = System.Drawing.Color.White;
             this.priorityProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.priorityProgressValue.Location = new System.Drawing.Point(429, 387);
+            this.priorityProgressValue.Location = new System.Drawing.Point(429, 388);
             this.priorityProgressValue.Name = "priorityProgressValue";
             this.priorityProgressValue.Size = new System.Drawing.Size(0, 20);
             this.priorityProgressValue.TabIndex = 96;
@@ -465,7 +463,7 @@ namespace WindowsFormsApp2
             this.projectsProgressValue.AutoSize = true;
             this.projectsProgressValue.BackColor = System.Drawing.Color.White;
             this.projectsProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.projectsProgressValue.Location = new System.Drawing.Point(429, 343);
+            this.projectsProgressValue.Location = new System.Drawing.Point(429, 347);
             this.projectsProgressValue.Name = "projectsProgressValue";
             this.projectsProgressValue.Size = new System.Drawing.Size(0, 20);
             this.projectsProgressValue.TabIndex = 95;
@@ -475,7 +473,7 @@ namespace WindowsFormsApp2
             this.peopleProgressValue.AutoSize = true;
             this.peopleProgressValue.BackColor = System.Drawing.Color.White;
             this.peopleProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.peopleProgressValue.Location = new System.Drawing.Point(429, 303);
+            this.peopleProgressValue.Location = new System.Drawing.Point(429, 306);
             this.peopleProgressValue.Name = "peopleProgressValue";
             this.peopleProgressValue.Size = new System.Drawing.Size(0, 20);
             this.peopleProgressValue.TabIndex = 94;
@@ -485,7 +483,7 @@ namespace WindowsFormsApp2
             this.performanceProgressValue.AutoSize = true;
             this.performanceProgressValue.BackColor = System.Drawing.Color.White;
             this.performanceProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.performanceProgressValue.Location = new System.Drawing.Point(429, 262);
+            this.performanceProgressValue.Location = new System.Drawing.Point(429, 265);
             this.performanceProgressValue.Name = "performanceProgressValue";
             this.performanceProgressValue.Size = new System.Drawing.Size(0, 20);
             this.performanceProgressValue.TabIndex = 93;
@@ -495,7 +493,7 @@ namespace WindowsFormsApp2
             this.customerServiceProgressValue.AutoSize = true;
             this.customerServiceProgressValue.BackColor = System.Drawing.Color.White;
             this.customerServiceProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.customerServiceProgressValue.Location = new System.Drawing.Point(429, 219);
+            this.customerServiceProgressValue.Location = new System.Drawing.Point(429, 224);
             this.customerServiceProgressValue.Name = "customerServiceProgressValue";
             this.customerServiceProgressValue.Size = new System.Drawing.Size(0, 20);
             this.customerServiceProgressValue.TabIndex = 92;
@@ -505,7 +503,7 @@ namespace WindowsFormsApp2
             this.qualityProgressValue.AutoSize = true;
             this.qualityProgressValue.BackColor = System.Drawing.Color.White;
             this.qualityProgressValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.qualityProgressValue.Location = new System.Drawing.Point(429, 181);
+            this.qualityProgressValue.Location = new System.Drawing.Point(429, 183);
             this.qualityProgressValue.Name = "qualityProgressValue";
             this.qualityProgressValue.Size = new System.Drawing.Size(0, 20);
             this.qualityProgressValue.TabIndex = 91;
@@ -513,7 +511,7 @@ namespace WindowsFormsApp2
             // feedbackResult
             // 
             this.feedbackResult.AutoSize = true;
-            this.feedbackResult.Location = new System.Drawing.Point(820, 454);
+            this.feedbackResult.Location = new System.Drawing.Point(820, 466);
             this.feedbackResult.Name = "feedbackResult";
             this.feedbackResult.Size = new System.Drawing.Size(0, 24);
             this.feedbackResult.TabIndex = 90;
@@ -521,7 +519,7 @@ namespace WindowsFormsApp2
             // feedbackEnd
             // 
             this.feedbackEnd.AutoSize = true;
-            this.feedbackEnd.Location = new System.Drawing.Point(688, 454);
+            this.feedbackEnd.Location = new System.Drawing.Point(688, 466);
             this.feedbackEnd.Name = "feedbackEnd";
             this.feedbackEnd.Size = new System.Drawing.Size(0, 24);
             this.feedbackEnd.TabIndex = 89;
@@ -529,7 +527,7 @@ namespace WindowsFormsApp2
             // feedbackStart
             // 
             this.feedbackStart.AutoSize = true;
-            this.feedbackStart.Location = new System.Drawing.Point(551, 454);
+            this.feedbackStart.Location = new System.Drawing.Point(551, 466);
             this.feedbackStart.Name = "feedbackStart";
             this.feedbackStart.Size = new System.Drawing.Size(0, 24);
             this.feedbackStart.TabIndex = 88;
@@ -537,7 +535,7 @@ namespace WindowsFormsApp2
             // visitsResult
             // 
             this.visitsResult.AutoSize = true;
-            this.visitsResult.Location = new System.Drawing.Point(820, 418);
+            this.visitsResult.Location = new System.Drawing.Point(820, 425);
             this.visitsResult.Name = "visitsResult";
             this.visitsResult.Size = new System.Drawing.Size(0, 24);
             this.visitsResult.TabIndex = 87;
@@ -545,7 +543,7 @@ namespace WindowsFormsApp2
             // visitsEnd
             // 
             this.visitsEnd.AutoSize = true;
-            this.visitsEnd.Location = new System.Drawing.Point(688, 421);
+            this.visitsEnd.Location = new System.Drawing.Point(688, 425);
             this.visitsEnd.Name = "visitsEnd";
             this.visitsEnd.Size = new System.Drawing.Size(0, 24);
             this.visitsEnd.TabIndex = 86;
@@ -553,7 +551,7 @@ namespace WindowsFormsApp2
             // visitsStart
             // 
             this.visitsStart.AutoSize = true;
-            this.visitsStart.Location = new System.Drawing.Point(551, 420);
+            this.visitsStart.Location = new System.Drawing.Point(551, 425);
             this.visitsStart.Name = "visitsStart";
             this.visitsStart.Size = new System.Drawing.Size(0, 24);
             this.visitsStart.TabIndex = 85;
@@ -561,7 +559,7 @@ namespace WindowsFormsApp2
             // priorityResult
             // 
             this.priorityResult.AutoSize = true;
-            this.priorityResult.Location = new System.Drawing.Point(820, 380);
+            this.priorityResult.Location = new System.Drawing.Point(820, 384);
             this.priorityResult.Name = "priorityResult";
             this.priorityResult.Size = new System.Drawing.Size(0, 24);
             this.priorityResult.TabIndex = 84;
@@ -577,7 +575,7 @@ namespace WindowsFormsApp2
             // priorityStart
             // 
             this.priorityStart.AutoSize = true;
-            this.priorityStart.Location = new System.Drawing.Point(551, 381);
+            this.priorityStart.Location = new System.Drawing.Point(551, 384);
             this.priorityStart.Name = "priorityStart";
             this.priorityStart.Size = new System.Drawing.Size(0, 24);
             this.priorityStart.TabIndex = 82;
@@ -585,7 +583,7 @@ namespace WindowsFormsApp2
             // projectsResult
             // 
             this.projectsResult.AutoSize = true;
-            this.projectsResult.Location = new System.Drawing.Point(820, 339);
+            this.projectsResult.Location = new System.Drawing.Point(820, 343);
             this.projectsResult.Name = "projectsResult";
             this.projectsResult.Size = new System.Drawing.Size(0, 24);
             this.projectsResult.TabIndex = 81;
@@ -601,7 +599,7 @@ namespace WindowsFormsApp2
             // projectsStart
             // 
             this.projectsStart.AutoSize = true;
-            this.projectsStart.Location = new System.Drawing.Point(551, 339);
+            this.projectsStart.Location = new System.Drawing.Point(551, 343);
             this.projectsStart.Name = "projectsStart";
             this.projectsStart.Size = new System.Drawing.Size(0, 24);
             this.projectsStart.TabIndex = 79;
@@ -609,7 +607,7 @@ namespace WindowsFormsApp2
             // peopleResult
             // 
             this.peopleResult.AutoSize = true;
-            this.peopleResult.Location = new System.Drawing.Point(820, 297);
+            this.peopleResult.Location = new System.Drawing.Point(820, 302);
             this.peopleResult.Name = "peopleResult";
             this.peopleResult.Size = new System.Drawing.Size(0, 24);
             this.peopleResult.TabIndex = 78;
@@ -617,7 +615,7 @@ namespace WindowsFormsApp2
             // peopleEnd
             // 
             this.peopleEnd.AutoSize = true;
-            this.peopleEnd.Location = new System.Drawing.Point(688, 300);
+            this.peopleEnd.Location = new System.Drawing.Point(688, 302);
             this.peopleEnd.Name = "peopleEnd";
             this.peopleEnd.Size = new System.Drawing.Size(0, 24);
             this.peopleEnd.TabIndex = 77;
@@ -625,7 +623,7 @@ namespace WindowsFormsApp2
             // peopleStart
             // 
             this.peopleStart.AutoSize = true;
-            this.peopleStart.Location = new System.Drawing.Point(551, 297);
+            this.peopleStart.Location = new System.Drawing.Point(551, 302);
             this.peopleStart.Name = "peopleStart";
             this.peopleStart.Size = new System.Drawing.Size(0, 24);
             this.peopleStart.TabIndex = 76;
@@ -633,7 +631,7 @@ namespace WindowsFormsApp2
             // performanceResult
             // 
             this.performanceResult.AutoSize = true;
-            this.performanceResult.Location = new System.Drawing.Point(820, 258);
+            this.performanceResult.Location = new System.Drawing.Point(820, 261);
             this.performanceResult.Name = "performanceResult";
             this.performanceResult.Size = new System.Drawing.Size(0, 24);
             this.performanceResult.TabIndex = 75;
@@ -641,7 +639,7 @@ namespace WindowsFormsApp2
             // performanceEnd
             // 
             this.performanceEnd.AutoSize = true;
-            this.performanceEnd.Location = new System.Drawing.Point(688, 258);
+            this.performanceEnd.Location = new System.Drawing.Point(688, 261);
             this.performanceEnd.Name = "performanceEnd";
             this.performanceEnd.Size = new System.Drawing.Size(0, 24);
             this.performanceEnd.TabIndex = 74;
@@ -649,7 +647,7 @@ namespace WindowsFormsApp2
             // performanceStart
             // 
             this.performanceStart.AutoSize = true;
-            this.performanceStart.Location = new System.Drawing.Point(551, 259);
+            this.performanceStart.Location = new System.Drawing.Point(551, 261);
             this.performanceStart.Name = "performanceStart";
             this.performanceStart.Size = new System.Drawing.Size(0, 24);
             this.performanceStart.TabIndex = 73;
@@ -657,7 +655,7 @@ namespace WindowsFormsApp2
             // customerServiceResult
             // 
             this.customerServiceResult.AutoSize = true;
-            this.customerServiceResult.Location = new System.Drawing.Point(820, 219);
+            this.customerServiceResult.Location = new System.Drawing.Point(820, 220);
             this.customerServiceResult.Name = "customerServiceResult";
             this.customerServiceResult.Size = new System.Drawing.Size(0, 24);
             this.customerServiceResult.TabIndex = 72;
@@ -665,7 +663,7 @@ namespace WindowsFormsApp2
             // customerServiceEnd
             // 
             this.customerServiceEnd.AutoSize = true;
-            this.customerServiceEnd.Location = new System.Drawing.Point(688, 218);
+            this.customerServiceEnd.Location = new System.Drawing.Point(688, 220);
             this.customerServiceEnd.Name = "customerServiceEnd";
             this.customerServiceEnd.Size = new System.Drawing.Size(0, 24);
             this.customerServiceEnd.TabIndex = 71;
@@ -673,7 +671,7 @@ namespace WindowsFormsApp2
             // customerServiceStart
             // 
             this.customerServiceStart.AutoSize = true;
-            this.customerServiceStart.Location = new System.Drawing.Point(551, 219);
+            this.customerServiceStart.Location = new System.Drawing.Point(551, 220);
             this.customerServiceStart.Name = "customerServiceStart";
             this.customerServiceStart.Size = new System.Drawing.Size(0, 24);
             this.customerServiceStart.TabIndex = 70;
@@ -704,9 +702,9 @@ namespace WindowsFormsApp2
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(302, 493);
+            this.stopButton.Location = new System.Drawing.Point(302, 507);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(89, 32);
+            this.stopButton.Size = new System.Drawing.Size(89, 30);
             this.stopButton.TabIndex = 66;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -735,7 +733,7 @@ namespace WindowsFormsApp2
             // safetyResult
             // 
             this.safetyResult.AutoSize = true;
-            this.safetyResult.Location = new System.Drawing.Point(820, 142);
+            this.safetyResult.Location = new System.Drawing.Point(820, 138);
             this.safetyResult.Name = "safetyResult";
             this.safetyResult.Size = new System.Drawing.Size(0, 24);
             this.safetyResult.TabIndex = 64;
@@ -743,7 +741,7 @@ namespace WindowsFormsApp2
             // safetyEnd
             // 
             this.safetyEnd.AutoSize = true;
-            this.safetyEnd.Location = new System.Drawing.Point(688, 142);
+            this.safetyEnd.Location = new System.Drawing.Point(688, 138);
             this.safetyEnd.Name = "safetyEnd";
             this.safetyEnd.Size = new System.Drawing.Size(0, 24);
             this.safetyEnd.TabIndex = 63;
@@ -751,7 +749,7 @@ namespace WindowsFormsApp2
             // safetyStart
             // 
             this.safetyStart.AutoSize = true;
-            this.safetyStart.Location = new System.Drawing.Point(551, 141);
+            this.safetyStart.Location = new System.Drawing.Point(551, 138);
             this.safetyStart.Name = "safetyStart";
             this.safetyStart.Size = new System.Drawing.Size(0, 24);
             this.safetyStart.TabIndex = 62;
@@ -759,7 +757,7 @@ namespace WindowsFormsApp2
             // introStart
             // 
             this.introStart.AutoSize = true;
-            this.introStart.Location = new System.Drawing.Point(551, 101);
+            this.introStart.Location = new System.Drawing.Point(551, 97);
             this.introStart.Name = "introStart";
             this.introStart.Size = new System.Drawing.Size(0, 24);
             this.introStart.TabIndex = 61;
@@ -767,16 +765,16 @@ namespace WindowsFormsApp2
             // feedbackProgressBar
             // 
             this.feedbackProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.feedbackProgressBar.Location = new System.Drawing.Point(401, 454);
+            this.feedbackProgressBar.Location = new System.Drawing.Point(401, 466);
             this.feedbackProgressBar.Name = "feedbackProgressBar";
-            this.feedbackProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.feedbackProgressBar.Size = new System.Drawing.Size(103, 30);
             this.feedbackProgressBar.TabIndex = 59;
             // 
             // feedbackButton
             // 
-            this.feedbackButton.Location = new System.Drawing.Point(302, 454);
+            this.feedbackButton.Location = new System.Drawing.Point(302, 466);
             this.feedbackButton.Name = "feedbackButton";
-            this.feedbackButton.Size = new System.Drawing.Size(89, 31);
+            this.feedbackButton.Size = new System.Drawing.Size(89, 30);
             this.feedbackButton.TabIndex = 58;
             this.feedbackButton.Text = "Start";
             this.feedbackButton.UseVisualStyleBackColor = true;
@@ -785,16 +783,16 @@ namespace WindowsFormsApp2
             // visitsProgressBar
             // 
             this.visitsProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.visitsProgressBar.Location = new System.Drawing.Point(401, 417);
+            this.visitsProgressBar.Location = new System.Drawing.Point(401, 425);
             this.visitsProgressBar.Name = "visitsProgressBar";
-            this.visitsProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.visitsProgressBar.Size = new System.Drawing.Size(103, 30);
             this.visitsProgressBar.TabIndex = 55;
             // 
             // visitsButton
             // 
-            this.visitsButton.Location = new System.Drawing.Point(302, 417);
+            this.visitsButton.Location = new System.Drawing.Point(302, 425);
             this.visitsButton.Name = "visitsButton";
-            this.visitsButton.Size = new System.Drawing.Size(89, 31);
+            this.visitsButton.Size = new System.Drawing.Size(89, 30);
             this.visitsButton.TabIndex = 54;
             this.visitsButton.Text = "Start";
             this.visitsButton.UseVisualStyleBackColor = true;
@@ -803,16 +801,16 @@ namespace WindowsFormsApp2
             // priorityProgressBar
             // 
             this.priorityProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.priorityProgressBar.Location = new System.Drawing.Point(401, 380);
+            this.priorityProgressBar.Location = new System.Drawing.Point(401, 384);
             this.priorityProgressBar.Name = "priorityProgressBar";
-            this.priorityProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.priorityProgressBar.Size = new System.Drawing.Size(103, 30);
             this.priorityProgressBar.TabIndex = 51;
             // 
             // priorityButton
             // 
-            this.priorityButton.Location = new System.Drawing.Point(302, 380);
+            this.priorityButton.Location = new System.Drawing.Point(302, 384);
             this.priorityButton.Name = "priorityButton";
-            this.priorityButton.Size = new System.Drawing.Size(89, 31);
+            this.priorityButton.Size = new System.Drawing.Size(89, 30);
             this.priorityButton.TabIndex = 50;
             this.priorityButton.Text = "Start";
             this.priorityButton.UseVisualStyleBackColor = true;
@@ -821,7 +819,7 @@ namespace WindowsFormsApp2
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(166, 60);
+            this.timeLabel.Location = new System.Drawing.Point(177, 60);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(97, 24);
             this.timeLabel.TabIndex = 41;
@@ -830,7 +828,7 @@ namespace WindowsFormsApp2
             // feedbackTitle
             // 
             this.feedbackTitle.AutoSize = true;
-            this.feedbackTitle.Location = new System.Drawing.Point(20, 464);
+            this.feedbackTitle.Location = new System.Drawing.Point(20, 466);
             this.feedbackTitle.Name = "feedbackTitle";
             this.feedbackTitle.Size = new System.Drawing.Size(100, 24);
             this.feedbackTitle.TabIndex = 40;
@@ -839,7 +837,7 @@ namespace WindowsFormsApp2
             // visitsTitle
             // 
             this.visitsTitle.AutoSize = true;
-            this.visitsTitle.Location = new System.Drawing.Point(22, 421);
+            this.visitsTitle.Location = new System.Drawing.Point(20, 425);
             this.visitsTitle.Name = "visitsTitle";
             this.visitsTitle.Size = new System.Drawing.Size(63, 24);
             this.visitsTitle.TabIndex = 39;
@@ -857,16 +855,16 @@ namespace WindowsFormsApp2
             // projectsProgressBar
             // 
             this.projectsProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.projectsProgressBar.Location = new System.Drawing.Point(401, 339);
+            this.projectsProgressBar.Location = new System.Drawing.Point(401, 343);
             this.projectsProgressBar.Name = "projectsProgressBar";
-            this.projectsProgressBar.Size = new System.Drawing.Size(103, 31);
+            this.projectsProgressBar.Size = new System.Drawing.Size(103, 30);
             this.projectsProgressBar.TabIndex = 37;
             // 
             // projectsButton
             // 
-            this.projectsButton.Location = new System.Drawing.Point(302, 339);
+            this.projectsButton.Location = new System.Drawing.Point(302, 343);
             this.projectsButton.Name = "projectsButton";
-            this.projectsButton.Size = new System.Drawing.Size(89, 31);
+            this.projectsButton.Size = new System.Drawing.Size(89, 30);
             this.projectsButton.TabIndex = 36;
             this.projectsButton.Text = "Start";
             this.projectsButton.UseVisualStyleBackColor = true;
@@ -875,7 +873,7 @@ namespace WindowsFormsApp2
             // projectsTitle
             // 
             this.projectsTitle.AutoSize = true;
-            this.projectsTitle.Location = new System.Drawing.Point(22, 342);
+            this.projectsTitle.Location = new System.Drawing.Point(20, 343);
             this.projectsTitle.Name = "projectsTitle";
             this.projectsTitle.Size = new System.Drawing.Size(76, 24);
             this.projectsTitle.TabIndex = 34;
@@ -884,14 +882,14 @@ namespace WindowsFormsApp2
             // peopleProgressBar
             // 
             this.peopleProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.peopleProgressBar.Location = new System.Drawing.Point(401, 297);
+            this.peopleProgressBar.Location = new System.Drawing.Point(401, 302);
             this.peopleProgressBar.Name = "peopleProgressBar";
             this.peopleProgressBar.Size = new System.Drawing.Size(103, 30);
             this.peopleProgressBar.TabIndex = 33;
             // 
             // peopleButton
             // 
-            this.peopleButton.Location = new System.Drawing.Point(302, 297);
+            this.peopleButton.Location = new System.Drawing.Point(302, 302);
             this.peopleButton.Name = "peopleButton";
             this.peopleButton.Size = new System.Drawing.Size(89, 30);
             this.peopleButton.TabIndex = 32;
@@ -902,7 +900,7 @@ namespace WindowsFormsApp2
             // peopleTitle
             // 
             this.peopleTitle.AutoSize = true;
-            this.peopleTitle.Location = new System.Drawing.Point(20, 299);
+            this.peopleTitle.Location = new System.Drawing.Point(20, 302);
             this.peopleTitle.Name = "peopleTitle";
             this.peopleTitle.Size = new System.Drawing.Size(70, 24);
             this.peopleTitle.TabIndex = 30;
@@ -911,14 +909,14 @@ namespace WindowsFormsApp2
             // performanceProgressBar
             // 
             this.performanceProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.performanceProgressBar.Location = new System.Drawing.Point(401, 256);
+            this.performanceProgressBar.Location = new System.Drawing.Point(401, 261);
             this.performanceProgressBar.Name = "performanceProgressBar";
             this.performanceProgressBar.Size = new System.Drawing.Size(103, 30);
             this.performanceProgressBar.TabIndex = 29;
             // 
             // performanceButton
             // 
-            this.performanceButton.Location = new System.Drawing.Point(302, 255);
+            this.performanceButton.Location = new System.Drawing.Point(302, 261);
             this.performanceButton.Name = "performanceButton";
             this.performanceButton.Size = new System.Drawing.Size(89, 30);
             this.performanceButton.TabIndex = 28;
@@ -929,7 +927,7 @@ namespace WindowsFormsApp2
             // performanceTitle
             // 
             this.performanceTitle.AutoSize = true;
-            this.performanceTitle.Location = new System.Drawing.Point(22, 258);
+            this.performanceTitle.Location = new System.Drawing.Point(20, 261);
             this.performanceTitle.Name = "performanceTitle";
             this.performanceTitle.Size = new System.Drawing.Size(115, 24);
             this.performanceTitle.TabIndex = 26;
@@ -938,14 +936,14 @@ namespace WindowsFormsApp2
             // customerServiceProgressBar
             // 
             this.customerServiceProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customerServiceProgressBar.Location = new System.Drawing.Point(401, 214);
+            this.customerServiceProgressBar.Location = new System.Drawing.Point(401, 220);
             this.customerServiceProgressBar.Name = "customerServiceProgressBar";
             this.customerServiceProgressBar.Size = new System.Drawing.Size(103, 30);
             this.customerServiceProgressBar.TabIndex = 25;
             // 
             // customerServiceButton
             // 
-            this.customerServiceButton.Location = new System.Drawing.Point(302, 215);
+            this.customerServiceButton.Location = new System.Drawing.Point(302, 220);
             this.customerServiceButton.Name = "customerServiceButton";
             this.customerServiceButton.Size = new System.Drawing.Size(89, 30);
             this.customerServiceButton.TabIndex = 24;
@@ -956,7 +954,7 @@ namespace WindowsFormsApp2
             // customerServiceTitle
             // 
             this.customerServiceTitle.AutoSize = true;
-            this.customerServiceTitle.Location = new System.Drawing.Point(20, 218);
+            this.customerServiceTitle.Location = new System.Drawing.Point(20, 220);
             this.customerServiceTitle.Name = "customerServiceTitle";
             this.customerServiceTitle.Size = new System.Drawing.Size(66, 24);
             this.customerServiceTitle.TabIndex = 22;
@@ -965,14 +963,14 @@ namespace WindowsFormsApp2
             // qualityProgressBar
             // 
             this.qualityProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.qualityProgressBar.Location = new System.Drawing.Point(401, 176);
+            this.qualityProgressBar.Location = new System.Drawing.Point(401, 179);
             this.qualityProgressBar.Name = "qualityProgressBar";
             this.qualityProgressBar.Size = new System.Drawing.Size(103, 30);
             this.qualityProgressBar.TabIndex = 21;
             // 
             // qualityButton
             // 
-            this.qualityButton.Location = new System.Drawing.Point(302, 176);
+            this.qualityButton.Location = new System.Drawing.Point(302, 179);
             this.qualityButton.Name = "qualityButton";
             this.qualityButton.Size = new System.Drawing.Size(89, 30);
             this.qualityButton.TabIndex = 20;
@@ -983,7 +981,7 @@ namespace WindowsFormsApp2
             // qualityTitle
             // 
             this.qualityTitle.AutoSize = true;
-            this.qualityTitle.Location = new System.Drawing.Point(20, 176);
+            this.qualityTitle.Location = new System.Drawing.Point(20, 179);
             this.qualityTitle.Name = "qualityTitle";
             this.qualityTitle.Size = new System.Drawing.Size(68, 24);
             this.qualityTitle.TabIndex = 18;
@@ -1011,7 +1009,7 @@ namespace WindowsFormsApp2
             // 
             this.introProgressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.introProgressBar.ForeColor = System.Drawing.Color.Red;
-            this.introProgressBar.Location = new System.Drawing.Point(401, 96);
+            this.introProgressBar.Location = new System.Drawing.Point(401, 97);
             this.introProgressBar.Name = "introProgressBar";
             this.introProgressBar.Size = new System.Drawing.Size(103, 30);
             this.introProgressBar.TabIndex = 15;
@@ -1019,7 +1017,7 @@ namespace WindowsFormsApp2
             // safetyTitle
             // 
             this.safetyTitle.AutoSize = true;
-            this.safetyTitle.Location = new System.Drawing.Point(20, 140);
+            this.safetyTitle.Location = new System.Drawing.Point(20, 138);
             this.safetyTitle.Name = "safetyTitle";
             this.safetyTitle.Size = new System.Drawing.Size(48, 24);
             this.safetyTitle.TabIndex = 13;
@@ -1028,7 +1026,7 @@ namespace WindowsFormsApp2
             // introResult
             // 
             this.introResult.AutoSize = true;
-            this.introResult.Location = new System.Drawing.Point(820, 100);
+            this.introResult.Location = new System.Drawing.Point(820, 97);
             this.introResult.Name = "introResult";
             this.introResult.Size = new System.Drawing.Size(0, 24);
             this.introResult.TabIndex = 11;
@@ -1036,7 +1034,7 @@ namespace WindowsFormsApp2
             // introEnd
             // 
             this.introEnd.AutoSize = true;
-            this.introEnd.Location = new System.Drawing.Point(688, 100);
+            this.introEnd.Location = new System.Drawing.Point(688, 97);
             this.introEnd.Name = "introEnd";
             this.introEnd.Size = new System.Drawing.Size(0, 24);
             this.introEnd.TabIndex = 10;
@@ -1108,7 +1106,7 @@ namespace WindowsFormsApp2
             // introTitle
             // 
             this.introTitle.AutoSize = true;
-            this.introTitle.Location = new System.Drawing.Point(22, 101);
+            this.introTitle.Location = new System.Drawing.Point(20, 97);
             this.introTitle.Name = "introTitle";
             this.introTitle.Size = new System.Drawing.Size(63, 24);
             this.introTitle.TabIndex = 1;
@@ -1252,7 +1250,7 @@ namespace WindowsFormsApp2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 634);
+            this.ClientSize = new System.Drawing.Size(1028, 648);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -1265,7 +1263,6 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1275,7 +1272,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DateTimePicker feedbackTimePicker;
         private System.Windows.Forms.DateTimePicker visitsTimePicker;

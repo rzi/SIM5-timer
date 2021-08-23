@@ -6,12 +6,13 @@ using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
+
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
         public bool intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
-        public string currentAction, procentBar;
+        public string currentAction, procentBar, status;
         public int currentBar, maxiBar;
         Result result = new Result();
         private void Form1_Load(object sender, EventArgs e)
@@ -711,7 +712,61 @@ namespace WindowsFormsApp2
                     if (progressBarValue > redTriger) feedbackProgressBar.ForeColor = Color.Red;
                 }
             }
+
+            ////switch
+            //switch (status)
+            //{
+            //    case "intro":
+            //        introFN();
+            //        break;
+
+            //    //case > 15.0:
+            //    //    Console.WriteLine($"Measured value is {measurement}; too high.");
+            //    //    break;
+
+            //    //case double.NaN:
+            //    //    Console.WriteLine("Failed measurement.");
+            //    //    break;
+
+            //    default:
+            //        Console.WriteLine($"default: {status}.");
+            //        break;
+            //}
+
+
         }
+
+        //private void introFN()
+        //{
+        //    double progressBarMaximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
+        //    double progressBarValue = valueFN(introStart.Text, currentTime.Text);
+        //    introProgressBar.Maximum = (int)progressBarMaximum;
+        //    if (progressBarValue == 1)
+        //    {
+        //        // obsługa błedu gdy wartośc zadana jest równa 0
+        //    }
+        //    else
+        //    {
+        //        if (introProgressBar.Value < introProgressBar.Maximum) introProgressBar.Value = (int)progressBarValue;
+        //        currentBar = (int)progressBarValue;
+        //        maxiBar = (int)progressBarMaximum;
+        //        double yellowTriger = (progressBarMaximum * 0.8);
+        //        double redTriger = progressBarMaximum;
+        //        double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+        //        Console.WriteLine("procentTNow " + percentTNow);
+        //        introProgressValue.Text = percentTNow.ToString("N0") + "%";
+        //        procentBar = introProgressValue.Text;
+        //        if (progressBarValue > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
+        //        if (progressBarValue > redTriger) introProgressBar.ForeColor = Color.Red;
+        //        result.isIntro = intro;
+        //        result.setIntro = introTimePicker.ToString();
+        //        result.startIntro = introStart.ToString();
+        //        result.stopIntro = introEnd.ToString();
+        //        result.resultIntro = introResult.ToString();
+        //        result.intro = "intro";
+        //    }
+        //}
+
         private double valueFN(string startTime, string currentTime)
         {
             DateTime timeStart = DateTime.Parse(startTime);
@@ -743,6 +798,7 @@ namespace WindowsFormsApp2
             DateTime timeStart = DateTime.Parse(currentTime.Text);
             introStart.Text = timeStart.TimeOfDay.ToString(); //czas rozpoczęcia
             intro = true;
+            status = "intro";
             introProgressBar.ForeColor = Color.LightGreen;
             introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
 
@@ -956,7 +1012,6 @@ namespace WindowsFormsApp2
             feedbackResult.Text = diff1.ToString();
             saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
             fillChart();
-            
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult,string progressValue)
         {
@@ -999,12 +1054,10 @@ namespace WindowsFormsApp2
         }
         private void button12_Click(object sender, EventArgs e)
         {
-            // czyszczenie restart app
+            // czyszczenie, restart app
             Application.Restart();
             Process.GetCurrentProcess().Kill();
             this.Visible = true;
-
-
         }
         public static double ConvertToUnixTimestamp(DateTime date)
         {
@@ -1129,6 +1182,5 @@ namespace WindowsFormsApp2
             double result1 = (End / Objective) * 100;
             return result1;
         }
-
     }
 }
