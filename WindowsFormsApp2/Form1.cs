@@ -400,7 +400,7 @@ namespace WindowsFormsApp2
             chart1.Series["Series11"].Points[0].Color = Color.Transparent;
             chart1.Series["Series11"].Points.AddXY("BHP", "0");
             chart1.Series["Series11"].Points[1].Color = Color.Transparent;
-            chart1.Series["Series11"].Points.AddXY("Jakość", "1");
+            chart1.Series["Series11"].Points.AddXY("Jakość", "0");
             chart1.Series["Series11"].Points[2].Color = Color.Transparent;
             chart1.Series["Series11"].Points.AddXY("Serwis", "0");
             chart1.Series["Series11"].Points[3].Color = Color.Transparent;
@@ -417,7 +417,7 @@ namespace WindowsFormsApp2
             chart1.Series["Series11"].Points.AddXY("Feedback", "0");
             chart1.Series["Series11"].Points[9].Color = Color.Transparent;
             chart1.Series["Series11"].Points.AddXY("Suma", "0");
-            
+            chart1.Series["Series11"].Points[10].YValues[0] = meetingTime;
             TimeSpan sumOfSetTime = calcSumOfTime();
             Console.WriteLine("sumOfSetTime " + sumOfSetTime);
             double sumOfSetTimeMinute = sumOfSetTime.Minutes + (sumOfSetTime.Seconds / 60);
@@ -433,7 +433,9 @@ namespace WindowsFormsApp2
                 chart1.Series["Series11"].Points[10].Color = Color.LightGreen;
                 chart1.Series["Series11"].Points[10].LabelForeColor = Color.Black;
             }
-            chart1.Series["Series11"].Points[10].YValues[0] = meetingTime;
+            chart1.Series["Series11"].Points[10].Label = Math.Round(meetingTime, 1).ToString() + " \nmin";
+
+
             chart1.ChartAreas[0].AxisY.Maximum = meetingTime;
             chart1.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9, System.Drawing.FontStyle.Bold);
             chart1.Invalidate();
