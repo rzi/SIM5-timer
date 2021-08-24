@@ -480,12 +480,12 @@ namespace WindowsFormsApp2
                 double progressBarMaximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
                 double progressBarValue = valueFN(introStart.Text, currentTime.Text);
                 introProgressBar.Maximum = (int)progressBarMaximum;
-                if (progressBarValue == 1)
-                {
-                    // obsługa błedu gdy wartośc zadana jest równa 0
-                }
-                else
-                {
+                //if (progressBarValue == 1)
+                //{
+                //    // obsługa błedu gdy wartośc zadana jest równa 0
+                //}
+                //else
+                //{
                     if (progressBarValue < introProgressBar.Maximum && introProgressBar.Value < introProgressBar.Maximum) introProgressBar.Value = (int) progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
@@ -503,7 +503,7 @@ namespace WindowsFormsApp2
                     result.stopIntro = introEnd.ToString();
                     result.resultIntro = introResult.ToString();
                     result.intro = "intro";
-                }
+                //}
                 
             }
             if (safety)
@@ -512,12 +512,12 @@ namespace WindowsFormsApp2
                 double progressBarValue = valueFN(safetyStart.Text, currentTime.Text);
                 safetyProgressBar.Maximum = (int)progressBarMaximum;
 
-                if (progressBarValue == 1)
-                {
-                    // obsługa błedu gdy wartośc zadana jest równa 0
-                }
-                else
-                {
+                //if (progressBarValue == 1)
+                //{
+                //    // obsługa błedu gdy wartośc zadana jest równa 0
+                //}
+                //else
+                //{
                     if (progressBarValue < safetyProgressBar.Maximum && safetyProgressBar.Value < safetyProgressBar.Maximum) safetyProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
@@ -529,7 +529,7 @@ namespace WindowsFormsApp2
                     procentBar = safetyProgressValue.Text;
                     if (progressBarValue > yellowTriger) safetyProgressBar.ForeColor = Color.Yellow;
                     if (progressBarValue > redTriger) safetyProgressBar.ForeColor = Color.Red;
-                }
+                //}
             }
             if (quality)
             {
@@ -743,13 +743,13 @@ namespace WindowsFormsApp2
             //        introFN();
             //        break;
 
-            //    //case "safety":
-            //    //    fafetyFN();
-            //    //    break;
+            //    case "safety":
+            //        fafetyFN();
+            //        break;
 
-            //    //case "quality":
-            //    //    qualityFN();
-            //    //    break;
+            //    case "quality":
+            //        qualityFN();
+            //        break;
 
             //    default:
             //        Console.WriteLine($"default: {status}.");
