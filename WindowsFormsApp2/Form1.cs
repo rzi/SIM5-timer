@@ -486,7 +486,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (introProgressBar.Value < introProgressBar.Maximum) introProgressBar.Value = (int) progressBarValue;
+                    if (progressBarValue < introProgressBar.Maximum && introProgressBar.Value < introProgressBar.Maximum) introProgressBar.Value = (int) progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -518,7 +518,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (safetyProgressBar.Value < safetyProgressBar.Maximum) safetyProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < safetyProgressBar.Maximum && safetyProgressBar.Value < safetyProgressBar.Maximum) safetyProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -543,7 +543,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (qualityProgressBar.Value < qualityProgressBar.Maximum) qualityProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < qualityProgressBar.Maximum && qualityProgressBar.Value < qualityProgressBar.Maximum) qualityProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -569,7 +569,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (customerServiceProgressBar.Value < customerServiceProgressBar.Maximum) customerServiceProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < customerServiceProgressBar.Maximum && customerServiceProgressBar.Value < customerServiceProgressBar.Maximum) customerServiceProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -595,7 +595,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (performanceProgressBar.Value < performanceProgressBar.Maximum) performanceProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < performanceProgressBar.Maximum && performanceProgressBar.Value < performanceProgressBar.Maximum) performanceProgressBar.Value = (int)progressBarValue;
                     currentBar = (int)progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -621,7 +621,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (peopleProgressBar.Value < peopleProgressBar.Maximum) peopleProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < peopleProgressBar.Maximum && peopleProgressBar.Value < peopleProgressBar.Maximum) peopleProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -647,7 +647,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (projectsProgressBar.Value < projectsProgressBar.Maximum) projectsProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < projectsProgressBar.Maximum && projectsProgressBar.Value < projectsProgressBar.Maximum) projectsProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -672,7 +672,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (priorityProgressBar.Value < priorityProgressBar.Maximum) priorityProgressBar.Value = (int)progressBarValue; 
+                    if (progressBarValue < priorityProgressBar.Maximum &&  priorityProgressBar.Value < priorityProgressBar.Maximum) priorityProgressBar.Value = (int)progressBarValue; 
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -697,7 +697,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (visitsProgressBar.Value < visitsProgressBar.Maximum) visitsProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < visitsProgressBar.Maximum && visitsProgressBar.Value < visitsProgressBar.Maximum) visitsProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
@@ -722,7 +722,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    if (feedbackProgressBar.Value < feedbackProgressBar.Maximum) feedbackProgressBar.Value = (int)progressBarValue;
+                    if (progressBarValue < feedbackProgressBar.Maximum && feedbackProgressBar.Value < feedbackProgressBar.Maximum) feedbackProgressBar.Value = (int)progressBarValue;
                     currentBar = (int) progressBarValue;
                     maxiBar = (int)progressBarMaximum;
                     double yellowTriger = (progressBarMaximum * 0.8);
