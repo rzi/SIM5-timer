@@ -454,8 +454,9 @@ namespace WindowsFormsApp2
         {
             char[] MyChar = { '%' };
             string NewString = text.TrimEnd(MyChar);
-            Console.WriteLine("valueOfColor: "+ NewString);
-            return int.Parse(NewString);
+            string trimmed = String.Concat(NewString.Where(c => !Char.IsWhiteSpace(c)));
+            Console.WriteLine("valueOfColor: "+ trimmed);
+            return int.Parse(trimmed);
         }
         private double convertResult(string text)
         {
