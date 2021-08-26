@@ -20,6 +20,15 @@ namespace WindowsFormsApp2
             Form2 form2 = new Form2(this);
             form2.Show();
             sumValue.Text = calcSumOfTime().ToString();
+            //PictureBox pb = new PictureBox();
+            //pb.Location = new Point(0, 0);
+            //pb.Size = new Size(150, 150);
+            //pb.Image = Image.FromFile("\\schneider_LIO_Life-Green_RGB.png");
+            //pb.Visible = true;
+            //this.Controls.Add(pb);
+            PictureBox pb1 = new PictureBox();
+            pb1.ImageLocation = ".\\schneider_LIO_Life-Green_RGB.png"; //path to image
+            pb1.SizeMode = PictureBoxSizeMode.AutoSize;
         }
         private void fillChart()
         {
