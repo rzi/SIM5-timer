@@ -24,11 +24,11 @@ namespace WindowsFormsApp2
         {
             label1.Text = _form1.currentAction;
             progressBar1.Maximum = _form1.maxiBar;
-            if (progressBar1.Value < progressBar1.Maximum) progressBar1.Value = _form1.currentBar;
+            if (_form1.currentBar <= progressBar1.Maximum && progressBar1.Value <= progressBar1.Maximum) progressBar1.Value = _form1.currentBar;
             if (_form1.currentBar < progressBar1.Maximum * 0.8) progressBar1.ForeColor = Color.LightGreen;
             if (_form1.currentBar > progressBar1.Maximum * 0.8) progressBar1.ForeColor = Color.Yellow;
             if (_form1.currentBar > progressBar1.Maximum * 0.99) progressBar1.ForeColor = Color.Red;
-            label2.Text = _form1.procentBar;
+            label2.Text = _form1.procentBar;  
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -36,5 +36,14 @@ namespace WindowsFormsApp2
             progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
