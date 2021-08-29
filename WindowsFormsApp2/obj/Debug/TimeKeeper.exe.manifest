@@ -163,14 +163,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TimeKeeper.exe" size="93624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TimeKeeper.exe" size="94648">
       <assemblyIdentity name="TimeKeeper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BhWArutk1Lzf5r+gSzPcN/RGG2tvs1oUAK8QaxDfZjY=</dsig:DigestValue>
+        <dsig:DigestValue>yf41Yalx8J8XgzSyN2ESzF8qldwvX1HCPD4Vjh3WAps=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

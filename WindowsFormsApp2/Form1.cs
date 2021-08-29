@@ -20,15 +20,13 @@ namespace WindowsFormsApp2
             Form2 form2 = new Form2(this);
             form2.Show();
             sumValue.Text = calcSumOfTime().ToString();
-            //PictureBox pb = new PictureBox();
-            //pb.Location = new Point(0, 0);
-            //pb.Size = new Size(150, 150);
-            //pb.Image = Image.FromFile("\\schneider_LIO_Life-Green_RGB.png");
-            //pb.Visible = true;
-            //this.Controls.Add(pb);
-            //PictureBox pb1 = new PictureBox();
-            //pb1.ImageLocation = ".\\schneider_LIO_Life-Green_RGB.png"; //path to image
-            //pb1.SizeMode = PictureBoxSizeMode.AutoSize;
+
+            Bitmap image = new Bitmap(canvas.Size.Width, canvas.Size.Height);
+            Graphics g = Graphics.FromImage(image);
+            g.DrawLine(new Pen(Color.Black, 2) { DashPattern = new float[] { 4, 2F } }, 8, 87, 940, 87);
+            g.DrawLine(new Pen(Color.Black, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
+            canvas.Image = image;
+
         }
         private void fillChart()
         {
@@ -1131,6 +1129,17 @@ namespace WindowsFormsApp2
         {
             sumValue.Text = calcSumOfTime().ToString();
         }
+
+        private void canvas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sumLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void safetyTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
