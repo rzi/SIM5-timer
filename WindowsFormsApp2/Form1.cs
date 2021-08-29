@@ -26,9 +26,9 @@ namespace WindowsFormsApp2
             //pb.Image = Image.FromFile("\\schneider_LIO_Life-Green_RGB.png");
             //pb.Visible = true;
             //this.Controls.Add(pb);
-            PictureBox pb1 = new PictureBox();
-            pb1.ImageLocation = ".\\schneider_LIO_Life-Green_RGB.png"; //path to image
-            pb1.SizeMode = PictureBoxSizeMode.AutoSize;
+            //PictureBox pb1 = new PictureBox();
+            //pb1.ImageLocation = ".\\schneider_LIO_Life-Green_RGB.png"; //path to image
+            //pb1.SizeMode = PictureBoxSizeMode.AutoSize;
         }
         private void fillChart()
         {
