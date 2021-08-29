@@ -293,7 +293,6 @@ namespace WindowsFormsApp2
             this.sumLabel.Size = new System.Drawing.Size(64, 24);
             this.sumLabel.TabIndex = 110;
             this.sumLabel.Text = "Suma:";
-            this.sumLabel.Click += new System.EventHandler(this.sumLabel_Click);
             // 
             // feedbackTimePicker
             // 
@@ -1271,7 +1270,6 @@ namespace WindowsFormsApp2
             this.canvas.Size = new System.Drawing.Size(990, 581);
             this.canvas.TabIndex = 112;
             this.canvas.TabStop = false;
-            this.canvas.Click += new System.EventHandler(this.canvas_Click);
             // 
             // Form1
             // 

@@ -23,10 +23,9 @@ namespace WindowsFormsApp2
 
             Bitmap image = new Bitmap(canvas.Size.Width, canvas.Size.Height);
             Graphics g = Graphics.FromImage(image);
-            g.DrawLine(new Pen(Color.Black, 2) { DashPattern = new float[] { 4, 2F } }, 8, 87, 940, 87);
-            g.DrawLine(new Pen(Color.Black, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
+            g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 87, 940, 87);
+            g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
             canvas.Image = image;
-
         }
         private void fillChart()
         {
@@ -1129,17 +1128,6 @@ namespace WindowsFormsApp2
         {
             sumValue.Text = calcSumOfTime().ToString();
         }
-
-        private void canvas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sumLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void safetyTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();

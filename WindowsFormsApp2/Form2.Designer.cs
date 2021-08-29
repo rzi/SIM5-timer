@@ -53,7 +53,6 @@ namespace WindowsFormsApp2
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(123, 35);
             this.progressBar1.TabIndex = 1;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // timer1
             // 
@@ -68,7 +67,6 @@ namespace WindowsFormsApp2
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 2;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form2
             // 
