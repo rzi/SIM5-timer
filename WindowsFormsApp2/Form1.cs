@@ -1,17 +1,18 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        public bool intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
+        public bool Sound, Sound1,Sound2, intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
         public string currentAction, procentBar, status;
         public int currentBar, maxiBar;
         Result result = new Result();
@@ -26,10 +27,11 @@ namespace WindowsFormsApp2
             g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 87, 940, 87);
             g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
             canvas.Image = image;
+
         }
         private void fillChart()
         {
-            double meetingTime =0;
+            double meetingTime = 0;
             // chart intro
             double introResult1 = convertResult(introResult.Text);
             meetingTime = meetingTime + introResult1;
@@ -45,7 +47,7 @@ namespace WindowsFormsApp2
                 chart1.Series["Series1"].Points[0].Color = Color.LightGreen;
                 chart1.Series["Series1"].Points[0].LabelForeColor = Color.Black;
             }
-            chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() +" \nmin";
+            chart1.Series["Series1"].Points[0].Label = Math.Round(introResult1, 1).ToString() + " \nmin";
             chart1.Series["Series1"].Points.AddXY("BHP", introResult1);
             chart1.Series["Series1"].Points[1].Color = Color.White;
             chart1.Series["Series1"].Points.AddXY("Jakość", introResult1);
@@ -307,7 +309,7 @@ namespace WindowsFormsApp2
             chart1.Series["Series8"].Points[5].Color = Color.White;
             chart1.Series["Series8"].Points.AddXY("Projekty", priorityResult1);
             chart1.Series["Series8"].Points[6].Color = Color.White;
-            chart1.Series["Series8"].Points.AddXY("Priorytety", priorityResult1);;
+            chart1.Series["Series8"].Points.AddXY("Priorytety", priorityResult1); ;
             chart1.Series["Series8"].Points[7].Label = Math.Round(priorityResult1, 1).ToString() + " \nmin";
             valueOfColor = valueOfColorFN(priorityProgressValue.Text);
             if (valueOfColor > 100)
@@ -445,7 +447,7 @@ namespace WindowsFormsApp2
             chart1.ChartAreas[0].AxisY.Maximum = meetingTime;
             chart1.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9, System.Drawing.FontStyle.Bold);
             chart1.Invalidate();
-           
+
             //chart title  
             chart1.Titles.Add(
              new Title(
@@ -456,13 +458,13 @@ namespace WindowsFormsApp2
                 )
             );
         }
-        private int valueOfColorFN(string text )
+        private int valueOfColorFN(string text)
         {
             char[] MyChar = { '%', '∞' };
             string NewString = text.TrimEnd(MyChar);
             string trimmed = String.Concat(NewString.Where(c => !Char.IsWhiteSpace(c)));
-            Console.WriteLine("valueOfColor: "+ trimmed);
-            if (trimmed == "") 
+            Console.WriteLine("valueOfColor: " + trimmed);
+            if (trimmed == "")
             {
                 return 0;
             }
@@ -470,7 +472,7 @@ namespace WindowsFormsApp2
             {
                 return int.Parse(trimmed);
             }
-                 
+
         }
         private double convertResult(string text)
         {
@@ -484,14 +486,12 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
-            timer1.Enabled = true; 
+            timer1.Enabled = true;
         }
         public void timer1_Tick(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             currentTime.Text = now.ToLongTimeString(); //bieżący czas
-
-
             switch (status)
             {
                 case "intro":
@@ -557,6 +557,7 @@ namespace WindowsFormsApp2
             procentBar = introProgressValue.Text;
             if (progressBarValue > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) introProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue,progressBarMaximum);
             result.isIntro = intro;
             result.setIntro = introTimePicker.ToString();
             result.startIntro = introStart.ToString();
@@ -580,6 +581,7 @@ namespace WindowsFormsApp2
             procentBar = safetyProgressValue.Text;
             if (progressBarValue > yellowTriger) safetyProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) safetyProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void qualityTick()
         {
@@ -597,6 +599,7 @@ namespace WindowsFormsApp2
             procentBar = qualityProgressValue.Text;
             if (progressBarValue > yellowTriger) qualityProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) qualityProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void customerServiceTick()
         {
@@ -614,6 +617,7 @@ namespace WindowsFormsApp2
             procentBar = customerServiceProgressValue.Text;
             if (progressBarValue > yellowTriger) customerServiceProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) customerServiceProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void performanceTick()
         {
@@ -631,6 +635,7 @@ namespace WindowsFormsApp2
             procentBar = performanceProgressValue.Text;
             if (progressBarValue > yellowTriger) performanceProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) performanceProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void peopleTick()
         {
@@ -648,6 +653,7 @@ namespace WindowsFormsApp2
             procentBar = peopleProgressValue.Text;
             if (progressBarValue > yellowTriger) peopleProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) peopleProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void projectsTick()
         {
@@ -665,6 +671,7 @@ namespace WindowsFormsApp2
             procentBar = projectsProgressValue.Text;
             if (progressBarValue > yellowTriger) projectsProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) projectsProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void priorityTick()
         {
@@ -682,6 +689,7 @@ namespace WindowsFormsApp2
             procentBar = priorityProgressValue.Text;
             if (progressBarValue > yellowTriger) priorityProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) priorityProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void visitsTick()
         {
@@ -699,6 +707,7 @@ namespace WindowsFormsApp2
             procentBar = visitsProgressValue.Text;
             if (progressBarValue > yellowTriger) visitsProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) visitsProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private void feedbackTick()
         {
@@ -716,6 +725,7 @@ namespace WindowsFormsApp2
             procentBar = feedbackProgressValue.Text;
             if (progressBarValue > yellowTriger) feedbackProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) feedbackProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
         }
         private double valueFN(string startTime, string currentTime)
         {
@@ -761,10 +771,10 @@ namespace WindowsFormsApp2
             Console.WriteLine(ItemObj.Item1);
         }
         private void button2_Click(object sender, EventArgs e)
-        { 
+        {
             if (intro)
             {
-                intro = false;
+                intro = false; Sound = false; Sound1 = false; Sound2 =false;
                 introEnd.Text = currentTime.Text;
                 DateTime timeStart = DateTime.Parse(introEnd.Text);
                 DateTime timeEnd = DateTime.Parse(introStart.Text);
@@ -785,17 +795,18 @@ namespace WindowsFormsApp2
                 safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
                 saveToDB("Wstęp", introTimePicker.Value.ToString(), introStart.Text, introEnd.Text, introResult.Text, introProgressValue.Text);
 
-            } else
+            }
+            else
             {
                 wrongSequenceWarning();
             }
 
-        }  
+        }
         private void Button3_Click(object sender, EventArgs e)
         {
             if (safety)
-            { 
-                safety = false;
+            {
+                safety = false; Sound = false; Sound1 = false; Sound2 = false;
                 safetyEnd.Text = currentTime.Text;
                 DateTime timeStart = DateTime.Parse(safetyEnd.Text);
                 DateTime timeEnd = DateTime.Parse(safetyStart.Text);
@@ -812,15 +823,17 @@ namespace WindowsFormsApp2
                 qualityProgressBar.ForeColor = Color.LightGreen;
                 qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
                 saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
-            } else
+            }
+            else
             {
                 wrongSequenceWarning();
             }
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if (quality) { 
-                quality = false;
+            if (quality)
+            {
+                quality = false; Sound = false; Sound1 = false; Sound2 = false;
                 qualityEnd.Text = currentTime.Text;
                 DateTime timeStart = DateTime.Parse(qualityEnd.Text);
                 DateTime timeEnd = DateTime.Parse(qualityStart.Text);
@@ -839,34 +852,34 @@ namespace WindowsFormsApp2
                 customerServiceProgressBar.ForeColor = Color.LightGreen;
                 customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
                 saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
-            } 
-        else
+            }
+            else
             {
                 wrongSequenceWarning();
             }
-}
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             if (customerService)
-            { 
-            customerService = false;
-            customerServiceEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(customerServiceEnd.Text);
-            DateTime timeEnd = DateTime.Parse(customerServiceStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            customerServiceResult.Text = diff1.ToString();
-            currentAction = performanceTitle.Text;
-            performanceStart.Text = "";
-            performanceEnd.Text = "";
-            performanceResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            performanceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            performance = true;
-            status = "performance";
-            performanceProgressBar.ForeColor = Color.LightGreen;
-            performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
-            } 
+            {
+                customerService = false; Sound = false; Sound1 = false; Sound2 = false;
+                customerServiceEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(customerServiceEnd.Text);
+                DateTime timeEnd = DateTime.Parse(customerServiceStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                customerServiceResult.Text = diff1.ToString();
+                currentAction = performanceTitle.Text;
+                performanceStart.Text = "";
+                performanceEnd.Text = "";
+                performanceResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                performanceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                performance = true;
+                status = "performance";
+                performanceProgressBar.ForeColor = Color.LightGreen;
+                performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
+            }
             else
             {
                 wrongSequenceWarning();
@@ -874,24 +887,25 @@ namespace WindowsFormsApp2
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            if (performance) { 
-            performance = false;
-            performanceEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(performanceEnd.Text);
-            DateTime timeEnd = DateTime.Parse(performanceStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            performanceResult.Text = diff1.ToString();
-            currentAction = peopleTitle.Text;
-            peopleStart.Text = "";
-            peopleEnd.Text = "";
-            peopleResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            peopleStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            people = true;
-            status = "people";
-            peopleProgressBar.ForeColor = Color.LightGreen;
-            peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
+            if (performance)
+            {
+                performance = false; Sound = false; Sound1 = false; Sound2 = false;
+                performanceEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(performanceEnd.Text);
+                DateTime timeEnd = DateTime.Parse(performanceStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                performanceResult.Text = diff1.ToString();
+                currentAction = peopleTitle.Text;
+                peopleStart.Text = "";
+                peopleEnd.Text = "";
+                peopleResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                peopleStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                people = true;
+                status = "people";
+                peopleProgressBar.ForeColor = Color.LightGreen;
+                peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
             }
             else
             {
@@ -900,24 +914,25 @@ namespace WindowsFormsApp2
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            if (people) { 
-            people = false;
-            peopleEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(peopleEnd.Text);
-            DateTime timeEnd = DateTime.Parse(peopleStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            peopleResult.Text = diff1.ToString();
-            currentAction = projectsTitle.Text;
-            projectsStart.Text = "";
-            projectsEnd.Text = "";
-            projectsResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            projectsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            projects = true;
-            status = "projects";
-            projectsProgressBar.ForeColor = Color.LightGreen;
-            projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
+            if (people)
+            {
+                people = false; Sound = false; Sound1 = false; Sound2 = false;
+                peopleEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(peopleEnd.Text);
+                DateTime timeEnd = DateTime.Parse(peopleStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                peopleResult.Text = diff1.ToString();
+                currentAction = projectsTitle.Text;
+                projectsStart.Text = "";
+                projectsEnd.Text = "";
+                projectsResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                projectsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                projects = true;
+                status = "projects";
+                projectsProgressBar.ForeColor = Color.LightGreen;
+                projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
             }
             else
             {
@@ -926,24 +941,25 @@ namespace WindowsFormsApp2
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            if (projects) { 
-            projects = false;
-            projectsEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(projectsEnd.Text);
-            DateTime timeEnd = DateTime.Parse(projectsStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            projectsResult.Text = diff1.ToString();
-            currentAction = priorityTitle.Text;
-            priorityStart.Text = "";
-            priorityEnd.Text = "";
-            priorityResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            priorityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            priority = true;
-            status = "priority";
-            priorityProgressBar.ForeColor = Color.LightGreen;
-            priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
+            if (projects)
+            {
+                projects = false; Sound = false; Sound1 = false; Sound2 = false;
+                projectsEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(projectsEnd.Text);
+                DateTime timeEnd = DateTime.Parse(projectsStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                projectsResult.Text = diff1.ToString();
+                currentAction = priorityTitle.Text;
+                priorityStart.Text = "";
+                priorityEnd.Text = "";
+                priorityResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                priorityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                priority = true;
+                status = "priority";
+                priorityProgressBar.ForeColor = Color.LightGreen;
+                priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
             }
             else
             {
@@ -953,24 +969,24 @@ namespace WindowsFormsApp2
         private void button9_Click(object sender, EventArgs e)
         {
             if (priority)
-            { 
-            priority = false;
-            priorityEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(priorityEnd.Text);
-            DateTime timeEnd = DateTime.Parse(priorityStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            priorityResult.Text = diff1.ToString();
-            currentAction = visitsTitle.Text;
-            visitsStart.Text = "";
-            visitsEnd.Text = "";
-            visitsResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            visitsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            visits = true;
-            status = "visits";
-            visitsProgressBar.ForeColor = Color.LightGreen;
-            visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
+            {
+                priority = false; Sound = false; Sound1 = false; Sound2 = false;
+                priorityEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(priorityEnd.Text);
+                DateTime timeEnd = DateTime.Parse(priorityStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                priorityResult.Text = diff1.ToString();
+                currentAction = visitsTitle.Text;
+                visitsStart.Text = "";
+                visitsEnd.Text = "";
+                visitsResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                visitsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                visits = true;
+                status = "visits";
+                visitsProgressBar.ForeColor = Color.LightGreen;
+                visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
             }
             else
             {
@@ -980,24 +996,24 @@ namespace WindowsFormsApp2
         private void button10_Click(object sender, EventArgs e)
         {
             if (visits)
-            { 
-            visits = false;
-            visitsEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(visitsEnd.Text);
-            DateTime timeEnd = DateTime.Parse(visitsStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            visitsResult.Text = diff1.ToString();
-            currentAction = feedbackTitle.Text;
-            feedbackStart.Text = "";
-            feedbackEnd.Text = "";
-            feedbackResult.Text = "";
-            DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-            feedbackStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-            feedback = true;
-            status = "feedback";
-            feedbackProgressBar.ForeColor = Color.LightGreen;
-            feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
+            {
+                visits = false; Sound = false; Sound1 = false; Sound2 = false;
+                visitsEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(visitsEnd.Text);
+                DateTime timeEnd = DateTime.Parse(visitsStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                visitsResult.Text = diff1.ToString();
+                currentAction = feedbackTitle.Text;
+                feedbackStart.Text = "";
+                feedbackEnd.Text = "";
+                feedbackResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                feedbackStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                feedback = true;
+                status = "feedback";
+                feedbackProgressBar.ForeColor = Color.LightGreen;
+                feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
             }
             else
             {
@@ -1006,29 +1022,30 @@ namespace WindowsFormsApp2
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            if (feedback )
-            { 
-            feedback = false;
-            feedbackEnd.Text = currentTime.Text;
-            DateTime timeStart = DateTime.Parse(feedbackEnd.Text);
-            DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
-            TimeSpan diff1 = timeStart.Subtract(timeEnd);
-            feedbackResult.Text = diff1.ToString();
-            status = "end";
-            saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
-            fillChart();
+            if (feedback)
+            {
+                feedback = false; Sound = false; Sound1 = false; Sound2 = false;
+                feedbackEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(feedbackEnd.Text);
+                DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                feedbackResult.Text = diff1.ToString();
+                status = "end";
+                saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
+                fillChart();
             }
             else
             {
                 wrongSequenceWarning();
             }
-        }  
+        }
         private void button12_Click(object sender, EventArgs e)
         {
             // czyszczenie, restart app
             Application.Restart();
             Process.GetCurrentProcess().Kill();
             this.Visible = true;
+            Sound = false; Sound1 = false; Sound2 = false;
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
         {
@@ -1121,7 +1138,7 @@ namespace WindowsFormsApp2
             }
             if (tabControl1.SelectedTab == tabControl1.TabPages[1]) // wykres
             {
-                
+
             }
         }
         private void introTimePicker_ValueChanged(object sender, EventArgs e)
@@ -1196,6 +1213,41 @@ namespace WindowsFormsApp2
         {
             MessageBox.Show("Zła sekwencja ", "Uwaga!");
             Console.WriteLine("zła sekwencja " + status);
+        }
+        private void playSimpleSound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+            simpleSound.Play();
+        }
+        private void playSimpleSound1()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\Windows Unlock.wav");
+            simpleSound.Play();
+        }
+        private void playSimpleSound2()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\tada.wav");
+            simpleSound.Play();
+        }
+        private void progressSound(double progressBarValue, double progressBarMaximum)
+        {
+
+            if (progressBarValue > progressBarMaximum * 0.8 && progressBarValue < progressBarMaximum * 0.85 && Sound == false)
+            {
+                playSimpleSound();
+                Sound = true;
+            }
+            if (progressBarValue > progressBarMaximum * 0.9 && progressBarValue < progressBarMaximum * 0.95 && Sound1 == false)
+            {
+                playSimpleSound1();
+                Sound1 = true;
+            }
+
+            if (progressBarValue > progressBarMaximum * 0.99 && progressBarValue < progressBarMaximum * 1.1 && Sound2 == false)
+            {
+                playSimpleSound2();
+                Sound2 = true;
+            }
         }
     }
 }
