@@ -1049,24 +1049,57 @@ namespace WindowsFormsApp2
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
         {
-            Console.WriteLine("zapis do DB");
+            //Console.WriteLine("zapis do DB");
+            //// db connection
+            //string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
+            //MySqlConnection conn = new MySqlConnection(connectionstring);
+            //try
+            //{
+            //    conn.Open();
+            //    //SQL Query to execute
+            //    //insert Query
+            //    // we are inserting actor_id, first_name, last_name, last_updated columns data
+            //    //21:36:01	insert into timedb.timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("2021-08-15","safety","3:00", "20:02:00","20:05:00","03:00","100%")	1 row(s) affected	0.000 sec
+
+            //    string date = dateTimePicker1.Value.ToString().Substring(0, 10);
+            //    Console.WriteLine("data: " + date);
+            //    string timeSet1 = timeSet.Substring(10, 9);
+            //    Console.WriteLine("timeSet1: " + timeSet1);
+            //    string sql = "insert into timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+            //        + "\"" + date + "\""
+            //        + ",\"" + block + "\""
+            //        + ",\"" + timeSet1 + "\""
+            //        + ",\"" + timeStart + "\""
+            //        + ",\"" + timeEnd + "\""
+            //        + ",\"" + timeResult + "\""
+            //        + ",\"" + progressValue + "\""
+            //        + ")";
+            //    Console.WriteLine(" sql; " + sql);
+            //    MySqlCommand cmd = new MySqlCommand(sql, conn);
+            //    cmd.ExecuteNonQuery();
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //conn.Close();
+           
+            // cba.pl
+            Console.WriteLine("zapis do DB na cba.pl");
             // db connection
-            string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
-            MySqlConnection conn = new MySqlConnection(connectionstring);
+            string connectionstring2 = "Server=rzi.cba.pl; Database=elunch_1;Uid=Bazapi2019; Password=Bazapi2019; Port=3306;SSL Mode=None";
+            MySqlConnection conn2 = new MySqlConnection(connectionstring2);
             try
             {
-                conn.Open();
-                //SQL Query to execute
-                //insert Query
-                // we are inserting actor_id, first_name, last_name, last_updated columns data
-                //21:36:01	insert into timedb.timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("2021-08-15","safety","3:00", "20:02:00","20:05:00","03:00","100%")	1 row(s) affected	0.000 sec
-
-                string date = dateTimePicker1.Value.ToString().Substring(0, 10);
-                Console.WriteLine("data: " + date);
+                conn2.Open();
+                string date2 = dateTimePicker1.Value.ToString().Substring(0, 10);
+                Console.WriteLine("data: " + date2);
                 string timeSet1 = timeSet.Substring(10, 9);
                 Console.WriteLine("timeSet1: " + timeSet1);
-                string sql = "insert into timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
-                    + "\"" + date + "\""
+                string sql = "insert into timeDB(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+                    + "\"" + date2 + "\""
                     + ",\"" + block + "\""
                     + ",\"" + timeSet1 + "\""
                     + ",\"" + timeStart + "\""
@@ -1075,16 +1108,14 @@ namespace WindowsFormsApp2
                     + ",\"" + progressValue + "\""
                     + ")";
                 Console.WriteLine(" sql; " + sql);
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn2);
                 cmd.ExecuteNonQuery();
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            conn.Close();
+            conn2.Close();
         }
         public static double ConvertToUnixTimestamp(DateTime date)
         {
