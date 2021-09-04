@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        public bool Sound, Sound1,Sound2, intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
+        public bool Sound, Sound1, Sound2, intro, safety, quality, customerService, performance, people, projects, priority, visits, feedback;
         public string currentAction, procentBar, status;
         public int currentBar, maxiBar;
         Result result = new Result();
@@ -27,6 +27,62 @@ namespace WindowsFormsApp2
             g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 87, 940, 87);
             g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
             canvas.Image = image;
+
+            // check setings
+            int counter = 0;
+            string line;
+
+            // Read the file and display it line by line.  
+            System.IO.StreamReader file =
+                new System.IO.StreamReader(@"C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\settings1.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                System.Console.WriteLine(line);
+                counter++;
+
+                if (counter == 1)
+                {
+                    if (line == "true")
+                    {
+                        checkBoxServer.Checked = true;
+                        Console.WriteLine("checked = " + line);
+                    }
+                    else
+                    {
+                        checkBoxServer.Checked = false;
+                        Console.WriteLine("checked = " + line);
+                    }
+                }
+                if (counter == 2)
+                {
+                    locationSite.Text = line;
+                }
+                if (counter == 3)
+                {
+                    hostInput.Text = line;
+                }
+                if (counter == 4)
+                {
+                    loginInput.Text = line;
+                }
+                if (counter == 5)
+                {
+                    passwordInput.Text = line;
+                }
+                if (counter == 6)
+                {
+                    baseInput.Text = line;
+                }
+                if (counter == 7)
+                {
+                    tableInput.Text = line;
+                }
+            }
+
+            file.Close();
+            System.Console.WriteLine("There were {0} lines.", counter);
+            // Suspend the screen.  
+            System.Console.ReadLine();
 
         }
         private void fillChart()
@@ -557,7 +613,7 @@ namespace WindowsFormsApp2
             procentBar = introProgressValue.Text;
             if (progressBarValue > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
             if (progressBarValue > redTriger) introProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue,progressBarMaximum);
+            progressSound(progressBarValue, progressBarMaximum);
             result.isIntro = intro;
             result.setIntro = introTimePicker.ToString();
             result.startIntro = introStart.ToString();
@@ -774,7 +830,7 @@ namespace WindowsFormsApp2
         {
             if (intro)
             {
-                intro = false; Sound = false; Sound1 = false; Sound2 =false;
+                intro = false; Sound = false; Sound1 = false; Sound2 = false;
                 introEnd.Text = currentTime.Text;
                 DateTime timeStart = DateTime.Parse(introEnd.Text);
                 DateTime timeEnd = DateTime.Parse(introStart.Text);
@@ -1049,6 +1105,47 @@ namespace WindowsFormsApp2
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
         {
+
+            if (checkBoxServer.Checked)
+            {
+                Console.WriteLine("zapis do DB na cba.pl");
+                // db connection
+                string connectionstring2 = "Server =" + hostInput.Text +
+                    "; Database=" + baseInput.Text +
+                    "; Uid=" + loginInput.Text +
+                    "; Password= " + passwordInput.Text +
+                    "; Port=3306;SSL Mode=None";
+
+                Console.WriteLine("connectionstring2: " + connectionstring2);
+                MySqlConnection conn2 = new MySqlConnection(connectionstring2);
+                try
+                {
+                    conn2.Open();
+                    string date2 = dateTimePicker1.Value.ToString().Substring(0, 10);
+                    Console.WriteLine("data: " + date2);
+                    string timeSet1 = timeSet.Substring(10, 9);
+                    Console.WriteLine("timeSet1: " + timeSet1);
+                    string sql = "insert into " + tableInput.Text + "(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+                        + "\"" + date2 + "\""
+                        + ",\"" + block + "\""
+                        + ",\"" + timeSet1 + "\""
+                        + ",\"" + timeStart + "\""
+                        + ",\"" + timeEnd + "\""
+                        + ",\"" + timeResult + "\""
+                        + ",\"" + progressValue + "\""
+                        + ")";
+                    Console.WriteLine(" sql: " + sql);
+                    MySqlCommand cmd = new MySqlCommand(sql, conn2);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn2.Close();
+            }
+
+
             //Console.WriteLine("zapis do DB");
             //// db connection
             //string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
@@ -1085,37 +1182,9 @@ namespace WindowsFormsApp2
             //    MessageBox.Show(ex.Message);
             //}
             //conn.Close();
-           
+
             // cba.pl
-            Console.WriteLine("zapis do DB na cba.pl");
-            // db connection
-            string connectionstring2 = "Server=rzi.cba.pl; Database=elunch_1;Uid=Bazapi2019; Password=Bazapi2019; Port=3306;SSL Mode=None";
-            MySqlConnection conn2 = new MySqlConnection(connectionstring2);
-            try
-            {
-                conn2.Open();
-                string date2 = dateTimePicker1.Value.ToString().Substring(0, 10);
-                Console.WriteLine("data: " + date2);
-                string timeSet1 = timeSet.Substring(10, 9);
-                Console.WriteLine("timeSet1: " + timeSet1);
-                string sql = "insert into timeDB(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
-                    + "\"" + date2 + "\""
-                    + ",\"" + block + "\""
-                    + ",\"" + timeSet1 + "\""
-                    + ",\"" + timeStart + "\""
-                    + ",\"" + timeEnd + "\""
-                    + ",\"" + timeResult + "\""
-                    + ",\"" + progressValue + "\""
-                    + ")";
-                Console.WriteLine(" sql; " + sql);
-                MySqlCommand cmd = new MySqlCommand(sql, conn2);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            conn2.Close();
+
         }
         public static double ConvertToUnixTimestamp(DateTime date)
         {
@@ -1134,11 +1203,16 @@ namespace WindowsFormsApp2
             {
 
                 // db connection
-                string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
+                string connectionstring = "Server =" + hostInput.Text +
+                    "; Database=" + baseInput.Text +
+                    "; Uid=" + loginInput.Text +
+                    "; Password= " + passwordInput.Text +
+                    "; Port=3306;SSL Mode=None";
+                Console.WriteLine("connectionstring: " + connectionstring);
                 MySqlConnection conn = new MySqlConnection(connectionstring);
                 try
                 {
-                    string mysql = "Select * FROM timedb";
+                    string mysql = "Select * FROM " + tableInput.Text;
                     MySqlCommand command = new MySqlCommand(mysql, conn);
                     conn.Open();
 
@@ -1167,56 +1241,9 @@ namespace WindowsFormsApp2
                 }
                 conn.Close();
             }
-            if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // wykres
+            if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // server settings from file
             {
-                int counter = 0;
-                string line;
-
-                // Read the file and display it line by line.  
-                System.IO.StreamReader file =
-                    new System.IO.StreamReader(@"C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\settings1.txt");
-                while ((line = file.ReadLine()) != null)
-                {
-                    System.Console.WriteLine(line);
-                    counter++;
-
-                    if (counter == 1)
-                    {
-                        if (line=="true")
-                        {
-                            checkBoxServer.Checked = true;
-                        }
-                        else
-                        {
-                            checkBoxServer.Checked = false;
-                        }
-                    }
-                    if (counter == 2)
-                    {
-                        locationSite.Text = line;
-                    }
-                    if (counter == 3)
-                    {
-                        hostInput.Text = line;
-                    }
-                    if (counter == 4)
-                    {
-                        loginInput.Text = line;
-                    }
-                    if (counter == 5)
-                    {
-                        passwordInput.Text = line;
-                    }
-                    if (counter == 6)
-                    {
-                        baseInput.Text = line;
-                    }
-                }
-
-                file.Close();
-                System.Console.WriteLine("There were {0} lines.", counter);
-                // Suspend the screen.  
-                System.Console.ReadLine();
+               
             }
         }
         private void introTimePicker_ValueChanged(object sender, EventArgs e)

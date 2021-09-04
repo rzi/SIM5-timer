@@ -1,6 +1,7 @@
 true
 Bukowno
-localhost
-root
-1234
+rzi.cba.pl
+Bazapi2019
+Bazapi2019
+elunch_1
 timeDB
