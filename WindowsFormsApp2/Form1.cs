@@ -1167,9 +1167,56 @@ namespace WindowsFormsApp2
                 }
                 conn.Close();
             }
-            if (tabControl1.SelectedTab == tabControl1.TabPages[1]) // wykres
+            if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // wykres
             {
+                int counter = 0;
+                string line;
 
+                // Read the file and display it line by line.  
+                System.IO.StreamReader file =
+                    new System.IO.StreamReader(@"C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\settings1.txt");
+                while ((line = file.ReadLine()) != null)
+                {
+                    System.Console.WriteLine(line);
+                    counter++;
+
+                    if (counter == 1)
+                    {
+                        if (line=="true")
+                        {
+                            checkBoxServer.Checked = true;
+                        }
+                        else
+                        {
+                            checkBoxServer.Checked = false;
+                        }
+                    }
+                    if (counter == 2)
+                    {
+                        locationSite.Text = line;
+                    }
+                    if (counter == 3)
+                    {
+                        hostInput.Text = line;
+                    }
+                    if (counter == 4)
+                    {
+                        loginInput.Text = line;
+                    }
+                    if (counter == 5)
+                    {
+                        passwordInput.Text = line;
+                    }
+                    if (counter == 6)
+                    {
+                        baseInput.Text = line;
+                    }
+                }
+
+                file.Close();
+                System.Console.WriteLine("There were {0} lines.", counter);
+                // Suspend the screen.  
+                System.Console.ReadLine();
             }
         }
         private void introTimePicker_ValueChanged(object sender, EventArgs e)
