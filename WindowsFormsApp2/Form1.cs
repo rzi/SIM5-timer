@@ -1254,6 +1254,12 @@ namespace WindowsFormsApp2
         {
             sumValue.Text = calcSumOfTime().ToString();
         }
+
+        private void tableInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
