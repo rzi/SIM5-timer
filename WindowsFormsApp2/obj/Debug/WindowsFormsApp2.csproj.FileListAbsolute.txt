@@ -75,7 +75,6 @@ C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Com
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\MySql.Data.xml
-C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Timekeeper.Properties.Resources.resources

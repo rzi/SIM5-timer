@@ -1243,7 +1243,38 @@ namespace WindowsFormsApp2
             }
             if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // server settings from file
             {
-               
+                if (checkBoxServer.Visible == true)
+                {
+                    location.Visible = true;
+                    locationSite.Visible = true;
+                    host.Visible = true;
+                    hostInput.Visible = true;
+                    login.Visible = true;
+                    loginInput.Visible = true;
+                    password.Visible = true;
+                    passwordInput.Visible = true;
+                    baseLabel.Visible = true;
+                    baseInput.Visible = true;
+                    tableLabel.Visible = true;
+                    tableInput.Visible = true;
+                    Console.WriteLine("checkBoxServer.Text =true");                }
+                else
+                {
+                    location.Visible = false;
+                    locationSite.Visible = false;
+                    host.Visible = false;
+                    hostInput.Visible = false;
+                    login.Visible = false;
+                    loginInput.Visible = false;
+                    password.Visible = false;
+                    passwordInput.Visible = false;
+                    baseLabel.Visible = false;
+                    baseInput.Visible = false;
+                    tableLabel.Visible = false;
+                    tableInput.Visible = false;
+                    Console.WriteLine("checkBoxServer.Text = false");
+
+                }
             }
         }
         private void introTimePicker_ValueChanged(object sender, EventArgs e)
@@ -1256,6 +1287,16 @@ namespace WindowsFormsApp2
         }
 
         private void tableInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hostInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginInput_TextChanged(object sender, EventArgs e)
         {
 
         }
