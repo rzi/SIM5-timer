@@ -1485,7 +1485,10 @@ namespace WindowsFormsApp2
                 //Copying Image from The Screen
                 captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, 0, 0, captureRectangle.Size);
                 //Saving the Image File (I am here Saving it in My E drive).
-                captureBitmap.Save(@"c:\Timekeeper\Capture.jpg", ImageFormat.Jpeg);
+                string data = dateTimePicker1.Value.ToString();
+                var cleanedFileName = CleanFileName(data).Replace(".","-").Replace(" ","-");
+                Console.WriteLine("data " + cleanedFileName);
+                captureBitmap.Save( $@"c:\Timekeeper\Capture{cleanedFileName}.jpg", ImageFormat.Jpeg);
                 //Displaying the Successfull Result
                 MessageBox.Show("Screen Captured");
             }
@@ -1494,5 +1497,10 @@ namespace WindowsFormsApp2
                 MessageBox.Show(ex.Message);
             }
         }
+        public static string CleanFileName(string fileName)
+        {
+            // return Path.GetInvalidFileNameChars().Aggregate(fileName, (current, c) => current.Replace(c.ToString(), string.Empty));
+            return string.Join("_", fileName.Split(Path.GetInvalidFileNameChars()));
+        }
     }
-}
+};
