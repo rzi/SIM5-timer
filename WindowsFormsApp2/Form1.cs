@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -682,10 +683,14 @@ namespace WindowsFormsApp2
         private void button12_Click(object sender, EventArgs e)
         {
             // czyszczenie, restart app
-            Application.Restart();
-            Process.GetCurrentProcess().Kill();
+            System.Windows.Forms.Application.Restart();
             this.Visible = true;
             Sound = false; Sound1 = false; Sound2 = false;
+        }
+        private void screenShot_Click(object sender, EventArgs e)
+        {
+            //Creating a Method name CaptureMyScreen
+            CaptureMyScreen();
         }
         private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
         {
@@ -1464,6 +1469,30 @@ namespace WindowsFormsApp2
             float result2 = (int)result.Minute + ((float)result.Second / 60);
             Console.WriteLine("min/60 " + result2);
             return result2;
+        }
+        private void CaptureMyScreen()
+        {
+            try
+            {
+                //Creating a new Bitmap object
+                Bitmap captureBitmap = new Bitmap(1920, 1080, PixelFormat.Format32bppArgb);
+                //Bitmap captureBitmap = new Bitmap(int width, int height, PixelFormat);
+                //Creating a Rectangle object which will  
+                //capture our Current Screen
+                Rectangle captureRectangle = Screen.AllScreens[0].Bounds;
+                //Creating a New Graphics Object
+                Graphics captureGraphics = Graphics.FromImage(captureBitmap);
+                //Copying Image from The Screen
+                captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, 0, 0, captureRectangle.Size);
+                //Saving the Image File (I am here Saving it in My E drive).
+                captureBitmap.Save(@"c:\Timekeeper\Capture.jpg", ImageFormat.Jpeg);
+                //Displaying the Successfull Result
+                MessageBox.Show("Screen Captured");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

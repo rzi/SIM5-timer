@@ -160,6 +160,7 @@ namespace WindowsFormsApp2
             this.hostInput = new System.Windows.Forms.TextBox();
             this.host = new System.Windows.Forms.Label();
             this.checkBoxServer = new System.Windows.Forms.CheckBox();
+            this.screenShot = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -1158,6 +1159,7 @@ namespace WindowsFormsApp2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.screenShot);
             this.tabPage2.Controls.Add(this.chart1);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
@@ -1441,6 +1443,16 @@ namespace WindowsFormsApp2
             this.checkBoxServer.UseVisualStyleBackColor = true;
             this.checkBoxServer.CheckedChanged += new System.EventHandler(this.checkBoxServer_CheckedChanged);
             // 
+            // screenShot
+            // 
+            this.screenShot.Location = new System.Drawing.Point(125, 516);
+            this.screenShot.Name = "screenShot";
+            this.screenShot.Size = new System.Drawing.Size(115, 47);
+            this.screenShot.TabIndex = 1;
+            this.screenShot.Text = "Zapisz ";
+            this.screenShot.UseVisualStyleBackColor = true;
+            this.screenShot.Click += new System.EventHandler(this.screenShot_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1587,6 +1599,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TextBox tableInput;
         private System.Windows.Forms.Label tableLabel;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button screenShot;
     }
 }
 
