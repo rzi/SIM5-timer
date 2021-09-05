@@ -1480,10 +1480,16 @@ namespace WindowsFormsApp2
                 //Creating a Rectangle object which will  
                 //capture our Current Screen
                 Rectangle captureRectangle = Screen.AllScreens[0].Bounds;
+                captureRectangle.X = ActiveForm.Bounds.X;
+                captureRectangle.Y = ActiveForm.Bounds.Y;
+                captureRectangle.Width =ActiveForm.Bounds.Width;
+                captureRectangle.Height = ActiveForm.Bounds.Height;
+                Console.WriteLine("captureRectangle " + captureRectangle.ToString());
+                Console.WriteLine("size " + captureRectangle.Size.ToString());
                 //Creating a New Graphics Object
                 Graphics captureGraphics = Graphics.FromImage(captureBitmap);
                 //Copying Image from The Screen
-                captureGraphics.CopyFromScreen(captureRectangle.Left, captureRectangle.Top, 0, 0, captureRectangle.Size);
+                captureGraphics.CopyFromScreen(captureRectangle.X, captureRectangle.Y, captureRectangle.X, captureRectangle.Y, captureRectangle.Size);
                 //Saving the Image File (I am here Saving it in My E drive).
                 string data = dateTimePicker1.Value.ToString();
                 var cleanedFileName = CleanFileName(data).Replace(".","-").Replace(" ","-");
