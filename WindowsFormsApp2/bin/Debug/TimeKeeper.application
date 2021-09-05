@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TimeKeeper.exe.manifest" size="13504">
+    <dependentAssembly dependencyType="install" codebase="TimeKeeper.exe.manifest" size="13505">
       <assemblyIdentity name="TimeKeeper.exe" version="1.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>M8lXXTOYCypTBCgnpI7oPQLM2XNCq7UqtDkyV++W0+4=</dsig:DigestValue>
+        <dsig:DigestValue>WiP0H5GxMw8natx1SVgdZqUe7jrHzPqhj5uvy+bG7jU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

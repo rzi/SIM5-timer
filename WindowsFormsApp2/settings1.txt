@@ -1,5 +1,4 @@
-false
-Bukowno
+﻿true
 rzi.cba.pl
 Bazapi2019
 Bazapi2019

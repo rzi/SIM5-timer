@@ -3,8 +3,10 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
+using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -28,62 +30,145 @@ namespace WindowsFormsApp2
             g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
             canvas.Image = image;
 
-            // check setings
+            //string line;
+            //string curFile = @"c:\Timekeeper\settings1.txt";
+
+            //if (File.Exists(curFile))
+            //{
+            //    //FileStream fs = new FileStream(curFile, FileMode.Open);
+            //    //System.IO.StreamReader file = new System.IO.StreamReader(curFile);
+            //    //using (var myFile = File.Create(myPath))
+            //    //{
+            //    //    // interact with myFile here, it will be disposed automatically
+            //    //}
+            //    string[] lines = File.ReadAllLines(curFile);
+
+            //    // while ((line.Length  = file.ReadLine()) != null)
+            //    Console.WriteLine("lines.Length " + lines.Length);
+            //    for (int i=0; i < lines.Length; i++  )
+            //    {
+            //        line = lines[i];
+            //        System.Console.WriteLine("line " + line);
+
+            //        if (i == 0)
+            //        {
+            //            if (line == "true")
+            //            { 
+            //                checkBoxServer.Checked = true;
+            //                Console.WriteLine("checked = " + line);
+            //            }
+            //            else
+            //            {
+            //                checkBoxServer.Checked = false;
+            //                Console.WriteLine("checked = " + line);
+            //            }
+            //        }
+            //        if (i == 1)
+            //        {
+            //            locationSite.Text = line;
+            //        }
+            //        if (i == 2)
+            //        {
+            //            hostInput.Text = line;
+            //        }
+            //        if (i == 3)
+            //        {
+            //            loginInput.Text = line;
+            //        }
+            //        if (i == 4)
+            //        {
+            //            passwordInput.Text = line;
+            //        }
+            //        if (i == 5)
+            //        {
+            //            baseInput.Text = line;
+            //        }
+            //        if (i == 6)
+            //        {
+            //            tableInput.Text = line;
+            //        }
+            //    }
+            //    //file.Close();
+            //    // fs.Close();
+            //    Console.WriteLine(" acces ");
             int counter = 0;
             string line;
-
-            // Read the file and display it line by line.  
-            System.IO.StreamReader file =
-                new System.IO.StreamReader(@"C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\settings1.txt");
-            while ((line = file.ReadLine()) != null)
+            string curpath = @"c:\Timekeeper\settings1.txt";
+            if (File.Exists(curpath))
             {
-                System.Console.WriteLine(line);
-                counter++;
+                // Read the file and display it line by line.  
+                using (StreamReader file = new StreamReader(curpath))
+                {
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                        counter++;
 
-                if (counter == 1)
-                {
-                    if (line == "true")
-                    {
-                        checkBoxServer.Checked = true;
-                        Console.WriteLine("checked = " + line);
+                        if (counter == 1)
+                        {
+                            if (line == "true")
+                            {
+                                checkBoxServer.Checked = true;
+                                Console.WriteLine("checked = " + line);
+                            }
+                            else
+                            {
+                                checkBoxServer.Checked = false;
+                                Console.WriteLine("checked = " + line);
+                            }
+                        }
+                        if (counter == 2)
+                        {
+                            locationSite.Text = line;
+                        }
+                        if (counter == 3)
+                        {
+                            hostInput.Text = line;
+                        }
+                        if (counter == 4)
+                        {
+                            loginInput.Text = line;
+                        }
+                        if (counter == 5)
+                        {
+                            passwordInput.Text = line;
+                        }
+                        if (counter == 6)
+                        {
+                            baseInput.Text = line;
+                        }
+                        if (counter == 7)
+                        {
+                            tableInput.Text = line;
+                        }
                     }
-                    else
+                    file.Dispose();
+                    file.Close();
+                }
+                System.Console.WriteLine("There were {0} lines.", counter);
+            }  
+            else
+            {
+                if (!Directory.Exists(@"c:\Timekeeper"))
+                {
+                    Directory.CreateDirectory(@"c:\Timekeeper");
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(curpath))
                     {
-                        checkBoxServer.Checked = false;
-                        Console.WriteLine("checked = " + line);
+                        sw.WriteLine("false");
+                        sw.Close();
                     }
                 }
-                if (counter == 2)
+                else if (!File.Exists(curpath))
                 {
-                    locationSite.Text = line;
-                }
-                if (counter == 3)
-                {
-                    hostInput.Text = line;
-                }
-                if (counter == 4)
-                {
-                    loginInput.Text = line;
-                }
-                if (counter == 5)
-                {
-                    passwordInput.Text = line;
-                }
-                if (counter == 6)
-                {
-                    baseInput.Text = line;
-                }
-                if (counter == 7)
-                {
-                    tableInput.Text = line;
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(curpath))
+                    {
+                        sw.WriteLine("false");
+                        sw.Close();
+                    }
                 }
             }
-
-            file.Close();
-            System.Console.WriteLine("There were {0} lines.", counter);
-            // Suspend the screen.  
-            System.Console.ReadLine();
-
         }
         private void fillChart()
         {
@@ -820,11 +905,11 @@ namespace WindowsFormsApp2
 
             // obiektowo - test
 
-            ItemObj.StartTime = DateTime.Parse(currentTime.Text);
-            ItemObj.Item1 = true;
-            introProgressBar.ForeColor = Color.LightGreen;
-            introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            Console.WriteLine(ItemObj.Item1);
+            //ItemObj.StartTime = DateTime.Parse(currentTime.Text);
+            //ItemObj.Item1 = true;
+            //introProgressBar.ForeColor = Color.LightGreen;
+            //introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            //Console.WriteLine(ItemObj.Item1);
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -1243,7 +1328,7 @@ namespace WindowsFormsApp2
             }
             if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // server settings from file
             {
-                if (checkBoxServer.Visible == true)
+                if (checkBoxServer.Checked )
                 {
                     location.Visible = true;
                     locationSite.Visible = true;
@@ -1301,10 +1386,65 @@ namespace WindowsFormsApp2
 
         }
 
+        private void checkBoxServer_CheckedChanged(object sender, EventArgs e)
+        {
+            // File name  
+            string fileName = @"C:\Timekeeper\settings1.txt";
+
+            if (checkBoxServer.Checked == true)
+            {
+               // lineChanger("true", fileName, 1);
+                location.Visible = true;
+                locationSite.Visible = true;
+                host.Visible = true;
+                hostInput.Visible = true;
+                login.Visible = true;
+                loginInput.Visible = true;
+                password.Visible = true;
+                passwordInput.Visible = true;
+                baseLabel.Visible = true;
+                baseInput.Visible = true;
+                tableLabel.Visible = true;
+                tableInput.Visible = true;
+                Console.WriteLine("checkBoxServer.Text = true");
+            }
+            else
+            {
+               // lineChanger("false", fileName, 1);
+                location.Visible = false;
+                locationSite.Visible = false;
+                host.Visible = false;
+                hostInput.Visible = false;
+                login.Visible = false;
+                loginInput.Visible = false;
+                password.Visible = false;
+                passwordInput.Visible = false;
+                baseLabel.Visible = false;
+                baseInput.Visible = false;
+                tableLabel.Visible = false;
+                tableInput.Visible = false;
+                Console.WriteLine("checkBoxServer.Text = false");
+            }
+        }
         private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string fileName = @"C:\Timekeeper\settings1.txt";
+            string[] lines = new string[7]; // = System.IO.File.ReadAllLines(fileName);
+            lines[0] = (checkBoxServer.Checked)? "true" :"false";
+            lines[1] = locationSite.Text;
+            lines[2] = hostInput.Text;
+            lines[3] = loginInput.Text;
+            lines[4] = passwordInput.Text;
+            lines[5] = baseInput.Text;
+            lines[6] = tableInput.Text;
+            File.WriteAllLines(fileName, lines);
+        }
+
         private void customerServiceTimePicker_ValueChanged(object sender, EventArgs e)
         {
             sumValue.Text = calcSumOfTime().ToString();
@@ -1400,6 +1540,104 @@ namespace WindowsFormsApp2
                 playSimpleSound2();
                 Sound2 = true;
             }
+        }
+        static void lineChanger(string newText, string fileName, int line_to_edit)
+        {
+            Console.WriteLine("fileName " + fileName);
+            Console.WriteLine("newText " + newText);
+            Console.WriteLine("line_to_edit " + line_to_edit);
+
+            //string[] arrLine = File.ReadAllLines(fileName);
+            //arrLine[line_to_edit - 1] = newText;
+            //File.WriteAllLines(fileName, arrLine);
+            //using (var fs = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite))
+            //{
+            //    int line_number = 1;
+            //    string line = null;
+
+            //    while ((line = fs.ReadLine()) != null)
+            //    {
+            //        if (line_number == line_to_edit)
+            //        {
+            //            writer.WriteLine(lineToWrite);
+            //        }
+            //        else
+            //        {
+            //            reader.ReadLine();
+            //        }
+            //        line_number++;
+            //    }
+            //}
+
+            //var counter =0;
+            //// Open the stream and read it back.
+
+            //string[] lines = System.IO.File.ReadAllLines(fileName);
+            //lines[line_to_edit] = newText;
+            //File.WriteAllLines(fileName, lines);
+
+            //Console.WriteLine("new lines  " + lines[line_to_edit - 1]);
+            //StreamReader sr = null;
+            //try
+            //{
+            //   sr = new StreamReader(fileName);
+            //   string line;
+            //   // Read and display lines from the file until the end of
+            //   // the file is reached.
+            //   while ((line = sr.ReadLine()) != null)
+            //      {
+            //          Console.WriteLine(line);
+            //      }
+            //}
+            //finally
+            //{
+            //    sr.Close();
+            //    sr.Dispose();
+            //}
+
+            //using (StreamWriter writer = new StreamWriter(fileName))
+            //{
+            //    string animal = "cat";
+            //    int size = 12;
+            //    // Use string interpolation syntax to make code clearer.
+            //    writer.WriteLine($"The {animal} is {size} pounds.");
+            //}
+            //FileStream fs = new FileStream(fileName, FileMode.Open);
+            ////read
+            //fs = new FileStream(fileName, FileMode.Open);
+            //StreamReader r = new StreamReader(fs, Encoding.UTF8);
+            //Console.WriteLine(r.ReadLine());
+            //r.Close();
+            //fs.Close();
+
+            ////write 
+            /// FileStream fs = new FileStream(fileName, FileMode.Open);
+            //StreamWriter w = new StreamWriter(fs, Encoding.UTF8);
+            //w.WriteLine("text_to_write");
+            //w.Flush();
+            //w.Close();
+            //fs.Close();
+            //using (FileStream fs = new FileStream(fileName, FileMode.Open))
+            //{
+            //    using (BinaryWriter w = new BinaryWriter(fs))
+            //    {
+            //        for (int i = 0; i < 11; i++)
+            //        {
+            //            w.Write(i);
+            //        }
+            //    }
+            //}
+
+            //using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            //{
+            //    using (BinaryReader r = new BinaryReader(fs))
+            //    {
+            //        for (int i = 0; i < 11; i++)
+            //        {
+            //            Console.WriteLine(r.ReadInt32());
+            //        }
+            //    }
+            //}
         }
     }
 }
