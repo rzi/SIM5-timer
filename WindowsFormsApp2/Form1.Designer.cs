@@ -146,6 +146,7 @@ namespace WindowsFormsApp2
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.saveButton = new System.Windows.Forms.Button();
             this.tableInput = new System.Windows.Forms.TextBox();
             this.tableLabel = new System.Windows.Forms.Label();
             this.baseInput = new System.Windows.Forms.TextBox();
@@ -159,7 +160,6 @@ namespace WindowsFormsApp2
             this.hostInput = new System.Windows.Forms.TextBox();
             this.host = new System.Windows.Forms.Label();
             this.checkBoxServer = new System.Windows.Forms.CheckBox();
-            this.saveButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -1323,13 +1323,22 @@ namespace WindowsFormsApp2
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Serwer";
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(269, 396);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(129, 37);
+            this.saveButton.TabIndex = 11;
+            this.saveButton.Text = "Zapisz";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // tableInput
             // 
             this.tableInput.Location = new System.Drawing.Point(129, 344);
             this.tableInput.Name = "tableInput";
             this.tableInput.Size = new System.Drawing.Size(270, 29);
             this.tableInput.TabIndex = 10;
-            this.tableInput.TextChanged += new System.EventHandler(this.tableInput_TextChanged);
             // 
             // tableLabel
             // 
@@ -1395,7 +1404,6 @@ namespace WindowsFormsApp2
             this.loginInput.Name = "loginInput";
             this.loginInput.Size = new System.Drawing.Size(270, 29);
             this.loginInput.TabIndex = 4;
-            this.loginInput.TextChanged += new System.EventHandler(this.loginInput_TextChanged);
             // 
             // login
             // 
@@ -1412,7 +1420,6 @@ namespace WindowsFormsApp2
             this.hostInput.Name = "hostInput";
             this.hostInput.Size = new System.Drawing.Size(270, 29);
             this.hostInput.TabIndex = 2;
-            this.hostInput.TextChanged += new System.EventHandler(this.hostInput_TextChanged);
             // 
             // host
             // 
@@ -1428,21 +1435,11 @@ namespace WindowsFormsApp2
             this.checkBoxServer.AutoSize = true;
             this.checkBoxServer.Location = new System.Drawing.Point(27, 47);
             this.checkBoxServer.Name = "checkBoxServer";
-            this.checkBoxServer.Size = new System.Drawing.Size(298, 28);
+            this.checkBoxServer.Size = new System.Drawing.Size(365, 28);
             this.checkBoxServer.TabIndex = 0;
-            this.checkBoxServer.Text = "z połączeniem do  bazy danych";
+            this.checkBoxServer.Text = "z połączeniem do  bazy danych MySQL";
             this.checkBoxServer.UseVisualStyleBackColor = true;
             this.checkBoxServer.CheckedChanged += new System.EventHandler(this.checkBoxServer_CheckedChanged);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(269, 396);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(129, 37);
-            this.saveButton.TabIndex = 11;
-            this.saveButton.Text = "Zapisz";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 

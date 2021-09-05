@@ -30,67 +30,6 @@ namespace WindowsFormsApp2
             g.DrawLine(new Pen(Color.LightGray, 2) { DashPattern = new float[] { 4, 2F } }, 8, 500, 940, 500);
             canvas.Image = image;
 
-            //string line;
-            //string curFile = @"c:\Timekeeper\settings1.txt";
-
-            //if (File.Exists(curFile))
-            //{
-            //    //FileStream fs = new FileStream(curFile, FileMode.Open);
-            //    //System.IO.StreamReader file = new System.IO.StreamReader(curFile);
-            //    //using (var myFile = File.Create(myPath))
-            //    //{
-            //    //    // interact with myFile here, it will be disposed automatically
-            //    //}
-            //    string[] lines = File.ReadAllLines(curFile);
-
-            //    // while ((line.Length  = file.ReadLine()) != null)
-            //    Console.WriteLine("lines.Length " + lines.Length);
-            //    for (int i=0; i < lines.Length; i++  )
-            //    {
-            //        line = lines[i];
-            //        System.Console.WriteLine("line " + line);
-
-            //        if (i == 0)
-            //        {
-            //            if (line == "true")
-            //            { 
-            //                checkBoxServer.Checked = true;
-            //                Console.WriteLine("checked = " + line);
-            //            }
-            //            else
-            //            {
-            //                checkBoxServer.Checked = false;
-            //                Console.WriteLine("checked = " + line);
-            //            }
-            //        }
-            //        if (i == 1)
-            //        {
-            //            locationSite.Text = line;
-            //        }
-            //        if (i == 2)
-            //        {
-            //            hostInput.Text = line;
-            //        }
-            //        if (i == 3)
-            //        {
-            //            loginInput.Text = line;
-            //        }
-            //        if (i == 4)
-            //        {
-            //            passwordInput.Text = line;
-            //        }
-            //        if (i == 5)
-            //        {
-            //            baseInput.Text = line;
-            //        }
-            //        if (i == 6)
-            //        {
-            //            tableInput.Text = line;
-            //        }
-            //    }
-            //    //file.Close();
-            //    // fs.Close();
-            //    Console.WriteLine(" acces ");
             int counter = 0;
             string line;
             string curpath = @"c:\Timekeeper\settings1.txt";
@@ -168,6 +107,908 @@ namespace WindowsFormsApp2
                         sw.Close();
                     }
                 }
+            }
+        }
+        public Form1()
+        {
+            InitializeComponent();
+            timer1.Enabled = true;
+        }
+        public void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            currentTime.Text = now.ToLongTimeString(); //bieżący czas
+            switch (status)
+            {
+                case "intro":
+                    introTick();
+                    break;
+
+                case "safety":
+                    safetyTick();
+                    break;
+
+                case "quality":
+                    qualityTick();
+                    break;
+
+                case "customerService":
+                    customerServiceTick();
+                    break;
+
+                case "performance":
+                    performanceTick();
+                    break;
+
+                case "people":
+                    peopleTick();
+                    break;
+
+                case "projects":
+                    projectsTick();
+                    break;
+
+                case "priority":
+                    priorityTick();
+                    break;
+
+                case "visits":
+                    visitsTick();
+                    break;
+
+                case "feedback":
+                    feedbackTick();
+                    break;
+
+                default:
+                    Console.WriteLine($"default: {status}.");
+                    break;
+            }
+        }
+        private void introTick()
+        {
+            double progressBarMaximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(introStart.Text, currentTime.Text);
+            introProgressBar.Maximum = (int)progressBarMaximum;
+            Console.WriteLine("introProgressBar.Maximum" + introProgressBar.Maximum);
+            if (progressBarValue <= introProgressBar.Maximum && introProgressBar.Value <= introProgressBar.Maximum) introProgressBar.Value = (int)progressBarValue;
+            Console.WriteLine("introProgressBar.Value: " + introProgressBar.Value);
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            introProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = introProgressValue.Text;
+            if (progressBarValue > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) introProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+            result.isIntro = intro;
+            result.setIntro = introTimePicker.ToString();
+            result.startIntro = introStart.ToString();
+            result.stopIntro = introEnd.ToString();
+            result.resultIntro = introResult.ToString();
+            result.intro = "intro";
+        }
+        private void safetyTick()
+        {
+            double progressBarMaximum = maximumFN(safetyStart.Text, safetyTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(safetyStart.Text, currentTime.Text);
+            safetyProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= safetyProgressBar.Maximum && safetyProgressBar.Value <= safetyProgressBar.Maximum) safetyProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            safetyProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = safetyProgressValue.Text;
+            if (progressBarValue > yellowTriger) safetyProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) safetyProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void qualityTick()
+        {
+            double progressBarMaximum = maximumFN(qualityStart.Text, qualityTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(qualityStart.Text, currentTime.Text);
+            qualityProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= qualityProgressBar.Maximum && qualityProgressBar.Value <= qualityProgressBar.Maximum) qualityProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = (int)progressBarMaximum;
+            double percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            qualityProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = qualityProgressValue.Text;
+            if (progressBarValue > yellowTriger) qualityProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) qualityProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void customerServiceTick()
+        {
+            double progressBarMaximum = maximumFN(customerServiceStart.Text, customerServiceTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(customerServiceStart.Text, currentTime.Text);
+            customerServiceProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= customerServiceProgressBar.Maximum && customerServiceProgressBar.Value <= customerServiceProgressBar.Maximum) customerServiceProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            customerServiceProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = customerServiceProgressValue.Text;
+            if (progressBarValue > yellowTriger) customerServiceProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) customerServiceProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void performanceTick()
+        {
+            double progressBarMaximum = maximumFN(performanceStart.Text, performanceTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(performanceStart.Text, currentTime.Text);
+            performanceProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= performanceProgressBar.Maximum && performanceProgressBar.Value <= performanceProgressBar.Maximum) performanceProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            performanceProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = performanceProgressValue.Text;
+            if (progressBarValue > yellowTriger) performanceProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) performanceProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void peopleTick()
+        {
+            double progressBarMaximum = maximumFN(peopleStart.Text, peopleTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(peopleStart.Text, currentTime.Text);
+            peopleProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= peopleProgressBar.Maximum && peopleProgressBar.Value <= peopleProgressBar.Maximum) peopleProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = (int)progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            peopleProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = peopleProgressValue.Text;
+            if (progressBarValue > yellowTriger) peopleProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) peopleProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void projectsTick()
+        {
+            double progressBarMaximum = maximumFN(projectsStart.Text, projectsTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(projectsStart.Text, currentTime.Text);
+            projectsProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= projectsProgressBar.Maximum && projectsProgressBar.Value <= projectsProgressBar.Maximum) projectsProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            projectsProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = projectsProgressValue.Text;
+            if (progressBarValue > yellowTriger) projectsProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) projectsProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void priorityTick()
+        {
+            double progressBarMaximum = maximumFN(priorityStart.Text, priorityTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(priorityStart.Text, currentTime.Text);
+            priorityProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= priorityProgressBar.Maximum && priorityProgressBar.Value <= priorityProgressBar.Maximum) priorityProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            priorityProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = priorityProgressValue.Text;
+            if (progressBarValue > yellowTriger) priorityProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) priorityProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void visitsTick()
+        {
+            double progressBarMaximum = maximumFN(visitsStart.Text, visitsTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(visitsStart.Text, currentTime.Text);
+            visitsProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= visitsProgressBar.Maximum && visitsProgressBar.Value <= visitsProgressBar.Maximum) visitsProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            visitsProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = visitsProgressValue.Text;
+            if (progressBarValue > yellowTriger) visitsProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) visitsProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private void feedbackTick()
+        {
+            double progressBarMaximum = maximumFN(feedbackStart.Text, feedbackTimePicker.Value.Ticks);
+            double progressBarValue = valueFN(feedbackStart.Text, currentTime.Text);
+            feedbackProgressBar.Maximum = (int)progressBarMaximum;
+            if (progressBarValue <= feedbackProgressBar.Maximum && feedbackProgressBar.Value <= feedbackProgressBar.Maximum) feedbackProgressBar.Value = (int)progressBarValue;
+            currentBar = (int)progressBarValue;
+            maxiBar = (int)progressBarMaximum;
+            double yellowTriger = (progressBarMaximum * 0.8);
+            double redTriger = progressBarMaximum;
+            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
+            Console.WriteLine("procentTNow " + percentTNow);
+            feedbackProgressValue.Text = percentTNow.ToString("N0") + "%";
+            procentBar = feedbackProgressValue.Text;
+            if (progressBarValue > yellowTriger) feedbackProgressBar.ForeColor = Color.Yellow;
+            if (progressBarValue > redTriger) feedbackProgressBar.ForeColor = Color.Red;
+            progressSound(progressBarValue, progressBarMaximum);
+        }
+        private double valueFN(string startTime, string currentTime)
+        {
+            DateTime timeStart = DateTime.Parse(startTime);
+            DateTime timeNow = DateTime.Parse(currentTime);
+            double tStart = ConvertToUnixTimestamp(timeStart);
+            double tNow = ConvertToUnixTimestamp(timeNow);
+            double result = (tNow - tStart);
+            return result;
+        }
+        private double maximumFN(string start, long ticks)
+        {
+            DateTime timeStart = DateTime.Parse(start);
+            TimeSpan setTime = new TimeSpan(ticks);
+            long timeInSeconds = setTime.Minutes * 60 + setTime.Seconds;
+            DateTime timeEnd = timeStart.AddSeconds(timeInSeconds);
+            double tStart = ConvertToUnixTimestamp(timeStart);
+            double tEnd = ConvertToUnixTimestamp(timeEnd);
+            double result = tEnd - tStart;
+            return result;
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string fileName = @"C:\Timekeeper\settings1.txt";
+            string[] lines = new string[7]; // = System.IO.File.ReadAllLines(fileName);
+            lines[0] = (checkBoxServer.Checked) ? "true" : "false";
+            lines[1] = locationSite.Text;
+            lines[2] = hostInput.Text;
+            lines[3] = loginInput.Text;
+            lines[4] = passwordInput.Text;
+            lines[5] = baseInput.Text;
+            lines[6] = tableInput.Text;
+            File.WriteAllLines(fileName, lines);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            currentAction = introTitle.Text;
+            introStart.Text = "";
+            introEnd.Text = "";
+            introResult.Text = "";
+            introProgressValue.Text = "";
+            DateTime timeStart = DateTime.Parse(currentTime.Text);
+            introStart.Text = timeStart.TimeOfDay.ToString(); //czas rozpoczęcia
+            intro = true;
+            status = "intro";
+            introProgressBar.ForeColor = Color.LightGreen;
+            introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            status = "intro";
+
+            // obiektowo - test
+
+            //ItemObj.StartTime = DateTime.Parse(currentTime.Text);
+            //ItemObj.Item1 = true;
+            //introProgressBar.ForeColor = Color.LightGreen;
+            //introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            //Console.WriteLine(ItemObj.Item1);
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (intro)
+            {
+                intro = false; Sound = false; Sound1 = false; Sound2 = false;
+                introEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(introEnd.Text);
+                DateTime timeEnd = DateTime.Parse(introStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                introResult.Text = diff1.ToString();
+                currentAction = safetyTitle.Text;
+                safetyStart.Text = "";
+                safetyEnd.Text = "";
+                safetyResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                safetyStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                DateTime introTimeObjective = timeEnd.AddSeconds(introTimePicker.Value.TimeOfDay.Minutes * 60 + introTimePicker.Value.TimeOfDay.Seconds);
+                double result1 = calcOfSpentTime(timeEnd, timeStart, introTimeObjective);
+                Console.WriteLine("wynik " + (result1));
+                safety = true;
+                status = "safety";
+                safetyProgressBar.ForeColor = Color.LightGreen;
+                safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Wstęp", introTimePicker.Value.ToString(), introStart.Text, introEnd.Text, introResult.Text, introProgressValue.Text);
+
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (safety)
+            {
+                safety = false; Sound = false; Sound1 = false; Sound2 = false;
+                safetyEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(safetyEnd.Text);
+                DateTime timeEnd = DateTime.Parse(safetyStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                safetyResult.Text = diff1.ToString();
+                currentAction = qualityTitle.Text;
+                qualityStart.Text = "";
+                qualityEnd.Text = "";
+                qualityResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                qualityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                quality = true;
+                status = "quality";
+                qualityProgressBar.ForeColor = Color.LightGreen;
+                qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (quality)
+            {
+                quality = false; Sound = false; Sound1 = false; Sound2 = false;
+                qualityEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(qualityEnd.Text);
+                DateTime timeEnd = DateTime.Parse(qualityStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                qualityResult.Text = diff1.ToString();
+
+                currentAction = customerServiceTitle.Text;
+
+                customerServiceStart.Text = "";
+                customerServiceEnd.Text = "";
+                customerServiceResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                customerServiceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                customerService = true;
+                status = "customerService";
+                customerServiceProgressBar.ForeColor = Color.LightGreen;
+                customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (customerService)
+            {
+                customerService = false; Sound = false; Sound1 = false; Sound2 = false;
+                customerServiceEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(customerServiceEnd.Text);
+                DateTime timeEnd = DateTime.Parse(customerServiceStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                customerServiceResult.Text = diff1.ToString();
+                currentAction = performanceTitle.Text;
+                performanceStart.Text = "";
+                performanceEnd.Text = "";
+                performanceResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                performanceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                performance = true;
+                status = "performance";
+                performanceProgressBar.ForeColor = Color.LightGreen;
+                performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (performance)
+            {
+                performance = false; Sound = false; Sound1 = false; Sound2 = false;
+                performanceEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(performanceEnd.Text);
+                DateTime timeEnd = DateTime.Parse(performanceStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                performanceResult.Text = diff1.ToString();
+                currentAction = peopleTitle.Text;
+                peopleStart.Text = "";
+                peopleEnd.Text = "";
+                peopleResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                peopleStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                people = true;
+                status = "people";
+                peopleProgressBar.ForeColor = Color.LightGreen;
+                peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (people)
+            {
+                people = false; Sound = false; Sound1 = false; Sound2 = false;
+                peopleEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(peopleEnd.Text);
+                DateTime timeEnd = DateTime.Parse(peopleStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                peopleResult.Text = diff1.ToString();
+                currentAction = projectsTitle.Text;
+                projectsStart.Text = "";
+                projectsEnd.Text = "";
+                projectsResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                projectsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                projects = true;
+                status = "projects";
+                projectsProgressBar.ForeColor = Color.LightGreen;
+                projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (projects)
+            {
+                projects = false; Sound = false; Sound1 = false; Sound2 = false;
+                projectsEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(projectsEnd.Text);
+                DateTime timeEnd = DateTime.Parse(projectsStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                projectsResult.Text = diff1.ToString();
+                currentAction = priorityTitle.Text;
+                priorityStart.Text = "";
+                priorityEnd.Text = "";
+                priorityResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                priorityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                priority = true;
+                status = "priority";
+                priorityProgressBar.ForeColor = Color.LightGreen;
+                priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (priority)
+            {
+                priority = false; Sound = false; Sound1 = false; Sound2 = false;
+                priorityEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(priorityEnd.Text);
+                DateTime timeEnd = DateTime.Parse(priorityStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                priorityResult.Text = diff1.ToString();
+                currentAction = visitsTitle.Text;
+                visitsStart.Text = "";
+                visitsEnd.Text = "";
+                visitsResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                visitsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                visits = true;
+                status = "visits";
+                visitsProgressBar.ForeColor = Color.LightGreen;
+                visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (visits)
+            {
+                visits = false; Sound = false; Sound1 = false; Sound2 = false;
+                visitsEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(visitsEnd.Text);
+                DateTime timeEnd = DateTime.Parse(visitsStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                visitsResult.Text = diff1.ToString();
+                currentAction = feedbackTitle.Text;
+                feedbackStart.Text = "";
+                feedbackEnd.Text = "";
+                feedbackResult.Text = "";
+                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
+                feedbackStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
+                feedback = true;
+                status = "feedback";
+                feedbackProgressBar.ForeColor = Color.LightGreen;
+                feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+                saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (feedback)
+            {
+                feedback = false; Sound = false; Sound1 = false; Sound2 = false;
+                feedbackEnd.Text = currentTime.Text;
+                DateTime timeStart = DateTime.Parse(feedbackEnd.Text);
+                DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
+                TimeSpan diff1 = timeStart.Subtract(timeEnd);
+                feedbackResult.Text = diff1.ToString();
+                status = "end";
+                saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
+                clearChart();
+                fillChart();
+            }
+            else
+            {
+                wrongSequenceWarning();
+            }
+        }
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // czyszczenie, restart app
+            Application.Restart();
+            Process.GetCurrentProcess().Kill();
+            this.Visible = true;
+            Sound = false; Sound1 = false; Sound2 = false;
+        }
+        private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
+        {
+
+            if (checkBoxServer.Checked)
+            {
+                Console.WriteLine("zapis do DB");
+                // db connection
+                string connectionstring2 = "Server =" + hostInput.Text +
+                    "; Database=" + baseInput.Text +
+                    "; Uid=" + loginInput.Text +
+                    "; Password= " + passwordInput.Text +
+                    "; Port=3306;SSL Mode=None";
+
+                Console.WriteLine("connectionstring2: " + connectionstring2);
+                MySqlConnection conn2 = new MySqlConnection(connectionstring2);
+                try
+                {
+                    conn2.Open();
+                    string date2 = dateTimePicker1.Value.ToString().Substring(0, 10);
+                    Console.WriteLine("data: " + date2);
+                    string timeSet1 = timeSet.Substring(10, 9);
+                    Console.WriteLine("timeSet1: " + timeSet1);
+                    string sql = "insert into " + tableInput.Text + "(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+                        + "\"" + date2 + "\""
+                        + ",\"" + block + "\""
+                        + ",\"" + timeSet1 + "\""
+                        + ",\"" + timeStart + "\""
+                        + ",\"" + timeEnd + "\""
+                        + ",\"" + timeResult + "\""
+                        + ",\"" + progressValue + "\""
+                        + ")";
+                    Console.WriteLine(" sql: " + sql);
+                    MySqlCommand cmd = new MySqlCommand(sql, conn2);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn2.Close();
+            }
+
+
+            //Console.WriteLine("zapis do DB");
+            //// db connection
+            //string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
+            //MySqlConnection conn = new MySqlConnection(connectionstring);
+            //try
+            //{
+            //    conn.Open();
+            //    //SQL Query to execute
+            //    //insert Query
+            //    // we are inserting actor_id, first_name, last_name, last_updated columns data
+            //    //21:36:01	insert into timedb.timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("2021-08-15","safety","3:00", "20:02:00","20:05:00","03:00","100%")	1 row(s) affected	0.000 sec
+
+            //    string date = dateTimePicker1.Value.ToString().Substring(0, 10);
+            //    Console.WriteLine("data: " + date);
+            //    string timeSet1 = timeSet.Substring(10, 9);
+            //    Console.WriteLine("timeSet1: " + timeSet1);
+            //    string sql = "insert into timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+            //        + "\"" + date + "\""
+            //        + ",\"" + block + "\""
+            //        + ",\"" + timeSet1 + "\""
+            //        + ",\"" + timeStart + "\""
+            //        + ",\"" + timeEnd + "\""
+            //        + ",\"" + timeResult + "\""
+            //        + ",\"" + progressValue + "\""
+            //        + ")";
+            //    Console.WriteLine(" sql; " + sql);
+            //    MySqlCommand cmd = new MySqlCommand(sql, conn);
+            //    cmd.ExecuteNonQuery();
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //conn.Close();
+
+            // cba.pl
+
+        }
+        public static double ConvertToUnixTimestamp(DateTime date)
+        {
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            TimeSpan diff = date.ToUniversalTime() - origin;
+            return Math.Floor(diff.TotalSeconds);
+        }
+        public static DateTime ConvertFromUnixTimestamp(double timestamp)
+        {
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            return origin.AddSeconds(timestamp);
+        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabControl1.TabPages[2])// Historia
+            {
+
+                // db connection
+                string connectionstring = "Server =" + hostInput.Text +
+                    "; Database=" + baseInput.Text +
+                    "; Uid=" + loginInput.Text +
+                    "; Password= " + passwordInput.Text +
+                    "; Port=3306;SSL Mode=None";
+                Console.WriteLine("connectionstring: " + connectionstring);
+                MySqlConnection conn = new MySqlConnection(connectionstring);
+                try
+                {
+                    string mysql = "Select * FROM " + tableInput.Text;
+                    MySqlCommand command = new MySqlCommand(mysql, conn);
+                    conn.Open();
+
+                    MySqlDataReader rdr = command.ExecuteReader();
+                    //read the data
+                    while (rdr.Read())
+                    {
+                        Console.WriteLine(rdr[0] + "  " + rdr[1] + "  " + rdr[2] + " " + rdr[3] + " " + rdr[4] + " " + rdr[5]);
+                    }
+                    rdr.Close();
+
+                    MySqlDataAdapter dtb = new MySqlDataAdapter();
+                    dtb.SelectCommand = command;
+                    System.Data.DataTable dTable = new DataTable();
+                    dtb.Fill(dTable);
+                    BindingSource bSource = new BindingSource();
+                    bSource.DataSource = dTable;
+
+                    dataGridView1.DataSource = bSource;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
+            }
+            if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // server settings from file
+            {
+                if (checkBoxServer.Checked )
+                {
+                    location.Visible = true;
+                    locationSite.Visible = true;
+                    host.Visible = true;
+                    hostInput.Visible = true;
+                    login.Visible = true;
+                    loginInput.Visible = true;
+                    password.Visible = true;
+                    passwordInput.Visible = true;
+                    baseLabel.Visible = true;
+                    baseInput.Visible = true;
+                    tableLabel.Visible = true;
+                    tableInput.Visible = true;
+                    Console.WriteLine("checkBoxServer.Text =true");                }
+                else
+                {
+                    location.Visible = false;
+                    locationSite.Visible = false;
+                    host.Visible = false;
+                    hostInput.Visible = false;
+                    login.Visible = false;
+                    loginInput.Visible = false;
+                    password.Visible = false;
+                    passwordInput.Visible = false;
+                    baseLabel.Visible = false;
+                    baseInput.Visible = false;
+                    tableLabel.Visible = false;
+                    tableInput.Visible = false;
+                    Console.WriteLine("checkBoxServer.Text = false");
+
+                }
+            }
+        }
+        private void introTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void safetyTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void checkBoxServer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxServer.Checked == true)
+            {
+                location.Visible = true;
+                locationSite.Visible = true;
+                host.Visible = true;
+                hostInput.Visible = true;
+                login.Visible = true;
+                loginInput.Visible = true;
+                password.Visible = true;
+                passwordInput.Visible = true;
+                baseLabel.Visible = true;
+                baseInput.Visible = true;
+                tableLabel.Visible = true;
+                tableInput.Visible = true;
+                Console.WriteLine("checkBoxServer.Text = true");
+            }
+            else
+            {
+                location.Visible = false;
+                locationSite.Visible = false;
+                host.Visible = false;
+                hostInput.Visible = false;
+                login.Visible = false;
+                loginInput.Visible = false;
+                password.Visible = false;
+                passwordInput.Visible = false;
+                baseLabel.Visible = false;
+                baseInput.Visible = false;
+                tableLabel.Visible = false;
+                tableInput.Visible = false;
+                Console.WriteLine("checkBoxServer.Text = false");
+            }
+        }
+        private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void customerServiceTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void performanceTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void peopleTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void projectsTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void priorityTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void visitsTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private void feedbackTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            sumValue.Text = calcSumOfTime().ToString();
+        }
+        private TimeSpan calcSumOfTime()
+        {
+            TimeSpan sumOftimeSet = introTimePicker.Value.TimeOfDay
+                .Add(safetyTimePicker.Value.TimeOfDay)
+                .Add(qualityTimePicker.Value.TimeOfDay)
+                .Add(customerServiceTimePicker.Value.TimeOfDay)
+                .Add(performanceTimePicker.Value.TimeOfDay)
+                .Add(peopleTimePicker.Value.TimeOfDay)
+                .Add(projectsTimePicker.Value.TimeOfDay)
+                .Add(priorityTimePicker.Value.TimeOfDay)
+                .Add(visitsTimePicker.Value.TimeOfDay)
+                .Add(feedbackTimePicker.Value.TimeOfDay)
+                ;
+            return sumOftimeSet;
+        }
+        private double calcOfSpentTime(DateTime timeEnd, DateTime timeStart, DateTime introTimeObjective)
+        {
+            // real progress time calcul.
+            double Start = (timeEnd.TimeOfDay.TotalHours / timeEnd.TimeOfDay.Hours - 1);
+            double End = (timeStart.TimeOfDay.TotalHours / timeStart.TimeOfDay.Hours - 1);
+            double Objective = (introTimeObjective.TimeOfDay.TotalHours / introTimeObjective.TimeOfDay.Hours - 1);
+
+            Console.WriteLine("Start " + Start);
+            Console.WriteLine("End " + End);
+            Console.WriteLine("Obj " + Objective);
+            double result1 = (End / Objective) * 100;
+            return result1;
+        }
+        private void wrongSequenceWarning()
+        {
+            MessageBox.Show("Zła sekwencja ", "Uwaga!");
+            Console.WriteLine("zła sekwencja " + status);
+        }
+        private void playSimpleSound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+            simpleSound.Play();
+        }
+        private void playSimpleSound1()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\Windows Unlock.wav");
+            simpleSound.Play();
+        }
+        private void playSimpleSound2()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\tada.wav");
+            simpleSound.Play();
+        }
+        private void progressSound(double progressBarValue, double progressBarMaximum)
+        {
+
+            if (progressBarValue > progressBarMaximum * 0.8 && progressBarValue < progressBarMaximum * 0.85 && Sound == false)
+            {
+                playSimpleSound();
+                Sound = true;
+            }
+            if (progressBarValue > progressBarMaximum * 0.9 && progressBarValue < progressBarMaximum * 0.95 && Sound1 == false)
+            {
+                playSimpleSound1();
+                Sound1 = true;
+            }
+
+            if (progressBarValue > progressBarMaximum * 0.99 && progressBarValue < progressBarMaximum * 1.1 && Sound2 == false)
+            {
+                playSimpleSound2();
+                Sound2 = true;
+            }
+        }
+        private void clearChart()
+        {  
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
             }
         }
         private void fillChart()
@@ -623,1021 +1464,6 @@ namespace WindowsFormsApp2
             float result2 = (int)result.Minute + ((float)result.Second / 60);
             Console.WriteLine("min/60 " + result2);
             return result2;
-        }
-        public Form1()
-        {
-            InitializeComponent();
-            timer1.Enabled = true;
-        }
-        public void timer1_Tick(object sender, EventArgs e)
-        {
-            DateTime now = DateTime.Now;
-            currentTime.Text = now.ToLongTimeString(); //bieżący czas
-            switch (status)
-            {
-                case "intro":
-                    introTick();
-                    break;
-
-                case "safety":
-                    safetyTick();
-                    break;
-
-                case "quality":
-                    qualityTick();
-                    break;
-
-                case "customerService":
-                    customerServiceTick();
-                    break;
-
-                case "performance":
-                    performanceTick();
-                    break;
-
-                case "people":
-                    peopleTick();
-                    break;
-
-                case "projects":
-                    projectsTick();
-                    break;
-
-                case "priority":
-                    priorityTick();
-                    break;
-
-                case "visits":
-                    visitsTick();
-                    break;
-
-                case "feedback":
-                    feedbackTick();
-                    break;
-
-                default:
-                    Console.WriteLine($"default: {status}.");
-                    break;
-            }
-        }
-        private void introTick()
-        {
-            double progressBarMaximum = maximumFN(introStart.Text, introTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(introStart.Text, currentTime.Text);
-            introProgressBar.Maximum = (int)progressBarMaximum;
-            Console.WriteLine("introProgressBar.Maximum" + introProgressBar.Maximum);
-            if (progressBarValue <= introProgressBar.Maximum && introProgressBar.Value <= introProgressBar.Maximum) introProgressBar.Value = (int)progressBarValue;
-            Console.WriteLine("introProgressBar.Value: " + introProgressBar.Value);
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            introProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = introProgressValue.Text;
-            if (progressBarValue > yellowTriger) introProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) introProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-            result.isIntro = intro;
-            result.setIntro = introTimePicker.ToString();
-            result.startIntro = introStart.ToString();
-            result.stopIntro = introEnd.ToString();
-            result.resultIntro = introResult.ToString();
-            result.intro = "intro";
-        }
-        private void safetyTick()
-        {
-            double progressBarMaximum = maximumFN(safetyStart.Text, safetyTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(safetyStart.Text, currentTime.Text);
-            safetyProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= safetyProgressBar.Maximum && safetyProgressBar.Value <= safetyProgressBar.Maximum) safetyProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            safetyProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = safetyProgressValue.Text;
-            if (progressBarValue > yellowTriger) safetyProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) safetyProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void qualityTick()
-        {
-            double progressBarMaximum = maximumFN(qualityStart.Text, qualityTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(qualityStart.Text, currentTime.Text);
-            qualityProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= qualityProgressBar.Maximum && qualityProgressBar.Value <= qualityProgressBar.Maximum) qualityProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = (int)progressBarMaximum;
-            double percentTNow = (int)((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            qualityProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = qualityProgressValue.Text;
-            if (progressBarValue > yellowTriger) qualityProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) qualityProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void customerServiceTick()
-        {
-            double progressBarMaximum = maximumFN(customerServiceStart.Text, customerServiceTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(customerServiceStart.Text, currentTime.Text);
-            customerServiceProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= customerServiceProgressBar.Maximum && customerServiceProgressBar.Value <= customerServiceProgressBar.Maximum) customerServiceProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            customerServiceProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = customerServiceProgressValue.Text;
-            if (progressBarValue > yellowTriger) customerServiceProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) customerServiceProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void performanceTick()
-        {
-            double progressBarMaximum = maximumFN(performanceStart.Text, performanceTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(performanceStart.Text, currentTime.Text);
-            performanceProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= performanceProgressBar.Maximum && performanceProgressBar.Value <= performanceProgressBar.Maximum) performanceProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            performanceProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = performanceProgressValue.Text;
-            if (progressBarValue > yellowTriger) performanceProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) performanceProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void peopleTick()
-        {
-            double progressBarMaximum = maximumFN(peopleStart.Text, peopleTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(peopleStart.Text, currentTime.Text);
-            peopleProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= peopleProgressBar.Maximum && peopleProgressBar.Value <= peopleProgressBar.Maximum) peopleProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = (int)progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            peopleProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = peopleProgressValue.Text;
-            if (progressBarValue > yellowTriger) peopleProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) peopleProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void projectsTick()
-        {
-            double progressBarMaximum = maximumFN(projectsStart.Text, projectsTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(projectsStart.Text, currentTime.Text);
-            projectsProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= projectsProgressBar.Maximum && projectsProgressBar.Value <= projectsProgressBar.Maximum) projectsProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            projectsProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = projectsProgressValue.Text;
-            if (progressBarValue > yellowTriger) projectsProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) projectsProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void priorityTick()
-        {
-            double progressBarMaximum = maximumFN(priorityStart.Text, priorityTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(priorityStart.Text, currentTime.Text);
-            priorityProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= priorityProgressBar.Maximum && priorityProgressBar.Value <= priorityProgressBar.Maximum) priorityProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            priorityProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = priorityProgressValue.Text;
-            if (progressBarValue > yellowTriger) priorityProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) priorityProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void visitsTick()
-        {
-            double progressBarMaximum = maximumFN(visitsStart.Text, visitsTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(visitsStart.Text, currentTime.Text);
-            visitsProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= visitsProgressBar.Maximum && visitsProgressBar.Value <= visitsProgressBar.Maximum) visitsProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            visitsProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = visitsProgressValue.Text;
-            if (progressBarValue > yellowTriger) visitsProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) visitsProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private void feedbackTick()
-        {
-            double progressBarMaximum = maximumFN(feedbackStart.Text, feedbackTimePicker.Value.Ticks);
-            double progressBarValue = valueFN(feedbackStart.Text, currentTime.Text);
-            feedbackProgressBar.Maximum = (int)progressBarMaximum;
-            if (progressBarValue <= feedbackProgressBar.Maximum && feedbackProgressBar.Value <= feedbackProgressBar.Maximum) feedbackProgressBar.Value = (int)progressBarValue;
-            currentBar = (int)progressBarValue;
-            maxiBar = (int)progressBarMaximum;
-            double yellowTriger = (progressBarMaximum * 0.8);
-            double redTriger = progressBarMaximum;
-            double percentTNow = ((progressBarValue / progressBarMaximum) * 100);
-            Console.WriteLine("procentTNow " + percentTNow);
-            feedbackProgressValue.Text = percentTNow.ToString("N0") + "%";
-            procentBar = feedbackProgressValue.Text;
-            if (progressBarValue > yellowTriger) feedbackProgressBar.ForeColor = Color.Yellow;
-            if (progressBarValue > redTriger) feedbackProgressBar.ForeColor = Color.Red;
-            progressSound(progressBarValue, progressBarMaximum);
-        }
-        private double valueFN(string startTime, string currentTime)
-        {
-            DateTime timeStart = DateTime.Parse(startTime);
-            DateTime timeNow = DateTime.Parse(currentTime);
-            double tStart = ConvertToUnixTimestamp(timeStart);
-            double tNow = ConvertToUnixTimestamp(timeNow);
-            double result = (tNow - tStart);
-            return result;
-        }
-        private double maximumFN(string start, long ticks)
-        {
-            DateTime timeStart = DateTime.Parse(start);
-            TimeSpan setTime = new TimeSpan(ticks);
-            long timeInSeconds = setTime.Minutes * 60 + setTime.Seconds;
-            DateTime timeEnd = timeStart.AddSeconds(timeInSeconds);
-            double tStart = ConvertToUnixTimestamp(timeStart);
-            double tEnd = ConvertToUnixTimestamp(timeEnd);
-            double result = tEnd - tStart;
-            return result;
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            currentAction = introTitle.Text;
-            introStart.Text = "";
-            introEnd.Text = "";
-            introResult.Text = "";
-            introProgressValue.Text = "";
-            DateTime timeStart = DateTime.Parse(currentTime.Text);
-            introStart.Text = timeStart.TimeOfDay.ToString(); //czas rozpoczęcia
-            intro = true;
-            status = "intro";
-            introProgressBar.ForeColor = Color.LightGreen;
-            introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            status = "intro";
-
-            // obiektowo - test
-
-            //ItemObj.StartTime = DateTime.Parse(currentTime.Text);
-            //ItemObj.Item1 = true;
-            //introProgressBar.ForeColor = Color.LightGreen;
-            //introProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            //Console.WriteLine(ItemObj.Item1);
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (intro)
-            {
-                intro = false; Sound = false; Sound1 = false; Sound2 = false;
-                introEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(introEnd.Text);
-                DateTime timeEnd = DateTime.Parse(introStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                introResult.Text = diff1.ToString();
-                currentAction = safetyTitle.Text;
-                safetyStart.Text = "";
-                safetyEnd.Text = "";
-                safetyResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                safetyStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                DateTime introTimeObjective = timeEnd.AddSeconds(introTimePicker.Value.TimeOfDay.Minutes * 60 + introTimePicker.Value.TimeOfDay.Seconds);
-                double result1 = calcOfSpentTime(timeEnd, timeStart, introTimeObjective);
-                Console.WriteLine("wynik " + (result1));
-                safety = true;
-                status = "safety";
-                safetyProgressBar.ForeColor = Color.LightGreen;
-                safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Wstęp", introTimePicker.Value.ToString(), introStart.Text, introEnd.Text, introResult.Text, introProgressValue.Text);
-
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-
-        }
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            if (safety)
-            {
-                safety = false; Sound = false; Sound1 = false; Sound2 = false;
-                safetyEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(safetyEnd.Text);
-                DateTime timeEnd = DateTime.Parse(safetyStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                safetyResult.Text = diff1.ToString();
-                currentAction = qualityTitle.Text;
-                qualityStart.Text = "";
-                qualityEnd.Text = "";
-                qualityResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                qualityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                quality = true;
-                status = "quality";
-                qualityProgressBar.ForeColor = Color.LightGreen;
-                qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (quality)
-            {
-                quality = false; Sound = false; Sound1 = false; Sound2 = false;
-                qualityEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(qualityEnd.Text);
-                DateTime timeEnd = DateTime.Parse(qualityStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                qualityResult.Text = diff1.ToString();
-
-                currentAction = customerServiceTitle.Text;
-
-                customerServiceStart.Text = "";
-                customerServiceEnd.Text = "";
-                customerServiceResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                customerServiceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                customerService = true;
-                status = "customerService";
-                customerServiceProgressBar.ForeColor = Color.LightGreen;
-                customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (customerService)
-            {
-                customerService = false; Sound = false; Sound1 = false; Sound2 = false;
-                customerServiceEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(customerServiceEnd.Text);
-                DateTime timeEnd = DateTime.Parse(customerServiceStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                customerServiceResult.Text = diff1.ToString();
-                currentAction = performanceTitle.Text;
-                performanceStart.Text = "";
-                performanceEnd.Text = "";
-                performanceResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                performanceStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                performance = true;
-                status = "performance";
-                performanceProgressBar.ForeColor = Color.LightGreen;
-                performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (performance)
-            {
-                performance = false; Sound = false; Sound1 = false; Sound2 = false;
-                performanceEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(performanceEnd.Text);
-                DateTime timeEnd = DateTime.Parse(performanceStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                performanceResult.Text = diff1.ToString();
-                currentAction = peopleTitle.Text;
-                peopleStart.Text = "";
-                peopleEnd.Text = "";
-                peopleResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                peopleStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                people = true;
-                status = "people";
-                peopleProgressBar.ForeColor = Color.LightGreen;
-                peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (people)
-            {
-                people = false; Sound = false; Sound1 = false; Sound2 = false;
-                peopleEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(peopleEnd.Text);
-                DateTime timeEnd = DateTime.Parse(peopleStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                peopleResult.Text = diff1.ToString();
-                currentAction = projectsTitle.Text;
-                projectsStart.Text = "";
-                projectsEnd.Text = "";
-                projectsResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                projectsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                projects = true;
-                status = "projects";
-                projectsProgressBar.ForeColor = Color.LightGreen;
-                projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            if (projects)
-            {
-                projects = false; Sound = false; Sound1 = false; Sound2 = false;
-                projectsEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(projectsEnd.Text);
-                DateTime timeEnd = DateTime.Parse(projectsStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                projectsResult.Text = diff1.ToString();
-                currentAction = priorityTitle.Text;
-                priorityStart.Text = "";
-                priorityEnd.Text = "";
-                priorityResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                priorityStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                priority = true;
-                status = "priority";
-                priorityProgressBar.ForeColor = Color.LightGreen;
-                priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (priority)
-            {
-                priority = false; Sound = false; Sound1 = false; Sound2 = false;
-                priorityEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(priorityEnd.Text);
-                DateTime timeEnd = DateTime.Parse(priorityStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                priorityResult.Text = diff1.ToString();
-                currentAction = visitsTitle.Text;
-                visitsStart.Text = "";
-                visitsEnd.Text = "";
-                visitsResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                visitsStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                visits = true;
-                status = "visits";
-                visitsProgressBar.ForeColor = Color.LightGreen;
-                visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            if (visits)
-            {
-                visits = false; Sound = false; Sound1 = false; Sound2 = false;
-                visitsEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(visitsEnd.Text);
-                DateTime timeEnd = DateTime.Parse(visitsStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                visitsResult.Text = diff1.ToString();
-                currentAction = feedbackTitle.Text;
-                feedbackStart.Text = "";
-                feedbackEnd.Text = "";
-                feedbackResult.Text = "";
-                DateTime timeStart1 = DateTime.Parse(currentTime.Text);
-                feedbackStart.Text = timeStart1.TimeOfDay.ToString(); //czas rozpoczęcia
-                feedback = true;
-                status = "feedback";
-                feedbackProgressBar.ForeColor = Color.LightGreen;
-                feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button11_Click(object sender, EventArgs e)
-        {
-            if (feedback)
-            {
-                feedback = false; Sound = false; Sound1 = false; Sound2 = false;
-                feedbackEnd.Text = currentTime.Text;
-                DateTime timeStart = DateTime.Parse(feedbackEnd.Text);
-                DateTime timeEnd = DateTime.Parse(feedbackStart.Text);
-                TimeSpan diff1 = timeStart.Subtract(timeEnd);
-                feedbackResult.Text = diff1.ToString();
-                status = "end";
-                saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
-                fillChart();
-            }
-            else
-            {
-                wrongSequenceWarning();
-            }
-        }
-        private void button12_Click(object sender, EventArgs e)
-        {
-            // czyszczenie, restart app
-            Application.Restart();
-            Process.GetCurrentProcess().Kill();
-            this.Visible = true;
-            Sound = false; Sound1 = false; Sound2 = false;
-        }
-        private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
-        {
-
-            if (checkBoxServer.Checked)
-            {
-                Console.WriteLine("zapis do DB na cba.pl");
-                // db connection
-                string connectionstring2 = "Server =" + hostInput.Text +
-                    "; Database=" + baseInput.Text +
-                    "; Uid=" + loginInput.Text +
-                    "; Password= " + passwordInput.Text +
-                    "; Port=3306;SSL Mode=None";
-
-                Console.WriteLine("connectionstring2: " + connectionstring2);
-                MySqlConnection conn2 = new MySqlConnection(connectionstring2);
-                try
-                {
-                    conn2.Open();
-                    string date2 = dateTimePicker1.Value.ToString().Substring(0, 10);
-                    Console.WriteLine("data: " + date2);
-                    string timeSet1 = timeSet.Substring(10, 9);
-                    Console.WriteLine("timeSet1: " + timeSet1);
-                    string sql = "insert into " + tableInput.Text + "(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
-                        + "\"" + date2 + "\""
-                        + ",\"" + block + "\""
-                        + ",\"" + timeSet1 + "\""
-                        + ",\"" + timeStart + "\""
-                        + ",\"" + timeEnd + "\""
-                        + ",\"" + timeResult + "\""
-                        + ",\"" + progressValue + "\""
-                        + ")";
-                    Console.WriteLine(" sql: " + sql);
-                    MySqlCommand cmd = new MySqlCommand(sql, conn2);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                conn2.Close();
-            }
-
-
-            //Console.WriteLine("zapis do DB");
-            //// db connection
-            //string connectionstring = "Server=localhost; Database=timedb ;Uid=root; Password=Klucze2021!1";
-            //MySqlConnection conn = new MySqlConnection(connectionstring);
-            //try
-            //{
-            //    conn.Open();
-            //    //SQL Query to execute
-            //    //insert Query
-            //    // we are inserting actor_id, first_name, last_name, last_updated columns data
-            //    //21:36:01	insert into timedb.timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("2021-08-15","safety","3:00", "20:02:00","20:05:00","03:00","100%")	1 row(s) affected	0.000 sec
-
-            //    string date = dateTimePicker1.Value.ToString().Substring(0, 10);
-            //    Console.WriteLine("data: " + date);
-            //    string timeSet1 = timeSet.Substring(10, 9);
-            //    Console.WriteLine("timeSet1: " + timeSet1);
-            //    string sql = "insert into timedb(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
-            //        + "\"" + date + "\""
-            //        + ",\"" + block + "\""
-            //        + ",\"" + timeSet1 + "\""
-            //        + ",\"" + timeStart + "\""
-            //        + ",\"" + timeEnd + "\""
-            //        + ",\"" + timeResult + "\""
-            //        + ",\"" + progressValue + "\""
-            //        + ")";
-            //    Console.WriteLine(" sql; " + sql);
-            //    MySqlCommand cmd = new MySqlCommand(sql, conn);
-            //    cmd.ExecuteNonQuery();
-
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //conn.Close();
-
-            // cba.pl
-
-        }
-        public static double ConvertToUnixTimestamp(DateTime date)
-        {
-            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            TimeSpan diff = date.ToUniversalTime() - origin;
-            return Math.Floor(diff.TotalSeconds);
-        }
-        public static DateTime ConvertFromUnixTimestamp(double timestamp)
-        {
-            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            return origin.AddSeconds(timestamp);
-        }
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControl1.SelectedTab == tabControl1.TabPages[2])// Historia
-            {
-
-                // db connection
-                string connectionstring = "Server =" + hostInput.Text +
-                    "; Database=" + baseInput.Text +
-                    "; Uid=" + loginInput.Text +
-                    "; Password= " + passwordInput.Text +
-                    "; Port=3306;SSL Mode=None";
-                Console.WriteLine("connectionstring: " + connectionstring);
-                MySqlConnection conn = new MySqlConnection(connectionstring);
-                try
-                {
-                    string mysql = "Select * FROM " + tableInput.Text;
-                    MySqlCommand command = new MySqlCommand(mysql, conn);
-                    conn.Open();
-
-                    MySqlDataReader rdr = command.ExecuteReader();
-                    //read the data
-                    while (rdr.Read())
-                    {
-                        Console.WriteLine(rdr[0] + "  " + rdr[1] + "  " + rdr[2] + " " + rdr[3] + " " + rdr[4] + " " + rdr[5]);
-                    }
-                    rdr.Close();
-
-                    MySqlDataAdapter dtb = new MySqlDataAdapter();
-                    dtb.SelectCommand = command;
-                    System.Data.DataTable dTable = new DataTable();
-                    dtb.Fill(dTable);
-                    BindingSource bSource = new BindingSource();
-                    bSource.DataSource = dTable;
-
-                    dataGridView1.DataSource = bSource;
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-                    dataGridView1.Columns[dataGridView1.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                conn.Close();
-            }
-            if (tabControl1.SelectedTab == tabControl1.TabPages[3]) // server settings from file
-            {
-                if (checkBoxServer.Checked )
-                {
-                    location.Visible = true;
-                    locationSite.Visible = true;
-                    host.Visible = true;
-                    hostInput.Visible = true;
-                    login.Visible = true;
-                    loginInput.Visible = true;
-                    password.Visible = true;
-                    passwordInput.Visible = true;
-                    baseLabel.Visible = true;
-                    baseInput.Visible = true;
-                    tableLabel.Visible = true;
-                    tableInput.Visible = true;
-                    Console.WriteLine("checkBoxServer.Text =true");                }
-                else
-                {
-                    location.Visible = false;
-                    locationSite.Visible = false;
-                    host.Visible = false;
-                    hostInput.Visible = false;
-                    login.Visible = false;
-                    loginInput.Visible = false;
-                    password.Visible = false;
-                    passwordInput.Visible = false;
-                    baseLabel.Visible = false;
-                    baseInput.Visible = false;
-                    tableLabel.Visible = false;
-                    tableInput.Visible = false;
-                    Console.WriteLine("checkBoxServer.Text = false");
-
-                }
-            }
-        }
-        private void introTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void safetyTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-
-        private void tableInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hostInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxServer_CheckedChanged(object sender, EventArgs e)
-        {
-            // File name  
-            string fileName = @"C:\Timekeeper\settings1.txt";
-
-            if (checkBoxServer.Checked == true)
-            {
-               // lineChanger("true", fileName, 1);
-                location.Visible = true;
-                locationSite.Visible = true;
-                host.Visible = true;
-                hostInput.Visible = true;
-                login.Visible = true;
-                loginInput.Visible = true;
-                password.Visible = true;
-                passwordInput.Visible = true;
-                baseLabel.Visible = true;
-                baseInput.Visible = true;
-                tableLabel.Visible = true;
-                tableInput.Visible = true;
-                Console.WriteLine("checkBoxServer.Text = true");
-            }
-            else
-            {
-               // lineChanger("false", fileName, 1);
-                location.Visible = false;
-                locationSite.Visible = false;
-                host.Visible = false;
-                hostInput.Visible = false;
-                login.Visible = false;
-                loginInput.Visible = false;
-                password.Visible = false;
-                passwordInput.Visible = false;
-                baseLabel.Visible = false;
-                baseInput.Visible = false;
-                tableLabel.Visible = false;
-                tableInput.Visible = false;
-                Console.WriteLine("checkBoxServer.Text = false");
-            }
-        }
-        private void qualityTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            string fileName = @"C:\Timekeeper\settings1.txt";
-            string[] lines = new string[7]; // = System.IO.File.ReadAllLines(fileName);
-            lines[0] = (checkBoxServer.Checked)? "true" :"false";
-            lines[1] = locationSite.Text;
-            lines[2] = hostInput.Text;
-            lines[3] = loginInput.Text;
-            lines[4] = passwordInput.Text;
-            lines[5] = baseInput.Text;
-            lines[6] = tableInput.Text;
-            File.WriteAllLines(fileName, lines);
-        }
-
-        private void customerServiceTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void performanceTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void peopleTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void projectsTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void priorityTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void visitsTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private void feedbackTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            sumValue.Text = calcSumOfTime().ToString();
-        }
-        private TimeSpan calcSumOfTime()
-        {
-            TimeSpan sumOftimeSet = introTimePicker.Value.TimeOfDay
-                .Add(safetyTimePicker.Value.TimeOfDay)
-                .Add(qualityTimePicker.Value.TimeOfDay)
-                .Add(customerServiceTimePicker.Value.TimeOfDay)
-                .Add(performanceTimePicker.Value.TimeOfDay)
-                .Add(peopleTimePicker.Value.TimeOfDay)
-                .Add(projectsTimePicker.Value.TimeOfDay)
-                .Add(priorityTimePicker.Value.TimeOfDay)
-                .Add(visitsTimePicker.Value.TimeOfDay)
-                .Add(feedbackTimePicker.Value.TimeOfDay)
-                ;
-            return sumOftimeSet;
-        }
-        private double calcOfSpentTime(DateTime timeEnd, DateTime timeStart, DateTime introTimeObjective)
-        {
-            // real progress time calcul.
-            double Start = (timeEnd.TimeOfDay.TotalHours / timeEnd.TimeOfDay.Hours - 1);
-            double End = (timeStart.TimeOfDay.TotalHours / timeStart.TimeOfDay.Hours - 1);
-            double Objective = (introTimeObjective.TimeOfDay.TotalHours / introTimeObjective.TimeOfDay.Hours - 1);
-
-            Console.WriteLine("Start " + Start);
-            Console.WriteLine("End " + End);
-            Console.WriteLine("Obj " + Objective);
-            double result1 = (End / Objective) * 100;
-            return result1;
-        }
-        private void wrongSequenceWarning()
-        {
-            MessageBox.Show("Zła sekwencja ", "Uwaga!");
-            Console.WriteLine("zła sekwencja " + status);
-        }
-        private void playSimpleSound()
-        {
-            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
-            simpleSound.Play();
-        }
-        private void playSimpleSound1()
-        {
-            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\Windows Unlock.wav");
-            simpleSound.Play();
-        }
-        private void playSimpleSound2()
-        {
-            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\tada.wav");
-            simpleSound.Play();
-        }
-        private void progressSound(double progressBarValue, double progressBarMaximum)
-        {
-
-            if (progressBarValue > progressBarMaximum * 0.8 && progressBarValue < progressBarMaximum * 0.85 && Sound == false)
-            {
-                playSimpleSound();
-                Sound = true;
-            }
-            if (progressBarValue > progressBarMaximum * 0.9 && progressBarValue < progressBarMaximum * 0.95 && Sound1 == false)
-            {
-                playSimpleSound1();
-                Sound1 = true;
-            }
-
-            if (progressBarValue > progressBarMaximum * 0.99 && progressBarValue < progressBarMaximum * 1.1 && Sound2 == false)
-            {
-                playSimpleSound2();
-                Sound2 = true;
-            }
-        }
-        static void lineChanger(string newText, string fileName, int line_to_edit)
-        {
-            Console.WriteLine("fileName " + fileName);
-            Console.WriteLine("newText " + newText);
-            Console.WriteLine("line_to_edit " + line_to_edit);
-
-            //string[] arrLine = File.ReadAllLines(fileName);
-            //arrLine[line_to_edit - 1] = newText;
-            //File.WriteAllLines(fileName, arrLine);
-            //using (var fs = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite))
-            //{
-            //    int line_number = 1;
-            //    string line = null;
-
-            //    while ((line = fs.ReadLine()) != null)
-            //    {
-            //        if (line_number == line_to_edit)
-            //        {
-            //            writer.WriteLine(lineToWrite);
-            //        }
-            //        else
-            //        {
-            //            reader.ReadLine();
-            //        }
-            //        line_number++;
-            //    }
-            //}
-
-            //var counter =0;
-            //// Open the stream and read it back.
-
-            //string[] lines = System.IO.File.ReadAllLines(fileName);
-            //lines[line_to_edit] = newText;
-            //File.WriteAllLines(fileName, lines);
-
-            //Console.WriteLine("new lines  " + lines[line_to_edit - 1]);
-            //StreamReader sr = null;
-            //try
-            //{
-            //   sr = new StreamReader(fileName);
-            //   string line;
-            //   // Read and display lines from the file until the end of
-            //   // the file is reached.
-            //   while ((line = sr.ReadLine()) != null)
-            //      {
-            //          Console.WriteLine(line);
-            //      }
-            //}
-            //finally
-            //{
-            //    sr.Close();
-            //    sr.Dispose();
-            //}
-
-            //using (StreamWriter writer = new StreamWriter(fileName))
-            //{
-            //    string animal = "cat";
-            //    int size = 12;
-            //    // Use string interpolation syntax to make code clearer.
-            //    writer.WriteLine($"The {animal} is {size} pounds.");
-            //}
-            //FileStream fs = new FileStream(fileName, FileMode.Open);
-            ////read
-            //fs = new FileStream(fileName, FileMode.Open);
-            //StreamReader r = new StreamReader(fs, Encoding.UTF8);
-            //Console.WriteLine(r.ReadLine());
-            //r.Close();
-            //fs.Close();
-
-            ////write 
-            /// FileStream fs = new FileStream(fileName, FileMode.Open);
-            //StreamWriter w = new StreamWriter(fs, Encoding.UTF8);
-            //w.WriteLine("text_to_write");
-            //w.Flush();
-            //w.Close();
-            //fs.Close();
-            //using (FileStream fs = new FileStream(fileName, FileMode.Open))
-            //{
-            //    using (BinaryWriter w = new BinaryWriter(fs))
-            //    {
-            //        for (int i = 0; i < 11; i++)
-            //        {
-            //            w.Write(i);
-            //        }
-            //    }
-            //}
-
-            //using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-            //{
-            //    using (BinaryReader r = new BinaryReader(fs))
-            //    {
-            //        for (int i = 0; i < 11; i++)
-            //        {
-            //            Console.WriteLine(r.ReadInt32());
-            //        }
-            //    }
-            //}
         }
     }
 }
