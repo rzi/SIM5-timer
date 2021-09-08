@@ -433,7 +433,7 @@ namespace WindowsFormsApp2
                 status = "safety";
                 safetyProgressBar.ForeColor = Color.LightGreen;
                 safetyProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Wstęp", introTimePicker.Value.ToString(), introStart.Text, introEnd.Text, introResult.Text, introProgressValue.Text);
+                saveToDB("Wstęp", introTimePicker.Value.ToString(), introStart.Text, introEnd.Text, introResult.Text, introProgressValue.Text,locationSite.Text);
 
             }
             else
@@ -462,7 +462,7 @@ namespace WindowsFormsApp2
                 status = "quality";
                 qualityProgressBar.ForeColor = Color.LightGreen;
                 qualityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text);
+                saveToDB("BHP", safetyTimePicker.Value.ToString(), safetyStart.Text, safetyEnd.Text, safetyResult.Text, safetyProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -491,7 +491,7 @@ namespace WindowsFormsApp2
                 status = "customerService";
                 customerServiceProgressBar.ForeColor = Color.LightGreen;
                 customerServiceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text);
+                saveToDB("Jakość", qualityTimePicker.Value.ToString(), qualityStart.Text, qualityEnd.Text, qualityResult.Text, qualityProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -518,7 +518,7 @@ namespace WindowsFormsApp2
                 status = "performance";
                 performanceProgressBar.ForeColor = Color.LightGreen;
                 performanceProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text);
+                saveToDB("Serwis", customerServiceTimePicker.Value.ToString(), customerServiceStart.Text, customerServiceEnd.Text, customerServiceResult.Text, customerServiceProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -545,7 +545,7 @@ namespace WindowsFormsApp2
                 status = "people";
                 peopleProgressBar.ForeColor = Color.LightGreen;
                 peopleProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text);
+                saveToDB("Efektywność", performanceTimePicker.Value.ToString(), performanceStart.Text, performanceEnd.Text, performanceResult.Text, performanceProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -572,7 +572,7 @@ namespace WindowsFormsApp2
                 status = "projects";
                 projectsProgressBar.ForeColor = Color.LightGreen;
                 projectsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text);
+                saveToDB("Eureka", peopleTimePicker.Value.ToString(), peopleStart.Text, peopleEnd.Text, peopleResult.Text, peopleProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -599,7 +599,7 @@ namespace WindowsFormsApp2
                 status = "priority";
                 priorityProgressBar.ForeColor = Color.LightGreen;
                 priorityProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text);
+                saveToDB("Projekty", projectsTimePicker.Value.ToString(), projectsStart.Text, projectsEnd.Text, projectsResult.Text, projectsProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -626,7 +626,7 @@ namespace WindowsFormsApp2
                 status = "visits";
                 visitsProgressBar.ForeColor = Color.LightGreen;
                 visitsProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text);
+                saveToDB("Priorytety", priorityTimePicker.Value.ToString(), priorityStart.Text, priorityEnd.Text, priorityResult.Text, priorityProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -653,7 +653,7 @@ namespace WindowsFormsApp2
                 status = "feedback";
                 feedbackProgressBar.ForeColor = Color.LightGreen;
                 feedbackProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-                saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text);
+                saveToDB("Wizyty", visitsTimePicker.Value.ToString(), visitsStart.Text, visitsEnd.Text, visitsResult.Text, visitsProgressValue.Text, locationSite.Text);
             }
             else
             {
@@ -671,7 +671,7 @@ namespace WindowsFormsApp2
                 TimeSpan diff1 = timeStart.Subtract(timeEnd);
                 feedbackResult.Text = diff1.ToString();
                 status = "end";
-                saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text);
+                saveToDB("Feedback", feedbackTimePicker.Value.ToString(), feedbackStart.Text, feedbackEnd.Text, feedbackResult.Text, feedbackProgressValue.Text, locationSite.Text);
                 clearChart();
                 fillChart();
             }
@@ -692,7 +692,7 @@ namespace WindowsFormsApp2
             //Creating a Method name CaptureMyScreen
             CaptureMyScreen();
         }
-        private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue)
+        private void saveToDB(string block, string timeSet, string timeStart, string timeEnd, string timeResult, string progressValue, string site)
         {
 
             if (checkBoxServer.Checked)
@@ -714,7 +714,7 @@ namespace WindowsFormsApp2
                     Console.WriteLine("data: " + date2);
                     string timeSet1 = timeSet.Substring(10, 9);
                     Console.WriteLine("timeSet1: " + timeSet1);
-                    string sql = "insert into " + tableInput.Text + "(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue)Values ("
+                    string sql = "insert into " + tableInput.Text + "(date,block,timeSet,timeStart,timeEnd,timeResult,progressValue,site)Values ("
                         + "\"" + date2 + "\""
                         + ",\"" + block + "\""
                         + ",\"" + timeSet1 + "\""
@@ -722,6 +722,7 @@ namespace WindowsFormsApp2
                         + ",\"" + timeEnd + "\""
                         + ",\"" + timeResult + "\""
                         + ",\"" + progressValue + "\""
+                        + ",\"" + site + "\""
                         + ")";
                     Console.WriteLine(" sql: " + sql);
                     MySqlCommand cmd = new MySqlCommand(sql, conn2);

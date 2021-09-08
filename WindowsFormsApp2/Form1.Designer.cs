@@ -31,19 +31,19 @@ namespace WindowsFormsApp2
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series89 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series90 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series91 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series92 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series93 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series94 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series95 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series96 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series97 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series98 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series99 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -141,6 +141,7 @@ namespace WindowsFormsApp2
             this.introTitle = new System.Windows.Forms.Label();
             this.canvas = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.screenShot = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -160,7 +161,6 @@ namespace WindowsFormsApp2
             this.hostInput = new System.Windows.Forms.TextBox();
             this.host = new System.Windows.Forms.Label();
             this.checkBoxServer = new System.Windows.Forms.CheckBox();
-            this.screenShot = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -184,7 +184,7 @@ namespace WindowsFormsApp2
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -311,7 +311,7 @@ namespace WindowsFormsApp2
             this.sumValue.AutoSize = true;
             this.sumValue.Location = new System.Drawing.Point(180, 511);
             this.sumValue.Name = "sumValue";
-            this.sumValue.Size = new System.Drawing.Size(0, 24);
+            this.sumValue.Size = new System.Drawing.Size(0, 20);
             this.sumValue.TabIndex = 111;
             // 
             // sumLabel
@@ -320,7 +320,7 @@ namespace WindowsFormsApp2
             this.sumLabel.Location = new System.Drawing.Point(113, 511);
             this.sumLabel.Name = "sumLabel";
             this.sumLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sumLabel.Size = new System.Drawing.Size(64, 24);
+            this.sumLabel.Size = new System.Drawing.Size(55, 20);
             this.sumLabel.TabIndex = 110;
             this.sumLabel.Text = "Suma:";
             // 
@@ -332,9 +332,9 @@ namespace WindowsFormsApp2
             this.feedbackTimePicker.Location = new System.Drawing.Point(180, 466);
             this.feedbackTimePicker.Name = "feedbackTimePicker";
             this.feedbackTimePicker.ShowUpDown = true;
-            this.feedbackTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.feedbackTimePicker.Size = new System.Drawing.Size(90, 26);
             this.feedbackTimePicker.TabIndex = 109;
-            this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.feedbackTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
             this.feedbackTimePicker.ValueChanged += new System.EventHandler(this.feedbackTimePicker_ValueChanged);
             // 
             // visitsTimePicker
@@ -345,9 +345,9 @@ namespace WindowsFormsApp2
             this.visitsTimePicker.Location = new System.Drawing.Point(180, 425);
             this.visitsTimePicker.Name = "visitsTimePicker";
             this.visitsTimePicker.ShowUpDown = true;
-            this.visitsTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.visitsTimePicker.Size = new System.Drawing.Size(90, 26);
             this.visitsTimePicker.TabIndex = 108;
-            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.visitsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             this.visitsTimePicker.ValueChanged += new System.EventHandler(this.visitsTimePicker_ValueChanged);
             // 
             // priorityTimePicker
@@ -358,9 +358,9 @@ namespace WindowsFormsApp2
             this.priorityTimePicker.Location = new System.Drawing.Point(180, 384);
             this.priorityTimePicker.Name = "priorityTimePicker";
             this.priorityTimePicker.ShowUpDown = true;
-            this.priorityTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.priorityTimePicker.Size = new System.Drawing.Size(90, 26);
             this.priorityTimePicker.TabIndex = 107;
-            this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.priorityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.priorityTimePicker.ValueChanged += new System.EventHandler(this.priorityTimePicker_ValueChanged);
             // 
             // projectsTimePicker
@@ -371,9 +371,9 @@ namespace WindowsFormsApp2
             this.projectsTimePicker.Location = new System.Drawing.Point(180, 343);
             this.projectsTimePicker.Name = "projectsTimePicker";
             this.projectsTimePicker.ShowUpDown = true;
-            this.projectsTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.projectsTimePicker.Size = new System.Drawing.Size(90, 26);
             this.projectsTimePicker.TabIndex = 106;
-            this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.projectsTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.projectsTimePicker.ValueChanged += new System.EventHandler(this.projectsTimePicker_ValueChanged);
             // 
             // peopleTimePicker
@@ -384,9 +384,9 @@ namespace WindowsFormsApp2
             this.peopleTimePicker.Location = new System.Drawing.Point(180, 302);
             this.peopleTimePicker.Name = "peopleTimePicker";
             this.peopleTimePicker.ShowUpDown = true;
-            this.peopleTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.peopleTimePicker.Size = new System.Drawing.Size(90, 26);
             this.peopleTimePicker.TabIndex = 105;
-            this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.peopleTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 3, 0, 0);
             this.peopleTimePicker.ValueChanged += new System.EventHandler(this.peopleTimePicker_ValueChanged);
             // 
             // performanceTimePicker
@@ -397,9 +397,9 @@ namespace WindowsFormsApp2
             this.performanceTimePicker.Location = new System.Drawing.Point(180, 261);
             this.performanceTimePicker.Name = "performanceTimePicker";
             this.performanceTimePicker.ShowUpDown = true;
-            this.performanceTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.performanceTimePicker.Size = new System.Drawing.Size(90, 26);
             this.performanceTimePicker.TabIndex = 104;
-            this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.performanceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.performanceTimePicker.ValueChanged += new System.EventHandler(this.performanceTimePicker_ValueChanged);
             // 
             // customerServiceTimePicker
@@ -410,9 +410,9 @@ namespace WindowsFormsApp2
             this.customerServiceTimePicker.Location = new System.Drawing.Point(180, 220);
             this.customerServiceTimePicker.Name = "customerServiceTimePicker";
             this.customerServiceTimePicker.ShowUpDown = true;
-            this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.customerServiceTimePicker.Size = new System.Drawing.Size(90, 26);
             this.customerServiceTimePicker.TabIndex = 103;
-            this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.customerServiceTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.customerServiceTimePicker.ValueChanged += new System.EventHandler(this.customerServiceTimePicker_ValueChanged);
             // 
             // qualityTimePicker
@@ -423,9 +423,9 @@ namespace WindowsFormsApp2
             this.qualityTimePicker.Location = new System.Drawing.Point(180, 179);
             this.qualityTimePicker.Name = "qualityTimePicker";
             this.qualityTimePicker.ShowUpDown = true;
-            this.qualityTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.qualityTimePicker.Size = new System.Drawing.Size(90, 26);
             this.qualityTimePicker.TabIndex = 102;
-            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.qualityTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.qualityTimePicker.ValueChanged += new System.EventHandler(this.qualityTimePicker_ValueChanged);
             // 
             // safetyTimePicker
@@ -436,9 +436,9 @@ namespace WindowsFormsApp2
             this.safetyTimePicker.Location = new System.Drawing.Point(180, 138);
             this.safetyTimePicker.Name = "safetyTimePicker";
             this.safetyTimePicker.ShowUpDown = true;
-            this.safetyTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.safetyTimePicker.Size = new System.Drawing.Size(90, 26);
             this.safetyTimePicker.TabIndex = 101;
-            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.safetyTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 5, 0, 0);
             this.safetyTimePicker.ValueChanged += new System.EventHandler(this.safetyTimePicker_ValueChanged);
             // 
             // introTimePicker
@@ -449,9 +449,9 @@ namespace WindowsFormsApp2
             this.introTimePicker.Location = new System.Drawing.Point(180, 97);
             this.introTimePicker.Name = "introTimePicker";
             this.introTimePicker.ShowUpDown = true;
-            this.introTimePicker.Size = new System.Drawing.Size(90, 29);
+            this.introTimePicker.Size = new System.Drawing.Size(90, 26);
             this.introTimePicker.TabIndex = 100;
-            this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 0, 10, 0);
+            this.introTimePicker.Value = new System.DateTime(2021, 8, 8, 0, 1, 0, 0);
             this.introTimePicker.ValueChanged += new System.EventHandler(this.introTimePicker_ValueChanged);
             // 
             // button12
@@ -549,7 +549,7 @@ namespace WindowsFormsApp2
             this.feedbackResult.AutoSize = true;
             this.feedbackResult.Location = new System.Drawing.Point(820, 466);
             this.feedbackResult.Name = "feedbackResult";
-            this.feedbackResult.Size = new System.Drawing.Size(0, 24);
+            this.feedbackResult.Size = new System.Drawing.Size(0, 20);
             this.feedbackResult.TabIndex = 90;
             // 
             // feedbackEnd
@@ -557,7 +557,7 @@ namespace WindowsFormsApp2
             this.feedbackEnd.AutoSize = true;
             this.feedbackEnd.Location = new System.Drawing.Point(688, 466);
             this.feedbackEnd.Name = "feedbackEnd";
-            this.feedbackEnd.Size = new System.Drawing.Size(0, 24);
+            this.feedbackEnd.Size = new System.Drawing.Size(0, 20);
             this.feedbackEnd.TabIndex = 89;
             // 
             // feedbackStart
@@ -565,7 +565,7 @@ namespace WindowsFormsApp2
             this.feedbackStart.AutoSize = true;
             this.feedbackStart.Location = new System.Drawing.Point(551, 466);
             this.feedbackStart.Name = "feedbackStart";
-            this.feedbackStart.Size = new System.Drawing.Size(0, 24);
+            this.feedbackStart.Size = new System.Drawing.Size(0, 20);
             this.feedbackStart.TabIndex = 88;
             // 
             // visitsResult
@@ -573,7 +573,7 @@ namespace WindowsFormsApp2
             this.visitsResult.AutoSize = true;
             this.visitsResult.Location = new System.Drawing.Point(820, 425);
             this.visitsResult.Name = "visitsResult";
-            this.visitsResult.Size = new System.Drawing.Size(0, 24);
+            this.visitsResult.Size = new System.Drawing.Size(0, 20);
             this.visitsResult.TabIndex = 87;
             // 
             // visitsEnd
@@ -581,7 +581,7 @@ namespace WindowsFormsApp2
             this.visitsEnd.AutoSize = true;
             this.visitsEnd.Location = new System.Drawing.Point(688, 425);
             this.visitsEnd.Name = "visitsEnd";
-            this.visitsEnd.Size = new System.Drawing.Size(0, 24);
+            this.visitsEnd.Size = new System.Drawing.Size(0, 20);
             this.visitsEnd.TabIndex = 86;
             // 
             // visitsStart
@@ -589,7 +589,7 @@ namespace WindowsFormsApp2
             this.visitsStart.AutoSize = true;
             this.visitsStart.Location = new System.Drawing.Point(551, 425);
             this.visitsStart.Name = "visitsStart";
-            this.visitsStart.Size = new System.Drawing.Size(0, 24);
+            this.visitsStart.Size = new System.Drawing.Size(0, 20);
             this.visitsStart.TabIndex = 85;
             // 
             // priorityResult
@@ -597,7 +597,7 @@ namespace WindowsFormsApp2
             this.priorityResult.AutoSize = true;
             this.priorityResult.Location = new System.Drawing.Point(820, 384);
             this.priorityResult.Name = "priorityResult";
-            this.priorityResult.Size = new System.Drawing.Size(0, 24);
+            this.priorityResult.Size = new System.Drawing.Size(0, 20);
             this.priorityResult.TabIndex = 84;
             // 
             // priorityEnd
@@ -605,7 +605,7 @@ namespace WindowsFormsApp2
             this.priorityEnd.AutoSize = true;
             this.priorityEnd.Location = new System.Drawing.Point(688, 384);
             this.priorityEnd.Name = "priorityEnd";
-            this.priorityEnd.Size = new System.Drawing.Size(0, 24);
+            this.priorityEnd.Size = new System.Drawing.Size(0, 20);
             this.priorityEnd.TabIndex = 83;
             // 
             // priorityStart
@@ -613,7 +613,7 @@ namespace WindowsFormsApp2
             this.priorityStart.AutoSize = true;
             this.priorityStart.Location = new System.Drawing.Point(551, 384);
             this.priorityStart.Name = "priorityStart";
-            this.priorityStart.Size = new System.Drawing.Size(0, 24);
+            this.priorityStart.Size = new System.Drawing.Size(0, 20);
             this.priorityStart.TabIndex = 82;
             // 
             // projectsResult
@@ -621,7 +621,7 @@ namespace WindowsFormsApp2
             this.projectsResult.AutoSize = true;
             this.projectsResult.Location = new System.Drawing.Point(820, 343);
             this.projectsResult.Name = "projectsResult";
-            this.projectsResult.Size = new System.Drawing.Size(0, 24);
+            this.projectsResult.Size = new System.Drawing.Size(0, 20);
             this.projectsResult.TabIndex = 81;
             // 
             // projectsEnd
@@ -629,7 +629,7 @@ namespace WindowsFormsApp2
             this.projectsEnd.AutoSize = true;
             this.projectsEnd.Location = new System.Drawing.Point(688, 343);
             this.projectsEnd.Name = "projectsEnd";
-            this.projectsEnd.Size = new System.Drawing.Size(0, 24);
+            this.projectsEnd.Size = new System.Drawing.Size(0, 20);
             this.projectsEnd.TabIndex = 80;
             // 
             // projectsStart
@@ -637,7 +637,7 @@ namespace WindowsFormsApp2
             this.projectsStart.AutoSize = true;
             this.projectsStart.Location = new System.Drawing.Point(551, 343);
             this.projectsStart.Name = "projectsStart";
-            this.projectsStart.Size = new System.Drawing.Size(0, 24);
+            this.projectsStart.Size = new System.Drawing.Size(0, 20);
             this.projectsStart.TabIndex = 79;
             // 
             // peopleResult
@@ -645,7 +645,7 @@ namespace WindowsFormsApp2
             this.peopleResult.AutoSize = true;
             this.peopleResult.Location = new System.Drawing.Point(820, 302);
             this.peopleResult.Name = "peopleResult";
-            this.peopleResult.Size = new System.Drawing.Size(0, 24);
+            this.peopleResult.Size = new System.Drawing.Size(0, 20);
             this.peopleResult.TabIndex = 78;
             // 
             // peopleEnd
@@ -653,7 +653,7 @@ namespace WindowsFormsApp2
             this.peopleEnd.AutoSize = true;
             this.peopleEnd.Location = new System.Drawing.Point(688, 302);
             this.peopleEnd.Name = "peopleEnd";
-            this.peopleEnd.Size = new System.Drawing.Size(0, 24);
+            this.peopleEnd.Size = new System.Drawing.Size(0, 20);
             this.peopleEnd.TabIndex = 77;
             // 
             // peopleStart
@@ -661,7 +661,7 @@ namespace WindowsFormsApp2
             this.peopleStart.AutoSize = true;
             this.peopleStart.Location = new System.Drawing.Point(551, 302);
             this.peopleStart.Name = "peopleStart";
-            this.peopleStart.Size = new System.Drawing.Size(0, 24);
+            this.peopleStart.Size = new System.Drawing.Size(0, 20);
             this.peopleStart.TabIndex = 76;
             // 
             // performanceResult
@@ -669,7 +669,7 @@ namespace WindowsFormsApp2
             this.performanceResult.AutoSize = true;
             this.performanceResult.Location = new System.Drawing.Point(820, 261);
             this.performanceResult.Name = "performanceResult";
-            this.performanceResult.Size = new System.Drawing.Size(0, 24);
+            this.performanceResult.Size = new System.Drawing.Size(0, 20);
             this.performanceResult.TabIndex = 75;
             // 
             // performanceEnd
@@ -677,7 +677,7 @@ namespace WindowsFormsApp2
             this.performanceEnd.AutoSize = true;
             this.performanceEnd.Location = new System.Drawing.Point(688, 261);
             this.performanceEnd.Name = "performanceEnd";
-            this.performanceEnd.Size = new System.Drawing.Size(0, 24);
+            this.performanceEnd.Size = new System.Drawing.Size(0, 20);
             this.performanceEnd.TabIndex = 74;
             // 
             // performanceStart
@@ -685,7 +685,7 @@ namespace WindowsFormsApp2
             this.performanceStart.AutoSize = true;
             this.performanceStart.Location = new System.Drawing.Point(551, 261);
             this.performanceStart.Name = "performanceStart";
-            this.performanceStart.Size = new System.Drawing.Size(0, 24);
+            this.performanceStart.Size = new System.Drawing.Size(0, 20);
             this.performanceStart.TabIndex = 73;
             // 
             // customerServiceResult
@@ -693,7 +693,7 @@ namespace WindowsFormsApp2
             this.customerServiceResult.AutoSize = true;
             this.customerServiceResult.Location = new System.Drawing.Point(820, 220);
             this.customerServiceResult.Name = "customerServiceResult";
-            this.customerServiceResult.Size = new System.Drawing.Size(0, 24);
+            this.customerServiceResult.Size = new System.Drawing.Size(0, 20);
             this.customerServiceResult.TabIndex = 72;
             // 
             // customerServiceEnd
@@ -701,7 +701,7 @@ namespace WindowsFormsApp2
             this.customerServiceEnd.AutoSize = true;
             this.customerServiceEnd.Location = new System.Drawing.Point(688, 220);
             this.customerServiceEnd.Name = "customerServiceEnd";
-            this.customerServiceEnd.Size = new System.Drawing.Size(0, 24);
+            this.customerServiceEnd.Size = new System.Drawing.Size(0, 20);
             this.customerServiceEnd.TabIndex = 71;
             // 
             // customerServiceStart
@@ -709,7 +709,7 @@ namespace WindowsFormsApp2
             this.customerServiceStart.AutoSize = true;
             this.customerServiceStart.Location = new System.Drawing.Point(551, 220);
             this.customerServiceStart.Name = "customerServiceStart";
-            this.customerServiceStart.Size = new System.Drawing.Size(0, 24);
+            this.customerServiceStart.Size = new System.Drawing.Size(0, 20);
             this.customerServiceStart.TabIndex = 70;
             // 
             // qualityResult
@@ -717,7 +717,7 @@ namespace WindowsFormsApp2
             this.qualityResult.AutoSize = true;
             this.qualityResult.Location = new System.Drawing.Point(820, 179);
             this.qualityResult.Name = "qualityResult";
-            this.qualityResult.Size = new System.Drawing.Size(0, 24);
+            this.qualityResult.Size = new System.Drawing.Size(0, 20);
             this.qualityResult.TabIndex = 69;
             // 
             // qualityEnd
@@ -725,7 +725,7 @@ namespace WindowsFormsApp2
             this.qualityEnd.AutoSize = true;
             this.qualityEnd.Location = new System.Drawing.Point(688, 179);
             this.qualityEnd.Name = "qualityEnd";
-            this.qualityEnd.Size = new System.Drawing.Size(0, 24);
+            this.qualityEnd.Size = new System.Drawing.Size(0, 20);
             this.qualityEnd.TabIndex = 68;
             // 
             // qualityStart
@@ -733,7 +733,7 @@ namespace WindowsFormsApp2
             this.qualityStart.AutoSize = true;
             this.qualityStart.Location = new System.Drawing.Point(551, 179);
             this.qualityStart.Name = "qualityStart";
-            this.qualityStart.Size = new System.Drawing.Size(0, 24);
+            this.qualityStart.Size = new System.Drawing.Size(0, 20);
             this.qualityStart.TabIndex = 67;
             // 
             // stopButton
@@ -771,7 +771,7 @@ namespace WindowsFormsApp2
             this.safetyResult.AutoSize = true;
             this.safetyResult.Location = new System.Drawing.Point(820, 138);
             this.safetyResult.Name = "safetyResult";
-            this.safetyResult.Size = new System.Drawing.Size(0, 24);
+            this.safetyResult.Size = new System.Drawing.Size(0, 20);
             this.safetyResult.TabIndex = 64;
             // 
             // safetyEnd
@@ -779,7 +779,7 @@ namespace WindowsFormsApp2
             this.safetyEnd.AutoSize = true;
             this.safetyEnd.Location = new System.Drawing.Point(688, 138);
             this.safetyEnd.Name = "safetyEnd";
-            this.safetyEnd.Size = new System.Drawing.Size(0, 24);
+            this.safetyEnd.Size = new System.Drawing.Size(0, 20);
             this.safetyEnd.TabIndex = 63;
             // 
             // safetyStart
@@ -787,7 +787,7 @@ namespace WindowsFormsApp2
             this.safetyStart.AutoSize = true;
             this.safetyStart.Location = new System.Drawing.Point(551, 138);
             this.safetyStart.Name = "safetyStart";
-            this.safetyStart.Size = new System.Drawing.Size(0, 24);
+            this.safetyStart.Size = new System.Drawing.Size(0, 20);
             this.safetyStart.TabIndex = 62;
             // 
             // introStart
@@ -795,7 +795,7 @@ namespace WindowsFormsApp2
             this.introStart.AutoSize = true;
             this.introStart.Location = new System.Drawing.Point(551, 97);
             this.introStart.Name = "introStart";
-            this.introStart.Size = new System.Drawing.Size(0, 24);
+            this.introStart.Size = new System.Drawing.Size(0, 20);
             this.introStart.TabIndex = 61;
             // 
             // feedbackProgressBar
@@ -857,7 +857,7 @@ namespace WindowsFormsApp2
             this.timeLabel.AutoSize = true;
             this.timeLabel.Location = new System.Drawing.Point(177, 60);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(97, 24);
+            this.timeLabel.Size = new System.Drawing.Size(82, 20);
             this.timeLabel.TabIndex = 41;
             this.timeLabel.Text = "Czas [min]";
             // 
@@ -866,7 +866,7 @@ namespace WindowsFormsApp2
             this.feedbackTitle.AutoSize = true;
             this.feedbackTitle.Location = new System.Drawing.Point(20, 466);
             this.feedbackTitle.Name = "feedbackTitle";
-            this.feedbackTitle.Size = new System.Drawing.Size(100, 24);
+            this.feedbackTitle.Size = new System.Drawing.Size(84, 20);
             this.feedbackTitle.TabIndex = 40;
             this.feedbackTitle.Text = "Feedback ";
             // 
@@ -875,7 +875,7 @@ namespace WindowsFormsApp2
             this.visitsTitle.AutoSize = true;
             this.visitsTitle.Location = new System.Drawing.Point(20, 425);
             this.visitsTitle.Name = "visitsTitle";
-            this.visitsTitle.Size = new System.Drawing.Size(63, 24);
+            this.visitsTitle.Size = new System.Drawing.Size(54, 20);
             this.visitsTitle.TabIndex = 39;
             this.visitsTitle.Text = "Wizyty";
             // 
@@ -884,7 +884,7 @@ namespace WindowsFormsApp2
             this.priorityTitle.AutoSize = true;
             this.priorityTitle.Location = new System.Drawing.Point(20, 384);
             this.priorityTitle.Name = "priorityTitle";
-            this.priorityTitle.Size = new System.Drawing.Size(86, 24);
+            this.priorityTitle.Size = new System.Drawing.Size(74, 20);
             this.priorityTitle.TabIndex = 38;
             this.priorityTitle.Text = "Priorytety";
             // 
@@ -911,7 +911,7 @@ namespace WindowsFormsApp2
             this.projectsTitle.AutoSize = true;
             this.projectsTitle.Location = new System.Drawing.Point(20, 343);
             this.projectsTitle.Name = "projectsTitle";
-            this.projectsTitle.Size = new System.Drawing.Size(76, 24);
+            this.projectsTitle.Size = new System.Drawing.Size(65, 20);
             this.projectsTitle.TabIndex = 34;
             this.projectsTitle.Text = "Projekty";
             // 
@@ -938,7 +938,7 @@ namespace WindowsFormsApp2
             this.peopleTitle.AutoSize = true;
             this.peopleTitle.Location = new System.Drawing.Point(20, 302);
             this.peopleTitle.Name = "peopleTitle";
-            this.peopleTitle.Size = new System.Drawing.Size(70, 24);
+            this.peopleTitle.Size = new System.Drawing.Size(60, 20);
             this.peopleTitle.TabIndex = 30;
             this.peopleTitle.Text = "Eureka";
             // 
@@ -965,7 +965,7 @@ namespace WindowsFormsApp2
             this.performanceTitle.AutoSize = true;
             this.performanceTitle.Location = new System.Drawing.Point(20, 261);
             this.performanceTitle.Name = "performanceTitle";
-            this.performanceTitle.Size = new System.Drawing.Size(115, 24);
+            this.performanceTitle.Size = new System.Drawing.Size(99, 20);
             this.performanceTitle.TabIndex = 26;
             this.performanceTitle.Text = "Efektywność";
             // 
@@ -992,7 +992,7 @@ namespace WindowsFormsApp2
             this.customerServiceTitle.AutoSize = true;
             this.customerServiceTitle.Location = new System.Drawing.Point(20, 220);
             this.customerServiceTitle.Name = "customerServiceTitle";
-            this.customerServiceTitle.Size = new System.Drawing.Size(66, 24);
+            this.customerServiceTitle.Size = new System.Drawing.Size(56, 20);
             this.customerServiceTitle.TabIndex = 22;
             this.customerServiceTitle.Text = "Serwis";
             // 
@@ -1019,7 +1019,7 @@ namespace WindowsFormsApp2
             this.qualityTitle.AutoSize = true;
             this.qualityTitle.Location = new System.Drawing.Point(20, 179);
             this.qualityTitle.Name = "qualityTitle";
-            this.qualityTitle.Size = new System.Drawing.Size(68, 24);
+            this.qualityTitle.Size = new System.Drawing.Size(59, 20);
             this.qualityTitle.TabIndex = 18;
             this.qualityTitle.Text = "Jakoćś";
             // 
@@ -1055,7 +1055,7 @@ namespace WindowsFormsApp2
             this.safetyTitle.AutoSize = true;
             this.safetyTitle.Location = new System.Drawing.Point(20, 138);
             this.safetyTitle.Name = "safetyTitle";
-            this.safetyTitle.Size = new System.Drawing.Size(48, 24);
+            this.safetyTitle.Size = new System.Drawing.Size(42, 20);
             this.safetyTitle.TabIndex = 13;
             this.safetyTitle.Text = "BHP";
             // 
@@ -1064,7 +1064,7 @@ namespace WindowsFormsApp2
             this.introResult.AutoSize = true;
             this.introResult.Location = new System.Drawing.Point(820, 97);
             this.introResult.Name = "introResult";
-            this.introResult.Size = new System.Drawing.Size(0, 24);
+            this.introResult.Size = new System.Drawing.Size(0, 20);
             this.introResult.TabIndex = 11;
             // 
             // introEnd
@@ -1072,7 +1072,7 @@ namespace WindowsFormsApp2
             this.introEnd.AutoSize = true;
             this.introEnd.Location = new System.Drawing.Point(688, 97);
             this.introEnd.Name = "introEnd";
-            this.introEnd.Size = new System.Drawing.Size(0, 24);
+            this.introEnd.Size = new System.Drawing.Size(0, 20);
             this.introEnd.TabIndex = 10;
             // 
             // resultLabel
@@ -1080,7 +1080,7 @@ namespace WindowsFormsApp2
             this.resultLabel.AutoSize = true;
             this.resultLabel.Location = new System.Drawing.Point(820, 60);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(76, 24);
+            this.resultLabel.Size = new System.Drawing.Size(69, 20);
             this.resultLabel.TabIndex = 9;
             this.resultLabel.Text = "Rezultat";
             // 
@@ -1089,7 +1089,7 @@ namespace WindowsFormsApp2
             this.endLabel.AutoSize = true;
             this.endLabel.Location = new System.Drawing.Point(674, 60);
             this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(119, 24);
+            this.endLabel.Size = new System.Drawing.Size(100, 20);
             this.endLabel.TabIndex = 8;
             this.endLabel.Text = "Zakończenie";
             // 
@@ -1098,7 +1098,7 @@ namespace WindowsFormsApp2
             this.startLabel.AutoSize = true;
             this.startLabel.Location = new System.Drawing.Point(522, 60);
             this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(120, 24);
+            this.startLabel.Size = new System.Drawing.Size(101, 20);
             this.startLabel.TabIndex = 7;
             this.startLabel.Text = "Rozpoczęcie";
             // 
@@ -1136,7 +1136,7 @@ namespace WindowsFormsApp2
             this.currentTime.AutoSize = true;
             this.currentTime.Location = new System.Drawing.Point(279, 20);
             this.currentTime.Name = "currentTime";
-            this.currentTime.Size = new System.Drawing.Size(0, 24);
+            this.currentTime.Size = new System.Drawing.Size(0, 20);
             this.currentTime.TabIndex = 5;
             // 
             // introTitle
@@ -1144,7 +1144,7 @@ namespace WindowsFormsApp2
             this.introTitle.AutoSize = true;
             this.introTitle.Location = new System.Drawing.Point(20, 97);
             this.introTitle.Name = "introTitle";
-            this.introTitle.Size = new System.Drawing.Size(63, 24);
+            this.introTitle.Size = new System.Drawing.Size(55, 20);
             this.introTitle.TabIndex = 1;
             this.introTitle.Text = "Wstęp";
             // 
@@ -1169,103 +1169,113 @@ namespace WindowsFormsApp2
             this.tabPage2.Text = "Wykresy";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // screenShot
+            // 
+            this.screenShot.Location = new System.Drawing.Point(125, 516);
+            this.screenShot.Name = "screenShot";
+            this.screenShot.Size = new System.Drawing.Size(115, 47);
+            this.screenShot.TabIndex = 1;
+            this.screenShot.Text = "Zapisz ";
+            this.screenShot.UseVisualStyleBackColor = true;
+            this.screenShot.Click += new System.EventHandler(this.screenShot_Click);
+            // 
             // chart1
             // 
-            chartArea3.AxisX.Interval = 1D;
-            chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisX.MaximumAutoSize = 90F;
-            chartArea3.AxisX.ScaleBreakStyle.Spacing = 1D;
-            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea3.AxisY.IsLabelAutoFit = false;
-            chartArea3.AxisY.LabelAutoFitMaxFontSize = 14;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.AxisY.Title = "Czas [mn]";
-            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Enabled = false;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea9.AxisX.Interval = 1D;
+            chartArea9.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea9.AxisX.MajorGrid.Enabled = false;
+            chartArea9.AxisX.MaximumAutoSize = 90F;
+            chartArea9.AxisX.ScaleBreakStyle.Spacing = 1D;
+            chartArea9.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea9.AxisY.IsLabelAutoFit = false;
+            chartArea9.AxisY.LabelAutoFitMaxFontSize = 14;
+            chartArea9.AxisY.MajorGrid.Enabled = false;
+            chartArea9.AxisY.Title = "Czas [mn]";
+            chartArea9.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.Enabled = false;
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(3, 38);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series23.Legend = "Legend1";
-            series23.Name = "Series1";
-            series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series24.Legend = "Legend1";
-            series24.Name = "Series2";
-            series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series25.Legend = "Legend1";
-            series25.Name = "Series3";
-            series25.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series26.Legend = "Legend1";
-            series26.Name = "Series4";
-            series26.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series27.Legend = "Legend1";
-            series27.Name = "Series5";
-            series27.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series28.Legend = "Legend1";
-            series28.Name = "Series6";
-            series28.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series29.Legend = "Legend1";
-            series29.Name = "Series7";
-            series29.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series30.Legend = "Legend1";
-            series30.Name = "Series8";
-            series30.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series31.Legend = "Legend1";
-            series31.Name = "Series9";
-            series31.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series32.Legend = "Legend1";
-            series32.Name = "Series10";
-            series32.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series33.ChartArea = "ChartArea1";
-            series33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series33.Legend = "Legend1";
-            series33.Name = "Series11";
-            series33.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series23);
-            this.chart1.Series.Add(series24);
-            this.chart1.Series.Add(series25);
-            this.chart1.Series.Add(series26);
-            this.chart1.Series.Add(series27);
-            this.chart1.Series.Add(series28);
-            this.chart1.Series.Add(series29);
-            this.chart1.Series.Add(series30);
-            this.chart1.Series.Add(series31);
-            this.chart1.Series.Add(series32);
-            this.chart1.Series.Add(series33);
+            series89.ChartArea = "ChartArea1";
+            series89.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series89.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series89.Legend = "Legend1";
+            series89.Name = "Series1";
+            series89.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series90.ChartArea = "ChartArea1";
+            series90.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series90.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series90.Legend = "Legend1";
+            series90.Name = "Series2";
+            series90.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series91.ChartArea = "ChartArea1";
+            series91.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series91.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series91.Legend = "Legend1";
+            series91.Name = "Series3";
+            series91.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series92.ChartArea = "ChartArea1";
+            series92.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series92.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series92.Legend = "Legend1";
+            series92.Name = "Series4";
+            series92.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series93.ChartArea = "ChartArea1";
+            series93.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series93.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series93.Legend = "Legend1";
+            series93.Name = "Series5";
+            series93.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series94.ChartArea = "ChartArea1";
+            series94.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series94.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series94.Legend = "Legend1";
+            series94.Name = "Series6";
+            series94.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series95.ChartArea = "ChartArea1";
+            series95.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series95.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series95.Legend = "Legend1";
+            series95.Name = "Series7";
+            series95.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series96.ChartArea = "ChartArea1";
+            series96.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series96.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series96.Legend = "Legend1";
+            series96.Name = "Series8";
+            series96.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series97.ChartArea = "ChartArea1";
+            series97.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series97.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series97.Legend = "Legend1";
+            series97.Name = "Series9";
+            series97.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series98.ChartArea = "ChartArea1";
+            series98.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series98.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series98.Legend = "Legend1";
+            series98.Name = "Series10";
+            series98.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series99.ChartArea = "ChartArea1";
+            series99.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series99.Legend = "Legend1";
+            series99.Name = "Series11";
+            series99.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series89);
+            this.chart1.Series.Add(series90);
+            this.chart1.Series.Add(series91);
+            this.chart1.Series.Add(series92);
+            this.chart1.Series.Add(series93);
+            this.chart1.Series.Add(series94);
+            this.chart1.Series.Add(series95);
+            this.chart1.Series.Add(series96);
+            this.chart1.Series.Add(series97);
+            this.chart1.Series.Add(series98);
+            this.chart1.Series.Add(series99);
             this.chart1.Size = new System.Drawing.Size(987, 472);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1273,10 +1283,10 @@ namespace WindowsFormsApp2
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dataGridView1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 33);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(996, 587);
+            this.tabPage4.Size = new System.Drawing.Size(996, 591);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Historia";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1285,11 +1295,13 @@ namespace WindowsFormsApp2
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(937, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(994, 575);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage5
@@ -1339,7 +1351,7 @@ namespace WindowsFormsApp2
             // 
             this.tableInput.Location = new System.Drawing.Point(129, 344);
             this.tableInput.Name = "tableInput";
-            this.tableInput.Size = new System.Drawing.Size(270, 29);
+            this.tableInput.Size = new System.Drawing.Size(270, 26);
             this.tableInput.TabIndex = 10;
             // 
             // tableLabel
@@ -1347,7 +1359,7 @@ namespace WindowsFormsApp2
             this.tableLabel.AutoSize = true;
             this.tableLabel.Location = new System.Drawing.Point(36, 344);
             this.tableLabel.Name = "tableLabel";
-            this.tableLabel.Size = new System.Drawing.Size(73, 24);
+            this.tableLabel.Size = new System.Drawing.Size(61, 20);
             this.tableLabel.TabIndex = 9;
             this.tableLabel.Text = "Tabela:";
             // 
@@ -1355,14 +1367,14 @@ namespace WindowsFormsApp2
             // 
             this.baseInput.Location = new System.Drawing.Point(129, 294);
             this.baseInput.Name = "baseInput";
-            this.baseInput.Size = new System.Drawing.Size(270, 29);
+            this.baseInput.Size = new System.Drawing.Size(270, 26);
             this.baseInput.TabIndex = 8;
             // 
             // locationSite
             // 
             this.locationSite.Location = new System.Drawing.Point(129, 94);
             this.locationSite.Name = "locationSite";
-            this.locationSite.Size = new System.Drawing.Size(270, 29);
+            this.locationSite.Size = new System.Drawing.Size(270, 26);
             this.locationSite.TabIndex = 1;
             // 
             // baseLabel
@@ -1370,7 +1382,7 @@ namespace WindowsFormsApp2
             this.baseLabel.AutoSize = true;
             this.baseLabel.Location = new System.Drawing.Point(48, 294);
             this.baseLabel.Name = "baseLabel";
-            this.baseLabel.Size = new System.Drawing.Size(61, 24);
+            this.baseLabel.Size = new System.Drawing.Size(54, 20);
             this.baseLabel.TabIndex = 7;
             this.baseLabel.Text = "Baza: ";
             // 
@@ -1379,7 +1391,7 @@ namespace WindowsFormsApp2
             this.location.AutoSize = true;
             this.location.Location = new System.Drawing.Point(35, 99);
             this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(74, 24);
+            this.location.Size = new System.Drawing.Size(64, 20);
             this.location.TabIndex = 0;
             this.location.Text = "Lokacja";
             // 
@@ -1388,7 +1400,7 @@ namespace WindowsFormsApp2
             this.passwordInput.Location = new System.Drawing.Point(129, 244);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.PasswordChar = '*';
-            this.passwordInput.Size = new System.Drawing.Size(270, 29);
+            this.passwordInput.Size = new System.Drawing.Size(270, 26);
             this.passwordInput.TabIndex = 6;
             // 
             // password
@@ -1396,7 +1408,7 @@ namespace WindowsFormsApp2
             this.password.AutoSize = true;
             this.password.Location = new System.Drawing.Point(37, 244);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(72, 24);
+            this.password.Size = new System.Drawing.Size(59, 20);
             this.password.TabIndex = 5;
             this.password.Text = "Hasło: ";
             // 
@@ -1404,7 +1416,7 @@ namespace WindowsFormsApp2
             // 
             this.loginInput.Location = new System.Drawing.Point(129, 194);
             this.loginInput.Name = "loginInput";
-            this.loginInput.Size = new System.Drawing.Size(270, 29);
+            this.loginInput.Size = new System.Drawing.Size(270, 26);
             this.loginInput.TabIndex = 4;
             // 
             // login
@@ -1412,7 +1424,7 @@ namespace WindowsFormsApp2
             this.login.AutoSize = true;
             this.login.Location = new System.Drawing.Point(42, 194);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(67, 24);
+            this.login.Size = new System.Drawing.Size(56, 20);
             this.login.TabIndex = 3;
             this.login.Text = "Login: ";
             // 
@@ -1420,7 +1432,7 @@ namespace WindowsFormsApp2
             // 
             this.hostInput.Location = new System.Drawing.Point(129, 144);
             this.hostInput.Name = "hostInput";
-            this.hostInput.Size = new System.Drawing.Size(270, 29);
+            this.hostInput.Size = new System.Drawing.Size(270, 26);
             this.hostInput.TabIndex = 2;
             // 
             // host
@@ -1428,7 +1440,7 @@ namespace WindowsFormsApp2
             this.host.AutoSize = true;
             this.host.Location = new System.Drawing.Point(51, 144);
             this.host.Name = "host";
-            this.host.Size = new System.Drawing.Size(58, 24);
+            this.host.Size = new System.Drawing.Size(51, 20);
             this.host.TabIndex = 1;
             this.host.Text = "Host: ";
             // 
@@ -1437,21 +1449,11 @@ namespace WindowsFormsApp2
             this.checkBoxServer.AutoSize = true;
             this.checkBoxServer.Location = new System.Drawing.Point(27, 47);
             this.checkBoxServer.Name = "checkBoxServer";
-            this.checkBoxServer.Size = new System.Drawing.Size(365, 28);
+            this.checkBoxServer.Size = new System.Drawing.Size(304, 24);
             this.checkBoxServer.TabIndex = 0;
             this.checkBoxServer.Text = "z połączeniem do  bazy danych MySQL";
             this.checkBoxServer.UseVisualStyleBackColor = true;
             this.checkBoxServer.CheckedChanged += new System.EventHandler(this.checkBoxServer_CheckedChanged);
-            // 
-            // screenShot
-            // 
-            this.screenShot.Location = new System.Drawing.Point(125, 516);
-            this.screenShot.Name = "screenShot";
-            this.screenShot.Size = new System.Drawing.Size(115, 47);
-            this.screenShot.TabIndex = 1;
-            this.screenShot.Text = "Zapisz ";
-            this.screenShot.UseVisualStyleBackColor = true;
-            this.screenShot.Click += new System.EventHandler(this.screenShot_Click);
             // 
             // Form1
             // 
