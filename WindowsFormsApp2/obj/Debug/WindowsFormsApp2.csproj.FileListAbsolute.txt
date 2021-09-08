@@ -86,3 +86,4 @@ C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TimeKeeper.exe
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TimeKeeper.pdb
 C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\Rafal\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TimeKeeper.pdb
